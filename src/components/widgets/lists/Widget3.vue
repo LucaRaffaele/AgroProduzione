@@ -74,48 +74,48 @@ import Dropdown2 from "@/components/dropdown/Dropdown2.vue";
 export default defineComponent({
   name: "kt-widget-3",
   components: {
-    Dropdown2,
+    Dropdown2
   },
   props: {
-    widgetClasses: String,
+    widgetClasses: String
   },
   setup() {
     const list = ref([
       {
         color: "success",
         title: "Create FireStone Logo",
-        text: "Due in 2 Days",
+        text: "Due in 2 Days"
       },
       {
         color: "primary",
         title: "Stakeholder Meeting",
-        text: "Due in 3 Days",
+        text: "Due in 3 Days"
       },
       {
         color: "warning",
         title: "Scoping & Estimations",
-        text: "Due in 5 Days",
+        text: "Due in 5 Days"
       },
       {
         color: "primary",
         title: "KPI App Showcase",
-        text: "Due in 2 Days",
+        text: "Due in 2 Days"
       },
       {
         color: "danger",
         title: "Project Meeting",
-        text: "Due in 12 Days",
+        text: "Due in 12 Days"
       },
       {
         color: "success",
         title: "Customers Update",
-        text: "Due in 1 week",
-      },
+        text: "Due in 1 week"
+      }
     ]);
 
     return {
-      list,
+      list
     };
-  },
+  }
 });
 </script>

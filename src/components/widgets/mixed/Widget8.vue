@@ -122,7 +122,7 @@ import Dropdown2 from "@/components/dropdown/Dropdown2.vue";
 export default defineComponent({
   name: "widget-1",
   components: {
-    Dropdown2,
+    Dropdown2
   },
   props: {
     widgetClasses: String,
@@ -130,7 +130,7 @@ export default defineComponent({
     image: String,
     title: String,
     date: String,
-    progress: String,
-  },
+    progress: String
+  }
 });
 </script>

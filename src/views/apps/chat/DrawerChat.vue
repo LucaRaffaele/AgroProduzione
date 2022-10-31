@@ -209,7 +209,7 @@ import Card4 from "@/components/cards/Card4.vue";
 export default defineComponent({
   name: "drawer-chat",
   components: {
-    Card4,
-  },
+    Card4
+  }
 });
 </script>

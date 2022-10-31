@@ -24,7 +24,7 @@ import {
   ref,
   onMounted,
   WritableComputedRef,
-  computed,
+  computed
 } from "vue";
 
 export default defineComponent({
@@ -35,8 +35,8 @@ export default defineComponent({
     itemsPerPageDropdownEnabled: {
       type: Boolean,
       required: false,
-      default: true,
-    },
+      default: true
+    }
   },
   emits: ["update:itemsPerPage"],
   setup(props, { emit }) {
@@ -52,12 +52,12 @@ export default defineComponent({
       },
       set(value: number): void {
         emit("update:itemsPerPage", value);
-      },
+      }
     });
 
     return {
-      itemsCountInTable,
+      itemsCountInTable
     };
-  },
+  }
 });
 </script>

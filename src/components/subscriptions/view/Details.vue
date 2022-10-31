@@ -225,7 +225,7 @@ import UserMenu from "@/layouts/main-layout/menus/UserAccountMenu.vue";
 export default defineComponent({
   name: "kt-details",
   components: {
-    UserMenu,
-  },
+    UserMenu
+  }
 });
 </script>

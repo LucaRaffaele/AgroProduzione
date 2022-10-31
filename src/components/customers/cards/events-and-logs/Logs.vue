@@ -77,7 +77,7 @@ export default defineComponent({
   name: "logs-card",
   components: {},
   props: {
-    cardClasses: String,
+    cardClasses: String
   },
   setup() {
     const logs = ref([
@@ -85,79 +85,79 @@ export default defineComponent({
         code: "200 OK",
         color: "success",
         message: "POST /v1/invoices/in_5806_7068/payment",
-        date: "10 Mar 2021, 11:05 am",
+        date: "10 Mar 2021, 11:05 am"
       },
       {
         code: "404 WRN",
         color: "warning",
         message: "POST /v1/customer/in_9092_7391/not_found",
-        date: "15 Apr 2021, 6:43 am",
+        date: "15 Apr 2021, 6:43 am"
       },
       {
         code: "200 OK",
         color: "success",
         message: "POST /v1/invoices/in_9757_6897/payment",
-        date: "15 Apr 2021, 6:43 am",
+        date: "15 Apr 2021, 6:43 am"
       },
       {
         code: "500 ERR",
         color: "danger",
         message: "POST /v1/invoice/c_6140090460c97/invalid",
-        date: "10 Nov 2021, 2:40 pm",
+        date: "10 Nov 2021, 2:40 pm"
       },
       {
         code: "200 OK",
         color: "success",
         message: "POST /v1/invoices/c_6140090460c99/payment",
-        date: "05 May 2021, 10:10 pm",
+        date: "05 May 2021, 10:10 pm"
       },
       {
         code: "500 ERR",
         color: "danger",
         message: "POST /v1/invoice/c_6140090460c97/invalid",
-        date: "20 Dec 2021, 11:05 am",
+        date: "20 Dec 2021, 11:05 am"
       },
       {
         code: "200 OK",
         color: "success",
         message: "POST /v1/invoices/in_5806_7068/payment",
-        date: "10 Mar 2021, 8:43 pm",
+        date: "10 Mar 2021, 8:43 pm"
       },
       {
         code: "404 WRN",
         color: "warning",
         message: "POST /v1/customer/c_6140090460c99/not_found",
-        date: "20 Dec 2021, 2:40 pm",
+        date: "20 Dec 2021, 2:40 pm"
       },
       {
         code: "200 OK",
         color: "success",
         message: "POST /v1/invoices/c_6140090460c97/payment",
-        date: "25 Oct 2021, 11:05 am",
+        date: "25 Oct 2021, 11:05 am"
       },
       {
         code: "404 WRN",
         color: "warning",
         message: "POST /v1/customer/in_8377_7366/not_found",
-        date: "19 Aug 2021, 6:43 am",
+        date: "19 Aug 2021, 6:43 am"
       },
       {
         code: "200 OK",
         color: "success",
         message: "POST /v1/invoices/in_6370_5796/payment",
-        date: "25 Oct 2021, 11:05 am",
+        date: "25 Oct 2021, 11:05 am"
       },
       {
         code: "500 ERR",
         color: "danger",
         message: "POST /v1/invoice/in_9092_7391/invalid",
-        date: "20 Dec 2021, 11:05 am",
-      },
+        date: "20 Dec 2021, 11:05 am"
+      }
     ]);
 
     return {
-      logs,
+      logs
     };
-  },
+  }
 });
 </script>

@@ -214,57 +214,57 @@ import KTCard from "@/components/cards/Card1.vue";
 export default defineComponent({
   name: "profile-projects",
   components: {
-    KTCard,
+    KTCard
   },
   setup() {
     const users1 = [
       { name: "Emma Smith", src: "media/avatars/300-6.jpg" },
       { name: "Rudy Stone", src: "media/avatars/300-1.jpg" },
-      { name: "Susan Redwood", initials: "S", state: "primary" },
+      { name: "Susan Redwood", initials: "S", state: "primary" }
     ];
 
     const users2 = [
       { name: "Alan Warden", initials: "A", state: "warning" },
-      { name: "Brian Cox", src: "media/avatars/300-5.jpg" },
+      { name: "Brian Cox", src: "media/avatars/300-5.jpg" }
     ];
 
     const users3 = [
       { name: "Mad Masy", src: "media/avatars/300-6.jpg" },
       { name: "Cris Willson", src: "media/avatars/300-1.jpg" },
-      { name: "Mike Garcie", initials: "M", state: "info" },
+      { name: "Mike Garcie", initials: "M", state: "info" }
     ];
 
     const users4 = [
       { name: "Nich Warden", initials: "N", state: "warning" },
-      { name: "Rob Otto", initials: "R", state: "success" },
+      { name: "Rob Otto", initials: "R", state: "success" }
     ];
 
     const users5 = [
       { name: "Francis Mitcham", src: "media/avatars/300-20.jpg" },
       { name: "Michelle Swanston", src: "media/avatars/300-7.jpg" },
-      { name: "Susan Redwood", initials: "S", state: "primary" },
+      { name: "Susan Redwood", initials: "S", state: "primary" }
     ];
 
     const users6 = [
       { name: "Emma Smith", src: "media/avatars/300-6.jpg" },
       { name: "Rudy Stone", src: "media/avatars/300-1.jpg" },
-      { name: "Susan Redwood", initials: "S", state: "primary" },
+      { name: "Susan Redwood", initials: "S", state: "primary" }
     ];
 
     const users7 = [
       { name: "Meloday Macy", src: "media/avatars/300-2.jpg" },
-      { name: "Rabbin Watterman", initials: "S", state: "success" },
+      { name: "Rabbin Watterman", initials: "S", state: "success" }
     ];
 
     const users8 = [
       { name: "Emma Smith", src: "media/avatars/300-6.jpg" },
       { name: "Rudy Stone", src: "media/avatars/300-1.jpg" },
-      { name: "Susan Redwood", initials: "S", state: "primary" },
+      { name: "Susan Redwood", initials: "S", state: "primary" }
     ];
 
     const users9 = [
       { name: "Meloday Macy", src: "media/avatars/300-2.jpg" },
-      { name: "Rabbin Watterman", initials: "S", state: "danger" },
+      { name: "Rabbin Watterman", initials: "S", state: "danger" }
     ];
 
     return {
@@ -276,8 +276,8 @@ export default defineComponent({
       users6,
       users7,
       users8,
-      users9,
+      users9
     };
-  },
+  }
 });
 </script>

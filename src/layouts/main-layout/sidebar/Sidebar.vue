@@ -31,12 +31,12 @@ export default defineComponent({
   components: {
     KTSidebarLogo,
     KTSidebarMenu,
-    KTSidebarFooter,
+    KTSidebarFooter
   },
   setup() {
     return {
-      displaySidebar,
+      displaySidebar
     };
-  },
+  }
 });
 </script>

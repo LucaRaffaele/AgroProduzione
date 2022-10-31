@@ -93,12 +93,12 @@ import VueApexCharts from "vue3-apexcharts";
 export default defineComponent({
   name: "widget-1",
   components: {
-    Dropdown3,
+    Dropdown3
   },
   props: {
     widgetClasses: String,
     widgetColor: String,
-    strokeColor: String,
+    strokeColor: String
   },
   setup(props) {
     const chartRef = ref<typeof VueApexCharts | null>(null);
@@ -108,8 +108,8 @@ export default defineComponent({
     const series = ref([
       {
         name: "Net Profit",
-        data: [30, 45, 32, 70, 40, 40, 40],
-      },
+        data: [30, 45, 32, 70, 40, 40, 40]
+      }
     ]);
 
     const themeMode = computed(() => {
@@ -137,9 +137,9 @@ export default defineComponent({
     return {
       chart,
       series,
-      chartRef,
+      chartRef
     };
-  },
+  }
 });
 
 const chartOptions = (widgetColor, strokeColor): ApexOptions => {
@@ -152,13 +152,13 @@ const chartOptions = (widgetColor, strokeColor): ApexOptions => {
       fontFamily: "inherit",
       type: "area",
       toolbar: {
-        show: false,
+        show: false
       },
       zoom: {
-        enabled: false,
+        enabled: false
       },
       sparkline: {
-        enabled: true,
+        enabled: true
       },
       dropShadow: {
         enabled: true,
@@ -167,40 +167,40 @@ const chartOptions = (widgetColor, strokeColor): ApexOptions => {
         left: 0,
         blur: 3,
         color: strokeColor,
-        opacity: 0.5,
-      },
+        opacity: 0.5
+      }
     },
     plotOptions: {},
     legend: {
-      show: false,
+      show: false
     },
     dataLabels: {
-      enabled: false,
+      enabled: false
     },
     fill: {
       type: "solid",
-      opacity: 0,
+      opacity: 0
     },
     stroke: {
       curve: "smooth",
       show: true,
       width: 3,
-      colors: [strokeColor],
+      colors: [strokeColor]
     },
     xaxis: {
       categories: ["Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug"],
       axisBorder: {
-        show: false,
+        show: false
       },
       axisTicks: {
-        show: false,
+        show: false
       },
       labels: {
         show: false,
         style: {
           colors: labelColor,
-          fontSize: "12px",
-        },
+          fontSize: "12px"
+        }
       },
       crosshairs: {
         show: false,
@@ -208,9 +208,9 @@ const chartOptions = (widgetColor, strokeColor): ApexOptions => {
         stroke: {
           color: borderColor,
           width: 1,
-          dashArray: 3,
-        },
-      },
+          dashArray: 3
+        }
+      }
     },
     yaxis: {
       min: 0,
@@ -219,49 +219,49 @@ const chartOptions = (widgetColor, strokeColor): ApexOptions => {
         show: false,
         style: {
           colors: labelColor,
-          fontSize: "12px",
-        },
-      },
+          fontSize: "12px"
+        }
+      }
     },
     states: {
       normal: {
         filter: {
           type: "none",
-          value: 0,
-        },
+          value: 0
+        }
       },
       hover: {
         filter: {
           type: "none",
-          value: 0,
-        },
+          value: 0
+        }
       },
       active: {
         allowMultipleDataPointsSelection: false,
         filter: {
           type: "none",
-          value: 0,
-        },
-      },
+          value: 0
+        }
+      }
     },
     tooltip: {
       style: {
-        fontSize: "12px",
+        fontSize: "12px"
       },
       y: {
         formatter: function (val) {
           return "$" + val + " thousands";
-        },
+        }
       },
       marker: {
-        show: false,
-      },
+        show: false
+      }
     },
     markers: {
       colors: [color],
       strokeColors: [strokeColor],
-      strokeWidth: 3,
-    },
+      strokeWidth: 3
+    }
   };
 };
 </script>

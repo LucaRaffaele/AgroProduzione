@@ -101,39 +101,39 @@ import Datatable from "@/components/kt-datatable/KTDataTable.vue";
 export default defineComponent({
   name: "payment-records",
   props: {
-    cardClasses: String,
+    cardClasses: String
   },
   components: {
-    Datatable,
+    Datatable
   },
   setup() {
     const tableHeader = ref([
       {
         columnName: "Invoice No.",
         columnLabel: "invoice",
-        sortEnabled: false,
+        sortEnabled: false
       },
       {
         columnName: "Status",
         columnLabel: "status",
         sortingField: "status.label",
-        sortEnabled: false,
+        sortEnabled: false
       },
       {
         columnName: "Amount",
         columnLabel: "amount",
-        sortEnabled: false,
+        sortEnabled: false
       },
       {
         columnName: "Date",
         columnLabel: "date",
-        sortEnabled: false,
+        sortEnabled: false
       },
       {
         columnName: "Actions",
         columnLabel: "actions",
-        sortEnabled: false,
-      },
+        sortEnabled: false
+      }
     ]);
     const tableData = ref([
       {
@@ -145,9 +145,9 @@ export default defineComponent({
         amount: "$880.00",
         status: {
           label: "Pending",
-          state: "warning",
+          state: "warning"
         },
-        date: "21 Oct 2020, 5:54 pm",
+        date: "21 Oct 2020, 5:54 pm"
       },
       {
         invoice:
@@ -158,9 +158,9 @@ export default defineComponent({
         amount: "$7,650.00",
         status: {
           label: "Successful",
-          state: "success",
+          state: "success"
         },
-        date: "19 Oct 2020, 7:32 am",
+        date: "19 Oct 2020, 7:32 am"
       },
       {
         invoice:
@@ -171,9 +171,9 @@ export default defineComponent({
         amount: "$375.00",
         status: {
           label: "Successful",
-          state: "success",
+          state: "success"
         },
-        date: "23 Sep 2020, 12:38 am",
+        date: "23 Sep 2020, 12:38 am"
       },
       {
         invoice:
@@ -184,9 +184,9 @@ export default defineComponent({
         amount: "$129.00",
         status: {
           label: "Successful",
-          state: "success",
+          state: "success"
         },
-        date: "11 Sep 2020, 3:18 pm",
+        date: "11 Sep 2020, 3:18 pm"
       },
       {
         invoice:
@@ -197,9 +197,9 @@ export default defineComponent({
         amount: "$450.00",
         status: {
           label: "Rejected",
-          state: "danger",
+          state: "danger"
         },
-        date: "03 Sep 2020, 1:08 am",
+        date: "03 Sep 2020, 1:08 am"
       },
       {
         invoice:
@@ -210,9 +210,9 @@ export default defineComponent({
         amount: "$8,700.00",
         status: {
           label: "Pending",
-          state: "warning",
+          state: "warning"
         },
-        date: "01 Sep 2020, 4:58 pm",
+        date: "01 Sep 2020, 4:58 pm"
       },
       {
         invoice:
@@ -223,9 +223,9 @@ export default defineComponent({
         amount: "$1,200.00",
         status: {
           label: "Successful",
-          state: "success",
+          state: "success"
         },
-        date: "14 Dec 2020, 8:43 pm",
+        date: "14 Dec 2020, 8:43 pm"
       },
       {
         invoice:
@@ -236,9 +236,9 @@ export default defineComponent({
         amount: "$79.00",
         status: {
           label: "Successful",
-          state: "success",
+          state: "success"
         },
-        date: "01 Dec 2020, 10:12 am",
+        date: "01 Dec 2020, 10:12 am"
       },
       {
         invoice:
@@ -249,9 +249,9 @@ export default defineComponent({
         amount: "$5,500.00",
         status: {
           label: "Successful",
-          state: "success",
+          state: "success"
         },
-        date: "12 Nov 2020, 2:01 pm",
+        date: "12 Nov 2020, 2:01 pm"
       },
       {
         invoice:
@@ -262,9 +262,9 @@ export default defineComponent({
         amount: "$880.00",
         status: {
           label: "Pending",
-          state: "warning",
+          state: "warning"
         },
-        date: "21 Oct 2020, 5:54 pm",
+        date: "21 Oct 2020, 5:54 pm"
       },
       {
         invoice:
@@ -275,9 +275,9 @@ export default defineComponent({
         amount: "$7,650.00",
         status: {
           label: "Successful",
-          state: "success",
+          state: "success"
         },
-        date: "19 Oct 2020, 7:32 am",
+        date: "19 Oct 2020, 7:32 am"
       },
       {
         invoice:
@@ -288,9 +288,9 @@ export default defineComponent({
         amount: "$375.00",
         status: {
           label: "Successful",
-          state: "success",
+          state: "success"
         },
-        date: "23 Sep 2020, 12:38 am",
+        date: "23 Sep 2020, 12:38 am"
       },
       {
         invoice:
@@ -301,9 +301,9 @@ export default defineComponent({
         amount: "$129.00",
         status: {
           label: "Successful",
-          state: "success",
+          state: "success"
         },
-        date: "11 Sep 2020, 3:18 pm",
+        date: "11 Sep 2020, 3:18 pm"
       },
       {
         invoice:
@@ -314,9 +314,9 @@ export default defineComponent({
         amount: "$450.00",
         status: {
           label: "Rejected",
-          state: "danger",
+          state: "danger"
         },
-        date: "03 Sep 2020, 1:08 am",
+        date: "03 Sep 2020, 1:08 am"
       },
       {
         invoice:
@@ -327,10 +327,10 @@ export default defineComponent({
         amount: "$8,700.00",
         status: {
           label: "Pending",
-          state: "warning",
+          state: "warning"
         },
-        date: "01 Sep 2020, 4:58 pm",
-      },
+        date: "01 Sep 2020, 4:58 pm"
+      }
     ]);
 
     const deleteRecord = (invoice) => {
@@ -342,6 +342,6 @@ export default defineComponent({
     };
 
     return { tableHeader, tableData, deleteRecord };
-  },
+  }
 });
 </script>

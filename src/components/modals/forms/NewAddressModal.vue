@@ -649,7 +649,7 @@ export default defineComponent({
   components: {
     ErrorMessage,
     Field,
-    Form,
+    Form
   },
   setup() {
     const submitButtonRef = ref<null | HTMLButtonElement>(null);
@@ -663,7 +663,7 @@ export default defineComponent({
       address2: "",
       town: "",
       state: "",
-      postCode: "",
+      postCode: ""
     });
 
     const validationSchema = Yup.object().shape({
@@ -674,7 +674,7 @@ export default defineComponent({
       address2: Yup.string().required().label("Address Line 2"),
       town: Yup.string().required().label("Town"),
       state: Yup.string().required().label("State/Province"),
-      postCode: Yup.string().required().label("Post code"),
+      postCode: Yup.string().required().label("Post code")
     });
 
     const submit = () => {
@@ -700,8 +700,8 @@ export default defineComponent({
           buttonsStyling: false,
           confirmButtonText: "Ok, got it!",
           customClass: {
-            confirmButton: "btn btn-primary",
-          },
+            confirmButton: "btn btn-primary"
+          }
         }).then(() => {
           hideModal(newAddressModalRef.value);
         });
@@ -713,8 +713,8 @@ export default defineComponent({
       validationSchema,
       submit,
       submitButtonRef,
-      newAddressModalRef,
+      newAddressModalRef
     };
-  },
+  }
 });
 </script>

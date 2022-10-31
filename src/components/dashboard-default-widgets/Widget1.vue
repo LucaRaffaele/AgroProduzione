@@ -60,7 +60,7 @@ export default defineComponent({
     className: { type: String, required: false },
     bgColor: { type: String, required: false, default: "#080655" },
     bgImage: { type: String, required: false },
-    description: { type: String, required: true },
-  },
+    description: { type: String, required: true }
+  }
 });
 </script>

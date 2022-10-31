@@ -124,7 +124,7 @@ export default defineComponent({
   name: "widget-14",
   props: {
     widgetClasses: String,
-    widgetColor: String,
-  },
+    widgetColor: String
+  }
 });
 </script>

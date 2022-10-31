@@ -627,7 +627,7 @@ export default defineComponent({
       town: "Melbourne",
       state: "Victoria",
       postCode: "3000",
-      country: "US",
+      country: "US"
     });
 
     const rules = ref({
@@ -635,44 +635,44 @@ export default defineComponent({
         {
           required: true,
           message: "Customer name is required",
-          trigger: "change",
-        },
+          trigger: "change"
+        }
       ],
       email: [
         {
           required: true,
           message: "Customer email is required",
-          trigger: "change",
-        },
+          trigger: "change"
+        }
       ],
       addressLine: [
         {
           required: true,
           message: "Address 1 is required",
-          trigger: "change",
-        },
+          trigger: "change"
+        }
       ],
       town: [
         {
           required: true,
           message: "Town is required",
-          trigger: "change",
-        },
+          trigger: "change"
+        }
       ],
       state: [
         {
           required: true,
           message: "State is required",
-          trigger: "change",
-        },
+          trigger: "change"
+        }
       ],
       postCode: [
         {
           required: true,
           message: "Post code is required",
-          trigger: "change",
-        },
-      ],
+          trigger: "change"
+        }
+      ]
     });
 
     const submit = () => {
@@ -693,8 +693,8 @@ export default defineComponent({
               buttonsStyling: false,
               confirmButtonText: "Ok, got it!",
               customClass: {
-                confirmButton: "btn btn-primary",
-              },
+                confirmButton: "btn btn-primary"
+              }
             }).then(() => {
               hideModal(addCustomerModalRef.value);
             });
@@ -706,8 +706,8 @@ export default defineComponent({
             buttonsStyling: false,
             confirmButtonText: "Ok, got it!",
             customClass: {
-              confirmButton: "btn btn-primary",
-            },
+              confirmButton: "btn btn-primary"
+            }
           });
           return false;
         }
@@ -720,8 +720,8 @@ export default defineComponent({
       submit,
       formRef,
       loading,
-      addCustomerModalRef,
+      addCustomerModalRef
     };
-  },
+  }
 });
 </script>

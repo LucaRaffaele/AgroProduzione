@@ -16,12 +16,12 @@ import { getIllustrationsPath } from "@/core/helpers/assets";
 export default defineComponent({
   name: "create-app",
   components: {
-    KTModalCard,
+    KTModalCard
   },
   setup() {
     return {
-      getIllustrationsPath,
+      getIllustrationsPath
     };
-  },
+  }
 });
 </script>

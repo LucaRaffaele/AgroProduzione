@@ -102,8 +102,7 @@
                   <!--begin::Input-->
                   <el-date-picker
                     v-model="targetData.eventStartDate"
-                    type="date"
-                    :teleported="false"
+                    type="text"
                     name="eventStartDate"
                   />
                   <!--end::Input-->
@@ -128,8 +127,7 @@
                   <!--begin::Input-->
                   <el-date-picker
                     v-model="targetData.eventEndDate"
-                    type="date"
-                    :teleported="false"
+                    type="text"
                     name="eventName"
                   />
                   <!--end::Input-->
@@ -212,7 +210,7 @@ export default defineComponent({
       eventLocation: "",
       allDay: true,
       eventStartDate: "",
-      eventEndDate: "",
+      eventEndDate: ""
     });
 
     const rules = ref({
@@ -220,9 +218,9 @@ export default defineComponent({
         {
           required: true,
           message: "Please input event name",
-          trigger: "blur",
-        },
-      ],
+          trigger: "blur"
+        }
+      ]
     });
 
     const submit = () => {
@@ -243,8 +241,8 @@ export default defineComponent({
               buttonsStyling: false,
               confirmButtonText: "Ok, got it!",
               customClass: {
-                confirmButton: "btn btn-primary",
-              },
+                confirmButton: "btn btn-primary"
+              }
             }).then(() => {
               hideModal(newTargetModalRef.value);
             });
@@ -256,8 +254,8 @@ export default defineComponent({
             buttonsStyling: false,
             confirmButtonText: "Ok, got it!",
             customClass: {
-              confirmButton: "btn btn-primary",
-            },
+              confirmButton: "btn btn-primary"
+            }
           });
           return false;
         }
@@ -270,9 +268,9 @@ export default defineComponent({
       loading,
       targetData,
       rules,
-      submit,
+      submit
     };
-  },
+  }
 });
 </script>
 

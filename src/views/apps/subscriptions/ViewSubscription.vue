@@ -35,7 +35,7 @@ export default defineComponent({
     Details,
     Events,
     Invoices,
-    Summary,
-  },
+    Summary
+  }
 });
 </script>

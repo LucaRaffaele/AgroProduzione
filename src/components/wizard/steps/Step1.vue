@@ -113,7 +113,7 @@ export default defineComponent({
   name: "step-1",
   components: {
     Field,
-    ErrorMessage,
-  },
+    ErrorMessage
+  }
 });
 </script>

@@ -44,7 +44,7 @@ export default defineComponent({
   props: {
     widgetClasses: String,
     chartColor: String,
-    chartHeight: String,
+    chartHeight: String
   },
   setup(props) {
     const chartRef = ref<typeof VueApexCharts | null>(null);
@@ -55,12 +55,12 @@ export default defineComponent({
     const series = ref([
       {
         name: "Net Profit",
-        data: [50, 60, 70, 80, 60, 50, 70, 60],
+        data: [50, 60, 70, 80, 60, 50, 70, 60]
       },
       {
         name: "Revenue",
-        data: [50, 60, 70, 80, 60, 50, 70, 60],
-      },
+        data: [50, 60, 70, 80, 60, 50, 70, 60]
+      }
     ]);
 
     const themeMode = computed(() => {
@@ -89,9 +89,9 @@ export default defineComponent({
       chart,
       series,
       chartRef,
-      refreshChart,
+      refreshChart
     };
-  },
+  }
 });
 
 const chartOptions = (color, chartHeight): ApexOptions => {
@@ -106,97 +106,96 @@ const chartOptions = (color, chartHeight): ApexOptions => {
       type: "bar",
       height: chartHeight,
       toolbar: {
-        show: false,
-      },
+        show: false
+      }
     },
     plotOptions: {
       bar: {
         horizontal: false,
-        columnWidth: "50%",
-        borderRadius: 5,
-      },
+        columnWidth: "50%"
+      }
     },
     legend: {
-      show: false,
+      show: false
     },
     dataLabels: {
-      enabled: false,
+      enabled: false
     },
     stroke: {
       show: true,
       width: 2,
-      colors: ["transparent"],
+      colors: ["transparent"]
     },
     xaxis: {
       categories: ["Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep"],
       axisBorder: {
-        show: false,
+        show: false
       },
       axisTicks: {
-        show: false,
+        show: false
       },
       labels: {
         style: {
           colors: labelColor,
-          fontSize: "12px",
-        },
-      },
+          fontSize: "12px"
+        }
+      }
     },
     yaxis: {
       labels: {
         style: {
           colors: labelColor,
-          fontSize: "12px",
-        },
-      },
+          fontSize: "12px"
+        }
+      }
     },
     fill: {
-      type: "solid",
+      type: "solid"
     },
     states: {
       normal: {
         filter: {
           type: "none",
-          value: 0,
-        },
+          value: 0
+        }
       },
       hover: {
         filter: {
           type: "none",
-          value: 0,
-        },
+          value: 0
+        }
       },
       active: {
         allowMultipleDataPointsSelection: false,
         filter: {
           type: "none",
-          value: 0,
-        },
-      },
+          value: 0
+        }
+      }
     },
     tooltip: {
       style: {
-        fontSize: "12px",
+        fontSize: "12px"
       },
       y: {
         formatter: function (val) {
           return "$" + val + " revenue";
-        },
-      },
+        }
+      }
     },
     colors: [baseColor, secondaryColor],
     grid: {
       padding: {
-        top: 10,
+        top: 10
       },
       borderColor: borderColor,
       strokeDashArray: 4,
       yaxis: {
         lines: {
-          show: true,
-        },
-      },
-    },
+          show: true
+        }
+      }
+    }
   };
 };
 </script>

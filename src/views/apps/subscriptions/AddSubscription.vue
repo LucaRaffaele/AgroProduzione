@@ -50,7 +50,7 @@ export default defineComponent({
     Products,
     PaymentMethod,
     NewCardModal,
-    CreateAccountModal,
-  },
+    CreateAccountModal
+  }
 });
 </script>

@@ -120,10 +120,10 @@ import Dropdown3 from "@/components/dropdown/Dropdown3.vue";
 export default defineComponent({
   name: "widget-4",
   props: {
-    widgetClasses: String,
+    widgetClasses: String
   },
   components: {
-    Dropdown3,
-  },
+    Dropdown3
+  }
 });
 </script>

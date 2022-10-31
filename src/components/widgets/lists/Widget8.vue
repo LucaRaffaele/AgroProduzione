@@ -96,10 +96,10 @@ import Dropdown3 from "@/components/dropdown/Dropdown3.vue";
 export default defineComponent({
   name: "kt-widget-6",
   components: {
-    Dropdown3,
+    Dropdown3
   },
   props: {
-    widgetClasses: String,
+    widgetClasses: String
   },
   setup() {
     const list = ref([
@@ -107,31 +107,31 @@ export default defineComponent({
         image: "media/stock/600x400/img-17.jpg",
         title: "Cup & Green",
         desc: "Visually stunning",
-        rate: "4.2",
+        rate: "4.2"
       },
       {
         image: "media/stock/600x400/img-17.jpg",
         title: "Pink Patterns",
         desc: "Feminine all around",
-        rate: "5.0",
+        rate: "5.0"
       },
       {
         image: "media/stock/600x400/img-1.jpg",
         title: "Abstract Art",
         desc: "The will to capture readers",
-        rate: " 5.7",
+        rate: " 5.7"
       },
       {
         image: "media/stock/600x400/img-9.jpg",
         title: "Desserts platter",
         desc: "Food trends & inspirations",
-        rate: "3.7",
-      },
+        rate: "3.7"
+      }
     ]);
 
     return {
-      list,
+      list
     };
-  },
+  }
 });
 </script>

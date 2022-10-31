@@ -162,7 +162,7 @@ export default defineComponent({
   name: "kt-widget-11",
   components: {},
   props: {
-    widgetClasses: String,
+    widgetClasses: String
   },
   setup() {
     const list = [
@@ -170,92 +170,92 @@ export default defineComponent({
         product: {
           image: "media/stock/600x400/img-26.jpg",
           name: "Sant Extreanet Solution",
-          specs: "HTML, JS, ReactJS",
+          specs: "HTML, JS, ReactJS"
         },
         price: "$2,790",
         deposit: "$520",
         agent: {
           name: "Bradly Beal",
-          position: "Insurance",
+          position: "Insurance"
         },
         status: {
           label: "Approved",
-          color: "primary",
-        },
+          color: "primary"
+        }
       },
       {
         product: {
           image: "media/stock/600x400/img-3.jpg",
           name: "Telegram Development",
-          specs: "C#, ASP.NET, MS SQL",
+          specs: "C#, ASP.NET, MS SQL"
         },
         price: "$4,790",
         deposit: "$240",
         agent: {
           name: "Chris Thompson",
-          position: "NBA Player",
+          position: "NBA Player"
         },
         status: {
           label: "In Progress",
-          color: "danger",
-        },
+          color: "danger"
+        }
       },
       {
         product: {
           image: "media/stock/600x400/img-9.jpg",
           name: "Payroll Application",
-          specs: "PHP, Laravel, VueJS",
+          specs: "PHP, Laravel, VueJS"
         },
         price: "$4,390",
         deposit: "$593",
         agent: {
           name: "Zoey McGee",
-          position: "Ruby Developer",
+          position: "Ruby Developer"
         },
         status: {
           label: "Success",
-          color: "success",
-        },
+          color: "success"
+        }
       },
       {
         product: {
           image: "media/stock/600x400/img-18.jpg",
           name: "HR Management System",
-          specs: "Python, PostgreSQL, ReactJS",
+          specs: "Python, PostgreSQL, ReactJS"
         },
         price: "$7,990",
         deposit: "$980",
         agent: {
           name: "Brandon Ingram",
-          position: "Insurance",
+          position: "Insurance"
         },
         status: {
           label: "Rejected",
-          color: "info",
-        },
+          color: "info"
+        }
       },
       {
         product: {
           image: "media/stock/600x400/img-8.jpg",
           name: "Telegram Mobile",
-          specs: "HTML, JS, ReactJS",
+          specs: "HTML, JS, ReactJS"
         },
         price: "$5,790",
         deposit: "$750",
         agent: {
           name: "Natali Trump",
-          position: "Insurance",
+          position: "Insurance"
         },
         status: {
           label: "Approved",
-          color: "warning",
-        },
-      },
+          color: "warning"
+        }
+      }
     ];
 
     return {
-      list,
+      list
     };
-  },
+  }
 });
 </script>

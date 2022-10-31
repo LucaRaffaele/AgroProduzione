@@ -634,7 +634,7 @@ export default defineComponent({
   name: "kt-widget-5",
   components: {},
   props: {
-    widgetClasses: String,
-  },
+    widgetClasses: String
+  }
 });
 </script>

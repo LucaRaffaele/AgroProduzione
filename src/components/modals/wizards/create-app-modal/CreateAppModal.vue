@@ -195,7 +195,7 @@ import CreateAppModalForm from "@/components/modals/wizards/create-app-modal/Cre
 export default defineComponent({
   name: "create-app-modal",
   components: {
-    CreateAppModalForm,
-  },
+    CreateAppModalForm
+  }
 });
 </script>

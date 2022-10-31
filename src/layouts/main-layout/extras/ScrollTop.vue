@@ -28,8 +28,8 @@ export default defineComponent({
     });
 
     return {
-      scrolltopDispaly,
+      scrolltopDispaly
     };
-  },
+  }
 });
 </script>

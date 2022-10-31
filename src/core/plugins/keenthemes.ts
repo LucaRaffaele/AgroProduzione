@@ -4,7 +4,7 @@ import {
   StickyComponent,
   ToggleComponent,
   DrawerComponent,
-  SwapperComponent,
+  SwapperComponent
 } from "@/assets/ts/components";
 import { ThemeModeComponent } from "@/assets/ts/layout";
 
@@ -47,5 +47,5 @@ const reinitializeScrollComponent = async () => {
 export {
   initializeComponents,
   reinitializeComponents,
-  reinitializeScrollComponent,
+  reinitializeScrollComponent
 };

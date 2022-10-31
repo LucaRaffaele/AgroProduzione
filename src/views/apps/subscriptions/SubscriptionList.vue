@@ -163,7 +163,7 @@ import arraySort from "array-sort";
 export default defineComponent({
   name: "kt-subscription-list",
   components: {
-    KTDatatable,
+    KTDatatable
   },
   setup() {
     const data = ref([
@@ -174,7 +174,7 @@ export default defineComponent({
         color: "success",
         billing: "Auto-debit",
         product: "Basic",
-        createdDate: "Oct 25, 2021",
+        createdDate: "Oct 25, 2021"
       },
       {
         id: 2,
@@ -183,7 +183,7 @@ export default defineComponent({
         color: "success",
         billing: "Manual - Credit Card",
         product: "Basic",
-        createdDate: "Mar 10, 2021",
+        createdDate: "Mar 10, 2021"
       },
       {
         id: 3,
@@ -192,7 +192,7 @@ export default defineComponent({
         color: "primary",
         billing: "Manual - Cash",
         product: "Teams Bundle",
-        createdDate: "Jul 25, 2021",
+        createdDate: "Jul 25, 2021"
       },
       {
         id: 4,
@@ -201,7 +201,7 @@ export default defineComponent({
         color: "warning",
         billing: "Manual - Paypal",
         product: "Enterprise",
-        createdDate: "Aug 19, 2021",
+        createdDate: "Aug 19, 2021"
       },
       {
         id: 5,
@@ -210,7 +210,7 @@ export default defineComponent({
         color: "warning",
         billing: "Auto-debit",
         product: "Basic",
-        createdDate: "May 05, 2021",
+        createdDate: "May 05, 2021"
       },
       {
         id: 6,
@@ -219,7 +219,7 @@ export default defineComponent({
         color: "success",
         billing: "Auto-debit",
         product: "Enterprise Bundle",
-        createdDate: "Aug 19, 2021",
+        createdDate: "Aug 19, 2021"
       },
       {
         id: 7,
@@ -228,7 +228,7 @@ export default defineComponent({
         color: "success",
         billing: "Auto-debit",
         product: "Teams",
-        createdDate: "Jun 20, 2021",
+        createdDate: "Jun 20, 2021"
       },
       {
         id: 8,
@@ -237,7 +237,7 @@ export default defineComponent({
         color: "danger",
         billing: "--",
         product: "Enterprise",
-        createdDate: "Jun 24, 2021",
+        createdDate: "Jun 24, 2021"
       },
       {
         id: 9,
@@ -246,7 +246,7 @@ export default defineComponent({
         color: "warning",
         billing: "Auto-debit",
         product: "Basic",
-        createdDate: "Aug 19, 2021",
+        createdDate: "Aug 19, 2021"
       },
       {
         id: 10,
@@ -255,7 +255,7 @@ export default defineComponent({
         color: "success",
         billing: "Auto-debit",
         product: "Enterprise Bundle",
-        createdDate: "Feb 21, 2021",
+        createdDate: "Feb 21, 2021"
       },
       {
         id: 11,
@@ -264,7 +264,7 @@ export default defineComponent({
         color: "success",
         billing: "Manual - Credit Card",
         product: "Enterprise",
-        createdDate: "May 05, 2021",
+        createdDate: "May 05, 2021"
       },
       {
         id: 12,
@@ -273,7 +273,7 @@ export default defineComponent({
         color: "success",
         billing: "Manual - Credit Card",
         product: "Basic",
-        createdDate: "Jun 24, 2021",
+        createdDate: "Jun 24, 2021"
       },
       {
         id: 13,
@@ -282,7 +282,7 @@ export default defineComponent({
         color: "danger",
         billing: "--",
         product: "Teams Bundle",
-        createdDate: "Jul 25, 2021",
+        createdDate: "Jul 25, 2021"
       },
       {
         id: 14,
@@ -291,7 +291,7 @@ export default defineComponent({
         color: "success",
         billing: "Manual - Paypal",
         product: "Enterprise",
-        createdDate: "Sep 22, 2021",
+        createdDate: "Sep 22, 2021"
       },
       {
         id: 15,
@@ -300,7 +300,7 @@ export default defineComponent({
         color: "success",
         billing: "Manual - Credit Card",
         product: "Basic",
-        createdDate: "Nov 10, 2021",
+        createdDate: "Nov 10, 2021"
       },
       {
         id: 16,
@@ -309,7 +309,7 @@ export default defineComponent({
         color: "danger",
         billing: "--",
         product: "Basic Bundle",
-        createdDate: "Jun 20, 2021",
+        createdDate: "Jun 20, 2021"
       },
       {
         id: 17,
@@ -318,7 +318,7 @@ export default defineComponent({
         color: "warning",
         billing: "Manual - Paypal",
         product: "Enterprise",
-        createdDate: "May 05, 2021",
+        createdDate: "May 05, 2021"
       },
       {
         id: 18,
@@ -327,7 +327,7 @@ export default defineComponent({
         color: "success",
         billing: "Auto-debit",
         product: "Teams",
-        createdDate: "Apr 15, 2021",
+        createdDate: "Apr 15, 2021"
       },
       {
         id: 19,
@@ -336,7 +336,7 @@ export default defineComponent({
         color: "success",
         billing: "Manual - Credit Card",
         product: "Basic",
-        createdDate: "Oct 25, 2021",
+        createdDate: "Oct 25, 2021"
       },
       {
         id: 20,
@@ -345,39 +345,39 @@ export default defineComponent({
         color: "danger",
         billing: "--",
         product: "Basic Bundle",
-        createdDate: "Feb 21, 2021",
-      },
+        createdDate: "Feb 21, 2021"
+      }
     ]);
     const headerConfig = ref([
       {
         columnName: "Customer",
         columnLabel: "customer",
-        sortEnabled: true,
+        sortEnabled: true
       },
       {
         columnName: "Status",
         columnLabel: "status",
-        sortEnabled: true,
+        sortEnabled: true
       },
       {
         columnName: "Billing",
         columnLabel: "billing",
-        sortEnabled: true,
+        sortEnabled: true
       },
       {
         columnName: "Product",
         columnLabel: "product",
-        sortEnabled: true,
+        sortEnabled: true
       },
       {
         columnName: "Created Date",
         columnLabel: "createdDate",
-        sortEnabled: true,
+        sortEnabled: true
       },
       {
         columnName: "Actions",
-        columnLabel: "actions",
-      },
+        columnLabel: "actions"
+      }
     ]);
 
     const selectedIds = ref<Array<number>>([]);
@@ -401,7 +401,11 @@ export default defineComponent({
       }
     };
     const onItemSelect = (selectedItems: Array<number>) => {
-      selectedIds.value = selectedItems;
+      if (selectedItems.length === 0) {
+        selectedIds.value = [];
+      } else {
+        selectedIds.value = [...selectedIds.value, ...selectedItems];
+      }
     };
 
     return {
@@ -411,8 +415,8 @@ export default defineComponent({
       onItemSelect,
       selectedIds,
       deleteFewSubscriptions,
-      deleteSubscription,
+      deleteSubscription
     };
-  },
+  }
 });
 </script>

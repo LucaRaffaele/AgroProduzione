@@ -20,12 +20,12 @@ export default defineComponent({
   name: "getting-started",
   components: {
     KTModalCard,
-    AddCustomerModal,
+    AddCustomerModal
   },
   setup() {
     return {
-      getIllustrationsPath,
+      getIllustrationsPath
     };
-  },
+  }
 });
 </script>

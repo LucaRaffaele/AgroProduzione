@@ -20,12 +20,12 @@ export default defineComponent({
   name: "new-address",
   components: {
     KTModalCard,
-    KTNewAddressModal,
+    KTNewAddressModal
   },
   setup() {
     return {
-      getIllustrationsPath,
+      getIllustrationsPath
     };
-  },
+  }
 });
 </script>

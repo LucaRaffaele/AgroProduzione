@@ -24,14 +24,14 @@ import {
   onMounted,
   ref,
   WritableComputedRef,
-  watch,
+  watch
 } from "vue";
 
 export default defineComponent({
   name: "table-footer",
   components: {
     TableItemsPerPageSelect,
-    TablePagination,
+    TablePagination
   },
   props: {
     count: { type: Number, required: false, default: 5 },
@@ -39,14 +39,13 @@ export default defineComponent({
     itemsPerPageDropdownEnabled: {
       type: Boolean,
       required: false,
-      default: true,
-    },
-    currentPage: { type: Number, required: false, default: 1 },
+      default: true
+    }
   },
   emits: ["update:itemsPerPage", "page-change"],
   setup(props, { emit }) {
-    const page = ref(props.currentPage);
-    const inputItemsPerPage = ref(props.itemsPerPage);
+    const page = ref(1);
+    const inputItemsPerPage = ref(5);
 
     watch(
       () => props.count,
@@ -78,7 +77,7 @@ export default defineComponent({
       set(value: number): void {
         inputItemsPerPage.value = value;
         emit("update:itemsPerPage", value);
-      },
+      }
     });
 
     const pageCount = computed(() => {
@@ -90,8 +89,8 @@ export default defineComponent({
       pageCount,
       page,
       itemsCountInTable,
-      inputItemsPerPage,
+      inputItemsPerPage
     };
-  },
+  }
 });
 </script>

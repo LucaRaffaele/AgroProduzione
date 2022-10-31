@@ -20,12 +20,12 @@ export default defineComponent({
   name: "create-account",
   components: {
     KTModalCard,
-    KTCreateAccountModal,
+    KTCreateAccountModal
   },
   setup() {
     return {
-      getIllustrationsPath,
+      getIllustrationsPath
     };
-  },
+  }
 });
 </script>

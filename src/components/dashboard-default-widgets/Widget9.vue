@@ -50,7 +50,7 @@ export default defineComponent({
   components: {},
   props: {
     className: { type: String, required: false },
-    height: { type: Number, required: true },
+    height: { type: Number, required: true }
   },
   setup(props) {
     const chartRef = ref<typeof VueApexCharts | null>(null);
@@ -62,16 +62,16 @@ export default defineComponent({
         name: "Inbound Calls",
         data: [
           65, 80, 80, 60, 60, 45, 45, 80, 80, 70, 70, 90, 90, 80, 80, 80, 60,
-          60, 50,
-        ],
+          60, 50
+        ]
       },
       {
         name: "Outbound Calls",
         data: [
           90, 110, 110, 95, 95, 85, 85, 95, 95, 115, 115, 100, 100, 115, 115,
-          95, 95, 85, 85,
-        ],
-      },
+          95, 95, 85, 85
+        ]
+      }
     ];
 
     const themeMode = computed(() => {
@@ -103,9 +103,9 @@ export default defineComponent({
     return {
       chart,
       chartRef,
-      series,
+      series
     };
-  },
+  }
 });
 
 const chartOptions = (height: number): ApexOptions => {
@@ -122,15 +122,15 @@ const chartOptions = (height: number): ApexOptions => {
       type: "area",
       height: height,
       toolbar: {
-        show: false,
-      },
+        show: false
+      }
     },
     plotOptions: {},
     legend: {
-      show: false,
+      show: false
     },
     dataLabels: {
-      enabled: false,
+      enabled: false
     },
     fill: {
       type: "gradient",
@@ -138,14 +138,14 @@ const chartOptions = (height: number): ApexOptions => {
         shadeIntensity: 1,
         opacityFrom: 0.4,
         opacityTo: 0.2,
-        stops: [15, 120, 100],
-      },
+        stops: [15, 120, 100]
+      }
     },
     stroke: {
       curve: "smooth",
       show: true,
       width: 3,
-      colors: [baseprimaryColor, basesuccessColor],
+      colors: [baseprimaryColor, basesuccessColor]
     },
     xaxis: {
       categories: [
@@ -167,13 +167,13 @@ const chartOptions = (height: number): ApexOptions => {
         "19 PM",
         "20 PM",
         "21 PM",
-        "",
+        ""
       ],
       axisBorder: {
-        show: false,
+        show: false
       },
       axisTicks: {
-        show: false,
+        show: false
       },
       tickAmount: 6,
       labels: {
@@ -181,24 +181,24 @@ const chartOptions = (height: number): ApexOptions => {
         rotateAlways: true,
         style: {
           colors: labelColor,
-          fontSize: "12px",
-        },
+          fontSize: "12px"
+        }
       },
       crosshairs: {
         position: "front",
         stroke: {
           width: 1,
-          dashArray: 3,
-        },
+          dashArray: 3
+        }
       },
       tooltip: {
         enabled: true,
         formatter: undefined,
         offsetY: 0,
         style: {
-          fontSize: "12px",
-        },
-      },
+          fontSize: "12px"
+        }
+      }
     },
     yaxis: {
       max: 120,
@@ -207,35 +207,35 @@ const chartOptions = (height: number): ApexOptions => {
       labels: {
         style: {
           colors: labelColor,
-          fontSize: "12px",
-        },
-      },
+          fontSize: "12px"
+        }
+      }
     },
     states: {
       normal: {
         filter: {
           type: "none",
-          value: 0,
-        },
+          value: 0
+        }
       },
       hover: {
         filter: {
           type: "none",
-          value: 0,
-        },
+          value: 0
+        }
       },
       active: {
         allowMultipleDataPointsSelection: false,
         filter: {
           type: "none",
-          value: 0,
-        },
-      },
+          value: 0
+        }
+      }
     },
     tooltip: {
       style: {
-        fontSize: "12px",
-      },
+        fontSize: "12px"
+      }
     },
     colors: [lightprimaryColor, lightsuccessColor],
     grid: {
@@ -243,13 +243,13 @@ const chartOptions = (height: number): ApexOptions => {
       strokeDashArray: 4,
       yaxis: {
         lines: {
-          show: true,
-        },
-      },
+          show: true
+        }
+      }
     },
     markers: {
-      strokeWidth: 3,
-    },
+      strokeWidth: 3
+    }
   };
 };
 </script>

@@ -19,12 +19,12 @@ export default defineComponent({
   name: "upgrade-plan",
   components: {
     KTModalCard,
-    KTUpgradePlanModal,
+    KTUpgradePlanModal
   },
   setup() {
     return {
-      getIllustrationsPath,
+      getIllustrationsPath
     };
-  },
+  }
 });
 </script>

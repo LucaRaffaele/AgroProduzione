@@ -96,10 +96,10 @@ export default defineComponent({
   props: {
     widgetClasses: String,
     widgetColor: String,
-    chartHeight: String,
+    chartHeight: String
   },
   components: {
-    Dropdown3,
+    Dropdown3
   },
   setup(props) {
     const chartRef = ref<typeof VueApexCharts | null>(null);
@@ -109,12 +109,12 @@ export default defineComponent({
     const series = ref([
       {
         name: "Net Profit",
-        data: [35, 65, 75, 55, 45, 60, 55],
+        data: [35, 65, 75, 55, 45, 60, 55]
       },
       {
         name: "Revenue",
-        data: [40, 70, 80, 60, 50, 65, 60],
-      },
+        data: [40, 70, 80, 60, 50, 65, 60]
+      }
     ]);
 
     const themeMode = computed(() => {
@@ -143,9 +143,9 @@ export default defineComponent({
       chart,
       series,
       chartRef,
-      refreshChart,
+      refreshChart
     };
-  },
+  }
 });
 
 const chartOptions = (chartHeight): ApexOptions => {
@@ -158,43 +158,43 @@ const chartOptions = (chartHeight): ApexOptions => {
       type: "bar",
       height: chartHeight,
       toolbar: {
-        show: false,
+        show: false
       },
       sparkline: {
-        enabled: true,
-      },
+        enabled: true
+      }
     },
     plotOptions: {
       bar: {
         horizontal: false,
-        columnWidth: "30%",
-      },
+        columnWidth: "30%"
+      }
     },
     legend: {
-      show: false,
+      show: false
     },
     dataLabels: {
-      enabled: false,
+      enabled: false
     },
     stroke: {
       show: true,
       width: 1,
-      colors: ["transparent"],
+      colors: ["transparent"]
     },
     xaxis: {
       categories: ["Feb", "Mar", "Apr", "May", "Jun", "Jul"],
       axisBorder: {
-        show: false,
+        show: false
       },
       axisTicks: {
-        show: false,
+        show: false
       },
       labels: {
         style: {
           colors: labelColor,
-          fontSize: "12px",
-        },
-      },
+          fontSize: "12px"
+        }
+      }
     },
     yaxis: {
       min: 0,
@@ -202,47 +202,47 @@ const chartOptions = (chartHeight): ApexOptions => {
       labels: {
         style: {
           colors: labelColor,
-          fontSize: "12px",
-        },
-      },
+          fontSize: "12px"
+        }
+      }
     },
     fill: {
       type: ["solid", "solid"],
-      opacity: [0.25, 1],
+      opacity: [0.25, 1]
     },
     states: {
       normal: {
         filter: {
           type: "none",
-          value: 0,
-        },
+          value: 0
+        }
       },
       hover: {
         filter: {
           type: "none",
-          value: 0,
-        },
+          value: 0
+        }
       },
       active: {
         allowMultipleDataPointsSelection: false,
         filter: {
           type: "none",
-          value: 0,
-        },
-      },
+          value: 0
+        }
+      }
     },
     tooltip: {
       style: {
-        fontSize: "12px",
+        fontSize: "12px"
       },
       y: {
         formatter: function (val) {
           return "$" + val + " thousands";
-        },
+        }
       },
       marker: {
-        show: false,
-      },
+        show: false
+      }
     },
     colors: ["#ffffff", "#ffffff"],
     grid: {
@@ -250,14 +250,14 @@ const chartOptions = (chartHeight): ApexOptions => {
       strokeDashArray: 4,
       yaxis: {
         lines: {
-          show: true,
-        },
+          show: true
+        }
       },
       padding: {
         left: 20,
-        right: 20,
-      },
-    },
+        right: 20
+      }
+    }
   };
 };
 </script>

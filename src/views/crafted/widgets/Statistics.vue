@@ -277,7 +277,7 @@ export default defineComponent({
     StatisticsWidget3,
     StatisticsWidget4,
     StatisticsWidget5,
-    StatisticsWidget6,
-  },
+    StatisticsWidget6
+  }
 });
 </script>

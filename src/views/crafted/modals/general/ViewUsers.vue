@@ -20,12 +20,12 @@ export default defineComponent({
   name: "view-users",
   components: {
     KTModalCard,
-    KTViewUsersModal,
+    KTViewUsersModal
   },
   setup() {
     return {
-      getIllustrationsPath,
+      getIllustrationsPath
     };
-  },
+  }
 });
 </script>

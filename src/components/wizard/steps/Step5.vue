@@ -63,6 +63,6 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "step-5",
-  components: {},
+  components: {}
 });
 </script>

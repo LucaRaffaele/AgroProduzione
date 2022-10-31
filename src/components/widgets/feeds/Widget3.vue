@@ -197,10 +197,10 @@ import Dropdown2 from "@/components/dropdown/Dropdown2.vue";
 export default defineComponent({
   name: "widget-3",
   props: {
-    widgetClasses: String,
+    widgetClasses: String
   },
   components: {
-    Dropdown2,
-  },
+    Dropdown2
+  }
 });
 </script>

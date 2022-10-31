@@ -307,7 +307,7 @@ export default defineComponent({
   components: {
     ErrorMessage,
     Field,
-    Form,
+    Form
   },
   setup() {
     const value = ref("apps");
@@ -318,11 +318,11 @@ export default defineComponent({
     const submitMobileButtonRef = ref<null | HTMLButtonElement>(null);
 
     const schema1 = Yup.object().shape({
-      mobile: Yup.string().required().label("Mobile"),
+      mobile: Yup.string().required().label("Mobile")
     });
 
     const schema2 = Yup.object().shape({
-      code: Yup.string().required().label("Code"),
+      code: Yup.string().required().label("Code")
     });
 
     const submitAuthCodeForm = () => {
@@ -339,8 +339,8 @@ export default defineComponent({
             buttonsStyling: false,
             confirmButtonText: "Ok, got it!",
             customClass: {
-              confirmButton: "btn btn-primary",
-            },
+              confirmButton: "btn btn-primary"
+            }
           }).then(() => {
             state.value = "";
           });
@@ -371,8 +371,8 @@ export default defineComponent({
           buttonsStyling: false,
           confirmButtonText: "Ok, got it!",
           customClass: {
-            confirmButton: "btn btn-primary",
-          },
+            confirmButton: "btn btn-primary"
+          }
         }).then(() => {
           state.value = "";
         });
@@ -387,8 +387,8 @@ export default defineComponent({
       submitAuthCodeForm,
       submitMobileForm,
       submitAuthCodeButtonRef,
-      submitMobileButtonRef,
+      submitMobileButtonRef
     };
-  },
+  }
 });
 </script>

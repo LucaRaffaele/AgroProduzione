@@ -321,7 +321,7 @@ import Dropdown3 from "@/components/dropdown/Dropdown3.vue";
 export default defineComponent({
   name: "profile-page-layout",
   components: {
-    Dropdown3,
-  },
+    Dropdown3
+  }
 });
 </script>

@@ -530,7 +530,7 @@ export default defineComponent({
     MixedWidget11,
     MixedWidget12,
     MixedWidget13,
-    MixedWidget14,
-  },
+    MixedWidget14
+  }
 });
 </script>

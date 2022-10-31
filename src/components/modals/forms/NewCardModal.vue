@@ -327,7 +327,7 @@ export default defineComponent({
   components: {
     ErrorMessage,
     Field,
-    Form,
+    Form
   },
   setup() {
     const submitButtonRef = ref<null | HTMLButtonElement>(null);
@@ -338,7 +338,7 @@ export default defineComponent({
       cardNumber: "4111 1111 1111 1111",
       expirationMonth: "",
       expirationYear: "",
-      cvv: "",
+      cvv: ""
     });
 
     const validationSchema = Yup.object().shape({
@@ -346,7 +346,7 @@ export default defineComponent({
       cardNumber: Yup.string().required().label("Card number"),
       expirationMonth: Yup.string().required().label("Month"),
       expirationYear: Yup.string().required().label("Year"),
-      cvv: Yup.string().required().label("CVV"),
+      cvv: Yup.string().required().label("CVV")
     });
 
     const submit = () => {
@@ -372,8 +372,8 @@ export default defineComponent({
           buttonsStyling: false,
           confirmButtonText: "Ok, got it!",
           customClass: {
-            confirmButton: "btn btn-primary",
-          },
+            confirmButton: "btn btn-primary"
+          }
         }).then(() => {
           hideModal(newCardModalRef.value);
         });
@@ -385,8 +385,8 @@ export default defineComponent({
       validationSchema,
       submit,
       submitButtonRef,
-      newCardModalRef,
+      newCardModalRef
     };
-  },
+  }
 });
 </script>

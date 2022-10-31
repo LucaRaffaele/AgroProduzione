@@ -97,8 +97,8 @@ import { defineComponent } from "vue";
 export default defineComponent({
   name: "earnings-card",
   props: {
-    cardClasses: String,
+    cardClasses: String
   },
-  components: {},
+  components: {}
 });
 </script>

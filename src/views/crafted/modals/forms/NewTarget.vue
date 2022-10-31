@@ -20,12 +20,12 @@ export default defineComponent({
   name: "new-target",
   components: {
     KTModalCard,
-    KTNewTargetModal,
+    KTNewTargetModal
   },
   setup() {
     return {
-      getIllustrationsPath,
+      getIllustrationsPath
     };
-  },
+  }
 });
 </script>

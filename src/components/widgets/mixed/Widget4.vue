@@ -72,13 +72,13 @@ import { useStore } from "vuex";
 export default defineComponent({
   name: "widget-1",
   components: {
-    Dropdown1,
+    Dropdown1
   },
   props: {
     widgetClasses: String,
     chartColor: String,
     chartHeight: String,
-    btnColor: String,
+    btnColor: String
   },
   setup(props) {
     const chartRef = ref<typeof VueApexCharts | null>(null);
@@ -112,9 +112,9 @@ export default defineComponent({
     return {
       chart,
       series,
-      chartRef,
+      chartRef
     };
-  },
+  }
 });
 
 const chartOptions = (color, height): ApexOptions => {
@@ -126,19 +126,19 @@ const chartOptions = (color, height): ApexOptions => {
     chart: {
       fontFamily: "inherit",
       height: height,
-      type: "radialBar",
+      type: "radialBar"
     },
     plotOptions: {
       radialBar: {
         hollow: {
           margin: 0,
-          size: "65%",
+          size: "65%"
         },
         dataLabels: {
           show: true,
           name: {
             show: false,
-            fontWeight: "700",
+            fontWeight: "700"
           },
           value: {
             color: labelColor,
@@ -148,20 +148,20 @@ const chartOptions = (color, height): ApexOptions => {
             show: true,
             formatter: function (val) {
               return val + "%";
-            },
-          },
+            }
+          }
         },
         track: {
           background: lightColor,
-          strokeWidth: "100%",
-        },
-      },
+          strokeWidth: "100%"
+        }
+      }
     },
     colors: [baseColor],
     stroke: {
-      lineCap: "round",
+      lineCap: "round"
     },
-    labels: ["Progress"],
+    labels: ["Progress"]
   };
 };
 </script>

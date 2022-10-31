@@ -2272,7 +2272,7 @@ export default defineComponent({
   components: {
     ErrorMessage,
     Field,
-    Form,
+    Form
   },
   setup() {
     const submitButton1 = ref<HTMLElement | null>(null);
@@ -2295,12 +2295,12 @@ export default defineComponent({
       country: Yup.string().required().label("Country"),
       language: Yup.string().required().label("Language"),
       timezone: Yup.string().required().label("Timezone"),
-      currency: Yup.string().required().label("Currency"),
+      currency: Yup.string().required().label("Currency")
     });
 
     const changeEmail = Yup.object().shape({
       emailaddress: Yup.string().required().email().label("Email"),
-      confirmemailpassword: Yup.string().required().label("Password"),
+      confirmemailpassword: Yup.string().required().label("Password")
     });
 
     const changePassword = Yup.object().shape({
@@ -2310,7 +2310,7 @@ export default defineComponent({
         .min(4)
         .required()
         .oneOf([Yup.ref("newpassword"), null], "Passwords must match")
-        .label("Password Confirmation"),
+        .label("Password Confirmation")
     });
 
     const profileDetails = ref<ProfileDetails>({
@@ -2326,9 +2326,9 @@ export default defineComponent({
       currency: "USD",
       communications: {
         email: false,
-        phone: false,
+        phone: false
       },
-      allowMarketing: false,
+      allowMarketing: false
     });
 
     const saveChanges1 = () => {
@@ -2389,8 +2389,8 @@ export default defineComponent({
             confirmButtonText: "Ok",
             buttonsStyling: false,
             customClass: {
-              confirmButton: "btn btn-light-primary",
-            },
+              confirmButton: "btn btn-light-primary"
+            }
           }).then(() => {
             emailFormDisplay.value = false;
           });
@@ -2425,8 +2425,8 @@ export default defineComponent({
             confirmButtonText: "Ok",
             buttonsStyling: false,
             customClass: {
-              confirmButton: "btn btn-light-primary",
-            },
+              confirmButton: "btn btn-light-primary"
+            }
           }).then(() => {
             passwordFormDisplay.value = false;
           });
@@ -2459,8 +2459,8 @@ export default defineComponent({
       updateEmailButton,
       updatePasswordButton,
       updateEmail,
-      updatePassword,
+      updatePassword
     };
-  },
+  }
 });
 </script>

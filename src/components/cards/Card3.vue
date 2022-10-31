@@ -107,7 +107,7 @@ export default defineComponent({
 
     totalSales: String,
 
-    connected: Boolean,
-  },
+    connected: Boolean
+  }
 });
 </script>

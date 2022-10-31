@@ -144,6 +144,6 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "kt-events",
-  components: {},
+  components: {}
 });
 </script>

@@ -23,6 +23,7 @@ class LayoutService {
     LayoutService.initSidebarPanel();
     LayoutService.initHeader();
     LayoutService.initFooter();
+    LayoutService.initContent();
   }
 
   // Init Layout settings
@@ -32,26 +33,26 @@ class LayoutService {
 
     store.dispatch(Actions.ADD_BODY_ATTRIBUTE, {
       qualifiedName: "id",
-      value: "kt_app_body",
+      value: "kt_app_body"
     });
 
     store.dispatch(Actions.ADD_BODY_CLASSNAME, "app-" + layout);
 
     store.dispatch(Actions.ADD_BODY_ATTRIBUTE, {
       qualifiedName: "data-kt-app-layout",
-      value: layout,
+      value: layout
     });
 
     // Light sidebar
     if (layout === "light-sidebar") {
       store.commit(Mutations.SET_LAYOUT_CONFIG_PROPERTY, {
         property: "header.default.fixed.desktop",
-        value: false,
+        value: false
       });
 
       store.commit(Mutations.SET_LAYOUT_CONFIG_PROPERTY, {
         property: "header.default.fixed.mobile",
-        value: false,
+        value: false
       });
     }
 
@@ -59,22 +60,22 @@ class LayoutService {
       if (pageWidth === "default") {
         store.commit(Mutations.SET_LAYOUT_CONFIG_PROPERTY, {
           property: "header.default.container",
-          value: "fluid",
+          value: "fluid"
         });
 
         store.commit(Mutations.SET_LAYOUT_CONFIG_PROPERTY, {
           property: "toolbar.container",
-          value: "fluid",
+          value: "fluid"
         });
 
         store.commit(Mutations.SET_LAYOUT_CONFIG_PROPERTY, {
           property: "content.container",
-          value: "fluid",
+          value: "fluid"
         });
 
         store.commit(Mutations.SET_LAYOUT_CONFIG_PROPERTY, {
           property: "footer.container",
-          value: "fluid",
+          value: "fluid"
         });
       }
     }
@@ -82,35 +83,35 @@ class LayoutService {
     if (layout === "light-sidebar" || layout === "dark-sidebar") {
       store.commit(Mutations.SET_LAYOUT_CONFIG_PROPERTY, {
         property: "sidebar.display",
-        value: true,
+        value: true
       });
     }
 
     if (layout === "light-header" || layout === "dark-header") {
       store.commit(Mutations.SET_LAYOUT_CONFIG_PROPERTY, {
         property: "sidebar.display",
-        value: false,
+        value: false
       });
 
       if (pageWidth === "default") {
         store.commit(Mutations.SET_LAYOUT_CONFIG_PROPERTY, {
           property: "header.default.container",
-          value: "fixed",
+          value: "fixed"
         });
 
         store.commit(Mutations.SET_LAYOUT_CONFIG_PROPERTY, {
           property: "toolbar.container",
-          value: "fixed",
+          value: "fixed"
         });
 
         store.commit(Mutations.SET_LAYOUT_CONFIG_PROPERTY, {
           property: "content.container",
-          value: "fixed",
+          value: "fixed"
         });
 
         store.commit(Mutations.SET_LAYOUT_CONFIG_PROPERTY, {
           property: "footer.container",
-          value: "fixed",
+          value: "fixed"
         });
       }
     }
@@ -126,7 +127,7 @@ class LayoutService {
     if (defaultContent === "pageTitle") {
       store.commit(Mutations.SET_LAYOUT_CONFIG_PROPERTY, {
         property: "footer.container",
-        value: "fixed",
+        value: "fixed"
       });
     }
   }
@@ -140,22 +141,22 @@ class LayoutService {
       // Set page width
       store.commit(Mutations.SET_LAYOUT_CONFIG_PROPERTY, {
         property: "header.default.container",
-        value: container,
+        value: container
       });
 
       store.commit(Mutations.SET_LAYOUT_CONFIG_PROPERTY, {
         property: "toolbar.container",
-        value: container,
+        value: container
       });
 
       store.commit(Mutations.SET_LAYOUT_CONFIG_PROPERTY, {
         property: "content.container",
-        value: container,
+        value: container
       });
 
       store.commit(Mutations.SET_LAYOUT_CONFIG_PROPERTY, {
         property: "footer.container",
-        value: container,
+        value: container
       });
     }
   }
@@ -164,52 +165,52 @@ class LayoutService {
     if (objectPath.get(config.value, "page.class")) {
       store.dispatch(Actions.ADD_CLASSNAME, {
         position: "page",
-        className: objectPath.get(config.value, "page.class"),
+        className: objectPath.get(config.value, "page.class")
       });
     }
 
     if (objectPath.get(config.value, "page.container") === "fixed") {
       store.dispatch(Actions.ADD_CLASSNAME, {
         position: "page-container",
-        className: "container-xxl",
+        className: "container-xxl"
       });
     } else if (objectPath.get(config.value, "page.container") === "fluid") {
       store.dispatch(Actions.ADD_CLASSNAME, {
         position: "page-container",
-        className: "container-fluid",
+        className: "container-fluid"
       });
     }
 
     if (objectPath.get(config.value, "page.containerClass")) {
       store.dispatch(Actions.ADD_CLASSNAME, {
         position: "page-container",
-        className: objectPath.get(config.value, "page.containerClass"),
+        className: objectPath.get(config.value, "page.containerClass")
       });
     }
 
     if (objectPath.get(config.value, "wrapper.class")) {
       store.dispatch(Actions.ADD_CLASSNAME, {
         position: "wrapper",
-        className: objectPath.get(config.value, "wrapper.class"),
+        className: objectPath.get(config.value, "wrapper.class")
       });
     }
 
     if (objectPath.get(config.value, "wrapper.container") === "fixed") {
       store.dispatch(Actions.ADD_CLASSNAME, {
         position: "wrapper-container",
-        className: "container-xxl",
+        className: "container-xxl"
       });
     } else if (objectPath.get(config.value, "wrapper.container") === "fluid") {
       store.dispatch(Actions.ADD_CLASSNAME, {
         position: "wrapper-container",
-        className: "container-fluid",
+        className: "container-fluid"
       });
     }
 
     if (objectPath.get(config.value, "wrapper.containerClass")) {
       store.dispatch(Actions.ADD_CLASSNAME, {
         position: "wrapper-container",
-        className: objectPath.get(config.value, "wrapper.containerClass"),
+        className: objectPath.get(config.value, "wrapper.containerClass")
       });
     }
   }
@@ -217,46 +218,46 @@ class LayoutService {
   public static initToolbar(): void {
     store.dispatch(Actions.ADD_BODY_ATTRIBUTE, {
       qualifiedName: "data-kt-app-toolbar-enabled",
-      value: "true",
+      value: "true"
     });
 
     if (objectPath.get(config.value, "toolbar.class")) {
       store.dispatch(Actions.ADD_CLASSNAME, {
         position: "toolbar",
-        className: objectPath.get(config.value, "toolbar.class"),
+        className: objectPath.get(config.value, "toolbar.class")
       });
     }
 
     if (objectPath.get(config.value, "toolbar.container") === "fixed") {
       store.dispatch(Actions.ADD_CLASSNAME, {
         position: "toolbar-container",
-        className: "container-xxl",
+        className: "container-xxl"
       });
     } else if (objectPath.get(config.value, "toolbar.container") === "fluid") {
       store.dispatch(Actions.ADD_CLASSNAME, {
         position: "toolbar-container",
-        className: "container-fluid",
+        className: "container-fluid"
       });
     }
 
     if (objectPath.get(config.value, "toolbar.containerClass")) {
       store.dispatch(Actions.ADD_CLASSNAME, {
         position: "toolbar-container",
-        className: objectPath.get(config.value, "toolbar.containerClass"),
+        className: objectPath.get(config.value, "toolbar.containerClass")
       });
     }
 
     if (objectPath.get(config.value, "toolbar.fixed.desktop")) {
       store.dispatch(Actions.ADD_BODY_ATTRIBUTE, {
         qualifiedName: "data-kt-app-toolbar-fixed",
-        value: "true",
+        value: "true"
       });
     }
 
     if (objectPath.get(config.value, "toolbar.fixed.mobile")) {
       store.dispatch(Actions.ADD_BODY_ATTRIBUTE, {
         qualifiedName: "data-kt-app-toolbar-fixed-mobile",
-        value: "true",
+        value: "true"
       });
     }
   }
@@ -268,12 +269,12 @@ class LayoutService {
 
     store.dispatch(Actions.ADD_BODY_ATTRIBUTE, {
       qualifiedName: "data-kt-app-sidebar-enabled",
-      value: "true",
+      value: "true"
     });
 
     store.dispatch(Actions.ADD_BODY_ATTRIBUTE, {
       qualifiedName: "data-kt-app-sidebar-fixed",
-      value: "true",
+      value: "true"
     });
 
     if (
@@ -281,7 +282,7 @@ class LayoutService {
     ) {
       store.dispatch(Actions.ADD_BODY_ATTRIBUTE, {
         qualifiedName: "data-kt-app-sidebar-minimize",
-        value: "on",
+        value: "on"
       });
     }
 
@@ -290,23 +291,23 @@ class LayoutService {
     ) {
       store.dispatch(Actions.ADD_BODY_ATTRIBUTE, {
         qualifiedName: "data-kt-app-sidebar-hoverable",
-        value: "true",
+        value: "true"
       });
     }
 
     store.dispatch(Actions.ADD_BODY_ATTRIBUTE, {
       qualifiedName: "data-kt-app-sidebar-push-header",
-      value: "true",
+      value: "true"
     });
 
     store.dispatch(Actions.ADD_BODY_ATTRIBUTE, {
       qualifiedName: "data-kt-app-sidebar-push-toolbar",
-      value: "true",
+      value: "true"
     });
 
     store.dispatch(Actions.ADD_BODY_ATTRIBUTE, {
       qualifiedName: "data-kt-app-sidebar-push-footer",
-      value: "true",
+      value: "true"
     });
 
     if (
@@ -317,7 +318,7 @@ class LayoutService {
       ) {
         store.dispatch(Actions.ADD_BODY_ATTRIBUTE, {
           qualifiedName: "data-kt-app-sidebar-primary-minimize",
-          value: "on",
+          value: "on"
         });
       }
 
@@ -329,7 +330,7 @@ class LayoutService {
       ) {
         store.dispatch(Actions.ADD_BODY_ATTRIBUTE, {
           qualifiedName: "data-kt-app-sidebar-primary-hoverable",
-          value: "on",
+          value: "on"
         });
       }
 
@@ -344,7 +345,7 @@ class LayoutService {
         ) {
           store.dispatch(Actions.ADD_BODY_ATTRIBUTE, {
             qualifiedName: "data-kt-app-sidebar-primary-minimize-mobile",
-            value: "on",
+            value: "on"
           });
         }
 
@@ -356,7 +357,7 @@ class LayoutService {
         ) {
           store.dispatch(Actions.ADD_BODY_ATTRIBUTE, {
             qualifiedName: "data-kt-app-sidebar-primary-hoverable-mobile",
-            value: "on",
+            value: "on"
           });
         }
       }
@@ -372,7 +373,7 @@ class LayoutService {
         ) {
           store.dispatch(Actions.ADD_BODY_ATTRIBUTE, {
             qualifiedName: "data-kt-app-sidebar-primary-collapse",
-            value: "on",
+            value: "on"
           });
         }
       }
@@ -388,7 +389,7 @@ class LayoutService {
         ) {
           store.dispatch(Actions.ADD_BODY_ATTRIBUTE, {
             qualifiedName: "data-kt-app-sidebar-primary-collapse-mobile",
-            value: "on",
+            value: "on"
           });
         }
       }
@@ -399,19 +400,19 @@ class LayoutService {
     if (objectPath.get(config.value, "sidebarPanel.class")) {
       store.dispatch(Actions.ADD_CLASSNAME, {
         position: "sidebar-panel",
-        className: objectPath.get(config.value, "sidebarPanel.class"),
+        className: objectPath.get(config.value, "sidebarPanel.class")
       });
     }
 
     if (objectPath.get(config.value, "sidebarPanel.fixed.desktop")) {
       store.dispatch(Actions.ADD_BODY_ATTRIBUTE, {
         qualifiedName: "data-kt-app-sidebar-panel-fixed",
-        value: "true",
+        value: "true"
       });
     } else {
       store.dispatch(Actions.ADD_BODY_ATTRIBUTE, {
         qualifiedName: "data-kt-app-sidebar-panel-fixed",
-        value: "false",
+        value: "false"
       });
     }
 
@@ -421,7 +422,7 @@ class LayoutService {
       ) {
         store.dispatch(Actions.ADD_BODY_ATTRIBUTE, {
           qualifiedName: "data-kt-app-sidebar-panel-minimize",
-          value: "on",
+          value: "on"
         });
       }
 
@@ -430,7 +431,7 @@ class LayoutService {
       ) {
         store.dispatch(Actions.ADD_BODY_ATTRIBUTE, {
           qualifiedName: "data-kt-app-sidebar-panel-hoverable",
-          value: "on",
+          value: "on"
         });
       }
 
@@ -445,7 +446,7 @@ class LayoutService {
         ) {
           store.dispatch(Actions.ADD_BODY_ATTRIBUTE, {
             qualifiedName: "data-kt-app-sidebar-panel-hoverable",
-            value: "on",
+            value: "on"
           });
         }
       }
@@ -460,14 +461,14 @@ class LayoutService {
     if (objectPath.get(config.value, "header.default.fixed.desktop")) {
       store.dispatch(Actions.ADD_BODY_ATTRIBUTE, {
         qualifiedName: "data-kt-app-header-fixed",
-        value: "true",
+        value: "true"
       });
     }
 
     if (objectPath.get(config.value, "header.default.fixed.mobile")) {
       store.dispatch(Actions.ADD_BODY_ATTRIBUTE, {
         qualifiedName: "data-kt-app-header-fixed-mobile",
-        value: "true",
+        value: "true"
       });
     }
   }
@@ -476,17 +477,20 @@ class LayoutService {
     if (objectPath.get(config.value, "footer.fixed.desktop")) {
       store.dispatch(Actions.ADD_BODY_ATTRIBUTE, {
         qualifiedName: "data-kt-app-footer-fixed",
-        value: "true",
+        value: "true"
       });
     }
 
     if (objectPath.get(config.value, "footer.fixed.mobile")) {
       store.dispatch(Actions.ADD_BODY_ATTRIBUTE, {
         qualifiedName: "data-kt-app-footer-fixed-mobile",
-        value: "true",
+        value: "true"
       });
     }
   }
+
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  public static initContent(): void {}
 
   public static emptyElementClassesAndAttributes(element: HTMLElement): void {
     element.className = "";

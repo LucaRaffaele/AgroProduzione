@@ -39,7 +39,7 @@
         <div
           class="flex-grow-1 bgi-no-repeat bgi-size-contain bgi-position-x-center bgi-position-y-bottom card-rounded-bottom h-200px"
           :style="{
-            backgroundImage: 'url(' + getIllustrationsPath('8.png') + ')',
+            backgroundImage: 'url(' + getIllustrationsPath('8.png') + ')'
           }"
         ></div>
         <!--end::Image-->
@@ -58,12 +58,12 @@ import { getIllustrationsPath } from "@/core/helpers/assets";
 export default defineComponent({
   name: "widget-1",
   props: {
-    widgetClasses: String,
+    widgetClasses: String
   },
   setup() {
     return {
-      getIllustrationsPath,
+      getIllustrationsPath
     };
-  },
+  }
 });
 </script>

@@ -129,7 +129,7 @@ export default defineComponent({
   name: "default-dashboard-widget-10",
   components: {},
   props: {
-    className: { type: String, required: false },
+    className: { type: String, required: false }
   },
   setup() {
     const table = [
@@ -143,8 +143,8 @@ export default defineComponent({
         chartColor: "success",
         status: {
           label: "In Process",
-          state: "primary",
-        },
+          state: "primary"
+        }
       },
       {
         img: "media/stock/600x600/img-40.jpg",
@@ -156,8 +156,8 @@ export default defineComponent({
         chartColor: "danger",
         status: {
           label: "On Hold",
-          state: "warning",
-        },
+          state: "warning"
+        }
       },
       {
         img: "media/stock/600x600/img-39.jpg",
@@ -169,8 +169,8 @@ export default defineComponent({
         chartColor: "success",
         status: {
           label: "In Process",
-          state: "primary",
-        },
+          state: "primary"
+        }
       },
       {
         img: "media/stock/600x600/img-47.jpg",
@@ -182,8 +182,8 @@ export default defineComponent({
         chartColor: "success",
         status: {
           label: "Completed",
-          state: "success",
-        },
+          state: "success"
+        }
       },
       {
         img: "media/stock/600x600/img-48.jpg",
@@ -195,14 +195,14 @@ export default defineComponent({
         chartColor: "danger",
         status: {
           label: "In Process",
-          state: "primary",
-        },
-      },
+          state: "primary"
+        }
+      }
     ];
 
     return {
-      table,
+      table
     };
-  },
+  }
 });
 </script>

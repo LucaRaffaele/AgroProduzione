@@ -187,10 +187,10 @@ import Dropdown2 from "@/components/dropdown/Dropdown2.vue";
 export default defineComponent({
   name: "kt-widget-12",
   components: {
-    Dropdown2,
+    Dropdown2
   },
   props: {
-    widgetClasses: String,
+    widgetClasses: String
   },
   setup() {
     const checkedRows = ref([]);
@@ -199,128 +199,128 @@ export default defineComponent({
         orderid: "56037-XDER",
         country: {
           name: "Brasil",
-          code: "PH",
+          code: "PH"
         },
         date: {
           value: "05/28/2020",
-          remarks: "Paid",
+          remarks: "Paid"
         },
         progress: {
           value: "50",
-          color: "primary",
+          color: "primary"
         },
         company: {
           name: "Intertico",
-          fields: "Web, UI/UX Design",
+          fields: "Web, UI/UX Design"
         },
         status: {
           label: "Approved",
-          color: "success",
+          color: "success"
         },
-        total: "$3560",
+        total: "$3560"
       },
       {
         orderid: "05822-FXSP",
         country: {
           name: "Belarus",
-          code: "BY",
+          code: "BY"
         },
         date: {
           value: "04/18/2021",
-          remarks: "Paid",
+          remarks: "Paid"
         },
         progress: {
           value: "50",
-          color: "primary",
+          color: "primary"
         },
         company: {
           name: "Agoda",
-          fields: "Houses & Hotels",
+          fields: "Houses & Hotels"
         },
         status: {
           label: "In Progress",
-          color: "warning",
+          color: "warning"
         },
-        total: "$4850",
+        total: "$4850"
       },
       {
         orderid: "4472-QREX",
         country: {
           name: "Phillipines",
-          code: "BH",
+          code: "BH"
         },
         date: {
           value: "07/23/2019",
-          remarks: "Paid",
+          remarks: "Paid"
         },
         progress: {
           value: "50",
-          color: "primary",
+          color: "primary"
         },
         company: {
           name: "RoadGee",
-          fields: "Transportation",
+          fields: "Transportation"
         },
         status: {
           label: "Success",
-          color: "danger",
+          color: "danger"
         },
-        total: "$8376",
+        total: "$8376"
       },
       {
         orderid: "00347-BCLQ",
         country: {
           name: "Argentina",
-          code: "BR",
+          code: "BR"
         },
         date: {
           value: "12/21/2021",
-          remarks: "Paid",
+          remarks: "Paid"
         },
         progress: {
           value: "50",
-          color: "primary",
+          color: "primary"
         },
         company: {
           name: "The Hill",
-          fields: "Insurance",
+          fields: "Insurance"
         },
         status: {
           label: "Rejected",
-          color: "info",
+          color: "info"
         },
-        total: "$9486",
+        total: "$9486"
       },
       {
         orderid: "59486-XDER",
         country: {
           name: "Agoda",
-          code: "BT",
+          code: "BT"
         },
         date: {
           value: "05/28/2020",
-          remarks: "Paid",
+          remarks: "Paid"
         },
         progress: {
           value: "50",
-          color: "primary",
+          color: "primary"
         },
         company: {
           name: "Phillipines",
-          fields: "Transportation",
+          fields: "Transportation"
         },
         status: {
           label: "Approved",
-          color: "primary",
+          color: "primary"
         },
-        total: "$8476",
-      },
+        total: "$8476"
+      }
     ];
 
     return {
       list,
-      checkedRows,
+      checkedRows
     };
-  },
+  }
 });
 </script>

@@ -646,8 +646,8 @@ import { defineComponent } from "vue";
 export default defineComponent({
   name: "payment-methods",
   props: {
-    cardClasses: String,
+    cardClasses: String
   },
-  components: {},
+  components: {}
 });
 </script>

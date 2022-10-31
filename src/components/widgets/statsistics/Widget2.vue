@@ -27,8 +27,8 @@ export default defineComponent({
     widgetClasses: String,
     title: String,
     description: String,
-    avatar: String,
+    avatar: String
   },
-  components: {},
+  components: {}
 });
 </script>

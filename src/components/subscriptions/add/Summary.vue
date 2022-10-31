@@ -140,6 +140,6 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "kt-summary",
-  components: {},
+  components: {}
 });
 </script>

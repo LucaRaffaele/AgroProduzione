@@ -217,7 +217,7 @@ export default defineComponent({
     KTChartWidget1,
     KTListWidget5,
     KTTableWidget5,
-    KTListWidget1,
-  },
+    KTListWidget1
+  }
 });
 </script>

@@ -145,7 +145,7 @@ export default defineComponent({
   name: "kt-widget-7",
   components: {},
   props: {
-    widgetClasses: String,
+    widgetClasses: String
   },
   setup() {
     const items = [
@@ -153,195 +153,195 @@ export default defineComponent({
         {
           icon: {
             file: "media/icons/duotune/coding/cod002.svg",
-            color: "success",
+            color: "success"
           },
           info: {
             title: "Media Device",
-            description: "Voice and video recorder",
+            description: "Voice and video recorder"
           },
           date: "5 day ago",
           badge: {
             label: "Delivered",
-            color: "success",
-          },
+            color: "success"
+          }
         },
         {
           icon: {
             file: "media/icons/duotune/general/gen024.svg",
-            color: "danger",
+            color: "danger"
           },
           info: {
             title: "Special Meal",
-            description: "Quona Rice",
+            description: "Quona Rice"
           },
           date: "2 day ago",
           badge: {
             label: "Delivered",
-            color: "danger",
-          },
+            color: "danger"
+          }
         },
         {
           icon: {
             file: "media/icons/duotune/maps/map004.svg",
-            color: "primary",
+            color: "primary"
           },
           info: {
             title: "New Users",
-            description: "Awesome Users",
+            description: "Awesome Users"
           },
           date: "4 day ago",
           badge: {
             label: "Delivered",
-            color: "primary",
-          },
+            color: "primary"
+          }
         },
         {
           icon: {
             file: "media/icons/duotune/abstract/abs027.svg",
-            color: "warning",
+            color: "warning"
           },
           info: {
             title: "Active Customers",
-            description: "Best Customers",
+            description: "Best Customers"
           },
           date: "1 day ago",
           badge: {
             label: "Delivered",
-            color: "warning",
-          },
+            color: "warning"
+          }
         },
         {
           icon: {
             file: "media/icons/duotune/art/art007.svg",
-            color: "info",
+            color: "info"
           },
           info: {
             title: "Strawberry Boxes",
-            description: "From Spain",
+            description: "From Spain"
           },
           date: "7 day ago",
           badge: {
             label: "Delivered",
-            color: "info",
-          },
-        },
+            color: "info"
+          }
+        }
       ],
 
       [
         {
           icon: {
             file: "media/icons/duotune/abstract/abs042.svg",
-            color: "info",
+            color: "info"
           },
           info: {
             title: "Strawberry Boxes",
-            description: "From Spain",
+            description: "From Spain"
           },
           date: "4 week ago",
           badge: {
             label: "Delivered",
-            color: "info",
-          },
+            color: "info"
+          }
         },
         {
           icon: {
             file: "media/icons/duotune/general/gen024.svg",
-            color: "danger",
+            color: "danger"
           },
           info: {
             title: "Special Meal",
-            description: "Quona Rice",
+            description: "Quona Rice"
           },
           date: "2 week ago",
           badge: {
             label: "Delivered",
-            color: "danger",
-          },
+            color: "danger"
+          }
         },
         {
           icon: {
             file: "media/icons/duotune/abstract/abs027.svg",
-            color: "warning",
+            color: "warning"
           },
           info: {
             title: "Active Customers",
-            description: "Best Customers",
+            description: "Best Customers"
           },
           date: "5 week ago",
           badge: {
             label: "Delivered",
-            color: "warning",
-          },
-        },
+            color: "warning"
+          }
+        }
       ],
 
       [
         {
           icon: {
             file: "media/icons/duotune/ecommerce/ecm002.svg",
-            color: "success",
+            color: "success"
           },
           info: {
             title: "Media Device",
-            description: "Voice and video recorder",
+            description: "Voice and video recorder"
           },
           date: "3 month ago",
           badge: {
             label: "Delivered",
-            color: "success",
-          },
+            color: "success"
+          }
         },
         {
           icon: {
             file: "media/icons/duotune/general/gen024.svg",
-            color: "danger",
+            color: "danger"
           },
           info: {
             title: "Special Meal",
-            description: "Quona Rice",
+            description: "Quona Rice"
           },
           date: "5 month ago",
           badge: {
             label: "Delivered",
-            color: "danger",
-          },
+            color: "danger"
+          }
         },
         {
           icon: {
             file: "media/icons/duotune/abstract/abs027.svg",
-            color: "warning",
+            color: "warning"
           },
           info: {
             title: "Active Customers",
-            description: "Best Customers",
+            description: "Best Customers"
           },
           date: "6 month ago",
           badge: {
             label: "Delivered",
-            color: "warning",
-          },
+            color: "warning"
+          }
         },
         {
           icon: {
             file: "media/icons/duotune/abstract/abs042.svg",
-            color: "info",
+            color: "info"
           },
           info: {
             title: "Strawberry Boxes",
-            description: "From Spain",
+            description: "From Spain"
           },
           date: "4 month ago",
           badge: {
             label: "Delivered",
-            color: "info",
-          },
-        },
-      ],
+            color: "info"
+          }
+        }
+      ]
     ];
 
     return {
-      items,
+      items
     };
-  },
+  }
 });
 </script>

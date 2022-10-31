@@ -96,5 +96,5 @@ export {
   Toolbar,
   PageTitle,
   Footer,
-  LayoutConfig,
+  LayoutConfig
 };

@@ -206,10 +206,10 @@ import Dropdown1 from "@/components/dropdown/Dropdown1.vue";
 export default defineComponent({
   name: "kt-widget-5",
   props: {
-    widgetClasses: String,
+    widgetClasses: String
   },
   components: {
-    Dropdown1,
-  },
+    Dropdown1
+  }
 });
 </script>

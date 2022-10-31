@@ -837,7 +837,7 @@ export default defineComponent({
   name: "create-app-modal",
   components: {
     Field,
-    ErrorMessage,
+    ErrorMessage
   },
   setup() {
     const currentStepIndex = ref(0);
@@ -864,7 +864,7 @@ export default defineComponent({
       cardExpiryMonth: "1",
       cardExpiryYear: "2",
       cardCvv: "123",
-      saveCard: "1",
+      saveCard: "1"
     });
 
     const formInitData = ref<KTCreateApp>({
@@ -878,28 +878,28 @@ export default defineComponent({
       cardExpiryMonth: "",
       cardExpiryYear: "",
       cardCvv: "",
-      saveCard: "",
+      saveCard: ""
     });
 
     const createAppSchema = [
       Yup.object({
         appName: Yup.string().required().label("App name"),
-        category: Yup.string().required().label("Category"),
+        category: Yup.string().required().label("Category")
       }),
       Yup.object({
-        framework: Yup.string().required().label("Framework"),
+        framework: Yup.string().required().label("Framework")
       }),
       Yup.object({
         dbName: Yup.string().required().label("Database name"),
-        dbType: Yup.string().required().label("Database engine"),
+        dbType: Yup.string().required().label("Database engine")
       }),
       Yup.object({
         nameOnCard: Yup.string().required().label("Name"),
         cardNumber: Yup.string().required().label("Card Number"),
         cardExpiryMonth: Yup.string().required().label("Expiration Month"),
         cardExpiryYear: Yup.string().required().label("Expiration Year"),
-        cardCvv: Yup.string().required().label("CVV"),
-      }),
+        cardCvv: Yup.string().required().label("CVV")
+      })
     ];
 
     // extracts the individual step schema
@@ -916,7 +916,7 @@ export default defineComponent({
     });
 
     const { resetForm, handleSubmit } = useForm<Step1 | Step2 | Step3 | Step4>({
-      validationSchema: currentSchema,
+      validationSchema: currentSchema
     });
 
     const previousStep = () => {
@@ -932,7 +932,7 @@ export default defineComponent({
     const handleStep = handleSubmit((values) => {
       formData.value = {
         ...formData.value,
-        ...values,
+        ...values
       };
 
       currentStepIndex.value++;
@@ -951,8 +951,8 @@ export default defineComponent({
         buttonsStyling: false,
         confirmButtonText: "Ok, got it!",
         customClass: {
-          confirmButton: "btn fw-semobold btn-light-primary",
-        },
+          confirmButton: "btn fw-semobold btn-light-primary"
+        }
       }).then(() => {
         if (!stepperObj.value) {
           return;
@@ -961,8 +961,8 @@ export default defineComponent({
         currentStepIndex.value = 0;
         resetForm({
           values: {
-            ...formInitData.value,
-          },
+            ...formInitData.value
+          }
         });
       });
     };
@@ -973,8 +973,8 @@ export default defineComponent({
       previousStep,
       currentStepIndex,
       totalSteps,
-      getIllustrationsPath,
+      getIllustrationsPath
     };
-  },
+  }
 });
 </script>

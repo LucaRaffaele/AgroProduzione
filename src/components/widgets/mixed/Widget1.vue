@@ -117,12 +117,12 @@ import Dropdown3 from "@/components/dropdown/Dropdown3.vue";
 export default defineComponent({
   name: "widget-1",
   components: {
-    Dropdown3,
+    Dropdown3
   },
   props: {
     widgetClasses: String,
     widgetColor: String,
-    chartHeight: Number,
+    chartHeight: Number
   },
   setup() {
     const items = [
@@ -131,34 +131,34 @@ export default defineComponent({
         title: "Sales",
         description: "100 Regions",
         stats: "$2,5b",
-        arrow: "up",
+        arrow: "up"
       },
       {
         icon: "media/icons/duotune/general/gen024.svg",
         title: "Revenue",
         description: "Quarter 2/3",
         stats: "$1,7b",
-        arrow: "down",
+        arrow: "down"
       },
       {
         icon: "media/icons/duotune/electronics/elc005.svg",
         title: "Growth",
         description: "80% Rate",
         stats: "$8,8m",
-        arrow: "up",
+        arrow: "up"
       },
       {
         icon: "media/icons/duotune/general/gen005.svg",
         title: "Dispute",
         description: "3090 Refunds",
         stats: "$270m",
-        arrow: "down",
-      },
+        arrow: "down"
+      }
     ];
 
     return {
-      items,
+      items
     };
-  },
+  }
 });
 </script>

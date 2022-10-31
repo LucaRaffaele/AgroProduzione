@@ -233,7 +233,7 @@ export default defineComponent({
   components: {
     Field,
     Form,
-    ErrorMessage,
+    ErrorMessage
   },
   setup() {
     const store = useStore();
@@ -249,7 +249,7 @@ export default defineComponent({
       password_confirmation: Yup.string()
         .required()
         .oneOf([Yup.ref("password"), null], "Passwords must match")
-        .label("Password Confirmation"),
+        .label("Password Confirmation")
     });
 
     onMounted(() => {
@@ -281,8 +281,8 @@ export default defineComponent({
           buttonsStyling: false,
           confirmButtonText: "Ok, got it!",
           customClass: {
-            confirmButton: "btn fw-semobold btn-light-primary",
-          },
+            confirmButton: "btn fw-semobold btn-light-primary"
+          }
         }).then(function () {
           // Go to page after successfully login
           router.push({ name: "dashboard" });
@@ -294,8 +294,8 @@ export default defineComponent({
           buttonsStyling: false,
           confirmButtonText: "Try again!",
           customClass: {
-            confirmButton: "btn fw-semobold btn-light-danger",
-          },
+            confirmButton: "btn fw-semobold btn-light-danger"
+          }
         });
       }
 
@@ -307,8 +307,8 @@ export default defineComponent({
     return {
       registration,
       onSubmitRegister,
-      submitButton,
+      submitButton
     };
-  },
+  }
 });
 </script>

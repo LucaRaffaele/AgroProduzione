@@ -40,7 +40,7 @@ export default defineComponent({
   props: {
     image: String,
     time: String,
-    text: String,
-  },
+    text: String
+  }
 });
 </script>

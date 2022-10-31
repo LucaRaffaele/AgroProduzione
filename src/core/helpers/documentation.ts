@@ -57,7 +57,7 @@ export const useCopyClipboard = () => {
               }
 
               return highlight;
-            },
+            }
           });
 
           clipboard.on("success", (e) => {
@@ -78,6 +78,6 @@ export const useCopyClipboard = () => {
   return {
     init: (element?) => {
       _init(element);
-    },
+    }
   };
 };

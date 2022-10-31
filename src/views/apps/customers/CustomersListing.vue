@@ -186,7 +186,7 @@ export default defineComponent({
   components: {
     Datatable,
     ExportCustomerModal,
-    AddCustomerModal,
+    AddCustomerModal
   },
   setup() {
     const tableHeader = ref([
@@ -194,38 +194,38 @@ export default defineComponent({
         columnName: "Customer Name",
         columnLabel: "name",
         sortEnabled: true,
-        columnWidth: 175,
+        columnWidth: 175
       },
       {
         columnName: "Email",
         columnLabel: "email",
         sortEnabled: true,
-        columnWidth: 230,
+        columnWidth: 230
       },
       {
         columnName: "Company",
         columnLabel: "company",
         sortEnabled: true,
-        columnWidth: 175,
+        columnWidth: 175
       },
       {
         columnName: "Payment Method",
         columnLabel: "paymentMethod",
         sortEnabled: true,
-        columnWidth: 175,
+        columnWidth: 175
       },
       {
         columnName: "Created Date",
         columnLabel: "date",
         sortEnabled: true,
-        columnWidth: 225,
+        columnWidth: 225
       },
       {
         columnName: "Actions",
         columnLabel: "actions",
         sortEnabled: false,
-        columnWidth: 135,
-      },
+        columnWidth: 135
+      }
     ]);
     const selectedIds = ref<Array<number>>([]);
 
@@ -283,7 +283,11 @@ export default defineComponent({
       }
     };
     const onItemSelect = (selectedItems: Array<number>) => {
-      selectedIds.value = selectedItems;
+      if (selectedItems.length === 0) {
+        selectedIds.value = [];
+      } else {
+        selectedIds.value = [...selectedIds.value, ...selectedItems];
+      }
     };
 
     return {
@@ -295,8 +299,8 @@ export default defineComponent({
       selectedIds,
       deleteFewCustomers,
       sort,
-      onItemSelect,
+      onItemSelect
     };
-  },
+  }
 });
 </script>

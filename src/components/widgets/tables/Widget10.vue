@@ -168,10 +168,10 @@ import Dropdown2 from "@/components/dropdown/Dropdown2.vue";
 export default defineComponent({
   name: "kt-widget-10",
   components: {
-    Dropdown2,
+    Dropdown2
   },
   props: {
-    widgetClasses: String,
+    widgetClasses: String
   },
   setup() {
     const list = [
@@ -179,72 +179,72 @@ export default defineComponent({
         user: {
           avatar: "media/avatars/300-6.jpg",
           name: "Emma Smith",
-          email: "e.smith@kpmg.com.au",
+          email: "e.smith@kpmg.com.au"
         },
         price: "$560,000",
         technologies: "Laravel, Metronic",
         status: {
           label: "Approved",
-          color: "success",
-        },
+          color: "success"
+        }
       },
       {
         user: {
           state: "danger",
           name: "Melody Macy",
-          email: "melody@altbox.com",
+          email: "melody@altbox.com"
         },
         price: "$2,000,000",
         technologies: "ReactJs, HTML",
         status: {
           label: "In Progress",
-          color: "warning",
-        },
+          color: "warning"
+        }
       },
       {
         user: {
           avatar: "media/avatars/300-1.jpg",
           name: "Max Smith",
-          email: "max@kt.com",
+          email: "max@kt.com"
         },
         price: "$760,000",
         technologies: "Python, MySQL",
         status: {
           label: "Success",
-          color: "danger",
-        },
+          color: "danger"
+        }
       },
       {
         user: {
           avatar: "media/avatars/300-5.jpg",
           name: "Sean Bean",
-          email: "sean@dellito.com",
+          email: "sean@dellito.com"
         },
         price: "$257,000",
         technologies: "ReactJS, Ruby",
         status: {
           label: "Rejected",
-          color: "info",
-        },
+          color: "info"
+        }
       },
       {
         user: {
           avatar: "media/avatars/300-25.jpg",
           name: "Brian Cox",
-          email: "brian@exchange.com",
+          email: "brian@exchange.com"
         },
         price: "$560,000",
         technologies: "AngularJS, C#",
         status: {
           label: "In Progress",
-          color: "primary",
-        },
-      },
+          color: "primary"
+        }
+      }
     ];
 
     return {
-      list,
+      list
     };
-  },
+  }
 });
 </script>

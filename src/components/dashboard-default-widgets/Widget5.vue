@@ -65,7 +65,7 @@ export default defineComponent({
   name: "default-dashboard-widget-5",
   components: {},
   props: {
-    className: { type: String, required: false },
-  },
+    className: { type: String, required: false }
+  }
 });
 </script>

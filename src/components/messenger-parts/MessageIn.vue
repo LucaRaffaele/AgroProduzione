@@ -43,7 +43,7 @@ export default defineComponent({
     name: String,
     image: String,
     time: String,
-    text: String,
-  },
+    text: String
+  }
 });
 </script>

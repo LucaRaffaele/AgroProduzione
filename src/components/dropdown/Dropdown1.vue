@@ -145,12 +145,12 @@ export default defineComponent({
       status: "1",
       author: true,
       customer: true,
-      notifications: true,
+      notifications: true
     });
 
     return {
-      data,
+      data
     };
-  },
+  }
 });
 </script>

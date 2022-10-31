@@ -5,7 +5,7 @@ const config: LayoutConfigTypes = {
     mode: "dark",
     primaryColor: "#50CD89",
     pageWidth: "default",
-    layout: "dark-sidebar",
+    layout: "dark-sidebar"
   },
   header: {
     display: true,
@@ -13,13 +13,13 @@ const config: LayoutConfigTypes = {
       container: "fluid",
       fixed: {
         desktop: true,
-        mobile: false,
+        mobile: false
       },
       menu: {
         display: true,
-        iconType: "svg",
-      },
-    },
+        iconType: "svg"
+      }
+    }
   },
   sidebar: {
     display: true,
@@ -28,44 +28,44 @@ const config: LayoutConfigTypes = {
         desktop: {
           enabled: true,
           default: false,
-          hoverable: true,
-        },
+          hoverable: true
+        }
       },
       menu: {
-        iconType: "svg",
-      },
-    },
+        iconType: "svg"
+      }
+    }
   },
   toolbar: {
     display: true,
     container: "fluid",
     fixed: {
       desktop: false,
-      mobile: false,
-    },
+      mobile: false
+    }
   },
   pageTitle: {
     display: true,
     breadcrumb: true,
-    direction: "column",
+    direction: "column"
   },
   content: {
-    container: "fluid",
+    container: "fluid"
   },
   footer: {
     display: true,
     container: "fluid",
     fixed: {
       desktop: false,
-      mobile: false,
-    },
+      mobile: false
+    }
   },
   illustrations: {
-    set: "sketchy-1",
+    set: "sketchy-1"
   },
   scrolltop: {
-    display: true,
-  },
+    display: true
+  }
 };
 
 export default config;

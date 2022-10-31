@@ -20,12 +20,12 @@ export default defineComponent({
   name: "share-and-earn",
   components: {
     KTModalsCard,
-    KTShareAndEarnModal,
+    KTShareAndEarnModal
   },
   setup() {
     return {
-      getIllustrationsPath,
+      getIllustrationsPath
     };
-  },
+  }
 });
 </script>

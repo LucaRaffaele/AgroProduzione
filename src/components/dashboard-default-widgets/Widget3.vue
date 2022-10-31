@@ -45,7 +45,7 @@
           id="kt_card_widget_17_chart"
           :style="{
             minWidth: `${chartSize}px`,
-            minHeight: `${chartSize}px`,
+            minHeight: `${chartSize}px`
           }"
           :data-kt-size="chartSize"
           :data-kt-line="11"
@@ -121,7 +121,7 @@ export default defineComponent({
   components: {},
   props: {
     className: { type: String, required: false },
-    chartSize: { type: Number, required: true },
+    chartSize: { type: Number, required: true }
   },
   setup(props, { expose }) {
     const initChart = () => {
@@ -141,7 +141,7 @@ export default defineComponent({
           : 11,
         rotate: el.getAttribute("data-kt-rotate")
           ? parseInt(el.getAttribute("data-kt-rotate") as string)
-          : 145,
+          : 145
         //percent:  el.getAttribute('data-kt-percent') ,
       };
 
@@ -187,6 +187,6 @@ export default defineComponent({
     onMounted(() => {
       initChart();
     });
-  },
+  }
 });
 </script>

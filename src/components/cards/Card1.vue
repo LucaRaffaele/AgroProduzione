@@ -133,7 +133,7 @@ export default defineComponent({
 
     budget: String,
 
-    users: Array,
+    users: Array
   },
   setup(props) {
     const getDescription = computed(() => {
@@ -170,8 +170,8 @@ export default defineComponent({
       getBudget,
       getStatus,
       getStatusDataBadgeColor,
-      getStatusDataColor,
+      getStatusDataColor
     };
-  },
+  }
 });
 </script>

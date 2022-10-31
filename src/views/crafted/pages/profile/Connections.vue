@@ -166,7 +166,7 @@ import Card3 from "@/components/cards/Card3.vue";
 export default defineComponent({
   name: "profile-connections",
   components: {
-    Card3,
-  },
+    Card3
+  }
 });
 </script>

@@ -11,7 +11,7 @@
             class="bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-400px min-h-sm-100 h-100"
             :style="{
               backgroundSize: '100% 100%',
-              backgroundImage: `url(${image})`,
+              backgroundImage: `url(${image})`
             }"
           ></div>
           <!--end::Image-->
@@ -197,7 +197,7 @@ export default defineComponent({
   components: {},
   props: {
     className: { type: String, required: false },
-    image: { type: String, required: true },
-  },
+    image: { type: String, required: true }
+  }
 });
 </script>

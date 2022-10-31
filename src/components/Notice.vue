@@ -62,8 +62,8 @@ export default defineComponent({
     buttonUrl: { type: String, default: "#" },
     buttonModalId: { type: String },
     color: { type: String, default: "primary" },
-    padding: { type: String, default: "p-6" },
+    padding: { type: String, default: "p-6" }
   },
-  components: {},
+  components: {}
 });
 </script>

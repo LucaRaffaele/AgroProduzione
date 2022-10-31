@@ -351,7 +351,7 @@ export default defineComponent({
   components: {},
   props: {
     className: { type: String, required: false },
-    height: { type: String, required: false, default: "425px" },
+    height: { type: String, required: false, default: "425px" }
   },
   setup(props) {
     const chartRef1 = ref<typeof VueApexCharts | null>(null);
@@ -362,55 +362,55 @@ export default defineComponent({
     const series1 = [
       {
         name: "Social Campaigns",
-        data: [[100, 250, 30]],
+        data: [[100, 250, 30]]
       },
       {
         name: "Email Newsletter",
-        data: [[225, 300, 35]],
+        data: [[225, 300, 35]]
       },
       {
         name: "TV Campaign",
-        data: [[300, 350, 25]],
+        data: [[300, 350, 25]]
       },
       {
         name: "Google Ads",
-        data: [[350, 350, 20]],
+        data: [[350, 350, 20]]
       },
       {
         name: "Courses",
-        data: [[450, 400, 25]],
+        data: [[450, 400, 25]]
       },
       {
         name: "Radio",
-        data: [[550, 350, 35]],
-      },
+        data: [[550, 350, 35]]
+      }
     ];
 
     const series2 = [
       {
         name: "Social Campaigns",
-        data: [[125, 300, 40]],
+        data: [[125, 300, 40]]
       },
       {
         name: "Email Newsletter",
-        data: [[250, 350, 35]],
+        data: [[250, 350, 35]]
       },
       {
         name: "TV Campaign",
-        data: [[350, 450, 30]],
+        data: [[350, 450, 30]]
       },
       {
         name: "Google Ads",
-        data: [[450, 250, 25]],
+        data: [[450, 250, 25]]
       },
       {
         name: "Courses",
-        data: [[500, 500, 30]],
+        data: [[500, 500, 30]]
       },
       {
         name: "Radio",
-        data: [[600, 250, 28]],
-      },
+        data: [[600, 250, 28]]
+      }
     ];
 
     const themeMode = computed(() => {
@@ -445,9 +445,9 @@ export default defineComponent({
       chartRef1,
       chartRef2,
       series1,
-      series2,
+      series2
     };
-  },
+  }
 });
 
 const chartOptions = (height: string): ApexOptions => {
@@ -459,21 +459,21 @@ const chartOptions = (height: string): ApexOptions => {
       type: "bubble",
       height: height,
       toolbar: {
-        show: false,
-      },
+        show: false
+      }
     },
     plotOptions: {
-      bubble: {},
+      bubble: {}
     },
     stroke: {
       show: false,
-      width: 0,
+      width: 0
     },
     legend: {
-      show: false,
+      show: false
     },
     dataLabels: {
-      enabled: false,
+      enabled: false
     },
     xaxis: {
       type: "numeric",
@@ -481,20 +481,20 @@ const chartOptions = (height: string): ApexOptions => {
       min: 0,
       max: 700,
       axisBorder: {
-        show: false,
+        show: false
       },
       axisTicks: {
         show: true,
-        height: 0,
+        height: 0
       },
       labels: {
         show: true,
         trim: true,
         style: {
           colors: getCSSVariableValue("--kt-gray-500"),
-          fontSize: "13px",
-        },
-      },
+          fontSize: "13px"
+        }
+      }
     },
     yaxis: {
       tickAmount: 7,
@@ -503,27 +503,27 @@ const chartOptions = (height: string): ApexOptions => {
       labels: {
         style: {
           colors: getCSSVariableValue("--kt-gray-500"),
-          fontSize: "13px",
-        },
-      },
+          fontSize: "13px"
+        }
+      }
     },
     tooltip: {
       style: {
-        fontSize: "12px",
+        fontSize: "12px"
       },
       x: {
         formatter: function (val) {
           return "Clicks: " + val;
-        },
+        }
       },
       y: {
         formatter: function (val) {
           return "$" + val + "K";
-        },
+        }
       },
       z: {
-        title: "Impression: ",
-      },
+        title: "Impression: "
+      }
     },
     colors: [
       getCSSVariableValue("--kt-primary"),
@@ -531,26 +531,26 @@ const chartOptions = (height: string): ApexOptions => {
       getCSSVariableValue("--kt-warning"),
       getCSSVariableValue("--kt-danger"),
       getCSSVariableValue("--kt-info"),
-      "#43CED7",
+      "#43CED7"
     ],
     fill: {
-      opacity: 1,
+      opacity: 1
     },
     markers: {
-      strokeWidth: 0,
+      strokeWidth: 0
     },
     grid: {
       borderColor: borderColor,
       strokeDashArray: 4,
       padding: {
-        right: 20,
+        right: 20
       },
       yaxis: {
         lines: {
-          show: true,
-        },
-      },
-    },
+          show: true
+        }
+      }
+    }
   };
 };
 </script>

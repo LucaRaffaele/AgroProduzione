@@ -188,8 +188,8 @@ export default defineComponent({
 
     return {
       copyButtonRef,
-      inputRef,
+      inputRef
     };
-  },
+  }
 });
 </script>

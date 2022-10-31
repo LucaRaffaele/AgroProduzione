@@ -326,8 +326,8 @@ export default defineComponent({
       hasActiveChildren,
       headerMenuIcons,
       MainMenuConfig,
-      translate,
+      translate
     };
-  },
+  }
 });
 </script>

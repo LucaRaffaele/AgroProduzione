@@ -111,7 +111,7 @@ export default defineComponent({
   name: "profile-documents",
   components: {
     KTFolder,
-    KTFile,
-  },
+    KTFile
+  }
 });
 </script>

@@ -99,7 +99,7 @@ export default defineComponent({
 
     avgEarnings: String,
 
-    totalSales: String,
+    totalSales: String
   },
   setup() {
     const openDrawer = () => {
@@ -107,8 +107,8 @@ export default defineComponent({
     };
 
     return {
-      openDrawer,
+      openDrawer
     };
-  },
+  }
 });
 </script>

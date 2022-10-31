@@ -38,8 +38,8 @@ export default defineComponent({
   props: {
     folderName: String,
 
-    files: String,
+    files: String
   },
-  components: {},
+  components: {}
 });
 </script>

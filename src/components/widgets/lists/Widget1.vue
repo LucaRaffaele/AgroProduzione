@@ -73,10 +73,10 @@ import Dropdown1 from "@/components/dropdown/Dropdown1.vue";
 export default defineComponent({
   name: "kt-widget-1",
   components: {
-    Dropdown1,
+    Dropdown1
   },
   props: {
-    widgetClasses: String,
+    widgetClasses: String
   },
   setup() {
     const items = [
@@ -84,37 +84,37 @@ export default defineComponent({
         icon: "media/icons/duotune/abstract/abs027.svg",
         color: "success",
         title: "Project Briefing",
-        description: "Project Manager",
+        description: "Project Manager"
       },
       {
         icon: "media/icons/duotune/art/art005.svg",
         color: "warning",
         title: "Concept Design",
-        description: "Art Director",
+        description: "Art Director"
       },
       {
         icon: "media/icons/duotune/communication/com012.svg",
         color: "primary",
         title: "Functional Logics",
-        description: "Lead Developer",
+        description: "Lead Developer"
       },
       {
         icon: "media/icons/duotune/coding/cod008.svg",
         color: "danger",
         title: "Development",
-        description: "DevOps",
+        description: "DevOps"
       },
       {
         icon: "media/icons/duotune/general/gen049.svg",
         color: "info",
         title: "Testing",
-        description: "QA Managers",
-      },
+        description: "QA Managers"
+      }
     ];
 
     return {
-      items,
+      items
     };
-  },
+  }
 });
 </script>

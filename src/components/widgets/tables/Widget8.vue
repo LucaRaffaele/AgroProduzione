@@ -136,7 +136,7 @@ export default defineComponent({
   name: "kt-widget-8",
   components: {},
   props: {
-    widgetClasses: String,
+    widgetClasses: String
   },
   setup() {
     const items = [
@@ -144,147 +144,147 @@ export default defineComponent({
         {
           icon: {
             file: "media/icons/duotune/coding/cod002.svg",
-            color: "danger",
+            color: "danger"
           },
           info: {
             event: "School Music Festival",
-            user: "by Rose Liam",
+            user: "by Rose Liam"
           },
-          date: "4:20PM, 03 Sep",
+          date: "4:20PM, 03 Sep"
         },
         {
           icon: {
             file: "media/icons/duotune/general/gen024.svg",
-            color: "warning",
+            color: "warning"
           },
           info: {
             event: "Maths Championship",
-            user: "By Tom Gere",
+            user: "By Tom Gere"
           },
-          date: "10:05PM, 25 Oct",
+          date: "10:05PM, 25 Oct"
         },
         {
           icon: {
             file: "media/icons/duotune/maps/map004.svg",
-            color: "info",
+            color: "info"
           },
           info: {
             event: "Who Knows Geography",
-            user: "By Zoey Dylan",
+            user: "By Zoey Dylan"
           },
-          date: "3:22PM, 07 Sep",
+          date: "3:22PM, 07 Sep"
         },
         {
           icon: {
             file: "media/icons/duotune/abstract/abs027.svg",
-            color: "primary",
+            color: "primary"
           },
           info: {
             event: "Napoleon Days",
-            user: "By Luke Owen",
+            user: "By Luke Owen"
           },
-          date: "1:20PM, 02 Dec",
+          date: "1:20PM, 02 Dec"
         },
         {
           icon: {
             file: "media/icons/duotune/art/art007.svg",
-            color: "success",
+            color: "success"
           },
           info: {
             event: "The School Art Leads",
-            user: "By Ellie Cole",
+            user: "By Ellie Cole"
           },
-          date: "6:20PM, 07 Sep",
-        },
+          date: "6:20PM, 07 Sep"
+        }
       ],
 
       [
         {
           icon: {
             file: "media/icons/duotune/maps/map004.svg",
-            color: "info",
+            color: "info"
           },
           info: {
             event: "Who Knows Geography",
-            user: "By Zoey Dylan",
+            user: "By Zoey Dylan"
           },
-          date: "3:22PM, 07 Sep",
+          date: "3:22PM, 07 Sep"
         },
         {
           icon: {
             file: "media/icons/duotune/general/gen024.svg",
-            color: "warning",
+            color: "warning"
           },
           info: {
             event: "Maths Championship",
-            user: "By Tom Gere",
+            user: "By Tom Gere"
           },
-          date: "10:05PM, 25 Oct",
+          date: "10:05PM, 25 Oct"
         },
         {
           icon: {
             file: "media/icons/duotune/coding/cod002.svg",
-            color: "danger",
+            color: "danger"
           },
           info: {
             event: "School Music Festival",
-            user: "by Rose Liam",
+            user: "by Rose Liam"
           },
-          date: "4:20PM, 03 Sep",
-        },
+          date: "4:20PM, 03 Sep"
+        }
       ],
 
       [
         {
           icon: {
             file: "media/icons/duotune/general/gen024.svg",
-            color: "warning",
+            color: "warning"
           },
           info: {
             event: "Maths Championship",
-            user: "By Tom Gere",
+            user: "By Tom Gere"
           },
-          date: "10:05PM, 25 Oct",
+          date: "10:05PM, 25 Oct"
         },
         {
           icon: {
             file: "media/icons/duotune/maps/map004.svg",
-            color: "info",
+            color: "info"
           },
           info: {
             event: "Who Knows Geography",
-            user: "By Zoey Dylan",
+            user: "By Zoey Dylan"
           },
-          date: "3:22PM, 07 Sep",
+          date: "3:22PM, 07 Sep"
         },
         {
           icon: {
             file: "media/icons/duotune/abstract/abs027.svg",
-            color: "primary",
+            color: "primary"
           },
           info: {
             event: "Napoleon Days",
-            user: "By Luke Owen",
+            user: "By Luke Owen"
           },
-          date: "1:20PM, 02 Dec",
+          date: "1:20PM, 02 Dec"
         },
         {
           icon: {
             file: "media/icons/duotune/coding/cod002.svg",
-            color: "danger",
+            color: "danger"
           },
           info: {
             event: "School Music Festival",
-            user: "by Rose Liam",
+            user: "by Rose Liam"
           },
-          date: "4:20PM, 03 Sep",
-        },
-      ],
+          date: "4:20PM, 03 Sep"
+        }
+      ]
     ];
 
     return {
-      items,
+      items
     };
-  },
+  }
 });
 </script>

@@ -267,7 +267,7 @@ export default defineComponent({
   components: {
     ErrorMessage,
     Field,
-    Form,
+    Form
   },
   setup() {
     const submitButtonRef = ref<null | HTMLButtonElement>(null);
@@ -278,14 +278,14 @@ export default defineComponent({
       apiName: "",
       shortDescription: "",
       category: "",
-      apiMethod: "",
+      apiMethod: ""
     });
 
     const validationSchema = Yup.object().shape({
       apiName: Yup.string().required().label("API name"),
       shortDescription: Yup.string().required().label("Description"),
       category: Yup.string().required().label("Category"),
-      apiMethod: Yup.string().required().label("API method"),
+      apiMethod: Yup.string().required().label("API method")
     });
 
     const submit = () => {
@@ -311,8 +311,8 @@ export default defineComponent({
           buttonsStyling: false,
           confirmButtonText: "Ok, got it!",
           customClass: {
-            confirmButton: "btn btn-primary",
-          },
+            confirmButton: "btn btn-primary"
+          }
         }).then(() => {
           hideModal(createAPIKeyModalRef.value);
         });
@@ -325,8 +325,8 @@ export default defineComponent({
       submit,
       submitButtonRef,
       modalRef,
-      createAPIKeyModalRef,
+      createAPIKeyModalRef
     };
-  },
+  }
 });
 </script>

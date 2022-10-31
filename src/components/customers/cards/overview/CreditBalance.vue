@@ -47,8 +47,8 @@ import { defineComponent } from "vue";
 export default defineComponent({
   name: "credit-bilance",
   props: {
-    cardClasses: String,
+    cardClasses: String
   },
-  components: {},
+  components: {}
 });
 </script>

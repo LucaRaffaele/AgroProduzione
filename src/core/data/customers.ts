@@ -20,9 +20,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/mastercard.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "mastercard",
+      label: "mastercard"
     },
-    date: "14 Dec 2020, 8:43 pm",
+    date: "14 Dec 2020, 8:43 pm"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -32,9 +32,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/visa.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "visa",
+      label: "visa"
     },
-    date: "01 Dec 2020, 10:12 am",
+    date: "01 Dec 2020, 10:12 am"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -44,9 +44,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/mastercard.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "mastercard",
+      label: "mastercard"
     },
-    date: "12 Nov 2020, 2:01 pm",
+    date: "12 Nov 2020, 2:01 pm"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -56,9 +56,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/american-express.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "american_express",
+      label: "american_express"
     },
-    date: "21 Oct 2020, 5:54 pm",
+    date: "21 Oct 2020, 5:54 pm"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -68,9 +68,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/visa.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "visa",
+      label: "visa"
     },
-    date: "19 Oct 2020, 7:32 am",
+    date: "19 Oct 2020, 7:32 am"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -80,9 +80,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/american-express.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "american_express",
+      label: "american_express"
     },
-    date: "23 Sep 2020, 12:37 am",
+    date: "23 Sep 2020, 12:37 am"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -92,9 +92,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/mastercard.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "mastercard",
+      label: "mastercard"
     },
-    date: "11 Sep 2020, 3:15 pm",
+    date: "11 Sep 2020, 3:15 pm"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -104,9 +104,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/american-express.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "american_express",
+      label: "american_express"
     },
-    date: "03 Sep 2020, 1:08 am",
+    date: "03 Sep 2020, 1:08 am"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -116,9 +116,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/visa.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "visa",
+      label: "visa"
     },
-    date: "01 Sep 2020, 4:58 pm",
+    date: "01 Sep 2020, 4:58 pm"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -128,9 +128,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/visa.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "visa",
+      label: "visa"
     },
-    date: "18 Aug 2020, 3:34 pm",
+    date: "18 Aug 2020, 3:34 pm"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -140,9 +140,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/mastercard.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "mastercard",
+      label: "mastercard"
     },
-    date: "14 Aug 2020, 1:21 pm",
+    date: "14 Aug 2020, 1:21 pm"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -152,9 +152,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/american-express.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "american_express",
+      label: "american_express"
     },
-    date: "11 Aug 2020, 5:13 pm",
+    date: "11 Aug 2020, 5:13 pm"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -164,9 +164,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/mastercard.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "mastercard",
+      label: "mastercard"
     },
-    date: "14 Dec 2020, 8:43 pm",
+    date: "14 Dec 2020, 8:43 pm"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -176,9 +176,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/visa.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "visa",
+      label: "visa"
     },
-    date: "01 Dec 2020, 10:12 am",
+    date: "01 Dec 2020, 10:12 am"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -188,9 +188,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/mastercard.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "mastercard",
+      label: "mastercard"
     },
-    date: "12 Nov 2020, 2:01 pm",
+    date: "12 Nov 2020, 2:01 pm"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -200,9 +200,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/american-express.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "american_express",
+      label: "american_express"
     },
-    date: "21 Oct 2020, 5:54 pm",
+    date: "21 Oct 2020, 5:54 pm"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -212,9 +212,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/visa.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "visa",
+      label: "visa"
     },
-    date: "19 Oct 2020, 7:32 am",
+    date: "19 Oct 2020, 7:32 am"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -224,9 +224,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/american-express.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "american_express",
+      label: "american_express"
     },
-    date: "23 Sep 2020, 12:37 am",
+    date: "23 Sep 2020, 12:37 am"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -236,9 +236,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/mastercard.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "mastercard",
+      label: "mastercard"
     },
-    date: "11 Sep 2020, 3:15 pm",
+    date: "11 Sep 2020, 3:15 pm"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -248,9 +248,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/american-express.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "american_express",
+      label: "american_express"
     },
-    date: "03 Sep 2020, 1:08 am",
+    date: "03 Sep 2020, 1:08 am"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -260,9 +260,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/visa.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "visa",
+      label: "visa"
     },
-    date: "01 Sep 2020, 4:58 pm",
+    date: "01 Sep 2020, 4:58 pm"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -272,9 +272,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/visa.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "visa",
+      label: "visa"
     },
-    date: "18 Aug 2020, 3:34 pm",
+    date: "18 Aug 2020, 3:34 pm"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -284,9 +284,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/mastercard.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "mastercard",
+      label: "mastercard"
     },
-    date: "14 Aug 2020, 1:21 pm",
+    date: "14 Aug 2020, 1:21 pm"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -296,9 +296,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/american-express.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "american_express",
+      label: "american_express"
     },
-    date: "11 Aug 2020, 5:13 pm",
+    date: "11 Aug 2020, 5:13 pm"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -308,9 +308,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/mastercard.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "mastercard",
+      label: "mastercard"
     },
-    date: "14 Dec 2020, 8:43 pm",
+    date: "14 Dec 2020, 8:43 pm"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -320,9 +320,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/visa.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "visa",
+      label: "visa"
     },
-    date: "01 Dec 2020, 10:12 am",
+    date: "01 Dec 2020, 10:12 am"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -332,9 +332,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/mastercard.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "mastercard",
+      label: "mastercard"
     },
-    date: "12 Nov 2020, 2:01 pm",
+    date: "12 Nov 2020, 2:01 pm"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -344,9 +344,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/american-express.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "american_express",
+      label: "american_express"
     },
-    date: "21 Oct 2020, 5:54 pm",
+    date: "21 Oct 2020, 5:54 pm"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -356,9 +356,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/visa.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "visa",
+      label: "visa"
     },
-    date: "19 Oct 2020, 7:32 am",
+    date: "19 Oct 2020, 7:32 am"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -368,9 +368,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/american-express.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "american_express",
+      label: "american_express"
     },
-    date: "23 Sep 2020, 12:37 am",
+    date: "23 Sep 2020, 12:37 am"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -380,9 +380,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/mastercard.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "mastercard",
+      label: "mastercard"
     },
-    date: "11 Sep 2020, 3:15 pm",
+    date: "11 Sep 2020, 3:15 pm"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -392,9 +392,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/american-express.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "american_express",
+      label: "american_express"
     },
-    date: "03 Sep 2020, 1:08 am",
+    date: "03 Sep 2020, 1:08 am"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -404,9 +404,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/visa.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "visa",
+      label: "visa"
     },
-    date: "01 Sep 2020, 4:58 pm",
+    date: "01 Sep 2020, 4:58 pm"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -416,9 +416,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/visa.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "visa",
+      label: "visa"
     },
-    date: "18 Aug 2020, 3:34 pm",
+    date: "18 Aug 2020, 3:34 pm"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -428,9 +428,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/mastercard.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "mastercard",
+      label: "mastercard"
     },
-    date: "14 Aug 2020, 1:21 pm",
+    date: "14 Aug 2020, 1:21 pm"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -440,9 +440,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/american-express.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "american_express",
+      label: "american_express"
     },
-    date: "11 Aug 2020, 5:13 pm",
+    date: "11 Aug 2020, 5:13 pm"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -452,9 +452,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/mastercard.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "mastercard",
+      label: "mastercard"
     },
-    date: "14 Dec 2020, 8:43 pm",
+    date: "14 Dec 2020, 8:43 pm"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -464,9 +464,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/visa.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "visa",
+      label: "visa"
     },
-    date: "01 Dec 2020, 10:12 am",
+    date: "01 Dec 2020, 10:12 am"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -476,9 +476,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/mastercard.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "mastercard",
+      label: "mastercard"
     },
-    date: "12 Nov 2020, 2:01 pm",
+    date: "12 Nov 2020, 2:01 pm"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -488,9 +488,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/american-express.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "american_express",
+      label: "american_express"
     },
-    date: "21 Oct 2020, 5:54 pm",
+    date: "21 Oct 2020, 5:54 pm"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -500,9 +500,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/visa.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "visa",
+      label: "visa"
     },
-    date: "19 Oct 2020, 7:32 am",
+    date: "19 Oct 2020, 7:32 am"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -512,9 +512,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/american-express.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "american_express",
+      label: "american_express"
     },
-    date: "23 Sep 2020, 12:37 am",
+    date: "23 Sep 2020, 12:37 am"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -524,9 +524,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/mastercard.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "mastercard",
+      label: "mastercard"
     },
-    date: "11 Sep 2020, 3:15 pm",
+    date: "11 Sep 2020, 3:15 pm"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -536,9 +536,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/american-express.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "american_express",
+      label: "american_express"
     },
-    date: "03 Sep 2020, 1:08 am",
+    date: "03 Sep 2020, 1:08 am"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -548,9 +548,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/visa.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "visa",
+      label: "visa"
     },
-    date: "01 Sep 2020, 4:58 pm",
+    date: "01 Sep 2020, 4:58 pm"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -560,9 +560,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/visa.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "visa",
+      label: "visa"
     },
-    date: "18 Aug 2020, 3:34 pm",
+    date: "18 Aug 2020, 3:34 pm"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -572,9 +572,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/mastercard.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "mastercard",
+      label: "mastercard"
     },
-    date: "14 Aug 2020, 1:21 pm",
+    date: "14 Aug 2020, 1:21 pm"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -584,9 +584,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/american-express.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "american_express",
+      label: "american_express"
     },
-    date: "11 Aug 2020, 5:13 pm",
+    date: "11 Aug 2020, 5:13 pm"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -596,9 +596,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/mastercard.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "mastercard",
+      label: "mastercard"
     },
-    date: "14 Dec 2020, 8:43 pm",
+    date: "14 Dec 2020, 8:43 pm"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -608,9 +608,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/visa.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "visa",
+      label: "visa"
     },
-    date: "01 Dec 2020, 10:12 am",
+    date: "01 Dec 2020, 10:12 am"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -620,9 +620,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/mastercard.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "mastercard",
+      label: "mastercard"
     },
-    date: "12 Nov 2020, 2:01 pm",
+    date: "12 Nov 2020, 2:01 pm"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -632,9 +632,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/american-express.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "american_express",
+      label: "american_express"
     },
-    date: "21 Oct 2020, 5:54 pm",
+    date: "21 Oct 2020, 5:54 pm"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -644,9 +644,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/visa.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "visa",
+      label: "visa"
     },
-    date: "19 Oct 2020, 7:32 am",
+    date: "19 Oct 2020, 7:32 am"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -656,9 +656,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/american-express.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "american_express",
+      label: "american_express"
     },
-    date: "23 Sep 2020, 12:37 am",
+    date: "23 Sep 2020, 12:37 am"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -668,9 +668,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/mastercard.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "mastercard",
+      label: "mastercard"
     },
-    date: "11 Sep 2020, 3:15 pm",
+    date: "11 Sep 2020, 3:15 pm"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -680,9 +680,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/american-express.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "american_express",
+      label: "american_express"
     },
-    date: "03 Sep 2020, 1:08 am",
+    date: "03 Sep 2020, 1:08 am"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -692,9 +692,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/visa.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "visa",
+      label: "visa"
     },
-    date: "01 Sep 2020, 4:58 pm",
+    date: "01 Sep 2020, 4:58 pm"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -704,9 +704,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/visa.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "visa",
+      label: "visa"
     },
-    date: "18 Aug 2020, 3:34 pm",
+    date: "18 Aug 2020, 3:34 pm"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -716,9 +716,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/mastercard.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "mastercard",
+      label: "mastercard"
     },
-    date: "14 Aug 2020, 1:21 pm",
+    date: "14 Aug 2020, 1:21 pm"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -728,9 +728,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/american-express.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "american_express",
+      label: "american_express"
     },
-    date: "11 Aug 2020, 5:13 pm",
+    date: "11 Aug 2020, 5:13 pm"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -740,9 +740,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/mastercard.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "mastercard",
+      label: "mastercard"
     },
-    date: "14 Dec 2020, 8:43 pm",
+    date: "14 Dec 2020, 8:43 pm"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -752,9 +752,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/visa.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "visa",
+      label: "visa"
     },
-    date: "01 Dec 2020, 10:12 am",
+    date: "01 Dec 2020, 10:12 am"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -764,9 +764,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/mastercard.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "mastercard",
+      label: "mastercard"
     },
-    date: "12 Nov 2020, 2:01 pm",
+    date: "12 Nov 2020, 2:01 pm"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -776,9 +776,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/american-express.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "american_express",
+      label: "american_express"
     },
-    date: "21 Oct 2020, 5:54 pm",
+    date: "21 Oct 2020, 5:54 pm"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -788,9 +788,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/visa.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "visa",
+      label: "visa"
     },
-    date: "19 Oct 2020, 7:32 am",
+    date: "19 Oct 2020, 7:32 am"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -800,9 +800,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/american-express.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "american_express",
+      label: "american_express"
     },
-    date: "23 Sep 2020, 12:37 am",
+    date: "23 Sep 2020, 12:37 am"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -812,9 +812,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/mastercard.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "mastercard",
+      label: "mastercard"
     },
-    date: "11 Sep 2020, 3:15 pm",
+    date: "11 Sep 2020, 3:15 pm"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -824,9 +824,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/american-express.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "american_express",
+      label: "american_express"
     },
-    date: "03 Sep 2020, 1:08 am",
+    date: "03 Sep 2020, 1:08 am"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -836,9 +836,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/visa.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "visa",
+      label: "visa"
     },
-    date: "01 Sep 2020, 4:58 pm",
+    date: "01 Sep 2020, 4:58 pm"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -848,9 +848,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/visa.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "visa",
+      label: "visa"
     },
-    date: "18 Aug 2020, 3:34 pm",
+    date: "18 Aug 2020, 3:34 pm"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -860,9 +860,9 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/mastercard.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "mastercard",
+      label: "mastercard"
     },
-    date: "14 Aug 2020, 1:21 pm",
+    date: "14 Aug 2020, 1:21 pm"
   },
   {
     id: Math.floor(Math.random() * 99999) + 1,
@@ -872,10 +872,10 @@ const customers: Array<ICustomer> = [
     payment: {
       icon: "media/svg/card-logos/american-express.svg",
       ccnumber: "**** " + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000),
-      label: "american_express",
+      label: "american_express"
     },
-    date: "11 Aug 2020, 5:13 pm",
-  },
+    date: "11 Aug 2020, 5:13 pm"
+  }
 ];
 
 export { ICustomer };

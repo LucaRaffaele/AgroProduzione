@@ -50,7 +50,7 @@ export default defineComponent({
     color: String,
     change: String,
     description: String,
-    height: Number,
+    height: Number
   },
   components: {},
   setup(props) {
@@ -61,8 +61,8 @@ export default defineComponent({
     const series = [
       {
         name: "Net Profit",
-        data: [40, 40, 30, 30, 35, 35, 50],
-      },
+        data: [40, 40, 30, 30, 35, 35, 50]
+      }
     ];
 
     const themeMode = computed(() => {
@@ -90,9 +90,9 @@ export default defineComponent({
     return {
       chart,
       series,
-      chartRef,
+      chartRef
     };
-  },
+  }
 });
 
 const chartOptions = (color, height): ApexOptions => {
@@ -106,42 +106,42 @@ const chartOptions = (color, height): ApexOptions => {
       type: "area",
       height: height,
       toolbar: {
-        show: false,
+        show: false
       },
       zoom: {
-        enabled: false,
+        enabled: false
       },
       sparkline: {
-        enabled: true,
-      },
+        enabled: true
+      }
     },
     plotOptions: {},
     legend: {
-      show: false,
+      show: false
     },
     dataLabels: {
-      enabled: false,
+      enabled: false
     },
     stroke: {
       curve: "smooth",
       show: true,
       width: 3,
-      colors: [baseColor],
+      colors: [baseColor]
     },
     xaxis: {
       categories: ["Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug"],
       axisBorder: {
-        show: false,
+        show: false
       },
       axisTicks: {
-        show: false,
+        show: false
       },
       labels: {
         show: false,
         style: {
           colors: labelColor,
-          fontSize: "12px",
-        },
+          fontSize: "12px"
+        }
       },
       crosshairs: {
         show: false,
@@ -149,12 +149,12 @@ const chartOptions = (color, height): ApexOptions => {
         stroke: {
           color: "#E4E6EF",
           width: 1,
-          dashArray: 3,
-        },
+          dashArray: 3
+        }
       },
       tooltip: {
-        enabled: false,
-      },
+        enabled: false
+      }
     },
     yaxis: {
       min: 0,
@@ -163,53 +163,53 @@ const chartOptions = (color, height): ApexOptions => {
         show: false,
         style: {
           colors: labelColor,
-          fontSize: "12px",
-        },
-      },
+          fontSize: "12px"
+        }
+      }
     },
     states: {
       normal: {
         filter: {
           type: "none",
-          value: 0,
-        },
+          value: 0
+        }
       },
       hover: {
         filter: {
           type: "none",
-          value: 0,
-        },
+          value: 0
+        }
       },
       active: {
         allowMultipleDataPointsSelection: false,
         filter: {
           type: "none",
-          value: 0,
-        },
-      },
+          value: 0
+        }
+      }
     },
     tooltip: {
       style: {
-        fontSize: "12px",
+        fontSize: "12px"
       },
       y: {
         formatter: function (val) {
           return "$" + val + " thousands";
-        },
-      },
+        }
+      }
     },
     fill: {
       type: "gradient",
       gradient: {
-        stops: [0, 100],
-      },
+        stops: [0, 100]
+      }
     },
     colors: [baseColor],
     markers: {
       colors: [baseColor],
       strokeColors: [lightColor],
-      strokeWidth: 3,
-    },
+      strokeWidth: 3
+    }
   };
 };
 </script>

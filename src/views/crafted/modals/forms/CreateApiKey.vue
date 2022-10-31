@@ -20,12 +20,12 @@ export default defineComponent({
   name: "create-api-key",
   components: {
     KTModalCard,
-    KTCreateAPIKeyModal,
+    KTCreateAPIKeyModal
   },
   setup() {
     return {
-      getIllustrationsPath,
+      getIllustrationsPath
     };
-  },
+  }
 });
 </script>

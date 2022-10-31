@@ -104,10 +104,10 @@ import Dropdown3 from "@/components/dropdown/Dropdown3.vue";
 export default defineComponent({
   name: "kt-widget-3",
   components: {
-    Dropdown3,
+    Dropdown3
   },
   props: {
-    widgetClasses: String,
+    widgetClasses: String
   },
   setup() {
     const items = [
@@ -118,7 +118,7 @@ export default defineComponent({
         description: "Best Customers",
         technologies: "ReactJs, HTML",
         users: "4600 Users",
-        size: "5.4MB",
+        size: "5.4MB"
       },
       {
         icon: "media/icons/duotune/general/gen024.svg",
@@ -127,7 +127,7 @@ export default defineComponent({
         description: "Best Customers",
         technologies: "Python, MySQL",
         users: "7200 Users",
-        size: "2.8MB",
+        size: "2.8MB"
       },
       {
         icon: "media/icons/duotune/finance/fin006.svg",
@@ -136,7 +136,7 @@ export default defineComponent({
         description: "Communication/Group.svg",
         technologies: "Laravel, Metronic",
         users: "890 Users",
-        size: "1.5MB",
+        size: "1.5MB"
       },
       {
         icon: "media/icons/duotune/abstract/abs027.svg",
@@ -145,7 +145,7 @@ export default defineComponent({
         description: "Best Customers",
         technologies: "AngularJS, C#",
         users: "4600 Users",
-        size: "5.4MB",
+        size: "5.4MB"
       },
       {
         icon: "media/icons/duotune/abstract/abs042.svg",
@@ -154,13 +154,13 @@ export default defineComponent({
         description: "Best Customers",
         technologies: "ReactJS, Ruby",
         users: "354 Users",
-        size: "500KB",
-      },
+        size: "500KB"
+      }
     ];
 
     return {
-      items,
+      items
     };
-  },
+  }
 });
 </script>

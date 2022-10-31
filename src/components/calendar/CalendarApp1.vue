@@ -48,7 +48,7 @@ export default defineComponent({
   name: "calendar-app-1",
   components: {
     FullCalendar,
-    NewEventModal,
+    NewEventModal
   },
   setup() {
     const newEvent = () => {
@@ -61,7 +61,7 @@ export default defineComponent({
       headerToolbar: {
         left: "prev,next today",
         center: "title",
-        right: "dayGridMonth,timeGridWeek,timeGridDay",
+        right: "dayGridMonth,timeGridWeek,timeGridDay"
       },
       initialDate: TODAY,
       navLinks: true, // can click day/week names to navigate views
@@ -71,21 +71,21 @@ export default defineComponent({
       views: {
         dayGridMonth: { buttonText: "month" },
         timeGridWeek: { buttonText: "week" },
-        timeGridDay: { buttonText: "day" },
+        timeGridDay: { buttonText: "day" }
       },
 
       editable: true,
       dayMaxEvents: true, // allow "more" link when too many events
       events: events,
       dateClick: newEvent,
-      eventClick: newEvent,
+      eventClick: newEvent
     };
 
     return {
       calendarOptions,
-      newEvent,
+      newEvent
     };
-  },
+  }
 });
 </script>
 

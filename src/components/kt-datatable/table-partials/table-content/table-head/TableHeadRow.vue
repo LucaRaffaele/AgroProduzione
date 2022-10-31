@@ -16,13 +16,13 @@
       <template v-for="(column, i) in header" :key="i">
         <th
           :class="{
-            'text-end': i === header.length - 1,
+            'text-end': i === header.length - 1
           }"
           @click="onSort(column.columnLabel, column.sortEnabled)"
           :style="{
             minWidth: column.columnWidth ? `${column.columnWidth}px` : '0',
             width: 'auto',
-            cursor: column.sortEnabled ? 'pointer' : 'auto',
+            cursor: column.sortEnabled ? 'pointer' : 'auto'
           }"
         >
           {{ column.columnName }}
@@ -52,9 +52,9 @@ export default defineComponent({
     sortOrder: {
       type: String as () => "asc" | "desc",
       required: false,
-      default: "asc",
+      default: "asc"
     },
-    header: { type: Array, required: true },
+    header: { type: Array, required: true }
   },
   emits: ["on-select", "on-sort"],
   components: {},
@@ -62,7 +62,7 @@ export default defineComponent({
     const checked = ref<boolean>(false);
     const columnLabelAndOrder = ref<Sort>({
       label: props.sortLabel,
-      order: props.sortOrder,
+      order: props.sortOrder
     });
 
     watch(
@@ -105,8 +105,8 @@ export default defineComponent({
       selectAll,
       checked,
       sortArrow,
-      columnLabelAndOrder,
+      columnLabelAndOrder
     };
-  },
+  }
 });
 </script>

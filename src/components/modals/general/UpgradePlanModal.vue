@@ -76,7 +76,7 @@
                       :class="[
                         index !== plans.length - 1 && 'mb-6',
                         plan.default && 'active',
-                        !plan.custom && 'btn-active btn-active-primary',
+                        !plan.custom && 'btn-active btn-active-primary'
                       ]"
                       data-bs-toggle="tab"
                       :data-bs-target="`#kt_upgrade_plan_${index}`"
@@ -277,33 +277,33 @@ export default defineComponent({
         features: [
           {
             title: "Up to 10 Active Users",
-            supported: true,
+            supported: true
           },
           {
             title: "Up to 30 Project Integrations",
-            supported: true,
+            supported: true
           },
           {
             title: "Analytics Module",
-            supported: true,
+            supported: true
           },
           {
             title: "Finance Module",
-            supported: false,
+            supported: false
           },
           {
             title: "Accounting Module",
-            supported: false,
+            supported: false
           },
           {
             title: "Network Platform",
-            supported: false,
+            supported: false
           },
           {
             title: "Unlimited Cloud Space",
-            supported: false,
-          },
-        ],
+            supported: false
+          }
+        ]
       },
 
       {
@@ -317,33 +317,33 @@ export default defineComponent({
         features: [
           {
             title: "Up to 10 Active Users",
-            supported: true,
+            supported: true
           },
           {
             title: "Up to 30 Project Integrations",
-            supported: true,
+            supported: true
           },
           {
             title: "Analytics Module",
-            supported: true,
+            supported: true
           },
           {
             title: "Finance Module",
-            supported: true,
+            supported: true
           },
           {
             title: "Accounting Module",
-            supported: true,
+            supported: true
           },
           {
             title: "Network Platform",
-            supported: false,
+            supported: false
           },
           {
             title: "Unlimited Cloud Space",
-            supported: false,
-          },
-        ],
+            supported: false
+          }
+        ]
       },
 
       {
@@ -358,48 +358,48 @@ export default defineComponent({
         features: [
           {
             title: "Up to 10 Active Users",
-            supported: true,
+            supported: true
           },
           {
             title: "Up to 30 Project Integrations",
-            supported: true,
+            supported: true
           },
           {
             title: "Analytics Module",
-            supported: true,
+            supported: true
           },
           {
             title: "Finance Module",
-            supported: true,
+            supported: true
           },
           {
             title: "Accounting Module",
-            supported: true,
+            supported: true
           },
           {
             title: "Network Platform",
-            supported: true,
+            supported: true
           },
           {
             title: "Unlimited Cloud Space",
-            supported: true,
-          },
-        ],
+            supported: true
+          }
+        ]
       },
 
       {
         title: "Custom",
         subTitle: "Requet a custom license",
         default: false,
-        custom: true,
-      },
+        custom: true
+      }
     ];
 
     return {
       plans,
       current,
-      selected,
+      selected
     };
-  },
+  }
 });
 </script>

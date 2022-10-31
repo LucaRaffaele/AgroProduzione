@@ -71,7 +71,7 @@ export default defineComponent({
     ChartsWidget5,
     ChartsWidget6,
     ChartsWidget7,
-    ChartsWidget8,
-  },
+    ChartsWidget8
+  }
 });
 </script>

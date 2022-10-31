@@ -71,42 +71,42 @@ export default defineComponent({
   props: {
     stats: { type: String, required: true },
     description: { type: String, required: true },
-    className: { type: String, required: false },
+    className: { type: String, required: false }
   },
   setup() {
     const profiles = [
       {
         name: "Alan Warden",
         initials: "A",
-        state: "warning",
+        state: "warning"
       },
       {
         name: "Michael Eberon",
-        src: "media/avatars/300-11.jpg",
+        src: "media/avatars/300-11.jpg"
       },
       {
         name: "Susan Redwood",
         initials: "S",
-        state: "primary",
+        state: "primary"
       },
       {
         name: "Melody Macy",
-        src: "media/avatars/300-2.jpg",
+        src: "media/avatars/300-2.jpg"
       },
       {
         name: "Perry Matthew",
         initials: "P",
-        state: "danger",
+        state: "danger"
       },
       {
         name: "Barry Walter",
-        src: "media/avatars/300-12.jpg",
-      },
+        src: "media/avatars/300-12.jpg"
+      }
     ];
 
     return {
-      profiles,
+      profiles
     };
-  },
+  }
 });
 </script>

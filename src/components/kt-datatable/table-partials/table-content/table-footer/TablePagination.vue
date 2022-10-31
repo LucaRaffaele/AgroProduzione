@@ -32,7 +32,7 @@
           v-for="(page, i) in pages"
           class="paginate_button page-item"
           :class="{
-            active: isPageActive(page.name),
+            active: isPageActive(page.name)
           }"
           :style="{ cursor: !page.isDisabled ? 'pointer' : 'auto' }"
           :key="i"
@@ -79,24 +79,24 @@ export default defineComponent({
     maxVisibleButtons: {
       type: Number,
       required: false,
-      default: 5,
+      default: 5
     },
     totalPages: {
       type: Number,
-      required: true,
+      required: true
     },
     total: {
       type: Number,
-      required: true,
+      required: true
     },
     perPage: {
       type: Number,
-      required: true,
+      required: true
     },
     currentPage: {
       type: Number,
-      required: true,
-    },
+      required: true
+    }
   },
   emits: ["page-change"],
   setup(props, { emit }) {
@@ -134,7 +134,7 @@ export default defineComponent({
       for (let i = startPage.value; i <= endPage.value; i += 1) {
         range.push({
           name: i,
-          isDisabled: i === props.currentPage,
+          isDisabled: i === props.currentPage
         });
       }
 
@@ -178,8 +178,8 @@ export default defineComponent({
       onClickPage,
       onClickNextPage,
       onClickLastPage,
-      isPageActive,
+      isPageActive
     };
-  },
+  }
 });
 </script>

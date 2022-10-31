@@ -88,7 +88,7 @@ export default defineComponent({
 
       store.commit(Mutations.SET_LAYOUT_CONFIG_PROPERTY, {
         property: "general.mode",
-        value: configMode,
+        value: configMode
       });
 
       store.dispatch(Actions.SET_THEME_MODE_ACTION, configMode);
@@ -97,8 +97,8 @@ export default defineComponent({
     return {
       themeMode,
       setMode,
-      path,
+      path
     };
-  },
+  }
 });
 </script>

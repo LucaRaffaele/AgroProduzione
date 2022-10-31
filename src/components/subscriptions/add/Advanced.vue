@@ -200,6 +200,6 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "kt-advanced",
-  components: {},
+  components: {}
 });
 </script>

@@ -31,8 +31,8 @@ export default defineComponent({
     iconColor: String,
     svgIcon: String,
     title: String,
-    description: String,
+    description: String
   },
-  components: {},
+  components: {}
 });
 </script>

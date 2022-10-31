@@ -11,7 +11,7 @@ export default defineComponent({
   name: "kt-menu-component",
   components: {},
   props: {
-    menuSelector: { type: String },
+    menuSelector: { type: String }
   },
   setup(props) {
     onMounted(() => {
@@ -19,6 +19,6 @@ export default defineComponent({
         MenuComponent.createInsance(props.menuSelector);
       });
     });
-  },
+  }
 });
 </script>

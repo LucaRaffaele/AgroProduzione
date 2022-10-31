@@ -32,7 +32,7 @@ export default defineComponent({
         store.dispatch(Actions.REMOVE_BODY_CLASSNAME, "page-loading");
       });
     });
-  },
+  }
 });
 </script>
 
@@ -52,7 +52,6 @@ export default defineComponent({
 @import "~element-plus/dist/index.css";
 
 // Main demo style scss
-@import "assets/sass/element-ui.dark";
 @import "assets/sass/plugins";
 @import "assets/sass/style";
 

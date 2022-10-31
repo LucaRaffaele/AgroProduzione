@@ -53,7 +53,7 @@ import { defineComponent, computed } from "vue";
 import {
   pageTitleDisplay,
   pageTitleBreadcrumbDisplay,
-  pageTitleDirection,
+  pageTitleDirection
 } from "@/core/helpers/config";
 import { useRoute } from "vue-router";
 
@@ -76,8 +76,8 @@ export default defineComponent({
       breadcrumbs,
       pageTitleDisplay,
       pageTitleBreadcrumbDisplay,
-      pageTitleDirection,
+      pageTitleDirection
     };
-  },
+  }
 });
 </script>

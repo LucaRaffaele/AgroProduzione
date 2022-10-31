@@ -44,8 +44,8 @@ export default defineComponent({
     color: String,
     description: String,
     progress: String,
-    title: String,
+    title: String
   },
-  components: {},
+  components: {}
 });
 </script>

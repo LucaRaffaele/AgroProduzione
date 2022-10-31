@@ -176,7 +176,7 @@ export default defineComponent({
             const start = new Date();
             start.setTime(start.getTime() - 3600 * 1000 * 24 * 7);
             return [start, end];
-          },
+          }
         },
         {
           text: "Last month",
@@ -185,7 +185,7 @@ export default defineComponent({
             const start = new Date();
             start.setTime(start.getTime() - 3600 * 1000 * 24 * 30);
             return [start, end];
-          },
+          }
         },
         {
           text: "Last 3 months",
@@ -194,15 +194,15 @@ export default defineComponent({
             const start = new Date();
             start.setTime(start.getTime() - 3600 * 1000 * 24 * 90);
             return [start, end];
-          },
-        },
-      ],
+          }
+        }
+      ]
     });
 
     const formData = ref({
       dateRange: [],
       exportFormat: "",
-      paymentType: "",
+      paymentType: ""
     });
 
     const rules = ref({
@@ -210,9 +210,9 @@ export default defineComponent({
         {
           required: true,
           message: "Date range is required",
-          trigger: "change",
-        },
-      ],
+          trigger: "change"
+        }
+      ]
     });
 
     const submit = () => {
@@ -233,8 +233,8 @@ export default defineComponent({
               buttonsStyling: false,
               confirmButtonText: "Ok, got it!",
               customClass: {
-                confirmButton: "btn btn-primary",
-              },
+                confirmButton: "btn btn-primary"
+              }
             }).then(() => {
               window.location.reload();
             });
@@ -246,8 +246,8 @@ export default defineComponent({
             buttonsStyling: false,
             confirmButtonText: "Ok, got it!",
             customClass: {
-              confirmButton: "btn btn-primary",
-            },
+              confirmButton: "btn btn-primary"
+            }
           });
           return false;
         }
@@ -260,8 +260,8 @@ export default defineComponent({
       rules,
       submit,
       formRef,
-      loading,
+      loading
     };
-  },
+  }
 });
 </script>

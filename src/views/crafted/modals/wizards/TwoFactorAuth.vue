@@ -20,12 +20,12 @@ export default defineComponent({
   name: "two-factor-auth",
   components: {
     KTModalCard,
-    KTTwoFactorAuthModal,
+    KTTwoFactorAuthModal
   },
   setup() {
     return {
-      getIllustrationsPath,
+      getIllustrationsPath
     };
-  },
+  }
 });
 </script>

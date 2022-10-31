@@ -232,7 +232,7 @@ export default defineComponent({
   name: "step-4",
   components: {
     Field,
-    ErrorMessage,
-  },
+    ErrorMessage
+  }
 });
 </script>

@@ -81,7 +81,7 @@ export default defineComponent({
   components: {
     Field,
     Form,
-    ErrorMessage,
+    ErrorMessage
   },
   setup() {
     const store = useStore();
@@ -90,7 +90,7 @@ export default defineComponent({
 
     //Create form validation object
     const forgotPassword = Yup.object().shape({
-      email: Yup.string().email().required().label("Email"),
+      email: Yup.string().email().required().label("Email")
     });
 
     //Form submit function
@@ -114,8 +114,8 @@ export default defineComponent({
           buttonsStyling: false,
           confirmButtonText: "Ok, got it!",
           customClass: {
-            confirmButton: "btn fw-semobold btn-light-primary",
-          },
+            confirmButton: "btn fw-semobold btn-light-primary"
+          }
         });
       } else {
         Swal.fire({
@@ -124,21 +124,21 @@ export default defineComponent({
           buttonsStyling: false,
           confirmButtonText: "Try again!",
           customClass: {
-            confirmButton: "btn fw-semobold btn-light-danger",
-          },
+            confirmButton: "btn fw-semobold btn-light-danger"
+          }
         });
       }
 
       submitButton.value?.removeAttribute("data-kt-indicator");
       // eslint-disable-next-line
-        submitButton.value!.disabled = false;
+      submitButton.value!.disabled = false;
     };
 
     return {
       onSubmitForgotPassword,
       forgotPassword,
-      submitButton,
+      submitButton
     };
-  },
+  }
 });
 </script>

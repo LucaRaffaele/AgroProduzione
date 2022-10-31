@@ -6,7 +6,7 @@
       class="app-container"
       :class="{
         'container-fluid': contentWidthFluid,
-        'container-xxl': !contentWidthFluid,
+        'container-xxl': !contentWidthFluid
       }"
     >
       <router-view></router-view>
@@ -24,8 +24,8 @@ export default defineComponent({
   components: {},
   setup() {
     return {
-      contentWidthFluid,
+      contentWidthFluid
     };
-  },
+  }
 });
 </script>

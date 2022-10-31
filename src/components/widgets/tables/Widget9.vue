@@ -188,7 +188,7 @@ export default defineComponent({
   name: "kt-widget-9",
   components: {},
   props: {
-    widgetClasses: String,
+    widgetClasses: String
   },
   setup() {
     const checkedRows = ref([]);
@@ -201,7 +201,7 @@ export default defineComponent({
         companyName: "Intertico",
         companySkills: "Web, UI/UX Design",
         value: "50",
-        color: "primary",
+        color: "primary"
       },
       {
         image: "media/avatars/300-2.jpg",
@@ -210,7 +210,7 @@ export default defineComponent({
         companyName: "Agoda",
         companySkills: "Houses & Hotels",
         value: "70",
-        color: "danger",
+        color: "danger"
       },
       {
         image: "media/avatars/300-5.jpg",
@@ -219,7 +219,7 @@ export default defineComponent({
         companyName: "RoadGee",
         companySkills: "Transportation",
         value: "60",
-        color: "success",
+        color: "success"
       },
       {
         image: "media/avatars/300-20.jpg",
@@ -228,7 +228,7 @@ export default defineComponent({
         companyName: "The Hill",
         companySkills: "Insurance",
         value: "50",
-        color: "warning",
+        color: "warning"
       },
       {
         image: "media/avatars/300-23.jpg",
@@ -237,14 +237,14 @@ export default defineComponent({
         companyName: "RoadGee",
         companySkills: "Art Director",
         value: "90",
-        color: "info",
-      },
+        color: "info"
+      }
     ];
 
     return {
       list,
-      checkedRows,
+      checkedRows
     };
-  },
+  }
 });
 </script>

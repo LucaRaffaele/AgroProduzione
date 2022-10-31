@@ -69,7 +69,7 @@ const messages = {
     getStarted: "Getting Started",
     subscriptionList: "Subscription List",
     addSubscription: "Add Subscription",
-    viewSubscription: "View Subscription",
+    viewSubscription: "View Subscription"
   },
   es: {
     dashboard: "Tablero",
@@ -139,7 +139,7 @@ const messages = {
     getStarted: "Empezando",
     subscriptionList: "Lista De Suscripción",
     addSubscription: "Añadir Suscripción",
-    viewSubscription: "Suscripción",
+    viewSubscription: "Suscripción"
   },
   de: {
     dashboard: "Instrumententafel",
@@ -209,7 +209,7 @@ const messages = {
     getStarted: "Einstieg",
     subscriptionList: "Abonnementliste",
     addSubscription: "Subskription Hinzufügen.",
-    viewSubscription: "Abonnement Anzeigen.",
+    viewSubscription: "Abonnement Anzeigen."
   },
   ja: {
     dashboard: "ダッシュボード",
@@ -279,7 +279,7 @@ const messages = {
     getStarted: "入門",
     subscriptionList: "サブスクリプションリスト",
     addSubscription: "サブスクリプションを追加します",
-    viewSubscription: "購読を見る",
+    viewSubscription: "購読を見る"
   },
   fr: {
     dashboard: "Générateur de mise",
@@ -349,15 +349,15 @@ const messages = {
     getStarted: "Commencer",
     subscriptionList: "Liste D'Abonnement",
     addSubscription: "Ajouter Un Abonnement",
-    viewSubscription: "Voir L'Abonnement",
-  },
+    viewSubscription: "Voir L'Abonnement"
+  }
 };
 
 const i18n = createI18n({
   legacy: false,
   locale: "en",
   globalInjection: true,
-  messages,
+  messages
 });
 
 export default i18n;

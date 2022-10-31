@@ -62,7 +62,7 @@ import { useCopyClipboard } from "@/core/helpers/documentation";
 export default defineComponent({
   name: "CodeHighlighter",
   props: {
-    fieldHeight: Number,
+    fieldHeight: Number
   },
   components: {},
   setup(props) {
@@ -89,8 +89,8 @@ export default defineComponent({
     return {
       getHeightInPixesls,
       htmlId,
-      jsId,
+      jsId
     };
-  },
+  }
 });
 </script>

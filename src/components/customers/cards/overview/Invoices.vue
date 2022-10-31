@@ -225,39 +225,39 @@ import Datatable from "@/components/kt-datatable/KTDataTable.vue";
 export default defineComponent({
   name: "invoices-card",
   props: {
-    cardClasses: String,
+    cardClasses: String
   },
   components: {
-    Datatable,
+    Datatable
   },
   setup() {
     const tableHeader = ref([
       {
         columnName: "Order id",
         columnLabel: "order",
-        sortEnabled: false,
+        sortEnabled: false
       },
       {
         columnName: "Amount",
         columnLabel: "amount",
-        sortEnabled: false,
+        sortEnabled: false
       },
       {
         columnName: "Status",
         columnLabel: "status",
         sortingField: "status.label",
-        sortEnabled: false,
+        sortEnabled: false
       },
       {
         columnName: "Date",
         columnLabel: "date",
-        sortEnabled: false,
+        sortEnabled: false
       },
       {
         columnName: "Invoice",
         columnLabel: "invoice",
-        sortEnabled: false,
-      },
+        sortEnabled: false
+      }
     ]);
     const tableData1 = ref([
       {
@@ -268,8 +268,8 @@ export default defineComponent({
         amount: "$38.00",
         status: {
           label: "Pending",
-          state: "warning",
-        },
+          state: "warning"
+        }
       },
       {
         date: "Oct 24, 2020",
@@ -279,8 +279,8 @@ export default defineComponent({
         amount: "$-2.60",
         status: {
           label: "Pending",
-          state: "warning",
-        },
+          state: "warning"
+        }
       },
       {
         date: "Oct 08, 2020",
@@ -290,8 +290,8 @@ export default defineComponent({
         amount: "$76.00",
         status: {
           label: "Pending",
-          state: "warning",
-        },
+          state: "warning"
+        }
       },
       {
         date: "Sep 15, 2020",
@@ -301,8 +301,8 @@ export default defineComponent({
         amount: "$5.00",
         status: {
           label: "Pending",
-          state: "warning",
-        },
+          state: "warning"
+        }
       },
       {
         date: "May 30, 2020",
@@ -312,8 +312,8 @@ export default defineComponent({
         amount: "$-1.30",
         status: {
           label: "Pending",
-          state: "warning",
-        },
+          state: "warning"
+        }
       },
       {
         date: "Apr 22, 2020",
@@ -323,8 +323,8 @@ export default defineComponent({
         amount: "$204.00",
         status: {
           label: "Pending",
-          state: "warning",
-        },
+          state: "warning"
+        }
       },
       {
         date: "Feb 09, 2020",
@@ -334,8 +334,8 @@ export default defineComponent({
         amount: "$31.00",
         status: {
           label: "Pending",
-          state: "warning",
-        },
+          state: "warning"
+        }
       },
       {
         date: "Nov 01, 2020",
@@ -345,8 +345,8 @@ export default defineComponent({
         amount: "$52.00",
         status: {
           label: "Pending",
-          state: "warning",
-        },
+          state: "warning"
+        }
       },
       {
         date: "Jan 04, 2020",
@@ -356,9 +356,9 @@ export default defineComponent({
         amount: "$-0.80",
         status: {
           label: "Pending",
-          state: "warning",
-        },
-      },
+          state: "warning"
+        }
+      }
     ]);
     const tableData2 = ref([
       {
@@ -369,8 +369,8 @@ export default defineComponent({
         amount: "$-1.30",
         status: {
           label: "Pending",
-          state: "warning",
-        },
+          state: "warning"
+        }
       },
       {
         date: "Apr 22, 2020",
@@ -380,8 +380,8 @@ export default defineComponent({
         amount: "$204.00",
         status: {
           label: "Pending",
-          state: "warning",
-        },
+          state: "warning"
+        }
       },
       {
         date: "Feb 09, 2020",
@@ -391,8 +391,8 @@ export default defineComponent({
         amount: "$31.00",
         status: {
           label: "Pending",
-          state: "warning",
-        },
+          state: "warning"
+        }
       },
       {
         date: "Nov 01, 2020",
@@ -402,8 +402,8 @@ export default defineComponent({
         amount: "$52.00",
         status: {
           label: "Pending",
-          state: "warning",
-        },
+          state: "warning"
+        }
       },
       {
         date: "Jan 04, 2020",
@@ -413,8 +413,8 @@ export default defineComponent({
         amount: "$-0.80",
         status: {
           label: "Pending",
-          state: "warning",
-        },
+          state: "warning"
+        }
       },
       {
         date: "Nov 01, 2020",
@@ -424,8 +424,8 @@ export default defineComponent({
         amount: "$38.00",
         status: {
           label: "Pending",
-          state: "warning",
-        },
+          state: "warning"
+        }
       },
       {
         date: "Oct 24, 2020",
@@ -435,8 +435,8 @@ export default defineComponent({
         amount: "$-2.60",
         status: {
           label: "Pending",
-          state: "warning",
-        },
+          state: "warning"
+        }
       },
       {
         date: "Oct 08, 2020",
@@ -446,8 +446,8 @@ export default defineComponent({
         amount: "$76.00",
         status: {
           label: "Pending",
-          state: "warning",
-        },
+          state: "warning"
+        }
       },
       {
         date: "Sep 15, 2020",
@@ -457,9 +457,9 @@ export default defineComponent({
         amount: "$5.00",
         status: {
           label: "Pending",
-          state: "warning",
-        },
-      },
+          state: "warning"
+        }
+      }
     ]);
     const tableData3 = ref([
       {
@@ -470,8 +470,8 @@ export default defineComponent({
         amount: "$31.00",
         status: {
           label: "Successful",
-          state: "success",
-        },
+          state: "success"
+        }
       },
       {
         date: "Nov 01, 2020",
@@ -481,8 +481,8 @@ export default defineComponent({
         amount: "$52.00",
         status: {
           label: "Pending",
-          state: "warning",
-        },
+          state: "warning"
+        }
       },
       {
         date: "Jan 04, 2020",
@@ -492,8 +492,8 @@ export default defineComponent({
         amount: "$-0.80",
         status: {
           label: "Pending",
-          state: "warning",
-        },
+          state: "warning"
+        }
       },
       {
         date: "Sep 15, 2020",
@@ -503,8 +503,8 @@ export default defineComponent({
         amount: "$5.00",
         status: {
           label: "Pending",
-          state: "warning",
-        },
+          state: "warning"
+        }
       },
       {
         date: "Nov 01, 2020",
@@ -514,8 +514,8 @@ export default defineComponent({
         amount: "$38.00",
         status: {
           label: "Pending",
-          state: "warning",
-        },
+          state: "warning"
+        }
       },
       {
         date: "Oct 24, 2020",
@@ -525,8 +525,8 @@ export default defineComponent({
         amount: "$-2.60",
         status: {
           label: "Pending",
-          state: "warning",
-        },
+          state: "warning"
+        }
       },
       {
         date: "Oct 08, 2020",
@@ -536,8 +536,8 @@ export default defineComponent({
         amount: "$76.00",
         status: {
           label: "Pending",
-          state: "warning",
-        },
+          state: "warning"
+        }
       },
       {
         date: "May 30, 2020",
@@ -547,8 +547,8 @@ export default defineComponent({
         amount: "$-1.30",
         status: {
           label: "Pending",
-          state: "warning",
-        },
+          state: "warning"
+        }
       },
       {
         date: "Apr 22, 2020",
@@ -558,9 +558,9 @@ export default defineComponent({
         amount: "$204.00",
         status: {
           label: "Pending",
-          state: "warning",
-        },
-      },
+          state: "warning"
+        }
+      }
     ]);
     const tableData4 = ref([
       {
@@ -571,8 +571,8 @@ export default defineComponent({
         amount: "$38.00",
         status: {
           label: "Pending",
-          state: "warning",
-        },
+          state: "warning"
+        }
       },
       {
         date: "Oct 24, 2020",
@@ -582,8 +582,8 @@ export default defineComponent({
         amount: "$-2.60",
         status: {
           label: "Pending",
-          state: "warning",
-        },
+          state: "warning"
+        }
       },
       {
         date: "Nov 01, 2020",
@@ -593,8 +593,8 @@ export default defineComponent({
         amount: "$38.00",
         status: {
           label: "Pending",
-          state: "warning",
-        },
+          state: "warning"
+        }
       },
       {
         date: "Oct 24, 2020",
@@ -604,8 +604,8 @@ export default defineComponent({
         amount: "$-2.60",
         status: {
           label: "Pending",
-          state: "warning",
-        },
+          state: "warning"
+        }
       },
       {
         date: "Feb 09, 2020",
@@ -615,8 +615,8 @@ export default defineComponent({
         amount: "$31.00",
         status: {
           label: "Pending",
-          state: "warning",
-        },
+          state: "warning"
+        }
       },
       {
         date: "Nov 01, 2020",
@@ -626,8 +626,8 @@ export default defineComponent({
         amount: "$52.00",
         status: {
           label: "Pending",
-          state: "warning",
-        },
+          state: "warning"
+        }
       },
       {
         date: "Jan 04, 2020",
@@ -637,8 +637,8 @@ export default defineComponent({
         amount: "$-0.80",
         status: {
           label: "Pending",
-          state: "warning",
-        },
+          state: "warning"
+        }
       },
       {
         date: "Oct 08, 2020",
@@ -648,8 +648,8 @@ export default defineComponent({
         amount: "$76.00",
         status: {
           label: "Pending",
-          state: "warning",
-        },
+          state: "warning"
+        }
       },
       {
         date: "Oct 08, 2020",
@@ -659,12 +659,12 @@ export default defineComponent({
         amount: "$76.00",
         status: {
           label: "Pending",
-          state: "warning",
-        },
-      },
+          state: "warning"
+        }
+      }
     ]);
 
     return { tableHeader, tableData1, tableData2, tableData3, tableData4 };
-  },
+  }
 });
 </script>

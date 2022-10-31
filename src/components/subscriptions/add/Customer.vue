@@ -98,7 +98,7 @@ import Notice from "@/components/Notice.vue";
 export default defineComponent({
   name: "kt-customer",
   components: {
-    Notice,
+    Notice
   },
   setup() {
     const body = ref(
@@ -106,8 +106,8 @@ export default defineComponent({
     );
 
     return {
-      body,
+      body
     };
-  },
+  }
 });
 </script>

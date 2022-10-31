@@ -22,12 +22,12 @@ export default defineComponent({
   name: "invite-friends",
   components: {
     KTModalCard,
-    KTInviteFriendsModal,
+    KTInviteFriendsModal
   },
   setup() {
     return {
-      getIllustrationsPath,
+      getIllustrationsPath
     };
-  },
+  }
 });
 </script>

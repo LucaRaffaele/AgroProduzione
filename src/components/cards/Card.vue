@@ -49,8 +49,8 @@ export default defineComponent({
     description: String,
     buttonText: String,
     image: String,
-    modalId: String,
+    modalId: String
   },
-  components: {},
+  components: {}
 });
 </script>

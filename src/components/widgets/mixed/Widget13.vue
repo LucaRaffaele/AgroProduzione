@@ -55,7 +55,7 @@ export default defineComponent({
   props: {
     widgetClasses: String,
     widgetColor: String,
-    chartHeight: String,
+    chartHeight: String
   },
   setup(props) {
     const chartRef = ref<typeof VueApexCharts | null>(null);
@@ -66,9 +66,9 @@ export default defineComponent({
       {
         name: "Inflation",
         data: [
-          1, 2.1, 1, 2.1, 4.1, 6.1, 4.1, 4.1, 2.1, 4.1, 2.1, 3.1, 1, 1, 2.1,
-        ],
-      },
+          1, 2.1, 1, 2.1, 4.1, 6.1, 4.1, 4.1, 2.1, 4.1, 2.1, 3.1, 1, 1, 2.1
+        ]
+      }
     ];
 
     const themeMode = computed(() => {
@@ -97,9 +97,9 @@ export default defineComponent({
       chart,
       series,
       chartRef,
-      refreshChart,
+      refreshChart
     };
-  },
+  }
 });
 
 const chartOptions = (chartHeight): ApexOptions => {
@@ -109,8 +109,8 @@ const chartOptions = (chartHeight): ApexOptions => {
       height: chartHeight,
       type: "bar",
       toolbar: {
-        show: false,
-      },
+        show: false
+      }
     },
     grid: {
       show: false,
@@ -118,17 +118,17 @@ const chartOptions = (chartHeight): ApexOptions => {
         top: 0,
         bottom: 0,
         left: 0,
-        right: 0,
-      },
+        right: 0
+      }
     },
     colors: ["#ffffff"],
     plotOptions: {
       bar: {
         dataLabels: {
-          position: "top", // top, center, bottom
+          position: "top" // top, center, bottom
         },
-        columnWidth: "20%",
-      },
+        columnWidth: "20%"
+      }
     },
     dataLabels: {
       enabled: false,
@@ -138,12 +138,12 @@ const chartOptions = (chartHeight): ApexOptions => {
       offsetY: -20,
       style: {
         fontSize: "12px",
-        colors: ["#304758"],
-      },
+        colors: ["#304758"]
+      }
     },
     xaxis: {
       labels: {
-        show: false,
+        show: false
       },
       categories: [
         "Jan",
@@ -160,37 +160,37 @@ const chartOptions = (chartHeight): ApexOptions => {
         "Dec",
         "Jan",
         "Feb",
-        "Mar",
+        "Mar"
       ],
       position: "top",
       axisBorder: {
-        show: false,
+        show: false
       },
       axisTicks: {
-        show: false,
+        show: false
       },
       crosshairs: {
-        show: false,
+        show: false
       },
       tooltip: {
-        enabled: false,
-      },
+        enabled: false
+      }
     },
     yaxis: {
       show: false,
       axisBorder: {
-        show: false,
+        show: false
       },
       axisTicks: {
-        show: false,
+        show: false
       },
       labels: {
         show: false,
         formatter: function (val) {
           return val + "%";
-        },
-      },
-    },
+        }
+      }
+    }
   };
 };
 </script>

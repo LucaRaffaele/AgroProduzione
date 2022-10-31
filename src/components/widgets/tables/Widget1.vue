@@ -125,10 +125,10 @@ import Dropdown1 from "@/components/dropdown/Dropdown1.vue";
 export default defineComponent({
   name: "kt-widget-1",
   components: {
-    Dropdown1,
+    Dropdown1
   },
   props: {
-    widgetClasses: String,
+    widgetClasses: String
   },
   setup() {
     const items = [
@@ -136,66 +136,66 @@ export default defineComponent({
         image: "media/svg/brand-logos/plurk.svg",
         info: {
           title: "Top Authors",
-          description: "Successful Fellas",
+          description: "Successful Fellas"
         },
         progress: {
           value: "70",
-          color: "primary",
-        },
+          color: "primary"
+        }
       },
 
       {
         image: "media/svg/brand-logos/telegram.svg",
         info: {
           title: "Popular Authors",
-          description: "Most Successful",
+          description: "Most Successful"
         },
         progress: {
           value: "50",
-          color: "primary",
-        },
+          color: "primary"
+        }
       },
 
       {
         image: "media/svg/brand-logos/vimeo.svg",
         info: {
           title: "New Users",
-          description: "Awesome Users",
+          description: "Awesome Users"
         },
         progress: {
           value: "80",
-          color: "primary",
-        },
+          color: "primary"
+        }
       },
 
       {
         image: "media/svg/brand-logos/bebo.svg",
         info: {
           title: "Active Customers",
-          description: "Best Customers",
+          description: "Best Customers"
         },
         progress: {
           value: "90",
-          color: "primary",
-        },
+          color: "primary"
+        }
       },
 
       {
         image: "media/svg/brand-logos/kickstarter.svg",
         info: {
           title: "Bestseller Theme",
-          description: "Amazing Templates",
+          description: "Amazing Templates"
         },
         progress: {
           value: "70",
-          color: "primary",
-        },
-      },
+          color: "primary"
+        }
+      }
     ];
 
     return {
-      items,
+      items
     };
-  },
+  }
 });
 </script>

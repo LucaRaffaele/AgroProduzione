@@ -120,10 +120,10 @@ import Dropdown1 from "@/components/dropdown/Dropdown1.vue";
 export default defineComponent({
   name: "kt-widget-2",
   components: {
-    Dropdown1,
+    Dropdown1
   },
   props: {
-    widgetClasses: String,
+    widgetClasses: String
   },
   setup() {
     const items = [
@@ -131,71 +131,71 @@ export default defineComponent({
         image: "media/svg/brand-logos/plurk.svg",
         info: {
           title: "Top Authors",
-          description: "Successful Fellas",
+          description: "Successful Fellas"
         },
         badges: [
           { label: "Angular", color: "danger" },
-          { label: "PHP", color: "info" },
+          { label: "PHP", color: "info" }
         ],
-        remarks: "4600 Users",
+        remarks: "4600 Users"
       },
 
       {
         image: "media/svg/brand-logos/telegram.svg",
         info: {
           title: "Popular Authors",
-          description: "Most Successful",
+          description: "Most Successful"
         },
         badges: [
           { label: "HTML", color: "danger" },
-          { label: "CSS", color: "info" },
+          { label: "CSS", color: "info" }
         ],
-        remarks: "7200 Users",
+        remarks: "7200 Users"
       },
 
       {
         image: "media/svg/brand-logos/vimeo.svg",
         info: {
           title: "New Users",
-          description: "Awesome Users",
+          description: "Awesome Users"
         },
         badges: [
           { label: "React", color: "danger" },
-          { label: "SASS", color: "info" },
+          { label: "SASS", color: "info" }
         ],
-        remarks: "890  Users",
+        remarks: "890  Users"
       },
 
       {
         image: "media/svg/brand-logos/bebo.svg",
         info: {
           title: "Active Customers",
-          description: "Best Customers",
+          description: "Best Customers"
         },
         badges: [
           { label: "Java", color: "danger" },
-          { label: "PHP", color: "info" },
+          { label: "PHP", color: "info" }
         ],
-        remarks: "6370 Users",
+        remarks: "6370 Users"
       },
 
       {
         image: "media/svg/brand-logos/kickstarter.svg",
         info: {
           title: "Bestseller Theme",
-          description: "Amazing Templates",
+          description: "Amazing Templates"
         },
         badges: [
           { label: "Python", color: "danger" },
-          { label: "MySQL", color: "info" },
+          { label: "MySQL", color: "info" }
         ],
-        remarks: "354 Users",
-      },
+        remarks: "354 Users"
+      }
     ];
 
     return {
-      items,
+      items
     };
-  },
+  }
 });
 </script>

@@ -6,6 +6,6 @@ export function initVeeValidate() {
     validateOnBlur: true,
     validateOnChange: true,
     validateOnInput: true,
-    validateOnModelUpdate: true,
+    validateOnModelUpdate: true
   });
 }

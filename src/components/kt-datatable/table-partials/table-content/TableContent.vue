@@ -55,17 +55,17 @@ export default defineComponent({
     sortOrder: {
       type: String as () => "asc" | "desc",
       required: false,
-      default: "asc",
+      default: "asc"
     },
     checkboxEnabled: { type: Boolean, required: false, default: false },
     checkboxLabel: { type: String, required: false, default: "id" },
-    loading: { type: Boolean, required: false, default: false },
+    loading: { type: Boolean, required: false, default: false }
   },
   emits: ["on-sort", "on-items-select"],
   components: {
     TableHeadRow,
     TableBodyRow,
-    Loading,
+    Loading
   },
   setup(props, { emit }) {
     const selectedItems = ref<Array<unknown>>([]);
@@ -92,7 +92,7 @@ export default defineComponent({
       check.value = checked;
       if (checked) {
         selectedItems.value = [
-          ...new Set([...selectedItems.value, ...allSelectedItems.value]),
+          ...new Set([...selectedItems.value, ...allSelectedItems.value])
         ];
       } else {
         selectedItems.value = [];
@@ -103,7 +103,7 @@ export default defineComponent({
     const itemsSelect = (value: any) => {
       selectedItems.value = [];
       //eslint-disable-next-line
-      value.forEach((item:any) => {
+      value.forEach((item: any) => {
         if (!selectedItems.value.includes(item)) selectedItems.value.push(item);
       });
     };
@@ -138,8 +138,8 @@ export default defineComponent({
       selectedItems,
       selectAll,
       itemsSelect,
-      check,
+      check
     };
-  },
+  }
 });
 </script>

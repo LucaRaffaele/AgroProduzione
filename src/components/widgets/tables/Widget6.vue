@@ -143,7 +143,7 @@ export default defineComponent({
   name: "kt-widget-6",
   components: {},
   props: {
-    widgetClasses: String,
+    widgetClasses: String
   },
   setup() {
     const items = [
@@ -152,62 +152,62 @@ export default defineComponent({
           image: "media/svg/avatars/001-boy.svg",
           user: {
             name: "Brad Simmons",
-            position: "Successful Fellas",
+            position: "Successful Fellas"
           },
           paid: "$200,500",
           progress: {
             value: "+28%",
-            color: "primary",
-          },
+            color: "primary"
+          }
         },
         {
           image: "media/svg/avatars/018-girl-9.svg",
           user: {
             name: "Jessie Clarcson",
-            position: "HTML, CSS Coding",
+            position: "HTML, CSS Coding"
           },
           paid: "$1,200,000",
           progress: {
             value: "+52%",
-            color: "warning",
-          },
+            color: "warning"
+          }
         },
         {
           image: "media/svg/avatars/047-girl-25.svg",
           user: {
             name: "Jessie Clarcson",
-            position: "PHP, Laravel, VueJS",
+            position: "PHP, Laravel, VueJS"
           },
           paid: "$1,200,000",
           progress: {
             value: "+52%",
-            color: "danger",
-          },
+            color: "danger"
+          }
         },
         {
           image: "media/svg/avatars/014-girl-7.svg",
           user: {
             name: "Natali Trump",
-            position: "UI/UX Designer",
+            position: "UI/UX Designer"
           },
           paid: "$3,400,000",
           progress: {
             value: "-34%",
-            color: "success",
-          },
+            color: "success"
+          }
         },
         {
           image: "media/svg/avatars/043-boy-18.svg",
           user: {
             name: "Kevin Leonard",
-            position: "Art Director",
+            position: "Art Director"
           },
           paid: "$35,600,000",
           progress: {
             value: "+230%",
-            color: "info",
-          },
-        },
+            color: "info"
+          }
+        }
       ],
 
       [
@@ -215,38 +215,38 @@ export default defineComponent({
           image: "media/svg/avatars/018-girl-9.svg",
           user: {
             name: "Jessie Clarcson",
-            position: "HTML, CSS Coding",
+            position: "HTML, CSS Coding"
           },
           paid: "$1,200,000",
           progress: {
             value: "+52%",
-            color: "warning",
-          },
+            color: "warning"
+          }
         },
         {
           image: "media/svg/avatars/014-girl-7.svg",
           user: {
             name: "Natali Trump",
-            position: "UI/UX Designer",
+            position: "UI/UX Designer"
           },
           paid: "$3,400,000",
           progress: {
             value: "-34%",
-            color: "success",
-          },
+            color: "success"
+          }
         },
         {
           image: "media/svg/avatars/001-boy.svg",
           user: {
             name: "Brad Simmons",
-            position: "Successful Fellas",
+            position: "Successful Fellas"
           },
           paid: "$200,500",
           progress: {
             value: "+28%",
-            color: "primary",
-          },
-        },
+            color: "primary"
+          }
+        }
       ],
 
       [
@@ -254,56 +254,56 @@ export default defineComponent({
           image: "media/svg/avatars/047-girl-25.svg",
           user: {
             name: "Jessie Clarcson",
-            position: "HTML, CSS Coding",
+            position: "HTML, CSS Coding"
           },
           paid: "$1,200,000",
           progress: {
             value: "+52%",
-            color: "danger",
-          },
+            color: "danger"
+          }
         },
         {
           image: "media/svg/avatars/014-girl-7.svg",
           user: {
             name: "Natali Trump",
-            position: "UI/UX Designer",
+            position: "UI/UX Designer"
           },
           paid: "$3,400,000",
           progress: {
             value: "-34%",
-            color: "success",
-          },
+            color: "success"
+          }
         },
         {
           image: "media/svg/avatars/043-boy-18.svg",
           user: {
             name: "Kevin Leonard",
-            position: "Art Director",
+            position: "Art Director"
           },
           paid: "$35,600,000",
           progress: {
             value: "+230%",
-            color: "info",
-          },
+            color: "info"
+          }
         },
         {
           image: "media/svg/avatars/001-boy.svg",
           user: {
             name: "Brad Simmons",
-            position: "Successful Fellas",
+            position: "Successful Fellas"
           },
           paid: "$200,500",
           progress: {
             value: "+28%",
-            color: "primary",
-          },
-        },
-      ],
+            color: "primary"
+          }
+        }
+      ]
     ];
 
     return {
-      items,
+      items
     };
-  },
+  }
 });
 </script>

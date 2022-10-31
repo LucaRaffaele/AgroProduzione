@@ -465,7 +465,7 @@ export default defineComponent({
     Results,
     Main,
     Empty,
-    MenuComponent,
+    MenuComponent
   },
   setup() {
     const search = ref<string>("");
@@ -511,8 +511,8 @@ export default defineComponent({
       searching,
       reset,
       inputRef,
-      setState,
+      setState
     };
-  },
+  }
 });
 </script>

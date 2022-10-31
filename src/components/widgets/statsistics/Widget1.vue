@@ -35,8 +35,8 @@ export default defineComponent({
     background: String,
     title: String,
     time: String,
-    description: String,
+    description: String
   },
-  components: {},
+  components: {}
 });
 </script>

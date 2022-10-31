@@ -113,7 +113,7 @@ export default defineComponent({
     TablesWidget10,
     TablesWidget11,
     TablesWidget12,
-    TablesWidget13,
-  },
+    TablesWidget13
+  }
 });
 </script>

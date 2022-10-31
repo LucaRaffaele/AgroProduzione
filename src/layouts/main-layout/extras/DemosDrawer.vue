@@ -248,58 +248,58 @@ export default defineComponent({
     const demos = [
       {
         name: "demo1",
-        available: true,
+        available: true
       },
       {
         name: "demo2",
-        available: true,
+        available: true
       },
       {
         name: "demo3",
-        available: true,
+        available: true
       },
       {
         name: "demo4",
-        available: true,
+        available: true
       },
       {
         name: "demo5",
-        available: true,
+        available: true
       },
       {
         name: "demo6",
-        available: true,
+        available: true
       },
       {
         name: "demo7",
-        available: true,
+        available: true
       },
       {
         name: "demo8",
-        available: true,
+        available: true
       },
       {
-        name: "demo9",
+        name: "demo9"
       },
       {
-        name: "demo10",
+        name: "demo10"
       },
       {
-        name: "demo11",
+        name: "demo11"
       },
       {
-        name: "demo12",
+        name: "demo12"
       },
       {
-        name: "demo13",
-      },
+        name: "demo13"
+      }
     ];
 
     return {
       themeName,
       demos,
-      demo,
+      demo
     };
-  },
+  }
 });
 </script>

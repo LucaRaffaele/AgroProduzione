@@ -31,7 +31,7 @@
         <div
           :class="[
             'mb-7' && list.length - 1 !== index,
-            `bg-light-${item.color}`,
+            `bg-light-${item.color}`
           ]"
           class="d-flex align-items-center rounded p-5 mb-7"
         >
@@ -74,10 +74,10 @@ import Dropdown3 from "@/components/dropdown/Dropdown3.vue";
 export default defineComponent({
   name: "kt-widget-6",
   components: {
-    Dropdown3,
+    Dropdown3
   },
   props: {
-    widgetClasses: String,
+    widgetClasses: String
   },
   setup() {
     const list = ref([
@@ -86,34 +86,34 @@ export default defineComponent({
         icon: "media/icons/duotune/abstract/abs027.svg",
         title: "Group lunch celebration",
         text: "Due in 2 Days",
-        number: "+28%",
+        number: "+28%"
       },
       {
         color: "success",
         icon: "media/icons/duotune/art/art005.svg",
         title: "Navigation optimization",
         text: "Due in 2 Days",
-        number: "+50%",
+        number: "+50%"
       },
       {
         color: "danger",
         icon: "media/icons/duotune/communication/com012.svg",
         title: "Rebrand strategy planning",
         text: "Due in 5 Days",
-        number: "-27%",
+        number: "-27%"
       },
       {
         color: "info",
         icon: "media/icons/duotune/communication/com012.svg",
         title: "Product goals strategy",
         text: "Due in 7 Days",
-        number: "+8%",
-      },
+        number: "+8%"
+      }
     ]);
 
     return {
-      list,
+      list
     };
-  },
+  }
 });
 </script>

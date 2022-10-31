@@ -38,7 +38,7 @@ export default defineComponent({
     data: { type: Array, required: true },
     currentlySelectedItems: { type: Array, required: false, default: () => [] },
     checkboxEnabled: { type: Boolean, required: false, default: false },
-    checkboxLabel: { type: String, required: false, default: "id" },
+    checkboxLabel: { type: String, required: false, default: "id" }
   },
   emits: ["on-select"],
   setup(props, { emit }) {
@@ -50,7 +50,7 @@ export default defineComponent({
       (currentValue) => {
         if (props.currentlySelectedItems.length !== 0) {
           selectedItems.value = [
-            ...new Set([...selectedItems.value, ...currentValue]),
+            ...new Set([...selectedItems.value, ...currentValue])
           ];
         } else {
           selectedItems.value = [];
@@ -64,8 +64,8 @@ export default defineComponent({
 
     return {
       selectedItems,
-      onChange,
+      onChange
     };
-  },
+  }
 });
 </script>

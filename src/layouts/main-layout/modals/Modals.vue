@@ -21,7 +21,7 @@ export default defineComponent({
     KTCreateAppModal,
     KTNewTargetModal,
     KTViewUsersModal,
-    KTInviteFriendsModal,
-  },
+    KTInviteFriendsModal
+  }
 });
 </script>

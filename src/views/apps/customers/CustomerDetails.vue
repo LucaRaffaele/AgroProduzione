@@ -487,7 +487,7 @@ export default defineComponent({
     Earnings,
     Statement,
     Dropdown3,
-    NewCardModal,
-  },
+    NewCardModal
+  }
 });
 </script>

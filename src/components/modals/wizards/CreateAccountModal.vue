@@ -1122,7 +1122,7 @@ export default defineComponent({
   name: "create-account-modal",
   components: {
     Field,
-    ErrorMessage,
+    ErrorMessage
   },
   setup() {
     const _stepperObj = ref<StepperComponent | null>(null);
@@ -1144,7 +1144,7 @@ export default defineComponent({
       cardNumber: "4111 1111 1111 1111",
       expirationMonth: "1",
       expirationYear: "2022",
-      cvv: "123",
+      cvv: "123"
     });
 
     onMounted(() => {
@@ -1156,7 +1156,7 @@ export default defineComponent({
     const createAppSchema = [
       Yup.object({}),
       Yup.object({
-        teamAccountName: Yup.string().required().label("Team account name"),
+        teamAccountName: Yup.string().required().label("Team account name")
       }),
       Yup.object({
         businessName: Yup.string().required().label("Business name"),
@@ -1167,15 +1167,15 @@ export default defineComponent({
         businessDescription: Yup.string()
           .required()
           .label("Business description"),
-        contactEmail: Yup.string().required().label("Contact email"),
+        contactEmail: Yup.string().required().label("Contact email")
       }),
       Yup.object({
         nameOnCard: Yup.string().required().label("Name"),
         cardNumber: Yup.string().required().label("Card number"),
         expirationMonth: Yup.string().required().label("Month"),
         expirationYear: Yup.string().required().label("Year"),
-        cvv: Yup.string().required().label("CVV"),
-      }),
+        cvv: Yup.string().required().label("CVV")
+      })
     ];
 
     // extracts the individual step schema
@@ -1192,7 +1192,7 @@ export default defineComponent({
     });
 
     const { resetForm, handleSubmit } = useForm<Step1 | Step2 | Step3 | Step4>({
-      validationSchema: currentSchema,
+      validationSchema: currentSchema
     });
 
     const previousStep = () => {
@@ -1208,8 +1208,8 @@ export default defineComponent({
     const handleStep = handleSubmit((values) => {
       resetForm({
         values: {
-          ...formData.value,
-        },
+          ...formData.value
+        }
       });
 
       for (const item in values) {
@@ -1237,8 +1237,8 @@ export default defineComponent({
         buttonsStyling: false,
         confirmButtonText: "Ok, got it!",
         customClass: {
-          confirmButton: "btn fw-semobold btn-light-primary",
-        },
+          confirmButton: "btn fw-semobold btn-light-primary"
+        }
       }).then(() => {
         hideModal(createAccountModalRef.value);
       });
@@ -1252,8 +1252,8 @@ export default defineComponent({
       formSubmit,
       currentStepIndex,
       formData,
-      createAccountModalRef,
+      createAccountModalRef
     };
-  },
+  }
 });
 </script>

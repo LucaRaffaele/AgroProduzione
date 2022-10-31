@@ -166,6 +166,6 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "kt-main",
-  components: {},
+  components: {}
 });
 </script>
