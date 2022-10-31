@@ -5,7 +5,7 @@
     id="kt_app_sidebar_footer"
   >
     <a
-      href="https://preview.keenthemes.com/metronic8/vue/docs/#/doc-overview"
+      href="https://rsaweb.com/documentazione"
       class="btn btn-flex flex-center btn-custom btn-primary overflow-hidden text-nowrap px-0 h-40px w-100"
       data-bs-toggle="tooltip"
       data-bs-trigger="hover"
@@ -26,6 +26,6 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "sidebar-footer",
-  components: {},
+  components: {}
 });
 </script>

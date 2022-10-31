@@ -5,9 +5,8 @@ import { Module, Action, Mutation, VuexModule } from "vuex-module-decorators";
 
 export interface User {
   name: string;
-  surname: string;
-  email: string;
-  password: string;
+  ditta: object;
+  image: string;
   api_token: string;
 }
 
@@ -15,13 +14,27 @@ export interface UserAuthInfo {
   errors: unknown;
   user: User;
   isAuthenticated: boolean;
+  tokenStart: number | null;
+  tokenExpirationTime: number | null;
 }
 
 @Module
 export default class AuthModule extends VuexModule implements UserAuthInfo {
   errors = {};
-  user = {} as User;
+  user = JSON.parse(localStorage.getItem("user") ?? "{}") as User;
   isAuthenticated = !!JwtService.getToken();
+  tokenStart = parseInt(localStorage.getItem("tokenStart") ?? "0");
+  tokenExpirationTime = parseInt(
+    localStorage.getItem("tokenExpirationTime") ?? "0"
+  );
+
+  /**
+   * Get authentification errors
+   * @returns array
+   */
+  get getErrors() {
+    return this.errors;
+  }
 
   /**
    * Get current user object
@@ -39,14 +52,6 @@ export default class AuthModule extends VuexModule implements UserAuthInfo {
     return this.isAuthenticated;
   }
 
-  /**
-   * Get authentification errors
-   * @returns array
-   */
-  get getErrors() {
-    return this.errors;
-  }
-
   @Mutation
   [Mutations.SET_ERROR](error) {
     this.errors = { ...error };
@@ -55,9 +60,22 @@ export default class AuthModule extends VuexModule implements UserAuthInfo {
   @Mutation
   [Mutations.SET_AUTH](user) {
     this.isAuthenticated = true;
-    this.user = user;
     this.errors = {};
-    JwtService.saveToken(user.api_token);
+    this.user = {
+      name: user.Data[0].userDesc,
+      ditta: user.Data[0].ditta,
+      image: user.Data[0].img_data,
+      api_token: user.Data[0].userDesc
+    };
+    this.tokenStart = Date.parse(user.Data[0].start_token);
+    localStorage.setItem("tokenStart", this.tokenStart.toString());
+    this.tokenExpirationTime = user.Data[0].expiresIn * 1000;
+    localStorage.setItem(
+      "tokenExpirationTime",
+      this.tokenExpirationTime.toString()
+    );
+    localStorage.setItem("user", JSON.stringify(this.user));
+    JwtService.saveToken(user.Data[0].token);
   }
 
   @Mutation
@@ -65,22 +83,27 @@ export default class AuthModule extends VuexModule implements UserAuthInfo {
     this.user = user;
   }
 
-  @Mutation
+  /* @Mutation
   [Mutations.SET_PASSWORD](password) {
     this.user.password = password;
-  }
+  } */
 
   @Mutation
   [Mutations.PURGE_AUTH]() {
     this.isAuthenticated = false;
+    localStorage.removeItem("user");
+    localStorage.removeItem("tokenExpirationTime");
+    localStorage.removeItem("tokenStart");
     this.user = {} as User;
+    this.tokenStart = 0;
+    this.tokenExpirationTime = 0;
     this.errors = [];
     JwtService.destroyToken();
   }
 
   @Action
   [Actions.LOGIN](credentials) {
-    return ApiService.post("login", credentials)
+    return ApiService.post("user/login", credentials)
       .then(({ data }) => {
         this.context.commit(Mutations.SET_AUTH, data);
       })
@@ -117,6 +140,16 @@ export default class AuthModule extends VuexModule implements UserAuthInfo {
   }
 
   @Action
+  [Actions.VERIFY_AUTH]() {
+    if (
+      !JwtService.getToken() ||
+      this.tokenStart + this.tokenExpirationTime < Date.now()
+    ) {
+      this.context.commit(Mutations.PURGE_AUTH);
+    }
+  }
+
+  /*  @Action
   [Actions.VERIFY_AUTH](payload) {
     if (JwtService.getToken()) {
       ApiService.setHeader();
@@ -131,5 +164,5 @@ export default class AuthModule extends VuexModule implements UserAuthInfo {
     } else {
       this.context.commit(Mutations.PURGE_AUTH);
     }
-  }
+  } */
 }

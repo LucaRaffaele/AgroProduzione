@@ -28,9 +28,25 @@ class ApiService {
   public static setHeader(): void {
     ApiService.vueInstance.axios.defaults.headers.common[
       "Authorization"
-    ] = `Token ${JwtService.getToken()}`;
+    ] = `OAuth oauth_token= ${JwtService.getToken()}`;
+    ApiService.vueInstance.axios.defaults.headers.common["Content-Type"] =
+      "application/json";
+    ApiService.vueInstance.axios.defaults.headers.common["Accept"] =
+      "application/json, text/plain, */*";
+  }
+
+  public static setSendHeader(): void {
+    ApiService.vueInstance.axios.defaults.headers.common[
+      "Authorization"
+    ] = `OAuth oauth_token= ${JwtService.getToken()}`;
+    ApiService.vueInstance.axios.defaults.headers.common["Content-Type"] =
+      "application/json; charset=UTF-8";
     ApiService.vueInstance.axios.defaults.headers.common["Accept"] =
       "application/json";
+    console.log(
+      "Apiservice - ",
+      ApiService.vueInstance.axios.defaults.headers.common
+    );
   }
 
   /**
@@ -62,13 +78,10 @@ class ApiService {
   /**
    * @description set the POST HTTP request
    * @param resource: string
-   * @param params: AxiosRequestConfig
+   * @param params: any
    * @returns Promise<AxiosResponse>
    */
-  public static post(
-    resource: string,
-    params: AxiosRequestConfig
-  ): Promise<AxiosResponse> {
+  public static post(resource: string, params: any): Promise<AxiosResponse> {
     return ApiService.vueInstance.axios.post(`${resource}`, params);
   }
 
@@ -90,13 +103,10 @@ class ApiService {
   /**
    * @description Send the PUT HTTP request
    * @param resource: string
-   * @param params: AxiosRequestConfig
+   * @param params: any
    * @returns Promise<AxiosResponse>
    */
-  public static put(
-    resource: string,
-    params: AxiosRequestConfig
-  ): Promise<AxiosResponse> {
+  public static put(resource: string, params: any): Promise<AxiosResponse> {
     return ApiService.vueInstance.axios.put(`${resource}`, params);
   }
 

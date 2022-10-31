@@ -9,18 +9,25 @@
           (themeMode === 'dark' && layout === 'light-sidebar')
         "
         alt="Logo"
-        src="media/logos/default-dark.svg"
+        src="media/rsa/default-dark.svg"
         class="h-25px app-sidebar-logo-default"
       />
       <img
         v-if="themeMode === 'light' && layout === 'light-sidebar'"
         alt="Logo"
-        src="media/logos/default.svg"
+        src="media/rsa/default.svg"
         class="h-25px app-sidebar-logo-default"
       />
       <img
+        v-if="themeMode === 'dark'"
         alt="Logo"
-        src="media/logos/default-small.svg"
+        src="media/rsa/default-dark-small.svg"
+        class="h-20px app-sidebar-logo-minimize"
+      />
+      <img
+        v-else
+        alt="Logo"
+        src="media/rsa/default-small.svg"
         class="h-20px app-sidebar-logo-minimize"
       />
     </router-link>
@@ -56,8 +63,8 @@ export default defineComponent({
     return {
       layout,
       themeMode,
-      sidebarToggleDisplay,
+      sidebarToggleDisplay
     };
-  },
+  }
 });
 </script>

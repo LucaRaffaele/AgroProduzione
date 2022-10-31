@@ -333,7 +333,7 @@ export default defineComponent({
     Step2,
     Step3,
     Step4,
-    Step5,
+    Step5
   },
   setup() {
     const store = useStore();
@@ -356,7 +356,7 @@ export default defineComponent({
       cardExpiryMonth: "1",
       cardExpiryYear: "2",
       cardCvv: "123",
-      saveCard: "1",
+      saveCard: "1"
     });
 
     onMounted(() => {
@@ -384,15 +384,15 @@ export default defineComponent({
           .required()
           .label("Shortened Descriptor"),
         businessType: Yup.string().required().label("Corporation Type"),
-        businessEmail: Yup.string().required().label("Contact Email"),
+        businessEmail: Yup.string().required().label("Contact Email")
       }),
       Yup.object({
         nameOnCard: Yup.string().required().label("Name On Card"),
         cardNumber: Yup.string().required().label("Card Number"),
         cardExpiryMonth: Yup.string().required().label("Expiration Month"),
         cardExpiryYear: Yup.string().required().label("Expiration Year"),
-        cardCvv: Yup.string().required().label("CVV"),
-      }),
+        cardCvv: Yup.string().required().label("CVV")
+      })
     ];
 
     const currentSchema = computed(() => {
@@ -402,7 +402,7 @@ export default defineComponent({
     const { resetForm, handleSubmit } = useForm<
       IStep1 | IStep2 | IStep3 | IStep4
     >({
-      validationSchema: currentSchema,
+      validationSchema: currentSchema
     });
 
     const totalSteps = computed(() => {
@@ -415,20 +415,20 @@ export default defineComponent({
 
     resetForm({
       values: {
-        ...formData.value,
-      },
+        ...formData.value
+      }
     });
 
     const handleStep = handleSubmit((values) => {
       resetForm({
         values: {
-          ...formData.value,
-        },
+          ...formData.value
+        }
       });
 
       formData.value = {
         ...formData.value,
-        ...values,
+        ...values
       };
 
       currentStepIndex.value++;
@@ -457,8 +457,8 @@ export default defineComponent({
         buttonsStyling: false,
         confirmButtonText: "Ok, got it!",
         customClass: {
-          confirmButton: "btn fw-semobold btn-light-primary",
-        },
+          confirmButton: "btn fw-semobold btn-light-primary"
+        }
       }).then(() => {
         window.location.reload();
       });
@@ -471,8 +471,8 @@ export default defineComponent({
       formSubmit,
       totalSteps,
       currentStepIndex,
-      getIllustrationsPath,
+      getIllustrationsPath
     };
-  },
+  }
 });
 </script>
