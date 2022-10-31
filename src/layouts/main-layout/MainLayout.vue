@@ -39,7 +39,7 @@ import {
   nextTick,
   onBeforeMount,
   onMounted,
-  watch,
+  watch
 } from "vue";
 import KTHeader from "@/layouts/main-layout/header/Header.vue";
 import KTSidebar from "@/layouts/main-layout/sidebar/Sidebar.vue";
@@ -65,7 +65,7 @@ export default defineComponent({
     KTDrawers,
     KTScrollTop,
     KTModals,
-    KTCustomize,
+    KTCustomize
   },
   setup() {
     const route = useRoute();
@@ -88,6 +88,6 @@ export default defineComponent({
         });
       }
     );
-  },
+  }
 });
 </script>

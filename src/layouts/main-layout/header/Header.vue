@@ -6,7 +6,7 @@
       class="app-container d-flex align-items-stretch justify-content-between"
       :class="{
         'container-fluid': headerWidthFluid,
-        'container-xxl': !headerWidthFluid,
+        'container-xxl': !headerWidthFluid
       }"
     >
       <div
@@ -76,22 +76,22 @@ import {
   layout,
   headerWidthFluid,
   themeMode,
-  headerDisplay,
+  headerDisplay
 } from "@/core/helpers/config";
 
 export default defineComponent({
   name: "layout-header",
   components: {
     KTHeaderMenu,
-    KTHeaderNavbar,
+    KTHeaderNavbar
   },
   setup() {
     return {
       layout,
       headerWidthFluid,
       headerDisplay,
-      themeMode,
+      themeMode
     };
-  },
+  }
 });
 </script>

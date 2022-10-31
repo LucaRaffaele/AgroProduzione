@@ -5,15 +5,15 @@ const DocMenuConfig = [
         heading: "dashboard",
         route: "/dashboard",
         svgIcon: "media/icons/duotune/art/art002.svg",
-        fontIcon: "bi-app-indicator",
+        fontIcon: "bi-app-indicator"
       },
       {
         heading: "layoutBuilder",
         route: "/builder",
         svgIcon: "media/icons/duotune/general/gen019.svg",
-        fontIcon: "bi-layers",
-      },
-    ],
+        fontIcon: "bi-layers"
+      }
+    ]
   },
   {
     heading: "craft",
@@ -31,29 +31,29 @@ const DocMenuConfig = [
             sub: [
               {
                 heading: "profileOverview",
-                route: "/crafted/pages/profile/overview",
+                route: "/crafted/pages/profile/overview"
               },
               {
                 heading: "projects",
-                route: "/crafted/pages/profile/projects",
+                route: "/crafted/pages/profile/projects"
               },
               {
                 heading: "campaigns",
-                route: "/crafted/pages/profile/campaigns",
+                route: "/crafted/pages/profile/campaigns"
               },
               {
                 heading: "documents",
-                route: "/crafted/pages/profile/documents",
+                route: "/crafted/pages/profile/documents"
               },
               {
                 heading: "connections",
-                route: "/crafted/pages/profile/connections",
+                route: "/crafted/pages/profile/connections"
               },
               {
                 heading: "activity",
-                route: "/crafted/pages/profile/activity",
-              },
-            ],
+                route: "/crafted/pages/profile/activity"
+              }
+            ]
           },
           {
             sectionTitle: "wizards",
@@ -61,15 +61,15 @@ const DocMenuConfig = [
             sub: [
               {
                 heading: "horizontal",
-                route: "/crafted/pages/wizards/horizontal",
+                route: "/crafted/pages/wizards/horizontal"
               },
               {
                 heading: "vertical",
-                route: "/crafted/pages/wizards/vertical",
-              },
-            ],
-          },
-        ],
+                route: "/crafted/pages/wizards/vertical"
+              }
+            ]
+          }
+        ]
       },
       {
         sectionTitle: "account",
@@ -79,13 +79,13 @@ const DocMenuConfig = [
         sub: [
           {
             heading: "accountOverview",
-            route: "/crafted/account/overview",
+            route: "/crafted/account/overview"
           },
           {
             heading: "settings",
-            route: "/crafted/account/settings",
-          },
-        ],
+            route: "/crafted/account/settings"
+          }
+        ]
       },
       {
         sectionTitle: "authentication",
@@ -97,31 +97,31 @@ const DocMenuConfig = [
             sub: [
               {
                 heading: "signIn",
-                route: "/sign-in",
+                route: "/sign-in"
               },
               {
                 heading: "signUp",
-                route: "/sign-up",
+                route: "/sign-up"
               },
               {
                 heading: "passwordReset",
-                route: "/password-reset",
-              },
-            ],
+                route: "/password-reset"
+              }
+            ]
           },
           {
             heading: "multiStepSignUp",
-            route: "/multi-step-sign-up",
+            route: "/multi-step-sign-up"
           },
           {
             heading: "error404",
-            route: "/404",
+            route: "/404"
           },
           {
             heading: "error500",
-            route: "/500",
-          },
-        ],
+            route: "/500"
+          }
+        ]
       },
       {
         sectionTitle: "modals",
@@ -135,21 +135,21 @@ const DocMenuConfig = [
             sub: [
               {
                 heading: "inviteFriends",
-                route: "/crafted/modals/general/invite-friends",
+                route: "/crafted/modals/general/invite-friends"
               },
               {
                 heading: "viewUsers",
-                route: "/crafted/modals/general/view-user",
+                route: "/crafted/modals/general/view-user"
               },
               {
                 heading: "upgradePlan",
-                route: "/crafted/modals/general/upgrade-plan",
+                route: "/crafted/modals/general/upgrade-plan"
               },
               {
                 heading: "shareAndEarn",
-                route: "/crafted/modals/general/share-and-earn",
-              },
-            ],
+                route: "/crafted/modals/general/share-and-earn"
+              }
+            ]
           },
           {
             sectionTitle: "forms",
@@ -157,21 +157,21 @@ const DocMenuConfig = [
             sub: [
               {
                 heading: "newTarget",
-                route: "/crafted/modals/forms/new-target",
+                route: "/crafted/modals/forms/new-target"
               },
               {
                 heading: "newCard",
-                route: "/crafted/modals/forms/new-card",
+                route: "/crafted/modals/forms/new-card"
               },
               {
                 heading: "newAddress",
-                route: "/crafted/modals/forms/new-address",
+                route: "/crafted/modals/forms/new-address"
               },
               {
                 heading: "createAPIKey",
-                route: "/crafted/modals/forms/create-api-key",
-              },
-            ],
+                route: "/crafted/modals/forms/create-api-key"
+              }
+            ]
           },
           {
             sectionTitle: "wizards",
@@ -179,19 +179,19 @@ const DocMenuConfig = [
             sub: [
               {
                 heading: "twoFactorAuth",
-                route: "/crafted/modals/wizards/two-factor-auth",
+                route: "/crafted/modals/wizards/two-factor-auth"
               },
               {
                 heading: "createApp",
-                route: "/crafted/modals/wizards/create-app",
+                route: "/crafted/modals/wizards/create-app"
               },
               {
                 heading: "createAccount",
-                route: "/crafted/modals/wizards/create-account",
-              },
-            ],
-          },
-        ],
+                route: "/crafted/modals/wizards/create-account"
+              }
+            ]
+          }
+        ]
       },
       {
         sectionTitle: "widgets",
@@ -201,31 +201,31 @@ const DocMenuConfig = [
         sub: [
           {
             heading: "widgetsLists",
-            route: "/crafted/widgets/lists",
+            route: "/crafted/widgets/lists"
           },
           {
             heading: "widgetsStatistics",
-            route: "/crafted/widgets/statistics",
+            route: "/crafted/widgets/statistics"
           },
           {
             heading: "widgetsCharts",
-            route: "/crafted/widgets/charts",
+            route: "/crafted/widgets/charts"
           },
           {
             heading: "widgetsMixed",
-            route: "/crafted/widgets/mixed",
+            route: "/crafted/widgets/mixed"
           },
           {
             heading: "widgetsTables",
-            route: "/crafted/widgets/tables",
+            route: "/crafted/widgets/tables"
           },
           {
             heading: "widgetsFeeds",
-            route: "/crafted/widgets/feeds",
-          },
-        ],
-      },
-    ],
+            route: "/crafted/widgets/feeds"
+          }
+        ]
+      }
+    ]
   },
   {
     heading: "apps",
@@ -239,17 +239,17 @@ const DocMenuConfig = [
         sub: [
           {
             heading: "gettingStarted",
-            route: "/apps/customers/getting-started",
+            route: "/apps/customers/getting-started"
           },
           {
             heading: "customersListing",
-            route: "/apps/customers/customers-listing",
+            route: "/apps/customers/customers-listing"
           },
           {
             heading: "customerDetails",
-            route: "/apps/customers/customer-details",
-          },
-        ],
+            route: "/apps/customers/customer-details"
+          }
+        ]
       },
       {
         sectionTitle: "subscriptions",
@@ -259,27 +259,27 @@ const DocMenuConfig = [
         sub: [
           {
             heading: "getStarted",
-            route: "/apps/subscriptions/getting-started",
+            route: "/apps/subscriptions/getting-started"
           },
           {
             heading: "subscriptionList",
-            route: "/apps/subscriptions/subscription-list",
+            route: "/apps/subscriptions/subscription-list"
           },
           {
             heading: "addSubscription",
-            route: "/apps/subscriptions/add-subscription",
+            route: "/apps/subscriptions/add-subscription"
           },
           {
             heading: "viewSubscription",
-            route: "/apps/subscriptions/view-subscription",
-          },
-        ],
+            route: "/apps/subscriptions/view-subscription"
+          }
+        ]
       },
       {
         heading: "calendarApp",
         route: "/apps/calendar",
         svgIcon: "media/icons/duotune/general/gen014.svg",
-        fontIcon: "bi-calendar3-event",
+        fontIcon: "bi-calendar3-event"
       },
       {
         sectionTitle: "chat",
@@ -289,20 +289,20 @@ const DocMenuConfig = [
         sub: [
           {
             heading: "privateChat",
-            route: "/apps/chat/private-chat",
+            route: "/apps/chat/private-chat"
           },
           {
             heading: "groupChat",
-            route: "/apps/chat/group-chat",
+            route: "/apps/chat/group-chat"
           },
           {
             heading: "drawerChat",
-            route: "/apps/chat/drawer-chat",
-          },
-        ],
-      },
-    ],
-  },
+            route: "/apps/chat/drawer-chat"
+          }
+        ]
+      }
+    ]
+  }
 ];
 
 export default DocMenuConfig;

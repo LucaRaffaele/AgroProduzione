@@ -65,14 +65,14 @@ export default defineComponent({
       store.dispatch(Actions.ADD_BODY_CLASSNAME, "bg-body");
       store.dispatch(Actions.ADD_BODY_ATTRIBUTE, {
         qualifiedName: "style",
-        value: `background-image: url("media/auth/${bgImage}")`,
+        value: `background-image: url("media/auth/${bgImage}")`
       });
     });
 
     return {
       getIllustrationsPath,
-      bgImage,
+      bgImage
     };
-  },
+  }
 });
 </script>

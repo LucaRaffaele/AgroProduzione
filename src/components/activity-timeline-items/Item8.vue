@@ -7,6 +7,6 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "item-8",
-  components: {},
+  components: {}
 });
 </script>

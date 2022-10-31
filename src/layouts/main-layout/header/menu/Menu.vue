@@ -118,13 +118,13 @@ import { headerMenuDisplay } from "@/core/helpers/config";
 export default defineComponent({
   name: "header-menu",
   components: {
-    KTMenuPages,
+    KTMenuPages
   },
   setup() {
     return {
       version,
-      headerMenuDisplay,
+      headerMenuDisplay
     };
-  },
+  }
 });
 </script>

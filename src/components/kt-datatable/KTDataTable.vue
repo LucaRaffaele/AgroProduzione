@@ -41,7 +41,7 @@ export default defineComponent({
     itemsPerPageDropdownEnabled: {
       type: Boolean,
       required: false,
-      default: true,
+      default: true
     },
     checkboxEnabled: { type: Boolean, required: false, default: false },
     checkboxLabel: { type: String, required: false, default: "id" },
@@ -51,20 +51,20 @@ export default defineComponent({
     sortOrder: {
       type: String as () => "asc" | "desc",
       required: false,
-      default: "asc",
+      default: "asc"
     },
     emptyTableText: { type: String, required: false, default: "No data found" },
-    currentPage: { type: Number, required: false, default: 1 },
+    currentPage: { type: Number, required: false, default: 1 }
   },
   emits: [
     "page-change",
     "on-sort",
     "on-items-select",
-    "on-items-per-page-change",
+    "on-items-per-page-change"
   ],
   components: {
     TableContent,
-    TableFooter,
+    TableFooter
   },
   setup(props, { emit }) {
     const currentPage = ref(props.currentPage);
@@ -121,8 +121,8 @@ export default defineComponent({
       onSort,
       onItemSelect,
       itemsInTable,
-      totalItems,
+      totalItems
     };
-  },
+  }
 });
 </script>

@@ -43,7 +43,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, onMounted } from "vue";
+import { defineComponent, computed } from "vue";
 import { useI18n } from "vue-i18n";
 import { useStore } from "vuex";
 import { useRouter } from "vue-router";

@@ -26,6 +26,6 @@ export default defineComponent({
 
       store.dispatch(Actions.ADD_BODY_CLASSNAME, "bgi-no-repeat");
     });
-  },
+  }
 });
 </script>

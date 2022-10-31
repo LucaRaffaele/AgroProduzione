@@ -95,6 +95,6 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "item-7",
-  components: {},
+  components: {}
 });
 </script>

@@ -95,7 +95,7 @@ export default defineComponent({
     Item5,
     Item6,
     Item7,
-    Item8,
-  },
+    Item8
+  }
 });
 </script>

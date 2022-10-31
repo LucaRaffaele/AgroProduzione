@@ -54,6 +54,6 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "item-6",
-  components: {},
+  components: {}
 });
 </script>

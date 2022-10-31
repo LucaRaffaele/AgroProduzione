@@ -169,7 +169,6 @@ import { Actions } from "@/store/enums/StoreEnums";
 import { useStore } from "vuex";
 import { useRouter } from "vue-router";
 import Swal from "sweetalert2/dist/sweetalert2.min.js";
-import ApiService from "@/core/services/ApiService";
 import * as Yup from "yup";
 
 export default defineComponent({
@@ -188,8 +187,8 @@ export default defineComponent({
 
     onBeforeMount(() => {
       if (process.env.NODE_ENV === "development") {
-        userDev.value = "ANDREA";
-        passwordDev.value = "ANDREA";
+        userDev.value = "ADMIN";
+        passwordDev.value = "ADMIN";
       }
     });
 
@@ -233,9 +232,6 @@ export default defineComponent({
             confirmButton: "btn fw-semobold btn-light-primary"
           }
         }).then(async function () {
-          let clientiMenu = await getMonitorClienti();
-          store.dispatch(Actions.SET_CUSTOMERS_MENU_ACTION, clientiMenu);
-
           // Go to page after successfully login
           router.push({ name: "dashboard" });
         });
@@ -255,19 +251,6 @@ export default defineComponent({
       submitButton.value?.removeAttribute("data-kt-indicator");
       // eslint-disable-next-line
       submitButton.value!.disabled = false;
-    };
-
-    const clienti = ref();
-
-    const getMonitorClienti = async () => {
-      ApiService.setHeader();
-      const res = await ApiService.get("monitor/get");
-      try {
-        console.log("***SigIn getMonitorClienti Result -> ", res.data);
-        return res.data.Data;
-      } catch {
-        console.log("Error--------------- ", res);
-      }
     };
 
     return {

@@ -9,7 +9,7 @@ const routes: Array<RouteRecordRaw> = [
     redirect: "/dashboard",
     component: () => import("@/layouts/main-layout/MainLayout.vue"),
     meta: {
-      middleware: "auth",
+      middleware: "auth"
     },
     children: [
       {
@@ -18,8 +18,8 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import("@/views/Dashboard.vue"),
         meta: {
           pageTitle: "Dashboard",
-          breadcrumbs: ["Dashboards"],
-        },
+          breadcrumbs: ["Dashboards"]
+        }
       },
       {
         path: "/builder",
@@ -27,15 +27,15 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import("@/views/LayoutBuilder.vue"),
         meta: {
           pageTitle: "Layout Builder",
-          breadcrumbs: ["Layout"],
-        },
+          breadcrumbs: ["Layout"]
+        }
       },
       {
         path: "/crafted/pages/profile",
         name: "profile",
         component: () => import("@/components/page-layouts/Profile.vue"),
         meta: {
-          breadcrumbs: ["Pages", "Profile"],
+          breadcrumbs: ["Pages", "Profile"]
         },
         children: [
           {
@@ -44,8 +44,8 @@ const routes: Array<RouteRecordRaw> = [
             component: () =>
               import("@/views/crafted/pages/profile/Overview.vue"),
             meta: {
-              pageTitle: "Overview",
-            },
+              pageTitle: "Overview"
+            }
           },
           {
             path: "projects",
@@ -53,8 +53,8 @@ const routes: Array<RouteRecordRaw> = [
             component: () =>
               import("@/views/crafted/pages/profile/Projects.vue"),
             meta: {
-              pageTitle: "Projects",
-            },
+              pageTitle: "Projects"
+            }
           },
           {
             path: "campaigns",
@@ -62,8 +62,8 @@ const routes: Array<RouteRecordRaw> = [
             component: () =>
               import("@/views/crafted/pages/profile/Campaigns.vue"),
             meta: {
-              pageTitle: "Campaigns",
-            },
+              pageTitle: "Campaigns"
+            }
           },
           {
             path: "documents",
@@ -71,8 +71,8 @@ const routes: Array<RouteRecordRaw> = [
             component: () =>
               import("@/views/crafted/pages/profile/Documents.vue"),
             meta: {
-              pageTitle: "Documents",
-            },
+              pageTitle: "Documents"
+            }
           },
           {
             path: "connections",
@@ -80,8 +80,8 @@ const routes: Array<RouteRecordRaw> = [
             component: () =>
               import("@/views/crafted/pages/profile/Connections.vue"),
             meta: {
-              pageTitle: "Connections",
-            },
+              pageTitle: "Connections"
+            }
           },
           {
             path: "activity",
@@ -89,10 +89,10 @@ const routes: Array<RouteRecordRaw> = [
             component: () =>
               import("@/views/crafted/pages/profile/Activity.vue"),
             meta: {
-              pageTitle: "Activity",
-            },
-          },
-        ],
+              pageTitle: "Activity"
+            }
+          }
+        ]
       },
       {
         path: "/crafted/pages/wizards/horizontal",
@@ -100,8 +100,8 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import("@/views/crafted/pages/wizards/Horizontal.vue"),
         meta: {
           pageTitle: "Horizontal",
-          breadcrumbs: ["Pages", "Wizard"],
-        },
+          breadcrumbs: ["Pages", "Wizard"]
+        }
       },
       {
         path: "/crafted/pages/wizards/vertical",
@@ -109,15 +109,15 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import("@/views/crafted/pages/wizards/Vertical.vue"),
         meta: {
           pageTitle: "Vertical",
-          breadcrumbs: ["Pages", "Wizard"],
-        },
+          breadcrumbs: ["Pages", "Wizard"]
+        }
       },
       {
         path: "/crafted/account",
         name: "account",
         component: () => import("@/views/crafted/account/Account.vue"),
         meta: {
-          breadcrumbs: ["Crafted", "Account"],
+          breadcrumbs: ["Crafted", "Account"]
         },
         children: [
           {
@@ -125,18 +125,18 @@ const routes: Array<RouteRecordRaw> = [
             name: "account-overview",
             component: () => import("@/views/crafted/account/Overview.vue"),
             meta: {
-              pageTitle: "Overview",
-            },
+              pageTitle: "Overview"
+            }
           },
           {
             path: "settings",
             name: "account-settings",
             component: () => import("@/views/crafted/account/Settings.vue"),
             meta: {
-              pageTitle: "Settings",
-            },
-          },
-        ],
+              pageTitle: "Settings"
+            }
+          }
+        ]
       },
       {
         path: "/apps/customers/getting-started",
@@ -144,8 +144,8 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import("@/views/apps/customers/GettingStarted.vue"),
         meta: {
           pageTitle: "Getting Started",
-          breadcrumbs: ["Apps", "Customers"],
-        },
+          breadcrumbs: ["Apps", "Customers"]
+        }
       },
       {
         path: "/apps/customers/customers-listing",
@@ -153,8 +153,8 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import("@/views/apps/customers/CustomersListing.vue"),
         meta: {
           pageTitle: "Customers Listing",
-          breadcrumbs: ["Apps", "Customers"],
-        },
+          breadcrumbs: ["Apps", "Customers"]
+        }
       },
       {
         path: "/apps/customers/customer-details",
@@ -162,8 +162,8 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import("@/views/apps/customers/CustomerDetails.vue"),
         meta: {
           pageTitle: "Customers Details",
-          breadcrumbs: ["Apps", "Customers"],
-        },
+          breadcrumbs: ["Apps", "Customers"]
+        }
       },
       {
         path: "/apps/subscriptions/getting-started",
@@ -172,8 +172,8 @@ const routes: Array<RouteRecordRaw> = [
           import("@/views/apps/subscriptions/GettingStarted.vue"),
         meta: {
           pageTitle: "Getting Started",
-          breadcrumbs: ["Apps", "Subscriptions"],
-        },
+          breadcrumbs: ["Apps", "Subscriptions"]
+        }
       },
       {
         path: "/apps/subscriptions/subscription-list",
@@ -182,8 +182,8 @@ const routes: Array<RouteRecordRaw> = [
           import("@/views/apps/subscriptions/SubscriptionList.vue"),
         meta: {
           pageTitle: "Getting Started",
-          breadcrumbs: ["Apps", "Subscriptions"],
-        },
+          breadcrumbs: ["Apps", "Subscriptions"]
+        }
       },
       {
         path: "/apps/subscriptions/add-subscription",
@@ -192,8 +192,8 @@ const routes: Array<RouteRecordRaw> = [
           import("@/views/apps/subscriptions/AddSubscription.vue"),
         meta: {
           pageTitle: "Add Subscription",
-          breadcrumbs: ["Apps", "Subscriptions"],
-        },
+          breadcrumbs: ["Apps", "Subscriptions"]
+        }
       },
       {
         path: "/apps/subscriptions/view-subscription",
@@ -202,8 +202,8 @@ const routes: Array<RouteRecordRaw> = [
           import("@/views/apps/subscriptions/ViewSubscription.vue"),
         meta: {
           pageTitle: "View Subscription",
-          breadcrumbs: ["Apps", "Subscriptions"],
-        },
+          breadcrumbs: ["Apps", "Subscriptions"]
+        }
       },
       {
         path: "/apps/calendar",
@@ -211,8 +211,8 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import("@/views/apps/Calendar.vue"),
         meta: {
           pageTitle: "Calendar",
-          breadcrumbs: ["Apps"],
-        },
+          breadcrumbs: ["Apps"]
+        }
       },
       {
         path: "/apps/chat/private-chat",
@@ -220,8 +220,8 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import("@/views/apps/chat/Chat.vue"),
         meta: {
           pageTitle: "Private Chat",
-          breadcrumbs: ["Apps", "Chat"],
-        },
+          breadcrumbs: ["Apps", "Chat"]
+        }
       },
       {
         path: "/apps/chat/group-chat",
@@ -229,8 +229,8 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import("@/views/apps/chat/Chat.vue"),
         meta: {
           pageTitle: "Group Chat",
-          breadcrumbs: ["Apps", "Chat"],
-        },
+          breadcrumbs: ["Apps", "Chat"]
+        }
       },
       {
         path: "/apps/chat/drawer-chat",
@@ -238,8 +238,8 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import("@/views/apps/chat/DrawerChat.vue"),
         meta: {
           pageTitle: "Drawer Chat",
-          breadcrumbs: ["Apps", "Chat"],
-        },
+          breadcrumbs: ["Apps", "Chat"]
+        }
       },
       {
         path: "/crafted/modals/general/invite-friends",
@@ -248,8 +248,8 @@ const routes: Array<RouteRecordRaw> = [
           import("@/views/crafted/modals/general/InviteFriends.vue"),
         meta: {
           pageTitle: "Invite Friends",
-          breadcrumbs: ["Crafted", "Modals", "General"],
-        },
+          breadcrumbs: ["Crafted", "Modals", "General"]
+        }
       },
       {
         path: "/crafted/modals/general/view-user",
@@ -257,8 +257,8 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import("@/views/crafted/modals/general/ViewUsers.vue"),
         meta: {
           pageTitle: "View User",
-          breadcrumbs: ["Crafted", "Modals", "General"],
-        },
+          breadcrumbs: ["Crafted", "Modals", "General"]
+        }
       },
       {
         path: "/crafted/modals/general/upgrade-plan",
@@ -267,8 +267,8 @@ const routes: Array<RouteRecordRaw> = [
           import("@/views/crafted/modals/general/UpgradePlan.vue"),
         meta: {
           pageTitle: "Upgrade Plan",
-          breadcrumbs: ["Crafted", "Modals", "General"],
-        },
+          breadcrumbs: ["Crafted", "Modals", "General"]
+        }
       },
       {
         path: "/crafted/modals/general/share-and-earn",
@@ -277,8 +277,8 @@ const routes: Array<RouteRecordRaw> = [
           import("@/views/crafted/modals/general/ShareAndEarn.vue"),
         meta: {
           pageTitle: "Share And Earn",
-          breadcrumbs: ["Crafted", "Modals", "General"],
-        },
+          breadcrumbs: ["Crafted", "Modals", "General"]
+        }
       },
       {
         path: "/crafted/modals/forms/new-target",
@@ -286,8 +286,8 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import("@/views/crafted/modals/forms/NewTarget.vue"),
         meta: {
           pageTitle: "New Target",
-          breadcrumbs: ["Crafted", "Modals", "Forms"],
-        },
+          breadcrumbs: ["Crafted", "Modals", "Forms"]
+        }
       },
       {
         path: "/crafted/modals/forms/new-card",
@@ -295,8 +295,8 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import("@/views/crafted/modals/forms/NewCard.vue"),
         meta: {
           pageTitle: "New Card",
-          breadcrumbs: ["Crafted", "Modals", "Forms"],
-        },
+          breadcrumbs: ["Crafted", "Modals", "Forms"]
+        }
       },
       {
         path: "/crafted/modals/forms/new-address",
@@ -304,8 +304,8 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import("@/views/crafted/modals/forms/NewAddress.vue"),
         meta: {
           pageTitle: "New Address",
-          breadcrumbs: ["Crafted", "Modals", "Forms"],
-        },
+          breadcrumbs: ["Crafted", "Modals", "Forms"]
+        }
       },
       {
         path: "/crafted/modals/forms/create-api-key",
@@ -314,8 +314,8 @@ const routes: Array<RouteRecordRaw> = [
           import("@/views/crafted/modals/forms/CreateApiKey.vue"),
         meta: {
           pageTitle: "Create Api Key",
-          breadcrumbs: ["Crafted", "Modals", "Forms"],
-        },
+          breadcrumbs: ["Crafted", "Modals", "Forms"]
+        }
       },
       {
         path: "/crafted/modals/wizards/two-factor-auth",
@@ -324,8 +324,8 @@ const routes: Array<RouteRecordRaw> = [
           import("@/views/crafted/modals/wizards/TwoFactorAuth.vue"),
         meta: {
           pageTitle: "Two Factory Auth",
-          breadcrumbs: ["Crafted", "Modals", "Wizards"],
-        },
+          breadcrumbs: ["Crafted", "Modals", "Wizards"]
+        }
       },
       {
         path: "/crafted/modals/wizards/create-app",
@@ -333,8 +333,8 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import("@/views/crafted/modals/wizards/CreateApp.vue"),
         meta: {
           pageTitle: "Create App",
-          breadcrumbs: ["Crafted", "Modals", "Wizards"],
-        },
+          breadcrumbs: ["Crafted", "Modals", "Wizards"]
+        }
       },
       {
         path: "/crafted/modals/wizards/create-account",
@@ -343,8 +343,8 @@ const routes: Array<RouteRecordRaw> = [
           import("@/views/crafted/modals/wizards/CreateAccount.vue"),
         meta: {
           pageTitle: "Create Account",
-          breadcrumbs: ["Crafted", "Modals", "Wizards"],
-        },
+          breadcrumbs: ["Crafted", "Modals", "Wizards"]
+        }
       },
       {
         path: "/crafted/widgets/lists",
@@ -352,8 +352,8 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import("@/views/crafted/widgets/Lists.vue"),
         meta: {
           pageTitle: "Lists",
-          breadcrumbs: ["Crafted", "Widgets"],
-        },
+          breadcrumbs: ["Crafted", "Widgets"]
+        }
       },
       {
         path: "/crafted/widgets/statistics",
@@ -361,8 +361,8 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import("@/views/crafted/widgets/Statistics.vue"),
         meta: {
           pageTitle: "Statistics",
-          breadcrumbs: ["Crafted", "Widgets"],
-        },
+          breadcrumbs: ["Crafted", "Widgets"]
+        }
       },
       {
         path: "/crafted/widgets/charts",
@@ -370,8 +370,8 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import("@/views/crafted/widgets/Charts.vue"),
         meta: {
           pageTitle: "Charts",
-          breadcrumbs: ["Crafted", "Widgets"],
-        },
+          breadcrumbs: ["Crafted", "Widgets"]
+        }
       },
       {
         path: "/crafted/widgets/mixed",
@@ -379,8 +379,8 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import("@/views/crafted/widgets/Mixed.vue"),
         meta: {
           pageTitle: "Mixed",
-          breadcrumbs: ["Crafted", "Widgets"],
-        },
+          breadcrumbs: ["Crafted", "Widgets"]
+        }
       },
       {
         path: "/crafted/widgets/tables",
@@ -388,8 +388,8 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import("@/views/crafted/widgets/Tables.vue"),
         meta: {
           pageTitle: "Tables",
-          breadcrumbs: ["Crafted", "Widgets"],
-        },
+          breadcrumbs: ["Crafted", "Widgets"]
+        }
       },
       {
         path: "/crafted/widgets/feeds",
@@ -397,10 +397,10 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import("@/views/crafted/widgets/Feeds.vue"),
         meta: {
           pageTitle: "Feeds",
-          breadcrumbs: ["Crafted", "Widgets"],
-        },
-      },
-    ],
+          breadcrumbs: ["Crafted", "Widgets"]
+        }
+      }
+    ]
   },
   {
     path: "/",
@@ -412,8 +412,8 @@ const routes: Array<RouteRecordRaw> = [
         component: () =>
           import("@/views/crafted/authentication/basic-flow/SignIn.vue"),
         meta: {
-          pageTitle: "Sign In",
-        },
+          pageTitle: "Sign In"
+        }
       },
       {
         path: "/sign-up",
@@ -421,8 +421,8 @@ const routes: Array<RouteRecordRaw> = [
         component: () =>
           import("@/views/crafted/authentication/basic-flow/SignUp.vue"),
         meta: {
-          pageTitle: "Sign Up",
-        },
+          pageTitle: "Sign Up"
+        }
       },
       {
         path: "/password-reset",
@@ -430,10 +430,10 @@ const routes: Array<RouteRecordRaw> = [
         component: () =>
           import("@/views/crafted/authentication/basic-flow/PasswordReset.vue"),
         meta: {
-          pageTitle: "Password reset",
-        },
-      },
-    ],
+          pageTitle: "Password reset"
+        }
+      }
+    ]
   },
   {
     path: "/multi-step-sign-up",
@@ -441,8 +441,8 @@ const routes: Array<RouteRecordRaw> = [
     component: () =>
       import("@/views/crafted/authentication/MultiStepSignUp.vue"),
     meta: {
-      pageTitle: "Multi-step Sign up",
-    },
+      pageTitle: "Multi-step Sign up"
+    }
   },
   {
     path: "/",
@@ -454,28 +454,28 @@ const routes: Array<RouteRecordRaw> = [
         name: "404",
         component: () => import("@/views/crafted/authentication/Error404.vue"),
         meta: {
-          pageTitle: "Error 404",
-        },
+          pageTitle: "Error 404"
+        }
       },
       {
         path: "/500",
         name: "500",
         component: () => import("@/views/crafted/authentication/Error500.vue"),
         meta: {
-          pageTitle: "Error 500",
-        },
-      },
-    ],
+          pageTitle: "Error 500"
+        }
+      }
+    ]
   },
   {
     path: "/:pathMatch(.*)*",
-    redirect: "/404",
-  },
+    redirect: "/404"
+  }
 ];
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes,
+  routes
 });
 
 router.beforeEach((to, from, next) => {
@@ -503,7 +503,7 @@ router.beforeEach((to, from, next) => {
   window.scrollTo({
     top: 0,
     left: 0,
-    behavior: "smooth",
+    behavior: "smooth"
   });
 });
 

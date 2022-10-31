@@ -94,7 +94,7 @@ import Dropdown3 from "@/components/dropdown/Dropdown3.vue";
 export default defineComponent({
   name: "card-2",
   components: {
-    Dropdown3,
+    Dropdown3
   },
   props: {
     cardClasses: String,
@@ -115,7 +115,7 @@ export default defineComponent({
 
     indicatorValue: String,
 
-    indicatorLabel: String,
-  },
+    indicatorLabel: String
+  }
 });
 </script>

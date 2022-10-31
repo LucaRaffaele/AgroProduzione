@@ -563,7 +563,7 @@ export default defineComponent({
     const onThemeModeChange = (e) => {
       store.commit(Mutations.SET_LAYOUT_CONFIG_PROPERTY, {
         property: "general.mode",
-        value: e.target.value,
+        value: e.target.value
       });
       store.dispatch(Actions.SET_THEME_MODE_ACTION, e.target.value);
 
@@ -579,7 +579,7 @@ export default defineComponent({
       event.preventDefault();
       store.commit(Mutations.SET_LAYOUT_CONFIG_PROPERTY, {
         property: "general.layout",
-        value: layoutType,
+        value: layoutType
       });
       // save new config to localStorage
       localStorage.setItem("config", JSON.stringify(config.value));
@@ -592,8 +592,8 @@ export default defineComponent({
       submit,
       config,
       layoutType,
-      themeMode,
+      themeMode
     };
-  },
+  }
 });
 </script>

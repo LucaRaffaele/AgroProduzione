@@ -117,7 +117,7 @@ export default defineComponent({
     Widget8,
     Widget9,
     Widget10,
-    MixedWidget5,
-  },
+    MixedWidget5
+  }
 });
 </script>

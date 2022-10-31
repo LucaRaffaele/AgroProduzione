@@ -13,8 +13,8 @@ const store = createStore({
     AuthModule,
     BodyModule,
     ConfigModule,
-    ThemeModeModule,
-  },
+    ThemeModeModule
+  }
 });
 
 export default store;

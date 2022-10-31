@@ -91,7 +91,7 @@
   <!--end::Authentication Layout -->
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent, onMounted } from "vue";
 import LayoutService from "@/core/services/LayoutService";
 import { useStore } from "vuex";
@@ -110,6 +110,6 @@ export default defineComponent({
 
       store.dispatch(Actions.ADD_BODY_CLASSNAME, "bg-body");
     });
-  },
+  }
 });
 </script>

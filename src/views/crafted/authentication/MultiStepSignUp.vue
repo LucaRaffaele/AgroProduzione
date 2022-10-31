@@ -373,10 +373,10 @@ export default defineComponent({
 
     const createAccountSchema = [
       Yup.object({
-        accountType: Yup.string().required().label("Account Type"),
+        accountType: Yup.string().required().label("Account Type")
       }),
       Yup.object({
-        accountName: Yup.string().required().label("Account Name"),
+        accountName: Yup.string().required().label("Account Name")
       }),
       Yup.object({
         businessName: Yup.string().required().label("Business Name"),

@@ -342,7 +342,7 @@ export default defineComponent({
       assign: "",
       dueDate: "",
       targetDetails: "",
-      tags: ["important", "urgent"],
+      tags: ["important", "urgent"]
     });
 
     const rules = ref({
@@ -350,30 +350,30 @@ export default defineComponent({
         {
           required: true,
           message: "Please input Activity name",
-          trigger: "blur",
-        },
+          trigger: "blur"
+        }
       ],
       assign: [
         {
           required: true,
           message: "Please select Activity zone",
-          trigger: "change",
-        },
+          trigger: "change"
+        }
       ],
       dueDate: [
         {
           required: true,
           message: "Please select Activity zone",
-          trigger: "change",
-        },
+          trigger: "change"
+        }
       ],
       tags: [
         {
           required: true,
           message: "Please select Activity zone",
-          trigger: "change",
-        },
-      ],
+          trigger: "change"
+        }
+      ]
     });
 
     const submit = () => {
@@ -394,8 +394,8 @@ export default defineComponent({
               buttonsStyling: false,
               confirmButtonText: "Ok, got it!",
               customClass: {
-                confirmButton: "btn btn-primary",
-              },
+                confirmButton: "btn btn-primary"
+              }
             }).then(() => {
               hideModal(newTargetModalRef.value);
             });
@@ -407,8 +407,8 @@ export default defineComponent({
             buttonsStyling: false,
             confirmButtonText: "Ok, got it!",
             customClass: {
-              confirmButton: "btn btn-primary",
-            },
+              confirmButton: "btn btn-primary"
+            }
           });
           return false;
         }
@@ -421,9 +421,9 @@ export default defineComponent({
       loading,
       formRef,
       rules,
-      newTargetModalRef,
+      newTargetModalRef
     };
-  },
+  }
 });
 </script>
 

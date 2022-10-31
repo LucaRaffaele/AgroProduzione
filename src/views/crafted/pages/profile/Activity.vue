@@ -182,7 +182,7 @@ export default defineComponent({
     KTActivityItem5,
     KTActivityItem6,
     KTActivityItem7,
-    KTActivityItem8,
-  },
+    KTActivityItem8
+  }
 });
 </script>

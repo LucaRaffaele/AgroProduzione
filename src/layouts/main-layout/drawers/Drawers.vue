@@ -21,7 +21,7 @@ export default defineComponent({
     KTActivityDrawer,
     KTDemosDrawer,
     KTHelpDrawer,
-    KTToolButtons,
-  },
+    KTToolButtons
+  }
 });
 </script>

@@ -270,8 +270,8 @@ export default defineComponent({
       hasActiveChildren,
       MainMenuConfig,
       sidebarMenuIcons,
-      translate,
+      translate
     };
-  },
+  }
 });
 </script>
