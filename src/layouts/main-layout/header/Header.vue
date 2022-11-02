@@ -55,10 +55,12 @@
       <!--end::Mobile logo-->
       <!--begin::Header wrapper-->
       <div
-        class="d-flex align-items-stretch justify-content-between flex-lg-grow-1"
+        class="d-flex align-items-stretch justify-content-end flex-lg-grow-1"
         id="kt_app_header_wrapper"
       >
-        <KTHeaderMenu />
+        <!-- Menù orizzontale
+          <KTHeaderMenu />
+        -->
         <KTHeaderNavbar />
       </div>
       <!--end::Header wrapper-->
@@ -68,9 +70,9 @@
   <!--end::Header-->
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from "vue";
-import KTHeaderMenu from "@/layouts/main-layout/header/menu/Menu.vue";
+// import KTHeaderMenu from "@/layouts/main-layout/header/menu/Menu.vue";
 import KTHeaderNavbar from "@/layouts/main-layout/header/Navbar.vue";
 import {
   layout,
@@ -82,7 +84,7 @@ import {
 export default defineComponent({
   name: "layout-header",
   components: {
-    KTHeaderMenu,
+    // KTHeaderMenu,
     KTHeaderNavbar
   },
   setup() {

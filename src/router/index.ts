@@ -22,6 +22,15 @@ const routes: Array<RouteRecordRaw> = [
         }
       },
       {
+        path: "/dashboard-default",
+        name: "dashboard-default",
+        component: () => import("@/views/DashboardDefault.vue"),
+        meta: {
+          pageTitle: "Dashboard Default",
+          breadcrumbs: ["Dashboards"]
+        }
+      },
+      {
         path: "/builder",
         name: "builder",
         component: () => import("@/views/LayoutBuilder.vue"),

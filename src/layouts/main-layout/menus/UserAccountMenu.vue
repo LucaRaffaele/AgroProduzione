@@ -10,7 +10,7 @@
         <!--begin::Avatar-->
         <div class="symbol symbol-50px me-5">
           <img
-            v-if="user.image != ''"
+            v-if="user.image != null"
             alt="Logo"
             :src="'data:image/jpeg;base64,' + user.image"
           />

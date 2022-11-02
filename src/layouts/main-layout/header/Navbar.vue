@@ -35,7 +35,7 @@
         data-kt-menu-placement="bottom-end"
       >
         <img
-          v-if="user && user.image != ''"
+          v-if="user && user.image != null"
           alt="Logo"
           :src="'data:image/jpeg;base64,' + user.image"
         />
@@ -61,7 +61,7 @@
   <!--end::Navbar-->
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent, computed } from "vue";
 import KTUserMenu from "@/layouts/main-layout/menus/UserAccountMenu.vue";
 import KTThemeModeSwitcher from "@/layouts/main-layout/theme-mode/ThemeModeSwitcher.vue";
