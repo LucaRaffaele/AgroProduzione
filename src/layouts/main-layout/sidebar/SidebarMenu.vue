@@ -42,7 +42,7 @@
                     <i
                       v-if="sidebarMenuIcons === 'font'"
                       :class="menuItem.fontIcon"
-                      class="bi fs-3"
+                      class="fs-3"
                     ></i>
                     <span
                       v-else-if="sidebarMenuIcons === 'svg'"
@@ -72,7 +72,7 @@
                   <i
                     v-if="sidebarMenuIcons === 'font'"
                     :class="menuItem.fontIcon"
-                    class="bi fs-3"
+                    class="fs-3"
                   ></i>
                   <span
                     v-else-if="sidebarMenuIcons === 'svg'"

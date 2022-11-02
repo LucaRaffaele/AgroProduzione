@@ -34,6 +34,155 @@
     <!--end::Menu separator-->
 
     <!--begin::Menu item-->
+    <div
+      class="menu-item px-5"
+      data-kt-menu-trigger="hover"
+      data-kt-menu-placement="left-start"
+      data-kt-menu-flip="center, top"
+    >
+      <div class="menu-link px-5">
+        <span class="menu-title position-relative">
+          Lingua
+          <span
+            class="fs-8 rounded bg-light px-3 py-2 position-absolute translate-middle-y top-50 end-0"
+          >
+            {{ currentLangugeLocale.name }}
+            <img
+              class="w-15px h-15px rounded-1 ms-2"
+              :src="currentLangugeLocale.flag"
+              alt="metronic"
+            />
+          </span>
+        </span>
+      </div>
+
+      <!--begin::Menu sub-->
+      <div class="menu-sub menu-sub-dropdown w-175px py-4">
+        <!--begin::Menu item-->
+        <div class="menu-item px-3">
+          <a
+            @click="setLang('it')"
+            href="#"
+            class="menu-link d-flex px-5"
+            :class="{ active: currentLanguage('it') }"
+          >
+            <span class="symbol symbol-20px me-4">
+              <img
+                class="rounded-1"
+                src="media/flags/italy.svg"
+                alt="metronic"
+              />
+            </span>
+            Italiano
+          </a>
+        </div>
+        <!--end::Menu item-->
+
+        <!--begin::Menu item-->
+        <div class="menu-item px-3">
+          <a
+            @click="setLang('en')"
+            href="#"
+            class="menu-link d-flex px-5"
+            :class="{ active: currentLanguage('en') }"
+          >
+            <span class="symbol symbol-20px me-4">
+              <img
+                class="rounded-1"
+                src="media/flags/united-states.svg"
+                alt="metronic"
+              />
+            </span>
+            English
+          </a>
+        </div>
+        <!--end::Menu item-->
+
+        <!--begin::Menu item Spanish-->
+        <!--  <div class="menu-item px-3">
+          <a
+            @click="setLang('es')"
+            href="#"
+            class="menu-link d-flex px-5"
+            :class="{ active: currentLanguage('es') }"
+          >
+            <span class="symbol symbol-20px me-4">
+              <img
+                class="rounded-1"
+                src="media/flags/spain.svg"
+                alt="metronic"
+              />
+            </span>
+            Spanish
+          </a>
+        </div> -->
+        <!--end::Menu item-->
+
+        <!--begin::Menu item German-->
+        <!-- <div class="menu-item px-3">
+          <a
+            @click="setLang('de')"
+            href="#"
+            class="menu-link d-flex px-5"
+            :class="{ active: currentLanguage('de') }"
+          >
+            <span class="symbol symbol-20px me-4">
+              <img
+                class="rounded-1"
+                src="media/flags/germany.svg"
+                alt="metronic"
+              />
+            </span>
+            German
+          </a>
+        </div> -->
+        <!--end::Menu item-->
+
+        <!--begin::Menu item Japanese-->
+        <!--  <div class="menu-item px-3">
+          <a
+            @click="setLang('ja')"
+            href="#"
+            class="menu-link d-flex px-5"
+            :class="{ active: currentLanguage('ja') }"
+          >
+            <span class="symbol symbol-20px me-4">
+              <img
+                class="rounded-1"
+                src="media/flags/japan.svg"
+                alt="metronic"
+              />
+            </span>
+            Japanese
+          </a>
+        </div> -->
+        <!--end::Menu item-->
+
+        <!--begin::Menu item French-->
+        <!--  <div class="menu-item px-3">
+          <a
+            @click="setLang('fr')"
+            href="#"
+            class="menu-link d-flex px-5"
+            :class="{ active: currentLanguage('fr') }"
+          >
+            <span class="symbol symbol-20px me-4">
+              <img
+                class="rounded-1"
+                src="media/flags/france.svg"
+                alt="metronic"
+              />
+            </span>
+            French
+          </a>
+        </div> -->
+        <!--end::Menu item-->
+      </div>
+      <!--end::Menu sub-->
+    </div>
+    <!--end::Menu item-->
+
+    <!--begin::Menu item-->
     <div class="menu-item px-5">
       <a @click="signOut()" class="menu-link px-5"> Sign Out </a>
     </div>
@@ -63,14 +212,18 @@ export default defineComponent({
 
     i18n.locale.value = localStorage.getItem("lang")
       ? (localStorage.getItem("lang") as string)
-      : "en";
+      : "it";
 
     const countries = {
+      it: {
+        flag: "media/flags/italy.svg",
+        name: "Italiano"
+      },
       en: {
         flag: "media/flags/united-states.svg",
         name: "English"
-      },
-      es: {
+      }
+      /* es: {
         flag: "media/flags/spain.svg",
         name: "Spanish"
       },
@@ -85,7 +238,7 @@ export default defineComponent({
       fr: {
         flag: "media/flags/france.svg",
         name: "French"
-      }
+      } */
     };
 
     const signOut = () => {

@@ -40,6 +40,33 @@ const routes: Array<RouteRecordRaw> = [
         }
       },
       {
+        path: "/menu/produzione",
+        name: "produzione",
+        component: () => import("@/views/menu/ProduzioneView.vue"),
+        meta: {
+          pageTitle: "Produzione",
+          breadcrumbs: ["Menu"]
+        }
+      },
+      {
+        path: "/menu/lavorazione",
+        name: "lavorazione",
+        component: () => import("@/views/menu/LavorazioneView.vue"),
+        meta: {
+          pageTitle: "Lavorazione",
+          breadcrumbs: ["Menu"]
+        }
+      },
+      {
+        path: "/menu/ricondizionamento",
+        name: "ricondizionamento",
+        component: () => import("@/views/menu/RicondizionamentoView.vue"),
+        meta: {
+          pageTitle: "Ricondizionamento",
+          breadcrumbs: ["Menu"]
+        }
+      },
+      {
         path: "/crafted/pages/profile",
         name: "profile",
         component: () => import("@/components/page-layouts/Profile.vue"),

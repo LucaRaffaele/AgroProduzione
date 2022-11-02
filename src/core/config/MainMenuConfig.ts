@@ -5,19 +5,43 @@ const DocMenuConfig = [
         heading: "dashboard",
         route: "/dashboard",
         svgIcon: "media/icons/duotune/art/art002.svg",
-        fontIcon: "bi-app-indicator"
+        fontIcon: "bi bi-app-indicator"
       },
       {
         heading: "dashboardDefault",
         route: "/dashboard-default",
         svgIcon: "media/icons/duotune/art/art002.svg",
-        fontIcon: "bi-app-indicator"
+        fontIcon: "bi bi-app-indicator"
       },
       {
         heading: "layoutBuilder",
         route: "/builder",
         svgIcon: "media/icons/duotune/general/gen019.svg",
-        fontIcon: "bi-layers"
+        fontIcon: "bi bi-recycle"
+      }
+    ]
+  },
+  {
+    heading: "menu",
+    route: "/menu",
+    pages: [
+      {
+        heading: "produzione",
+        route: "/menu/produzione",
+        svgIcon: "media/icons/duotune/technology/teh005.svg",
+        fontIcon: "bi bi-calendar3-event"
+      },
+      {
+        heading: "lavorazione",
+        route: "/menu/lavorazione",
+        svgIcon: "media/icons/duotune/general/gen014.svg",
+        fontIcon: "bi bi-calendar3-event"
+      },
+      {
+        heading: "ricondizionamento",
+        route: "/menu/ricondizionamento",
+        svgIcon: "media/icons/duotune/abstract/abs040.svg",
+        fontIcon: "bi bi-recycle"
       }
     ]
   },
@@ -29,7 +53,7 @@ const DocMenuConfig = [
         sectionTitle: "pages",
         route: "/pages",
         svgIcon: "media/icons/duotune/general/gen022.svg",
-        fontIcon: "bi-archive",
+        fontIcon: "bi bi-archive",
         sub: [
           {
             sectionTitle: "profile",
@@ -81,7 +105,7 @@ const DocMenuConfig = [
         sectionTitle: "account",
         route: "/account",
         svgIcon: "media/icons/duotune/communication/com006.svg",
-        fontIcon: "bi-person",
+        fontIcon: "bi bi-person",
         sub: [
           {
             heading: "accountOverview",
@@ -96,7 +120,7 @@ const DocMenuConfig = [
       {
         sectionTitle: "authentication",
         svgIcon: "media/icons/duotune/technology/teh004.svg",
-        fontIcon: "bi-sticky",
+        fontIcon: "bi bi-sticky",
         sub: [
           {
             sectionTitle: "basicFlow",
@@ -133,7 +157,7 @@ const DocMenuConfig = [
         sectionTitle: "modals",
         route: "/modals",
         svgIcon: "media/icons/duotune/art/art009.svg",
-        fontIcon: "bi-shield-check",
+        fontIcon: "bi bi-shield-check",
         sub: [
           {
             sectionTitle: "general",
@@ -203,7 +227,7 @@ const DocMenuConfig = [
         sectionTitle: "widgets",
         route: "/widgets",
         svgIcon: "media/icons/duotune/general/gen025.svg",
-        fontIcon: "bi-layers",
+        fontIcon: "bi bi-layers",
         sub: [
           {
             heading: "widgetsLists",
@@ -241,7 +265,7 @@ const DocMenuConfig = [
         sectionTitle: "customers",
         route: "/customers",
         svgIcon: "media/icons/duotune/finance/fin006.svg",
-        fontIcon: "bi-printer",
+        fontIcon: "bi bi-printer",
         sub: [
           {
             heading: "gettingStarted",
@@ -261,7 +285,7 @@ const DocMenuConfig = [
         sectionTitle: "subscriptions",
         route: "/subscriptions",
         svgIcon: "media/icons/duotune/ecommerce/ecm002.svg",
-        fontIcon: "bi-cart",
+        fontIcon: "bi bi-cart",
         sub: [
           {
             heading: "getStarted",
@@ -285,13 +309,13 @@ const DocMenuConfig = [
         heading: "calendarApp",
         route: "/apps/calendar",
         svgIcon: "media/icons/duotune/general/gen014.svg",
-        fontIcon: "bi-calendar3-event"
+        fontIcon: "bi bi-calendar3-event"
       },
       {
         sectionTitle: "chat",
         route: "/chat",
         svgIcon: "media/icons/duotune/communication/com012.svg",
-        fontIcon: "bi-chat-left",
+        fontIcon: "bi bi-chat-left",
         sub: [
           {
             heading: "privateChat",
