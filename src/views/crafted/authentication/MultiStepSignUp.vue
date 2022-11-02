@@ -126,8 +126,8 @@
         </div>
         <!--end::Body-->
         <!--begin::Footer-->
-        <div class="d-flex flex-center flex-wrap px-5 py-10">
-          <!--begin::Links-->
+        <!-- <div class="d-flex flex-center flex-wrap px-5 py-10">
+     
           <div class="d-flex fw-normal">
             <a
               href="https://keenthemes.com"
@@ -148,8 +148,8 @@
               >Contact Us</a
             >
           </div>
-          <!--end::Links-->
-        </div>
+    
+        </div> -->
         <!--end::Footer-->
       </div>
     </div>

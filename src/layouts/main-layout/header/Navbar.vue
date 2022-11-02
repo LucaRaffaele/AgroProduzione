@@ -1,6 +1,12 @@
 <template>
   <!--begin::Navbar-->
   <div class="app-navbar flex-shrink-0">
+    <!--begin::Search-->
+    <div class="app-navbar-item align-items-stretch ms-1 ms-lg-3">
+      <KTSearch />
+    </div>
+    <!--end::Search-->
+
     <!--begin::Theme mode-->
     <div class="app-navbar-item ms-1 ms-lg-3">
       <!--begin::Menu toggle-->
@@ -64,6 +70,7 @@
 <script lang="ts">
 import { defineComponent, computed } from "vue";
 import KTUserMenu from "@/layouts/main-layout/menus/UserAccountMenu.vue";
+import KTSearch from "@/layouts/main-layout/search/Search.vue";
 import KTThemeModeSwitcher from "@/layouts/main-layout/theme-mode/ThemeModeSwitcher.vue";
 import { useStore } from "vuex";
 
@@ -71,7 +78,8 @@ export default defineComponent({
   name: "header-navbar",
   components: {
     KTUserMenu,
-    KTThemeModeSwitcher
+    KTThemeModeSwitcher,
+    KTSearch
   },
   setup() {
     const store = useStore();
