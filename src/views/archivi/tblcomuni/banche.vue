@@ -1,5 +1,5 @@
 <template>
-    <banche-grid></banche-grid>
+  <banche-grid></banche-grid>
 </template>
 
 <script>

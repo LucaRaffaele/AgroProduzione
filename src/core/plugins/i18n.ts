@@ -7,6 +7,7 @@ const messages = {
     layoutBuilder: "Layout builder",
     menu: "Menu",
     produzione: "Produzione",
+    banche: "Banche",
     lavorazione: "Lavorazione",
     ricondizionamento: "Ricondizionamento",
     craft: "Componenti Base",

@@ -42,6 +42,12 @@ const DocMenuConfig = [
         route: "/menu/ricondizionamento",
         svgIcon: "media/icons/duotune/abstract/abs040.svg",
         fontIcon: "bi bi-recycle"
+      },
+      {
+        heading: "banche",
+        route: "/menu/banche",
+        svgIcon: "media/icons/duotune/abstract/abs040.svg",
+        fontIcon: "bi bi-recycle"
       }
     ]
   },

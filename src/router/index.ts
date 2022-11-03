@@ -67,6 +67,15 @@ const routes: Array<RouteRecordRaw> = [
         }
       },
       {
+        path: "/menu/banche",
+        name: "banche",
+        component: () => import("@/views/archivi/tblcomuni/banche.vue"),
+        meta: {
+          pageTitle: "Banche",
+          breadcrumbs: ["Menu"]
+        }
+      },
+      {
         path: "/crafted/pages/profile",
         name: "profile",
         component: () => import("@/components/page-layouts/Profile.vue"),

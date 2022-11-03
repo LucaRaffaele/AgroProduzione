@@ -332,7 +332,13 @@
         <b-row class="mt-2">
           <b-col>
             <hr />
-            <ejs-button id="submitButton" type="submit" :css-class="btn_onpress"> F2 - Salva </ejs-button>
+            <ejs-button
+              id="submitButton"
+              type="submit"
+              :css-class="btn_onpress"
+            >
+              F2 - Salva
+            </ejs-button>
           </b-col>
         </b-row>
       </b-form>
@@ -341,16 +347,16 @@
 </template>
 
 <script>
-import axios from 'axios'
-import { sendAuthHeader } from '@/helpers/authservice/auth-header'
-import { layoutMethods, notificationMethods } from '@/state/helpers'
-import { rsaUtility } from '@/helpers/utility.js'
-import { userService } from '@/helpers/authservice/user.service'
+import axios from "axios";
+import { sendAuthHeader } from "@/helpers/authservice/auth-header";
+import { layoutMethods, notificationMethods } from "@/state/helpers";
+import { rsaUtility } from "@/helpers/utility.js";
+import { userService } from "@/helpers/authservice/user.service";
 
 export default {
-  name: 'BancheEdit',
+  name: "BancheEdit",
 
-  emit: ['add-record', 'edit-record'],
+  emit: ["add-record", "edit-record"],
 
   props: {
     edit: {
@@ -366,26 +372,26 @@ export default {
   data() {
     return {
       rsaUtility,
-      btn_onpress: 'e-primary',
+      btn_onpress: "e-primary",
       record: this.dataRecord
-    }
+    };
   },
 
   computed: {
     titolo: function () {
-      if (!this.edit) return 'Inserimento Banche'
-      return 'Modifica Banche'
+      if (!this.edit) return "Inserimento Banche";
+      return "Modifica Banche";
     }
   },
 
   watch: {
     dataRecord(val) {
-      this.record = val
+      this.record = val;
     }
   },
 
   mounted: function () {
-    rsaUtility.consoleLog('BancheEdit - mounted')
+    rsaUtility.consoleLog("BancheEdit - mounted");
   },
 
   methods: {
@@ -393,89 +399,91 @@ export default {
     ...notificationMethods,
 
     saveUpperCase(field) {
-      rsaUtility.onTextBoxBlur(this.record, field)
+      rsaUtility.onTextBoxBlur(this.record, field);
     },
 
     onShow(args) {
-      rsaUtility.consoleLog('OnShow', args)
-      let self = this
+      rsaUtility.consoleLog("OnShow", args);
+      let self = this;
       this.$nextTick().then(function () {
-        self.$refs.ban_desc.focusIn()
-      })
+        self.$refs.ban_desc.focusIn();
+      });
     },
 
     // eslint-disable-next-line no-unused-vars
     formSubmit(e) {
       if (this.record.ban_codice <= 0) {
-        this.$refs.ban_codice.focusIn()
-        return
+        this.$refs.ban_codice.focusIn();
+        return;
       }
-      this.record.ban_desc = this.record.ban_desc.trim().toUpperCase()
-      if (this.record.ban_desc == '') {
-        this.$refs.ban_desc.focusIn()
-        return
+      this.record.ban_desc = this.record.ban_desc.trim().toUpperCase();
+      if (this.record.ban_desc == "") {
+        this.$refs.ban_desc.focusIn();
+        return;
       }
 
       let obj = {
         RecordsTotal: 1,
         Data: [this.record]
-      }
+      };
       if (!this.edit) {
-        let url = userService.getApipath() + 'banche/post'
-        rsaUtility.consoleLog('BancheEdit emit add-record: ' + url, obj)
-        this.loaderOn()
-        this.clear()
+        let url = userService.getApipath() + "banche/post";
+        rsaUtility.consoleLog("BancheEdit emit add-record: " + url, obj);
+        this.loaderOn();
+        this.clear();
         axios
           .post(url, obj, { headers: sendAuthHeader() })
           .then((res) => {
-            this.loaderOff()
+            this.loaderOff();
             if (res.data.RecordsTotal > 0) {
-              rsaUtility.consoleLog('record creato')
-              this.$emit('add-record', res.data.Data[0])
-              this.record.ban_codice = parseInt([res.data.Data[0].ban_codice], 10) + 1
-              this.record.ban_desc = ''
-              this.record.ban_indirizzo = ''
-              this.record.ban_citta = ''
-              this.record.ban_prov = ''
-              this.record.ban_cap = ''
-              this.record.ban_azi = ''
-              this.record.ban_dip = ''
-              this.record.ban_abi = ''
-              this.record.ban_cab = ''
-              this.record.ban_cin = ''
-              this.record.ban_conto = ''
-              this.record.ban_spor = ''
-              this.record.ban_iban = ''
-              this.record.ban_tel = ''
-              this.record.ban_sot = null
-              this.$refs.ban_desc.focusIn()
+              rsaUtility.consoleLog("record creato");
+              this.$emit("add-record", res.data.Data[0]);
+              this.record.ban_codice =
+                parseInt([res.data.Data[0].ban_codice], 10) + 1;
+              this.record.ban_desc = "";
+              this.record.ban_indirizzo = "";
+              this.record.ban_citta = "";
+              this.record.ban_prov = "";
+              this.record.ban_cap = "";
+              this.record.ban_azi = "";
+              this.record.ban_dip = "";
+              this.record.ban_abi = "";
+              this.record.ban_cab = "";
+              this.record.ban_cin = "";
+              this.record.ban_conto = "";
+              this.record.ban_spor = "";
+              this.record.ban_iban = "";
+              this.record.ban_tel = "";
+              this.record.ban_sot = null;
+              this.$refs.ban_desc.focusIn();
             }
           })
           .catch((error) => {
-            this.loaderOff()
-            this.handlerError(error)
-          })
+            this.loaderOff();
+            this.handlerError(error);
+          });
       } else {
-        let url = userService.getApipath() + 'banche/put/' + this.record.ban_codice
-        rsaUtility.consoleLog('BancheEdit emit edit-record: ' + url, obj)
-        this.loaderOn()
-        this.clear()
+        let url =
+          userService.getApipath() + "banche/put/" + this.record.ban_codice;
+        rsaUtility.consoleLog("BancheEdit emit edit-record: " + url, obj);
+        this.loaderOn();
+        this.clear();
         axios
           .put(url, obj, { headers: sendAuthHeader() })
           .then((res) => {
-            this.loaderOff()
+            this.loaderOff();
             if (res.data.RecordsTotal > 0) {
-              this.$emit('edit-record', res.data.Data[0])
-              this.record = res.data.Data[0]
-              this.$refs.ban_desc.focusIn()
+              this.$emit("edit-record", res.data.Data[0]);
+              this.record = res.data.Data[0];
+              this.$refs.ban_desc.focusIn();
             }
           })
           .catch((error) => {
-            this.loaderOff()
-            this.handlerError(error)
-          })
+            this.loaderOff();
+            this.handlerError(error);
+          });
       }
     }
   }
-}
+};
 </script>
