@@ -1,4 +1,4 @@
-import { dimensionConsts } from "@/helpers/constants.js";
+import { dimensionConsts } from "@/core/helpers/constants.js";
 
 export const rsaUtility = {
   GetShowedNumDoc,

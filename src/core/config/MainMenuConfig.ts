@@ -48,6 +48,12 @@ const DocMenuConfig = [
         route: "/menu/banche",
         svgIcon: "media/icons/duotune/abstract/abs040.svg",
         fontIcon: "bi bi-recycle"
+      },
+      {
+        heading: "articoli",
+        route: "/menu/articoli",
+        svgIcon: "media/icons/duotune/abstract/abs040.svg",
+        fontIcon: "bi bi-recycle"
       }
     ]
   },

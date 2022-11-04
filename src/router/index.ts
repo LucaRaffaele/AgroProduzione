@@ -76,6 +76,15 @@ const routes: Array<RouteRecordRaw> = [
         }
       },
       {
+        path: "/menu/articoli",
+        name: "articoli",
+        component: () => import("@/views/articoli/ArticoliView.vue"),
+        meta: {
+          pageTitle: "Articoli",
+          breadcrumbs: ["Menu"]
+        }
+      },
+      {
         path: "/crafted/pages/profile",
         name: "profile",
         component: () => import("@/components/page-layouts/Profile.vue"),

@@ -8,6 +8,7 @@ const messages = {
     menu: "Menu",
     produzione: "Produzione",
     banche: "Banche",
+    articoli: "articoli",
     lavorazione: "Lavorazione",
     ricondizionamento: "Ricondizionamento",
     craft: "Componenti Base",
