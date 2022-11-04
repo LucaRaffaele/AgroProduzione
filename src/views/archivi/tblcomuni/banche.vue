@@ -1,14 +1,15 @@
 <template>
-  <banche-grid></banche-grid>
+  <div>TEST</div>
+  <!-- <banche-grid></banche-grid> -->
 </template>
 
 <script>
-import BancheGrid from "@/components/tblcomuni/Banche/BancheGrid";
+// import BancheGrid from "@/components/tblcomuni/Banche/BancheGrid";
 
 export default {
-  name: "Banche",
+  name: "BancheView",
   component: {
-    BancheGrid
+    // BancheGrid
   }
 };
 </script>

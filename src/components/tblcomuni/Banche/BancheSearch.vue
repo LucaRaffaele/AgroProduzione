@@ -24,11 +24,11 @@
 <script>
 import BancheGrid from "./BancheGrid";
 import axios from "axios";
-import { authHeader } from "@/helpers/authservice/auth-header";
-import { userService } from "@/helpers/authservice/user.service";
+import { authHeader } from "@/core/helpers/authservice/auth-header";
+import { userService } from "@/core/helpers/authservice/user.service";
 import { layoutMethods, notificationMethods } from "@/state/helpers";
-import { dimensionConsts } from "@/helpers/constants.js";
-import { rsaUtility } from "@/helpers/utility.js";
+import { dimensionConsts } from "@/core/helpers/constants.js";
+import { rsaUtility } from "@/core/helpers/utility.js";
 
 export default {
   name: "BancheSearch",

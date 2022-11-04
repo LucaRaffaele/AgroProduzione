@@ -78,8 +78,8 @@ import {
 } from "@syncfusion/ej2-vue-grids";
 import { DialogUtility } from "@syncfusion/ej2-popups";
 import { layoutMethods, notificationMethods } from "@/state/helpers";
-import { dimensionConsts } from "@/helpers/constants.js";
-import { rsaUtility } from "@/helpers/utility.js";
+import { dimensionConsts } from "@/core/helpers/constants.js";
+import { rsaUtility } from "@/core/helpers/utility.js";
 const BancheEdit = () =>
   import(
     /* webpackChunkName: "tblcomuni" */ "@/components/tblcomuni/Banche/BancheEdit"

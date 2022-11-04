@@ -64,7 +64,7 @@ export const rsaConst = {
   // Nazionalità
   NAZ_ITA: 1,
   NAZ_STR: 2
-}
+};
 
 export const dimensionConsts = {
   //GRID
@@ -72,12 +72,12 @@ export const dimensionConsts = {
   SEARCHGRID: 10,
 
   //Height
-  HEIGHTSEARCHWRAPPER: '370',
-  HEIGHTGRIDWRAPPER: '550',
+  HEIGHTSEARCHWRAPPER: "370",
+  HEIGHTGRIDWRAPPER: "550",
 
   //Prima Nota
   IVAGRID: 7,
   PNOTARIGHEGRID: 100,
   ANALITICS: 50,
   SCADENZE: 50
-}
+};

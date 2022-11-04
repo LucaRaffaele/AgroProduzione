@@ -350,8 +350,8 @@
 import axios from "axios";
 import { sendAuthHeader } from "@/helpers/authservice/auth-header";
 import { layoutMethods, notificationMethods } from "@/state/helpers";
-import { rsaUtility } from "@/helpers/utility.js";
-import { userService } from "@/helpers/authservice/user.service";
+import { rsaUtility } from "@/core/helpers/utility.js";
+import { userService } from "@/core/helpers/authservice/user.service";
 
 export default {
   name: "BancheEdit",
@@ -404,10 +404,10 @@ export default {
 
     onShow(args) {
       rsaUtility.consoleLog("OnShow", args);
-      let self = this;
+      /* const self = this;
       this.$nextTick().then(function () {
         self.$refs.ban_desc.focusIn();
-      });
+      }); */
     },
 
     // eslint-disable-next-line no-unused-vars
