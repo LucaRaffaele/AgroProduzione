@@ -42,10 +42,16 @@
 </template>
 
 <script lang="ts">
+import { getIllustrationsPath } from "@/core/helpers/assets";
 import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "kt-getting-started",
-  components: {}
+  components: {},
+  setup() {
+    return {
+      getIllustrationsPath
+    };
+  }
 });
 </script>
