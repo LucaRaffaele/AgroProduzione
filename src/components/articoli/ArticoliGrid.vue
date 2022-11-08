@@ -1,6 +1,26 @@
 <template>
-  <div @keydown="onKeydown">
-    <ejs-grid
+  <div>
+    <ejs-grid :dataSource="data">
+      <e-columns>
+        <e-column
+          field="OrderID"
+          headerText="Order ID"
+          textAlign="Right"
+          width="100"
+        ></e-column>
+        <e-column
+          field="CustomerID"
+          headerText="Customer ID"
+          width="120"
+        ></e-column>
+        <e-column
+          field="ShipCountry"
+          headerText="Ship Country"
+          width="150"
+        ></e-column>
+      </e-columns>
+    </ejs-grid>
+    <!-- <ejs-grid
       ref="grid"
       :dataSource="data"
       locale="it-IT"
@@ -8,9 +28,8 @@
       :allow-resizing="true"
       :resize-settings="{ mode: 'Auto' }"
       :allow-text-wrap="true"
-      :height="height"
+      :height="500"
     >
-      <!--  :recordDoubleClick="onDoubleClick" -->
       <e-columns>
         <e-column
           field="ana_codice"
@@ -63,30 +82,27 @@
           width="180"
         ></e-column>
       </e-columns>
-    </ejs-grid>
+    </ejs-grid> -->
   </div>
 </template>
 
-<script>
-import { dimensionConsts } from "@/core/helpers/constants.js";
-import { rsaUtility } from "@/core/helpers/utility.js";
+<script lang="ts">
+import { defineComponent, ref, onMounted } from "vue";
 import {
   GridComponent,
   ColumnsDirective,
   ColumnDirective
 } from "@syncfusion/ej2-vue-grids";
-
 import ApiService from "@/core/services/ApiService";
+import { rsaConsoleLog } from "@/core/helpers/utility";
 
-export default {
+export default defineComponent({
   name: "ArticoliGrid",
-
   components: {
     "ejs-grid": GridComponent,
     "e-columns": ColumnsDirective,
     "e-column": ColumnDirective
   },
-
   props: {
     search: {
       type: Boolean,
@@ -94,7 +110,7 @@ export default {
     },
     size: {
       type: Number,
-      default: dimensionConsts.DEFAULTGRID
+      default: 20
     },
     filter: {
       type: String,
@@ -117,129 +133,61 @@ export default {
   },
 
   emit: ["edit-articolo"],
+  /* 
+  provide: {
+    grid: [Sort, Edit, Toolbar, Page, ExcelExport, PdfExport, Resize]
+  }, */
 
-  inject: ["selectArticolo"],
+  setup(props, { emit }) {
+    const data = ref<Array<any>>([
+      {
+        OrderID: 10248,
+        CustomerID: "VINET",
+        ShipCountry: "France"
+      },
+      {
+        OrderID: 10249,
+        CustomerID: "TOMSP",
+        ShipCountry: "Germany"
+      }
+    ]);
 
-  data: function () {
-    return {
-      //TODO Attivare add-record ed edit-record
-      toDeveloped: false,
+    const state = ref({ skip: 0, take: props.size, requiresCounts: true });
 
-      data: null,
-      utilDlg: null,
-
-      state: { skip: 0, take: this.size, requiresCounts: true },
-      filterArticles: "",
-
-      pageSettings: { pageSizes: true, pageSize: this.size },
-      wrapSettings: { wrapMode: "Content" }
-    };
-  },
-
-  computed: {
-    height() {
-      return rsaUtility.setGridHeight(this.data, this.search);
-    }
-  },
-
-  created() {
-    rsaUtility.consoleLog("ArticoliGrid Component - Created");
-    if (!this.preload) {
-      rsaUtility.consoleLog("ArticoliSearch - Created");
-      return;
-    }
-    let state = { skip: 0, take: this.size, requiresCounts: true };
-    var url =
-      process.env.VUE_APP_API_URL +
-      "articoli/getjoined?top=" +
-      state.take +
-      "&skip=" +
-      state.skip;
-    if (state.requiresCounts) url += "&inlinecount=true";
-    url = encodeURI(url);
-    rsaUtility.consoleLog("ArticoliSearch - Created-> PRELOAD URL: ", url);
-
-    ApiService.setHeader();
-    ApiService.get(url)
-      .then((res) => {
-        this.loaderOff();
-        this.data = {
-          result: res.data.Data,
-          count: res.data.RecordsTotal
-        };
-      })
-      .catch((error) => {
-        this.loaderOff();
-        this.handlerError(error);
-      });
-  },
-
-  //FIXME: Spostare DataStateChange da created a mounted
-  mounted() {
-    if (Object.keys(this.records).length > 0) this.data = this.records;
-    else {
-      let state = { skip: 0, take: this.size, requiresCounts: true };
-      this.onDataStateChange(state);
-    }
-
-    this.$nextTick().then(function () {
-      this.$nextTick().then(function () {
-        requestAnimationFrame(() => {
-          document
-            .getElementById(
-              this.$refs.grid.ej2Instances.toolbarModule.searchBoxObj.searchBox
-                .id
-            )
-            .focus();
-        });
-      });
+    onMounted(() => {
+      rsaConsoleLog("ArticoliGrid mounted");
+      // onDataStateChange(state);
     });
-  },
 
-  methods: {
-    onFilterSelect(filter) {
-      rsaUtility.consoleLog("Il filtro è: ", filter);
-      this.filterArticles = filter;
-    },
+    const onDataStateChange = (state) => {
+      const url =
+        "articoli/getjoined?top=" + state.take + "&skip=" + state.skip;
 
-    actionBegin(args) {
-      if (args.requestType === "beginEdit") {
-        args.cancel = true;
-      }
-    },
+      ApiService.setHeader();
+      ApiService.get(url)
+        .then(({ data }) => {
+          rsaConsoleLog("*** Result -> ", data);
+          if (data.RecordsTotal > 0) {
+            data.value = {
+              result: data.Data,
+              count: data.RecordsTotal
+            };
+          }
+        })
+        .catch(({ response }) => {
+          rsaConsoleLog("Error--------------- ", response);
+        });
+    };
 
-    dataBound() {
-      var gridInstance =
-        document.getElementsByClassName("e-grid")[0].ej2_instances[0];
-      gridInstance.gridLines = "Both";
-      gridInstance.autoFitColumns();
-    },
-
-    descFormatter(field, data) {
+    const descFormatter = (field, data) => {
       return data[field] + " " + data.ana_desc2.trim();
-    },
+    };
 
-    addRecord(args) {
-      rsaUtility.consoleLog("Add Record", args);
-      this.$refs.grid.ej2Instances.addRecord(args);
-      this.$refs.grid.ej2Instances.refresh();
-    },
-
-    editRecord(args) {
-      rsaUtility.consoleLog("Edit Record", args);
-      this.$refs.grid.ej2Instances.updateRow(args);
-      this.$refs.grid.ej2Instances.refresh();
-      for (var i = 0; i < this.data.length; i++) {
-        if (this.data[i].ana_codice == args.ana_codice) {
-          this.data[i] = args;
-          break;
-        }
-      }
-    },
-
-    refreshGrid() {
-      this.$refs.grid.ej2Instances.refresh();
-    }
+    return {
+      data,
+      descFormatter,
+      onDataStateChange
+    };
   }
-};
+});
 </script>

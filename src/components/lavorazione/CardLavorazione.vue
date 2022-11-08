@@ -2,7 +2,7 @@
   <!--begin::Mixed Widget 1-->
   <div class="card card-xxl-stretch">
     <!--begin::Header-->
-    <div :class="`bg-${widgetColor}`" class="card-header border-0 py-5">
+    <div :class="`bg-${widgetColor}`" class="card-header border-0 pt-5 pb-20">
       <!--begin::Heading-->
       <div class="d-flex flex-stack">
         <!--begin:Info-->
@@ -26,7 +26,7 @@
             </a>
 
             <span class="text-muted fw-semobold">
-              {{ "Data di lavorazione: " + lavorazione.lav_data }}
+              {{ "Data di creazione: " + lavorazione.lav_data }}
             </span>
           </div>
           <!--end:Title-->
@@ -34,13 +34,13 @@
         <!--begin:Info-->
       </div>
       <!--end::Heading-->
-      <h3 class="card-title fw-bold text-white">Sales Statistics</h3>
+      <h3 class="card-title fw-bold text-white">{{ lavorazione.lav_desc }}</h3>
     </div>
     <!--end::Header-->
     <!--begin::Body-->
     <div class="card-body p-0">
       <!--begin::Stats-->
-      <div class="card-p mt-n20 position-relative">
+      <div class="card-p mt-n12 position-relative">
         <!--begin::Row-->
         <div class="row m-0">
           <div class="col bg-light-warning px-6 py-8 rounded-2 me-7 mb-7">
@@ -103,9 +103,13 @@ export default defineComponent({
     widgetClasses: String,
     widgetColor: {
       type: String,
-      default: "primary"
+      default: "secondary"
     },
-    strokeColor: String
+    strokeColor: String,
+    lavorazione: {
+      type: Object,
+      required: true
+    }
   },
   setup(props) {
     const chartRef = ref<typeof VueApexCharts | null>(null);
