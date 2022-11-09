@@ -92,9 +92,6 @@
 <script lang="ts">
 import { defineComponent, ref, computed, watch, onBeforeMount } from "vue";
 import { useStore } from "vuex";
-import { ApexOptions } from "apexcharts";
-import { getCSSVariableValue } from "@/assets/ts/_utils";
-import VueApexCharts from "vue3-apexcharts";
 
 export default defineComponent({
   name: "card-lavorazione",
@@ -112,167 +109,13 @@ export default defineComponent({
     }
   },
   setup(props) {
-    const chartRef = ref<typeof VueApexCharts | null>(null);
-    let chart: ApexOptions = {};
     const store = useStore();
-
-    const series = ref([
-      {
-        name: "Net Profit",
-        data: [30, 45, 32, 70, 40, 40, 40]
-      }
-    ]);
 
     const themeMode = computed(() => {
       return store.getters.getThemeMode;
     });
 
-    onBeforeMount(() => {
-      Object.assign(chart, chartOptions(props.widgetColor, props.strokeColor));
-    });
-
-    const refreshChart = () => {
-      if (!chartRef.value) {
-        return;
-      }
-
-      Object.assign(chart, chartOptions(props.widgetColor, props.strokeColor));
-
-      chartRef.value.refresh();
-    };
-
-    watch(themeMode, () => {
-      refreshChart();
-    });
-
-    return {
-      chart,
-      series,
-      chartRef
-    };
+    return {};
   }
 });
-
-const chartOptions = (widgetColor, strokeColor): ApexOptions => {
-  const labelColor = getCSSVariableValue("--kt-gray-500");
-  const borderColor = getCSSVariableValue("--kt-gray-200");
-  const color = getCSSVariableValue(`--kt-${widgetColor}`);
-
-  return {
-    chart: {
-      fontFamily: "inherit",
-      type: "area",
-      toolbar: {
-        show: false
-      },
-      zoom: {
-        enabled: false
-      },
-      sparkline: {
-        enabled: true
-      },
-      dropShadow: {
-        enabled: true,
-        enabledOnSeries: undefined,
-        top: 5,
-        left: 0,
-        blur: 3,
-        color: strokeColor,
-        opacity: 0.5
-      }
-    },
-    plotOptions: {},
-    legend: {
-      show: false
-    },
-    dataLabels: {
-      enabled: false
-    },
-    fill: {
-      type: "solid",
-      opacity: 0
-    },
-    stroke: {
-      curve: "smooth",
-      show: true,
-      width: 3,
-      colors: [strokeColor]
-    },
-    xaxis: {
-      categories: ["Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug"],
-      axisBorder: {
-        show: false
-      },
-      axisTicks: {
-        show: false
-      },
-      labels: {
-        show: false,
-        style: {
-          colors: labelColor,
-          fontSize: "12px"
-        }
-      },
-      crosshairs: {
-        show: false,
-        position: "front",
-        stroke: {
-          color: borderColor,
-          width: 1,
-          dashArray: 3
-        }
-      }
-    },
-    yaxis: {
-      min: 0,
-      max: 80,
-      labels: {
-        show: false,
-        style: {
-          colors: labelColor,
-          fontSize: "12px"
-        }
-      }
-    },
-    states: {
-      normal: {
-        filter: {
-          type: "none",
-          value: 0
-        }
-      },
-      hover: {
-        filter: {
-          type: "none",
-          value: 0
-        }
-      },
-      active: {
-        allowMultipleDataPointsSelection: false,
-        filter: {
-          type: "none",
-          value: 0
-        }
-      }
-    },
-    tooltip: {
-      style: {
-        fontSize: "12px"
-      },
-      y: {
-        formatter: function (val) {
-          return "$" + val + " thousands";
-        }
-      },
-      marker: {
-        show: false
-      }
-    },
-    markers: {
-      colors: [color],
-      strokeColors: [strokeColor],
-      strokeWidth: 3
-    }
-  };
-};
 </script>
