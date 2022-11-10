@@ -77,14 +77,13 @@ export default defineComponent({
     const lavorazioniList = ref<Array<any>>([]);
 
     onMounted(async () => {
-      /* lavorazioniList.value = await getLavorazioni();
-      if (!lavorazioniList.value)  */
-      lavorazioniList.value = lavorazioniFake.value;
+      lavorazioniList.value = await getLavorazioni();
+      if (!lavorazioniList.value) lavorazioniList.value = lavorazioniFake.value;
     });
 
     const getLavorazioni = async () => {
       ApiService.setHeader();
-      const result = await ApiService.get("lavorazioni/get");
+      const result = await ApiService.get("lavorazioni/getjoined");
       try {
         rsaConsoleLog("***LavoraziniView Result -> ", result.data);
         if (result.data.RecordsTotal > 0) {
