@@ -41,19 +41,17 @@
     <!--end::Col-->
   </div>
   <!--end::Row-->
-  <AddLavorazioneModal></AddLavorazioneModal>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref, onMounted } from "vue";
 import ApiService from "@/core/services/ApiService";
 import { rsaConsoleLog } from "@/core/helpers/utility";
-import AddLavorazioneModal from "@/components/lavorazione/AddLavorazioneModal.vue";
-import CardLavorazione from "@/components/lavorazione/CardLavorazione.vue";
+import CardLavorazione from "@/components/lavorazioni/CardLavorazione.vue";
 
 export default defineComponent({
   name: "ProduzioneView",
-  components: { CardLavorazione, AddLavorazioneModal },
+  components: { CardLavorazione },
   setup() {
     const modalId = ref("modal_add_lavorazione");
     const lavorazioniFake = ref([

@@ -32,8 +32,8 @@ const DocMenuConfig = [
         fontIcon: "bi bi-calendar3-event"
       },
       {
-        heading: "lavorazione",
-        route: "/menu/lavorazione",
+        heading: "lavorazioni",
+        route: "/menu/lavorazioni",
         svgIcon: "media/icons/duotune/general/gen014.svg",
         fontIcon: "bi bi-calendar3-event"
       },

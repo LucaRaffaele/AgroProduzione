@@ -37,7 +37,18 @@
           </li>
           <!--end::Item-->
           <!--begin::Item-->
-          <li class="breadcrumb-item text-muted">{{ item }}</li>
+          <template v-if="typeof item == 'string'">
+            <li class="breadcrumb-item text-muted">{{ item }}</li>
+          </template>
+          <template v-else>
+            <li class="breadcrumb-item text-white opacity-75">
+              <router-link
+                :to="item.link"
+                class="text-white text-hover-primary"
+                >{{ item.label }}</router-link
+              >
+            </li>
+          </template>
           <!--end::Item-->
         </template>
       </ul>

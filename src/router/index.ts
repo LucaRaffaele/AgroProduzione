@@ -49,13 +49,52 @@ const routes: Array<RouteRecordRaw> = [
         }
       },
       {
-        path: "/menu/lavorazione",
-        name: "lavorazione",
-        component: () => import("@/views/menu/LavorazioneView.vue"),
-        meta: {
-          pageTitle: "Lavorazione",
-          breadcrumbs: ["Menu"]
-        }
+        path: "/menu/lavorazioni",
+        redirect: "/menu/lavorazioni/list",
+        component: () => import("@/views/menu/lavorazioni/LavorazioniView.vue"),
+        children: [
+          {
+            path: "list",
+            name: "lavorazioni-list",
+            component: () =>
+              import("@/views/menu/lavorazioni/LavorazioniList.vue"),
+            meta: {
+              pageTitle: "Lavorazioni"
+            }
+          },
+          {
+            path: "modifica/:id",
+            name: "lavorazioni-edit",
+            component: () =>
+              import("@/views/menu/lavorazioni/LavorazioniEdit.vue"),
+            props: true,
+            meta: {
+              pageTitle: "Lavorazione",
+              breadcrumbs: [
+                {
+                  label: "Lavorazione",
+                  link: "/lavorazioni/list"
+                }
+              ]
+            }
+          },
+          {
+            path: "stop/:id",
+            name: "lavorazioni-stop",
+            component: () =>
+              import("@/views/menu/lavorazioni/LavorazioniStopProcess.vue"),
+            props: true,
+            meta: {
+              pageTitle: "Lavorazione Fine Processo",
+              breadcrumbs: [
+                {
+                  label: "Lavorazione Stop",
+                  link: "/lavorazioni/list"
+                }
+              ]
+            }
+          }
+        ]
       },
       {
         path: "/menu/ricondizionamento",
