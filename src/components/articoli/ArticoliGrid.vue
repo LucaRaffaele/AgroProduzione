@@ -5,74 +5,87 @@
       :dataSource="dataTable"
       locale="it-IT"
       :allowSorting="true"
-      :data-bound="dataBound"
-      :allow-resizing="true"
-      :resize-settings="{ mode: 'Auto' }"
-      :edit-settings="editSettings"
+      :dataBound="dataBound"
+      :allowResizing="true"
+      :resizeSettings="{ mode: 'Auto' }"
+      :editSettings="editSettings"
       :toolbar="toolbarOptions"
-      :toolbar-click="onToolbarClicked"
-      :allow-paging="true"
-      :page-settings="pageSettings"
-      :action-begin="actionBegin"
-      :record-double-click="onDoubleClick"
-      :allow-excel-export="true"
-      :allow-pdf-export="true"
-      :allow-text-wrap="true"
-      :text-wrap-settings="wrapSettings"
-      :data-state-change="onDataStateChange"
+      :toolbarClick="onToolbarClicked"
+      :allowPaging="true"
+      :pageSettings="pageSettings"
+      :actionBegin="actionBegin"
+      :recordDoubleClick="onDoubleClick"
+      :allowExcelExport="true"
+      :allowPdfExport="true"
+      :allowTextWrap="true"
+      :textWrapSettings="wrapSettings"
+      :dataStateChange="onDataStateChange"
       :height="500"
     >
       <e-columns>
         <e-column
+          field=""
+          header-text=""
+          text-align="Center"
+          width="60"
+        ></e-column>
+        <e-column
           field="ana_codice"
-          header-text="Codice"
-          text-align="Left"
+          headerText="Codice"
+          textAlign="Left"
           width="150"
+          hideAtMedia="(min-width: 800px)"
           :is-primary-key="true"
         ></e-column>
 
         <e-column
           field="ana_desc1"
-          header-text="Descrizione"
-          text-align="Left"
-          :value-accessor="descFormatter"
-          width="250"
+          headerText="Descrizione"
+          textAlign="Left"
+          :valueAccessor="descFormatter"
+          width="180"
         ></e-column>
 
         <e-column
           field="ana_cod_fornitore"
-          header-text="Cod. Art. Forn."
-          text-align="Left"
+          headerText="Cod. Art. Forn."
+          textAlign="Left"
+          hideAtMedia="(min-width: 1200px)"
           width="120"
         ></e-column>
 
         <e-column
           field="ana_gruppo"
-          header-text="Gruppo."
-          text-align="Left"
+          headerText="Gruppo."
+          textAlign="Left"
+          hideAtMedia="(min-width: 800px)"
           width="150"
         ></e-column>
 
         <e-column
           field="for_desc"
-          header-text="Fornitore"
-          text-align="Left"
+          headerText="Fornitore"
+          textAlign="Left"
+          hideAtMedia="(min-width: 800px)"
           width="220"
         ></e-column>
 
         <e-column
           field="mar_desc"
-          header-text="Marchio"
-          text-align="Left"
+          headerText="Marchio"
+          textAlign="Left"
+          hideAtMedia="(min-width: 800px)"
           width="180"
         ></e-column>
 
         <e-column
           field="mer_desc"
-          header-text="Cat. Merceologica"
-          text-align="Left"
+          headerText="Cat. Merceologica"
+          textAlign="Left"
+          hideAtMedia="(min-width: 800px)"
           width="180"
         ></e-column>
+        <e-column headerText="Comandi" textAlign="Left" width="80"></e-column>
       </e-columns>
     </ejs-grid>
   </div>
@@ -82,6 +95,7 @@
 import { defineComponent, ref, onMounted } from "vue";
 import ApiService from "@/core/services/ApiService";
 import { rsaConsoleLog } from "@/core/helpers/utility";
+import { Page } from "@syncfusion/ej2-vue-grids";
 
 export default defineComponent({
   name: "articoli-grid",
@@ -116,10 +130,10 @@ export default defineComponent({
   },
 
   emit: ["edit-articolo"],
-  /*
+
   provide: {
-    grid: [Sort, Edit, Toolbar, Page, ExcelExport, PdfExport, Resize]
-  }, */
+    grid: [Page]
+  },
 
   setup(props, { emit }) {
     const dataTable = ref();
