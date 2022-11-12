@@ -47,20 +47,28 @@
       </div>
       <!--end::sidebar mobile toggle-->
       <!--begin::Mobile logo-->
-      <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
-        <router-link to="/" class="d-lg-none">
-          <img alt="Logo" src="media/logos/default-small.svg" class="h-30px" />
-        </router-link>
+      <!-- <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
+          <router-link to="/" class="d-lg-none">
+            <img alt="Logo" src="media/logos/default-small.svg" class="h-30px" />
+          </router-link>
+        </div> -->
+      <!--end::Mobile logo-->
+      <!--begin::Breadcrumb-->
+      <div
+        class="d-flex align-items-stretch justify-content-between flex-lg-grow-1"
+      >
+        <!--begin::Navbar-->
+        <div class="d-flex align-items-stretch" id="kt_header_nav">
+          <KTToolbar />
+        </div>
+        <!--end::Navbar-->
       </div>
       <!--end::Mobile logo-->
       <!--begin::Header wrapper-->
       <div
-        class="d-flex align-items-stretch justify-content-end flex-lg-grow-1"
+        class="d-flex align-items-stretch justify-content-end"
         id="kt_app_header_wrapper"
       >
-        <!-- Menù orizzontale
-          <KTHeaderMenu />
-        -->
         <KTHeaderNavbar />
       </div>
       <!--end::Header wrapper-->
@@ -73,6 +81,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 // import KTHeaderMenu from "@/layouts/main-layout/header/menu/Menu.vue";
+import KTToolbar from "@/layouts/main-layout/toolbar/Toolbar.vue";
 import KTHeaderNavbar from "@/layouts/main-layout/header/Navbar.vue";
 import {
   layout,
@@ -85,7 +94,8 @@ export default defineComponent({
   name: "layout-header",
   components: {
     // KTHeaderMenu,
-    KTHeaderNavbar
+    KTHeaderNavbar,
+    KTToolbar
   },
   setup() {
     return {

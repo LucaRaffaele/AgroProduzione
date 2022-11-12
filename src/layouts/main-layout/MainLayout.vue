@@ -11,7 +11,7 @@
         <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
           <!--begin::Content wrapper-->
           <div class="d-flex flex-column flex-column-fluid">
-            <KTToolbar />
+            <!-- <KTToolbar /> -->
             <div id="kt_app_content" class="app-content flex-column-fluid">
               <KTContent></KTContent>
             </div>
@@ -44,7 +44,7 @@ import {
 import KTHeader from "@/layouts/main-layout/header/Header.vue";
 import KTSidebar from "@/layouts/main-layout/sidebar/Sidebar.vue";
 import KTContent from "@/layouts/main-layout/content/Content.vue";
-import KTToolbar from "@/layouts/main-layout/toolbar/Toolbar.vue";
+// import KTToolbar from "@/layouts/main-layout/toolbar/Toolbar.vue";
 import KTFooter from "@/layouts/main-layout/footer/Footer.vue";
 import KTDrawers from "@/layouts/main-layout/drawers/Drawers.vue";
 import KTModals from "@/layouts/main-layout/modals/Modals.vue";
@@ -60,7 +60,7 @@ export default defineComponent({
     KTHeader,
     KTSidebar,
     KTContent,
-    KTToolbar,
+    // KTToolbar,
     KTFooter,
     KTDrawers,
     KTScrollTop,

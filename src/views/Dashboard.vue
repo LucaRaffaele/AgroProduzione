@@ -6,13 +6,13 @@
       <!--begin::Image-->
       <div
         v-if="themeMode === 'dark'"
-        class="bgi-no-repeat bgi-size-contain bgi-position-x-center bgi-position-y-center card-rounded-bottom h-250px"
+        class="bgi-no-repeat bgi-size-contain bgi-position-x-center bgi-position-y-center mt-8 card-rounded-bottom h-250px"
         style="background-image: url('media/rsa/default-dark-big.svg')"
       ></div>
 
       <div
         v-if="themeMode === 'light'"
-        class="bgi-no-repeat bgi-size-contain bgi-position-x-center bgi-position-y-center card-rounded-bottom h-250px"
+        class="bgi-no-repeat bgi-size-contain bgi-position-x-center bgi-position-y-center mt-8 card-rounded-bottom h-250px"
         style="background-image: url('media/rsa/default-big.svg')"
       ></div>
       <!-- <div

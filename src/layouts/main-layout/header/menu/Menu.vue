@@ -12,8 +12,9 @@
     data-kt-drawer-toggle="#kt_app_header_menu_toggle"
     data-kt-swapper="true"
     data-kt-swapper-mode="{default: 'append', lg: 'prepend'}"
-    data-kt-swapper-parent="{default: '#kt_app_body', lg: '#kt_app_header_wrapper'}"
+    data-kt-swapper-parent="{default: '#kt_app_body', lg: '#kt_header_nav'}"
   >
+    <!-- //kt_app_header_wrapper -->
     <!--begin::Menu-->
     <div
       class="menu menu-rounded menu-column menu-lg-row my-5 my-lg-0 align-items-stretch fw-semibold px-2 px-lg-0"

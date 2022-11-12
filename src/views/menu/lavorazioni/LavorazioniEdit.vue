@@ -102,6 +102,7 @@ import { ILavorazione as LavorazioneDetails } from "@/core/data/lavorazioni";
 import { ErrorMessage, Field, Form } from "vee-validate";
 import ApiService from "@/core/services/ApiService";
 import * as Yup from "yup";
+import { rsaConsoleLog } from "@/core/helpers/utility";
 
 export default defineComponent({
   name: "lavorazioni-edit",
@@ -125,7 +126,7 @@ export default defineComponent({
     });
 
     onMounted(() => {
-      console.log("UserSettings on Mounted props data -> ", props.id);
+      rsaConsoleLog("UserSettings on Mounted props data -> ", props.id);
       /* if (props.id != 0)
         lavorazioneDetails.value = ; */
     });
@@ -133,7 +134,7 @@ export default defineComponent({
     watch(
       () => props.id,
       (newValue) => {
-        console.log("UserSettings on WATCH props data -> ", props.id);
+        rsaConsoleLog("UserSettings on WATCH props data -> ", props.id);
       }
     );
 
@@ -159,7 +160,7 @@ export default defineComponent({
           ApiService.post("utenti/post", obj)
             .then(({ data }) => {
               submitButton1.value?.removeAttribute("data-kt-indicator");
-              console.log("UtentiSettings Post Result -> ", data);
+              rsaConsoleLog("UtentiSettings Post Result -> ", data);
               if (data.RecordsTotal > 0) {
                 emit("updateUser", data.Data[0]);
                 lavorazioneDetails.value = {
@@ -172,7 +173,7 @@ export default defineComponent({
             })
             .catch(({ response }) => {
               submitButton1.value?.removeAttribute("data-kt-indicator");
-              console.log("Error--------------- ", response);
+              rsaConsoleLog("Error--------------- ", response);
             });
 
           submitButton1.value?.removeAttribute("data-kt-indicator");
@@ -184,7 +185,7 @@ export default defineComponent({
           )
             .then(({ data }) => {
               submitButton1.value?.removeAttribute("data-kt-indicator");
-              console.log("UtentiSettings Put Result -> ", data);
+              rsaConsoleLog("UtentiSettings Put Result -> ", data);
               if (data.RecordsTotal > 0) {
                 lavorazioneDetails.value = data.Data[0];
                 emit("updateUser", data.Data[0]);
@@ -192,7 +193,7 @@ export default defineComponent({
             })
             .catch(({ response }) => {
               submitButton1.value?.removeAttribute("data-kt-indicator");
-              console.log("Error--------------- ", response);
+              rsaConsoleLog("Error--------------- ", response);
             });
 
           submitButton1.value?.removeAttribute("data-kt-indicator");

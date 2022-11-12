@@ -8,13 +8,26 @@
     <!--end::Title-->
 
     <!--begin::Controls-->
-    <div class="d-flex align-items-center my-2">
-      <router-link
-        :to="'/menu/lavorazioni/edit/' + 0"
-        class="btn btn-primary align-self-center"
-        >Aggiungi Lavorazione</router-link
-      >
-    </div>
+    <template v-if="!onEdit">
+      <div class="d-flex align-items-center my-2">
+        <router-link
+          :to="'/menu/lavorazioni/modifica/' + 0"
+          class="btn btn-primary align-self-center"
+          @click="onEdit = true"
+          >Aggiungi Lavorazione</router-link
+        >
+      </div>
+    </template>
+    <template v-if="onEdit">
+      <div class="d-flex align-items-center my-2">
+        <router-link
+          to="/menu/lavorazioni/list/"
+          class="btn btn-danger align-self-center"
+          @click="onEdit = false"
+          >Indietro</router-link
+        >
+      </div>
+    </template>
     <!--end::Controls-->
   </div>
   <!--end::Campaigns toolbar-->
@@ -25,54 +38,18 @@
 
 <script lang="ts">
 import { defineComponent, ref, onMounted } from "vue";
-import ApiService from "@/core/services/ApiService";
 import { rsaConsoleLog } from "@/core/helpers/utility";
 
 export default defineComponent({
   name: "lavorazioni-view",
   components: {},
   setup() {
-    const modalId = ref("modal_add_lavorazione");
-    const lavorazioniFake = ref([
-      {
-        lav_desc: "Pomodori",
-        lav_data: "12 Dicembre 2022",
-        img_data: null
-      },
-      {
-        lav_desc: "Arance",
-        lav_data: "13 Dicembre 2022",
-        img_data: null
-      },
-      {
-        lav_desc: "Limoni",
-        lav_data: "14 Dicembre 2022",
-        img_data: null
-      }
-    ]);
-
-    const lavorazioniList = ref<Array<any>>([]);
-
-    onMounted(async () => {
-      lavorazioniList.value = await getLavorazioni();
-      if (!lavorazioniList.value) lavorazioniList.value = lavorazioniFake.value;
+    const onEdit = ref(false);
+    onMounted(() => {
+      rsaConsoleLog("LavorazioniView Mounted!");
     });
 
-    const getLavorazioni = async () => {
-      ApiService.setHeader();
-      const result = await ApiService.get("lavorazioni/getjoined");
-      try {
-        rsaConsoleLog("***LavoraziniView Result -> ", result.data);
-        if (result.data.RecordsTotal > 0) {
-          return result.data.Data;
-        }
-      } catch {
-        rsaConsoleLog("Error--------------- ", result);
-        return null;
-      }
-      return null;
-    };
-    return { modalId, lavorazioniList };
+    return { onEdit };
   }
 });
 </script>

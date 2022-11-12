@@ -50,9 +50,13 @@ import { rsaConsoleLog } from "@/core/helpers/utility";
 import CardLavorazione from "@/components/lavorazioni/CardLavorazione.vue";
 
 export default defineComponent({
-  name: "ProduzioneView",
+  name: "lavorazioni-stop-process",
   components: { CardLavorazione },
-  setup() {
+
+  props: {
+    id: { type: String, required: true }
+  },
+  setup(props) {
     const modalId = ref("modal_add_lavorazione");
     const lavorazioniFake = ref([
       {
@@ -75,6 +79,8 @@ export default defineComponent({
     const lavorazioniList = ref<Array<any>>([]);
 
     onMounted(async () => {
+      rsaConsoleLog("***LavorazioniStopProcess Result -> ", props.id);
+
       lavorazioniList.value = await getLavorazioni();
       if (!lavorazioniList.value) lavorazioniList.value = lavorazioniFake.value;
     });

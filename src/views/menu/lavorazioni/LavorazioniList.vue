@@ -27,7 +27,7 @@ import { rsaConsoleLog } from "@/core/helpers/utility";
 import CardLavorazione from "@/components/lavorazioni/CardLavorazione.vue";
 
 export default defineComponent({
-  name: "ProduzioneView",
+  name: "lavorazioni-list",
   components: { CardLavorazione },
   setup() {
     const modalId = ref("modal_add_lavorazione");
@@ -60,7 +60,7 @@ export default defineComponent({
       ApiService.setHeader();
       const result = await ApiService.get("lavorazioni/getjoined");
       try {
-        rsaConsoleLog("***LavoraziniView Result -> ", result.data);
+        rsaConsoleLog("***LavorazioniList Result -> ", result.data);
         if (result.data.RecordsTotal > 0) {
           return result.data.Data;
         }
