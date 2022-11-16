@@ -142,19 +142,19 @@ export default defineComponent({
 
     onMounted(() => {
       rsaConsoleLog("ArticoliGrid mounted");
-      onDataStateChange(state);
+      onDataStateChange(state.value);
     });
 
     const onDataStateChange = (state) => {
       rsaConsoleLog("*** Result -> ", state);
-      const url =
-        "articoli/getjoined?top=" +
+      const slug =
+        "getjoined?top=" +
         state.take +
         "&skip=" +
         state.skip +
         "&inlinecount=true";
       ApiService.setHeader();
-      ApiService.get(url)
+      ApiService.get("articoli", slug)
         .then(({ data }) => {
           rsaConsoleLog("*** Result -> ", data.RecordsTotal);
           if (data.RecordsTotal > 0) {
