@@ -9,14 +9,12 @@
       :allowResizing="true"
       :resizeSettings="{ mode: 'Auto' }"
       :editSettings="editSettings"
-      :toolbar="toolbarOptions"
+      :toolbar="toolbar"
       :toolbarClick="onToolbarClicked"
       :allowPaging="true"
       :pageSettings="pageSettings"
       :actionBegin="actionBegin"
       :recordDoubleClick="onDoubleClick"
-      :allowExcelExport="true"
-      :allowPdfExport="true"
       :allowTextWrap="true"
       :textWrapSettings="wrapSettings"
       :dataStateChange="onDataStateChange"
@@ -85,7 +83,13 @@
           hideAtMedia="(min-width: 800px)"
           width="180"
         ></e-column>
-        <e-column headerText="Comandi" textAlign="Left" width="80"></e-column>
+        <e-column
+          headerText="Comandi"
+          hideAtMedia="(max-width: 800px)"
+          textAlign="Left"
+          width="80"
+        ></e-column>
+        <!-- template="selectButtonTemplate" -->
       </e-columns>
     </ejs-grid>
   </div>
@@ -95,7 +99,13 @@
 import { defineComponent, ref, onMounted } from "vue";
 import ApiService from "@/core/services/ApiService";
 import { rsaConsoleLog } from "@/core/helpers/utility";
-import { Page } from "@syncfusion/ej2-vue-grids";
+import { Page, Toolbar } from "@syncfusion/ej2-vue-grids";
+
+/* const selectButtonTemplate = {
+  template: `<a href="#" class="btn btn-icon btn-dark"
+  ><i class="bi bi-droplet-half fs-3 me-2"></i></a
+>`
+}; */
 
 export default defineComponent({
   name: "articoli-grid",
@@ -132,7 +142,7 @@ export default defineComponent({
   emit: ["edit-articolo"],
 
   provide: {
-    grid: [Page]
+    grid: [Page, Toolbar]
   },
 
   setup(props, { emit }) {
@@ -189,29 +199,6 @@ export default defineComponent({
       mode: "Dialog"
     });
 
-    const toolbarOptions = ref([
-      {
-        text: "F2 - OK",
-        tooltipText: "Seleziona il record",
-        prefixIcon: "mdi mdi-check text-info bx-sm mb-1",
-        id: "Seleziona"
-      },
-      {
-        text: "F4 - Modifica",
-        tooltipText: "Modifica record",
-        prefixIcon: "mdi mdi-pencil-outline text-warning bx-sm mb-1",
-        id: "Modifica"
-      },
-      {
-        text: "F3 - Nuovo",
-        tooltipText: "Inserisci un nuovo record",
-        prefixIcon: "mdi mdi-plus text-success bx-sm mb-1",
-        id: "Aggiungi"
-      },
-
-      "Search"
-    ]);
-
     const onToolbarClicked = (args) => {
       rsaConsoleLog("-> onToolbarClicked args ", args);
     };
@@ -224,6 +211,8 @@ export default defineComponent({
         args.cancel = true;
       }
     };
+
+    const toolbar = ref(["Search"]);
 
     const onDoubleClick = (args) => {
       rsaConsoleLog("Double click", args);
@@ -248,14 +237,14 @@ export default defineComponent({
       dataTable,
       dataBound,
       editSettings,
-      toolbarOptions,
       onToolbarClicked,
       pageSettings,
       actionBegin,
       onDoubleClick,
       wrapSettings,
       descFormatter,
-      onDataStateChange
+      onDataStateChange,
+      toolbar
     };
   }
 });

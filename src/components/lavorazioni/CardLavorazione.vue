@@ -21,11 +21,11 @@
 
           <!--begin:Title-->
           <div class="d-flex flex-column flex-grow-1 my-lg-0 my-2 pr-3">
-            <a href="#" class="text-dark fw-bold text-hover-primary fs-5">
+            <a href="#" class="text-dark fw-bold text-hover-gray-300 fs-5">
               {{ lavorazione.ana_desc1 }}
             </a>
 
-            <span class="text-muted fw-semobold">
+            <span class="text-gray-800 fw-semobold">
               {{ "Data di creazione: " + lavorazione.lav_created_at }}
             </span>
           </div>
