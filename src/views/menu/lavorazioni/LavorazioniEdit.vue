@@ -40,6 +40,46 @@
           </div>
           <!--end::Input group-->
 
+          <!--end::Input group-->
+          <div class="row mb-6 justify-content-start">
+            <!--begin::Label-->
+            <label class="col-form-label required fw-semobold fs-6">
+              Prodotto
+            </label>
+            <!--end::Label-->
+
+            <!--begin::Col-->
+            <div class="col-8 fv-row">
+              <Field
+                type="text"
+                name="ana_desc"
+                :readonly="true"
+                class="form-control form-control-lg form-control-solid"
+                placeholder=""
+                v-model.trim="lavorazioneDetails.ana_desc1"
+              />
+              <div class="fv-plugins-message-container">
+                <div class="fv-help-block">
+                  <ErrorMessage name="ana_desc" />
+                </div>
+              </div>
+            </div>
+            <div class="col-auto fv-row">
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                :data-bs-target="`#${idModal}`"
+              >
+                <span class="svg-icon svg-icon-2"
+                  ><inline-svg src="media/icons/duotune/general/gen021.svg" />
+                </span>
+              </button>
+            </div>
+            <!--end::Col-->
+          </div>
+          <!--end::Input group-->
+
           <!--Articolo-->
           <div class="row mb-6">
             <!--begin::Label-->
@@ -94,12 +134,14 @@
       </Form>
     </div>
   </div>
+  <search-modal></search-modal>
 </template>
 
 <script lang="ts">
 import { defineComponent, onMounted, ref, watch, computed } from "vue";
 import { ILavorazione as LavorazioneDetails } from "@/core/data/lavorazioni";
 import { ErrorMessage, Field, Form } from "vee-validate";
+import SearchModal from "@/components/modals/SearchModal.vue";
 import ApiService from "@/core/services/ApiService";
 import * as Yup from "yup";
 import { rsaConsoleLog } from "@/core/helpers/utility";
@@ -114,7 +156,8 @@ export default defineComponent({
   components: {
     ErrorMessage,
     Field,
-    Form
+    Form,
+    SearchModal
   },
 
   setup(props, { emit }) {
@@ -128,6 +171,8 @@ export default defineComponent({
     const isNewProcessing = computed(() => {
       return props.id == "0";
     });
+
+    const idModal = "search_lavorazioni_modal";
 
     onMounted(() => {
       rsaConsoleLog("UserSettings on Mounted props data -> ", props.id);
@@ -221,7 +266,8 @@ export default defineComponent({
       lavorazioneDetails,
       lavorazioneDetailsValidator,
       onClickCancelButton,
-      isNewProcessing
+      isNewProcessing,
+      idModal
     };
   }
 });
