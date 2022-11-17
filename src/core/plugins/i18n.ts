@@ -9,6 +9,8 @@ const messages = {
     produzione: "Produzione",
     banche: "Banche",
     articoli: "Articoli",
+    operatori: "Operatori",
+    clienti: "Clienti",
     lavorazioni: "Lavorazioni",
     ricondizionamento: "Ricondizionamento",
     craft: "Componenti Base",

@@ -54,6 +54,18 @@ const DocMenuConfig = [
         route: "/menu/articoli",
         svgIcon: "media/icons/duotune/abstract/abs040.svg",
         fontIcon: "bi bi-recycle"
+      },
+      {
+        heading: "operatori",
+        route: "/menu/operatori",
+        svgIcon: "media/icons/duotune/abstract/abs040.svg",
+        fontIcon: "bi bi-recycle"
+      },
+      {
+        heading: "clienti",
+        route: "/menu/clienti",
+        svgIcon: "media/icons/duotune/abstract/abs040.svg",
+        fontIcon: "bi bi-recycle"
       }
     ]
   },

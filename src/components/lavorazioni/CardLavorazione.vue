@@ -42,42 +42,46 @@
       <!--begin::Stats-->
       <div class="card-p mt-n12 position-relative">
         <!--begin::Row-->
-        <div class="row m-0">
-          <div class="col bg-light-warning px-6 py-8 rounded-2 me-7 mb-7">
+        <div class="row m-0 gap-7">
+          <div
+            class="col btn btn-light-warning px-3 ripple py-8 rounded-2 me-0 mb-7"
+          >
             <span class="svg-icon svg-icon-3x svg-icon-warning d-block my-2">
               <inline-svg src="media/icons/duotune/ecommerce/ecm001.svg" />
             </span>
-            <a href="#" class="text-warning fw-semobold fs-6">
-              Richiedi Prelievo
-            </a>
+
+            Richiedi Prelievo
           </div>
-          <div class="col bg-light-primary px-6 py-8 rounded-2 mb-7">
+          <div class="col btn btn-light-primary px-3 py-8 rounded-2 mb-7">
             <span class="svg-icon svg-icon-3x svg-icon-primary d-block my-2">
               <inline-svg src="media/icons/duotune/arrows/arr075.svg" />
             </span>
-            <a href="#" class="text-primary fw-semobold fs-6">
-              Inserisci Operatori
-            </a>
+
+            Inserisci Operatori
+          </div>
+          <div class="col btn btn-light-info px-3 py-8 rounded-2 mb-7">
+            <span class="svg-icon svg-icon-3x svg-icon-primary d-block my-2">
+              <inline-svg src="media/icons/duotune/electronics/elc001.svg" />
+            </span>
+            Articoli
           </div>
         </div>
         <!--end::Row-->
         <!--begin::Row-->
         <div class="row m-0">
-          <div class="col bg-light-success px-6 py-8 rounded-2 me-7">
+          <div class="col btn btn-light-success px-6 py-8 rounded-2 me-7">
             <span class="svg-icon svg-icon-3x svg-icon-success d-block my-2">
               <inline-svg src="media/icons/duotune/arrows/arr027.svg" />
             </span>
-            <a href="#" class="text-success fw-semobold fs-6 mt-2">
-              Avvia Lavorazione
-            </a>
+
+            Avvia Lavorazione
           </div>
-          <div class="col bg-light-danger px-6 py-8 rounded-2">
+          <div class="col btn btn-light-danger px-6 py-8 rounded-2">
             <span class="svg-icon svg-icon-3x svg-icon-danger d-block my-2">
               <inline-svg src="media/icons/duotune/abstract/abs006.svg" />
             </span>
-            <a href="#" class="text-danger fw-semobold fs-6 mt-2">
-              Fine Lavorazione
-            </a>
+
+            Fine Lavorazione
           </div>
         </div>
         <!--end::Row-->

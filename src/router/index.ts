@@ -124,6 +124,24 @@ const routes: Array<RouteRecordRaw> = [
         }
       },
       {
+        path: "/menu/operatori",
+        name: "operatori",
+        component: () => import("@/views/operatori/OperatoriView.vue"),
+        meta: {
+          pageTitle: "Operatori",
+          breadcrumbs: ["Menu"]
+        }
+      },
+      {
+        path: "/menu/clienti",
+        name: "clienti",
+        component: () => import("@/views/clienti/ClientiView.vue"),
+        meta: {
+          pageTitle: "Clienti",
+          breadcrumbs: ["Menu"]
+        }
+      },
+      {
         path: "/crafted/pages/profile",
         name: "profile",
         component: () => import("@/components/page-layouts/Profile.vue"),
