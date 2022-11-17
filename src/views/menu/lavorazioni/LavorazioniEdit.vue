@@ -70,10 +70,6 @@
 
         <!-- Discard and Save button -->
         <div class="card-footer d-flex justify-content-end py-6 px-9">
-          <button class="btn btn-primary me-3" @click="onClickCancelButton">
-            {{ isNewUser ? "Chiudi" : "Indietro" }}
-          </button>
-
           <button
             type="submit"
             id="kt_account_profile_details_submit"
@@ -81,7 +77,11 @@
             class="btn btn-primary ms"
           >
             <span class="indicator-label">
-              {{ isNewUser ? "Aggiungi l'utente" : "Salva le modifiche" }}
+              {{
+                isNewProcessing
+                  ? "Aggiungi la Lavorazione"
+                  : "Salva le modifiche"
+              }}
             </span>
             <span class="indicator-progress">
               Please wait...
@@ -97,7 +97,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ref, watch } from "vue";
+import { defineComponent, onMounted, ref, watch, computed } from "vue";
 import { ILavorazione as LavorazioneDetails } from "@/core/data/lavorazioni";
 import { ErrorMessage, Field, Form } from "vee-validate";
 import ApiService from "@/core/services/ApiService";
@@ -123,6 +123,10 @@ export default defineComponent({
       ana_desc1: "",
       lav_anno: 0,
       lav_rtf: ""
+    });
+
+    const isNewProcessing = computed(() => {
+      return props.id == "0";
     });
 
     onMounted(() => {
@@ -216,7 +220,8 @@ export default defineComponent({
       saveChanges1,
       lavorazioneDetails,
       lavorazioneDetailsValidator,
-      onClickCancelButton
+      onClickCancelButton,
+      isNewProcessing
     };
   }
 });
