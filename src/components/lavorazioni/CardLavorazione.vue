@@ -2,7 +2,10 @@
   <!--begin::Mixed Widget 1-->
   <div class="card card-xxl-stretch">
     <!--begin::Header-->
-    <div :class="`bg-${widgetColor}`" class="card-header border-0 pt-5 pb-20">
+    <div
+      :class="`bg-${widgetColor}` + ` bg-${active}`"
+      class="card-header border-0 pt-5 pb-20"
+    >
       <!--begin::Heading-->
       <div class="d-flex flex-stack">
         <!--begin:Info-->
@@ -69,14 +72,23 @@
         <!--end::Row-->
         <!--begin::Row-->
         <div class="row m-0">
-          <div class="col btn btn-light-success px-6 py-8 rounded-2 me-7">
+          <div
+            :class="
+              'col btn btn-light-success px-6 py-8 rounded-2 me-7 ' +
+              (active == 'success' ? 'success-btn' : '')
+            "
+            @click="active = 'success'"
+          >
             <span class="svg-icon svg-icon-3x svg-icon-success d-block my-2">
               <inline-svg src="media/icons/duotune/arrows/arr027.svg" />
             </span>
 
             Avvia Lavorazione
           </div>
-          <div class="col btn btn-light-danger px-6 py-8 rounded-2">
+          <div
+            class="col btn btn-light-danger px-6 py-8 rounded-2"
+            @click="active = 'danger'"
+          >
             <span class="svg-icon svg-icon-3x svg-icon-danger d-block my-2">
               <inline-svg src="media/icons/duotune/abstract/abs006.svg" />
             </span>
@@ -114,12 +126,20 @@ export default defineComponent({
   },
   setup(props) {
     const store = useStore();
-
+    const active = ref("primary");
     const themeMode = computed(() => {
       return store.getters.getThemeMode;
     });
 
-    return {};
+    return {
+      active
+    };
   }
 });
 </script>
+<style>
+.success-btn {
+  opacity: 0.5;
+  pointer-events: none;
+}
+</style>

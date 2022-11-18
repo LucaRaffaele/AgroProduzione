@@ -2,7 +2,7 @@
   <!--begin::Modal - View Users-->
   <div class="modal fade" :id="idModal" tabindex="-1" aria-hidden="true">
     <!--begin::Modal dialog-->
-    <div class="modal-dialog mw-650px">
+    <div class="modal-dialog mw-75">
       <!--begin::Modal content-->
       <div class="modal-content">
         <!--begin::Modal header-->
@@ -48,3 +48,12 @@ export default defineComponent({
   }
 });
 </script>
+
+<style lang="scss">
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) {
+  .modal-dialog {
+    min-width: 100%;
+  }
+}
+</style>

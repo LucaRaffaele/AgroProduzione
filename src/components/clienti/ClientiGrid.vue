@@ -23,65 +23,109 @@
       <e-columns>
         <e-column
           field=""
-          header-text=""
-          text-align="Center"
+          headerText=""
+          textAlign="Center"
           width="60"
         ></e-column>
+
         <e-column
-          field="ana_codice"
+          field="cli_codice"
+          headertextAlign="Center"
           headerText="Codice"
-          textAlign="Left"
-          width="150"
           hideAtMedia="(min-width: 800px)"
+          textAlign="Right"
+          width="100"
           :is-primary-key="true"
         ></e-column>
 
         <e-column
-          field="ana_desc1"
-          headerText="Descrizione"
+          field="cli_desc"
+          headertextAlign="Center"
+          headerText="Denominazione"
           textAlign="Left"
-          :valueAccessor="descFormatter"
-          width="180"
+          visible="false"
+          width="300"
         ></e-column>
 
         <e-column
-          field="ana_cod_fornitore"
-          headerText="Cod. Art. Forn."
-          textAlign="Left"
-          hideAtMedia="(min-width: 1200px)"
-          width="120"
-        ></e-column>
-
-        <e-column
-          field="ana_gruppo"
-          headerText="Gruppo."
-          textAlign="Left"
+          field="cli_indirizzo"
+          headertextAlign="Center"
           hideAtMedia="(min-width: 800px)"
+          headerText="Indirizzo"
+          textAlign="Left"
           width="150"
         ></e-column>
 
         <e-column
-          field="for_desc"
-          headerText="Fornitore"
-          textAlign="Left"
+          field="cli_citta"
           hideAtMedia="(min-width: 800px)"
-          width="220"
+          headertextAlign="Center"
+          headerText="Città"
+          textAlign="Left"
+          width="145"
         ></e-column>
 
         <e-column
-          field="mar_desc"
-          headerText="Marchio"
+          field="cli_prov"
+          hideAtMedia="(min-width: 800px)"
+          headertextAlign="Center"
+          headerText="Prov."
+          textAlign="Center"
+          width="90"
+        ></e-column>
+
+        <e-column
+          field="cli_tel"
+          headertextAlign="Center"
+          hideAtMedia="(min-width: 800px)"
+          headerText="Telefono"
+          textAlign="Left"
+          width="130"
+        ></e-column>
+
+        <e-column
+          field="cli_cel"
+          headertextAlign="Center"
+          hideAtMedia="(min-width: 800px)"
+          headerText="Cellulare"
+          textAlign="Left"
+          width="130"
+        ></e-column>
+
+        <e-column
+          field="cli_email"
+          headertextAlign="Center"
+          headerText="Email"
           textAlign="Left"
           hideAtMedia="(min-width: 800px)"
+          width="235"
+        ></e-column>
+
+        <e-column
+          field="cli_piva"
+          headertextAlign="Center"
+          hideAtMedia="(min-width: 800px)"
+          headerText="P.IVA"
+          textAlign="Left"
+          width="125"
+        ></e-column>
+
+        <e-column
+          field="cli_codfis"
+          hideAtMedia="(min-width: 800px)"
+          headertextAlign="Center"
+          headerText="Cod. Fiscale"
+          textAlign="Left"
           width="180"
         ></e-column>
 
         <e-column
-          field="mer_desc"
-          headerText="Cat. Merceologica"
-          textAlign="Left"
+          field="cli_tessera"
+          headertextAlign="Center"
+          headerText="Fidelity"
           hideAtMedia="(min-width: 800px)"
-          width="180"
+          textAlign="Left"
+          width="140"
         ></e-column>
         <e-column
           headerText="Comandi"
@@ -164,7 +208,7 @@ export default defineComponent({
         state.skip +
         "&inlinecount=true";
       ApiService.setHeader();
-      ApiService.get("articoli", slug)
+      ApiService.get("clienti", slug)
         .then(({ data }) => {
           rsaConsoleLog("*** Result -> ", data.RecordsTotal);
           if (data.RecordsTotal > 0) {

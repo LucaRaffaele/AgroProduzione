@@ -134,12 +134,15 @@
       </Form>
     </div>
   </div>
-  <search-modal></search-modal>
+  <search-modal :idModal="idModal">
+    <template v-slot:grid> <ArticoliGrid></ArticoliGrid></template>
+  </search-modal>
 </template>
 
 <script lang="ts">
 import { defineComponent, onMounted, ref, watch, computed } from "vue";
 import { ILavorazione as LavorazioneDetails } from "@/core/data/lavorazioni";
+import ArticoliGrid from "@/components/articoli/ArticoliGrid.vue";
 import { ErrorMessage, Field, Form } from "vee-validate";
 import SearchModal from "@/components/modals/SearchModal.vue";
 import ApiService from "@/core/services/ApiService";
@@ -157,7 +160,8 @@ export default defineComponent({
     ErrorMessage,
     Field,
     Form,
-    SearchModal
+    SearchModal,
+    ArticoliGrid
   },
 
   setup(props, { emit }) {
