@@ -21,7 +21,7 @@
         <!--begin::Modal header-->
 
         <!--begin::Modal body-->
-        <div class="modal-body scroll-y mx-5 mx-xl-18 pt-0 pb-15">
+        <div class="modal-body scroll-y mx-0 px-lg-5 px-2 pt-0 pb-10">
           <slot name="grid"></slot>
         </div>
         <!--end::Modal body-->

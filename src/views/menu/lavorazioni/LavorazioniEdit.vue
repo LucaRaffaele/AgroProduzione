@@ -16,13 +16,14 @@
           <!--Full Name-->
           <div class="row mb-6">
             <!--begin::Label-->
-            <label class="col-lg-4 col-form-label required fw-semobold fs-6"
+            <label
+              class="col-xl-2 col-lg-3 col-sm-4 col-8 col-form-label required fw-semobold fs-6"
               >Descrizione</label
             >
             <!--end::Label-->
 
             <!--begin::Col-->
-            <div class="col-lg-8">
+            <div class="col-lg col-12">
               <Field
                 type="text"
                 name="lav_rtf"
@@ -49,7 +50,23 @@
             <!--end::Label-->
 
             <!--begin::Col-->
-            <div class="col-8 fv-row">
+            <div class="col-xl-2 col-lg-3 col-sm-4 col-8 fv-row">
+              <Field
+                type="text"
+                name="lav_art"
+                :readonly="true"
+                class="form-control form-control-lg form-control-solid"
+                placeholder=""
+                v-model.trim="lavorazioneDetails.lav_art"
+              />
+              <div class="fv-plugins-message-container">
+                <div class="fv-help-block">
+                  <ErrorMessage name="lav_art" />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg col-12 order-lg-1 order-2 fv-row">
               <Field
                 type="text"
                 name="ana_desc"
@@ -64,45 +81,20 @@
                 </div>
               </div>
             </div>
-            <div class="col-auto fv-row">
+
+            <div class="col-auto order-lg-2 order-1 fv-row ms-auto">
               <button
                 type="button"
                 class="btn btn-primary"
                 data-bs-toggle="modal"
-                :data-bs-target="`#${idModal}`"
+                :data-bs-target="`#${articoliSearchModalId}`"
               >
-                <span class="svg-icon svg-icon-2"
-                  ><inline-svg src="media/icons/duotune/general/gen021.svg" />
+                <span class="svg-icon svg-icon-2">
+                  <inline-svg src="media/icons/duotune/general/gen021.svg" />
                 </span>
               </button>
             </div>
-            <!--end::Col-->
-          </div>
-          <!--end::Input group-->
 
-          <!--Articolo-->
-          <div class="row mb-6">
-            <!--begin::Label-->
-            <label class="col-lg-4 col-form-label fw-semobold fs-6"
-              >Articolo</label
-            >
-            <!--end::Label-->
-
-            <!--begin::Col-->
-            <div class="col-lg-8 fv-row">
-              <Field
-                type="text"
-                name="ana_desc1"
-                class="form-control form-control-lg form-control-solid"
-                placeholder="Descrizione"
-                v-model="lavorazioneDetails.ana_desc1"
-              />
-              <div class="fv-plugins-message-container">
-                <div class="fv-help-block">
-                  <ErrorMessage name="lav_indirizzo" />
-                </div>
-              </div>
-            </div>
             <!--end::Col-->
           </div>
           <!--end::Input group-->
@@ -134,8 +126,10 @@
       </Form>
     </div>
   </div>
-  <search-modal :idModal="idModal">
-    <template v-slot:grid> <ArticoliGrid></ArticoliGrid></template>
+  <search-modal :idModal="articoliSearchModalId">
+    <template v-slot:grid>
+      <ArticoliGrid @select-row="onSelectArticolo"></ArticoliGrid
+    ></template>
   </search-modal>
 </template>
 
@@ -147,6 +141,7 @@ import { ErrorMessage, Field, Form } from "vee-validate";
 import SearchModal from "@/components/modals/SearchModal.vue";
 import ApiService from "@/core/services/ApiService";
 import * as Yup from "yup";
+import { hideModal } from "@/core/helpers/dom";
 import { rsaConsoleLog } from "@/core/helpers/utility";
 
 export default defineComponent({
@@ -176,7 +171,7 @@ export default defineComponent({
       return props.id == "0";
     });
 
-    const idModal = "search_lavorazioni_modal";
+    const articoliSearchModalId = "articoli_search_modal";
 
     onMounted(() => {
       rsaConsoleLog("UserSettings on Mounted props data -> ", props.id);
@@ -254,6 +249,13 @@ export default defineComponent({
       }
     };
 
+    const onSelectArticolo = (args) => {
+      rsaConsoleLog("LavorazioniEdit articolo Selected -> ", args);
+      hideModal(document.getElementById(articoliSearchModalId));
+      lavorazioneDetails.value.ana_desc1 = args.ana_desc1;
+      lavorazioneDetails.value.lav_art = args.ana_codice;
+    };
+
     const onClickCancelButton = () => {
       emit("updateUser", null);
       lavorazioneDetails.value = {
@@ -271,7 +273,8 @@ export default defineComponent({
       lavorazioneDetailsValidator,
       onClickCancelButton,
       isNewProcessing,
-      idModal
+      articoliSearchModalId,
+      onSelectArticolo
     };
   }
 });

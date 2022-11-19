@@ -139,7 +139,7 @@ export default defineComponent({
     }
   },
 
-  emit: ["edit-articolo"],
+  emits: ["edit-articolo", "select-row"],
 
   provide: {
     grid: [Page, Toolbar]
@@ -215,7 +215,8 @@ export default defineComponent({
     const toolbar = ref(["Search"]);
 
     const onDoubleClick = (args) => {
-      rsaConsoleLog("Double click", args);
+      rsaConsoleLog("Double click", args.rowData);
+      emit("select-row", args.rowData);
       /* if (this.search) {
         if (this.multiselection) this.selectArticolo([args.rowData]);
         else this.selectArticolo(args.rowData);
