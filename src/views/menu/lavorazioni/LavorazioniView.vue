@@ -32,24 +32,36 @@
   </div>
   <!--end::Campaigns toolbar-->
   <!--begin::Content-->
-  <router-view></router-view>
+  <router-view @update-lavorazione="onUpdateLavorazione"></router-view>
   <!--end::Content-->
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, onMounted } from "vue";
+import { defineComponent, ref, computed, onMounted } from "vue";
+import { useRouter, useRoute } from "vue-router";
 import { rsaConsoleLog } from "@/core/helpers/utility";
 
 export default defineComponent({
   name: "lavorazioni-view",
   components: {},
   setup() {
-    const onEdit = ref(false);
+    const router = useRouter();
+    const route = useRoute();
+
     onMounted(() => {
       rsaConsoleLog("LavorazioniView Mounted!");
     });
 
-    return { onEdit };
+    const onEdit = computed(() => {
+      return route.path.indexOf("/list") == -1;
+    });
+
+    const onUpdateLavorazione = (lav) => {
+      rsaConsoleLog("LavorazioniView onUpdateLavorazione lav -> ", lav);
+      router.push({ name: "lavorazioni-list" });
+    };
+
+    return { onEdit, onUpdateLavorazione };
   }
 });
 </script>

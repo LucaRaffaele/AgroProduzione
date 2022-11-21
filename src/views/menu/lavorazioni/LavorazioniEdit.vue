@@ -2,13 +2,13 @@
   <!--begin::Basic info-->
   <div class="card mb-5 mb-xl-10">
     <!--begin::Content-->
-    <div id="kt_account_profile_details" class="collapse show">
+    <div id="lavorazioni_edit" class="collapse show">
       <!--begin::Form-->
       <Form
-        id="kt_account_profile_details_form"
+        id="lavorazioni_edit_form"
         class="form"
         novalidate="novalidate"
-        @submit="saveChanges1()"
+        @submit="saveChanges()"
         :validation-schema="lavorazioneDetailsValidator"
       >
         <!--begin::Card body-->
@@ -41,7 +41,7 @@
           </div>
           <!--end::Input group-->
 
-          <!--end::Input group-->
+          <!--begin::Input group-->
           <div class="row mb-6 justify-content-start">
             <!--begin::Label-->
             <label class="col-form-label required fw-semobold fs-6">
@@ -98,14 +98,76 @@
             <!--end::Col-->
           </div>
           <!--end::Input group-->
+
+          <!--begin::Input group-->
+          <div
+            class="row row-cols-lg-4 row-cols-sm-3 row-cols-2 mb-6 justify-content-start"
+          >
+            <div class="col">
+              <div class="row mb-6 justify-content-start">
+                <!--begin::Label-->
+                <label class="col-form-label fw-semobold fs-6">
+                  Quantità
+                </label>
+                <!--end::Label-->
+
+                <!--begin::Col-->
+                <div class="col fv-row">
+                  <Field
+                    type="number"
+                    name="lav_art_qta"
+                    class="form-control form-control-lg form-control-solid"
+                    placeholder=""
+                    v-model.trim="lavorazioneDetails.lav_art_qta"
+                  />
+                  <div class="fv-plugins-message-container">
+                    <div class="fv-help-block">
+                      <ErrorMessage name="lav_art_qta" />
+                    </div>
+                  </div>
+                </div>
+
+                <!--end::Col-->
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="row mb-6 justify-content-start">
+                <!--begin::Label-->
+                <label class="col-form-label required fw-semobold fs-6">
+                  Colli
+                </label>
+                <!--end::Label-->
+
+                <!--begin::Col-->
+                <div class="col fv-row">
+                  <Field
+                    type="number"
+                    name="lav_art_colli"
+                    class="form-control form-control-lg form-control-solid"
+                    placeholder=""
+                    v-model.trim="lavorazioneDetails.lav_art_colli"
+                  />
+                  <div class="fv-plugins-message-container">
+                    <div class="fv-help-block">
+                      <ErrorMessage name="lav_art_colli" />
+                    </div>
+                  </div>
+                </div>
+
+                <!--end::Col-->
+              </div>
+            </div>
+          </div>
+          <!--end::Input group-->
         </div>
 
         <!-- Discard and Save button -->
         <div class="card-footer d-flex justify-content-end py-6 px-9">
           <button
             type="submit"
-            id="kt_account_profile_details_submit"
-            ref="submitButton1"
+            id="lavorazioni_edit_submit"
+            ref="submitButton"
             class="btn btn-primary ms"
           >
             <span class="indicator-label">
@@ -151,6 +213,8 @@ export default defineComponent({
     id: { type: String, required: true }
   },
 
+  emits: ["updateLavorazione"],
+
   components: {
     ErrorMessage,
     Field,
@@ -174,7 +238,7 @@ export default defineComponent({
     const articoliSearchModalId = "articoli_search_modal";
 
     onMounted(() => {
-      rsaConsoleLog("UserSettings on Mounted props data -> ", props.id);
+      rsaConsoleLog("LavorazioniEdit Mounted with props id -> ", props.id);
       /* if (props.id != 0)
         lavorazioneDetails.value = ; */
     });
@@ -186,31 +250,34 @@ export default defineComponent({
       }
     );
 
-    const submitButton1 = ref<HTMLElement | null>(null);
+    const submitButton = ref<HTMLElement | null>(null);
 
     const lavorazioneDetailsValidator = Yup.object().shape({
-      lav_rtf: Yup.string().required().label("Descrizione"),
-      lav_art: Yup.string().required().label("Codice Articolo"),
-      lav_art_colli: Yup.number().label("N. Colli"),
-      lav_art_qta: Yup.string().label("Quantità")
+      lav_rtf: Yup.string().required("Il campo Descrizione è obbligatorio"),
+      lav_art: Yup.string().required("Selezionare un articolo"),
+      lav_art_colli: Yup.number().required("Indicare il numero dei Colli")
     });
 
-    const saveChanges1 = () => {
-      if (submitButton1.value) {
+    const saveChanges = () => {
+      if (submitButton.value) {
+        if (lavorazioneDetails.value.lav_art == "") return;
+        if (lavorazioneDetails.value.lav_rtf == "") return;
+        if (lavorazioneDetails.value.lav_art_colli == 0) return;
+
         // Activate indicator
-        submitButton1.value.setAttribute("data-kt-indicator", "on");
+        submitButton.value.setAttribute("data-kt-indicator", "on");
         const obj = {
           RecordsTotal: 1,
           Data: [lavorazioneDetails.value]
         };
         if (props.id == "0") {
           ApiService.setSendHeader();
-          ApiService.post("utenti/post", obj)
+          ApiService.post("lavorazioni/post", obj)
             .then(({ data }) => {
-              submitButton1.value?.removeAttribute("data-kt-indicator");
-              rsaConsoleLog("UtentiSettings Post Result -> ", data);
+              submitButton.value?.removeAttribute("data-kt-indicator");
+              rsaConsoleLog("***LavorazioniEdit Post Result -> ", data);
               if (data.RecordsTotal > 0) {
-                emit("updateUser", data.Data[0]);
+                emit("updateLavorazione", data.Data[0]);
                 lavorazioneDetails.value = {
                   lav_codice: 1,
                   ana_desc1: "",
@@ -220,11 +287,11 @@ export default defineComponent({
               }
             })
             .catch(({ response }) => {
-              submitButton1.value?.removeAttribute("data-kt-indicator");
+              submitButton.value?.removeAttribute("data-kt-indicator");
               rsaConsoleLog("Error--------------- ", response);
             });
 
-          submitButton1.value?.removeAttribute("data-kt-indicator");
+          submitButton.value?.removeAttribute("data-kt-indicator");
         } else {
           ApiService.setSendHeader();
           ApiService.put(
@@ -232,19 +299,19 @@ export default defineComponent({
             obj
           )
             .then(({ data }) => {
-              submitButton1.value?.removeAttribute("data-kt-indicator");
-              rsaConsoleLog("UtentiSettings Put Result -> ", data);
+              submitButton.value?.removeAttribute("data-kt-indicator");
+              rsaConsoleLog("***LavorazioniEdit Put Result -> ", data);
               if (data.RecordsTotal > 0) {
                 lavorazioneDetails.value = data.Data[0];
-                emit("updateUser", data.Data[0]);
+                emit("updateLavorazione", data.Data[0]);
               }
             })
             .catch(({ response }) => {
-              submitButton1.value?.removeAttribute("data-kt-indicator");
+              submitButton.value?.removeAttribute("data-kt-indicator");
               rsaConsoleLog("Error--------------- ", response);
             });
 
-          submitButton1.value?.removeAttribute("data-kt-indicator");
+          submitButton.value?.removeAttribute("data-kt-indicator");
         }
       }
     };
@@ -257,7 +324,7 @@ export default defineComponent({
     };
 
     const onClickCancelButton = () => {
-      emit("updateUser", null);
+      emit("updateLavorazione", null);
       lavorazioneDetails.value = {
         lav_codice: 1,
         ana_desc1: "",
@@ -267,8 +334,8 @@ export default defineComponent({
     };
 
     return {
-      submitButton1,
-      saveChanges1,
+      submitButton,
+      saveChanges,
       lavorazioneDetails,
       lavorazioneDetailsValidator,
       onClickCancelButton,

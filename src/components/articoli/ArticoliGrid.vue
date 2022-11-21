@@ -156,7 +156,6 @@ export default defineComponent({
     });
 
     const onDataStateChange = (state) => {
-      rsaConsoleLog("*** Result -> ", state);
       const slug =
         "getjoined?top=" +
         state.take +
@@ -166,7 +165,10 @@ export default defineComponent({
       ApiService.setHeader();
       ApiService.get("articoli", slug)
         .then(({ data }) => {
-          rsaConsoleLog("*** Result -> ", data.RecordsTotal);
+          rsaConsoleLog(
+            "***ArticoliGRID getjoined Result -> ",
+            data.RecordsTotal
+          );
           if (data.RecordsTotal > 0) {
             dataTable.value = {
               result: data.Data,

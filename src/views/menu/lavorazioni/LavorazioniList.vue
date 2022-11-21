@@ -5,7 +5,7 @@
     <div
       v-for="(lavorazione, index) of lavorazioniList"
       :key="index"
-      class="col-xl-4"
+      class="col-xl-4 col-md-6"
     >
       <CardLavorazione
         widget-classes="card-xl-stretch mb-xl-8"
@@ -28,6 +28,7 @@ import CardLavorazione from "@/components/lavorazioni/CardLavorazione.vue";
 
 export default defineComponent({
   name: "lavorazioni-list",
+  emits: ["updateLavorazione"],
   components: { CardLavorazione },
   setup() {
     const modalId = ref("modal_add_lavorazione");

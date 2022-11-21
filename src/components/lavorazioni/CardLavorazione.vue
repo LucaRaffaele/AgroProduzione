@@ -43,57 +43,75 @@
     <!--begin::Body-->
     <div class="card-body p-0">
       <!--begin::Stats-->
-      <div class="card-p mt-n12 position-relative">
+      <div class="card-p mt-n12 position-relative mx-n3">
         <!--begin::Row-->
-        <div class="row m-0 gap-7">
-          <div
-            class="col btn btn-light-warning px-3 ripple py-8 rounded-2 me-0 mb-7"
-          >
-            <span class="svg-icon svg-icon-3x svg-icon-warning d-block my-2">
-              <inline-svg src="media/icons/duotune/ecommerce/ecm001.svg" />
-            </span>
-
-            Richiedi Prelievo
+        <div class="row m-0 gap-4">
+          <div class="col d-grid me-0 mb-7 p-0">
+            <button
+              type="button"
+              class="btn btn-light-warning px-3 ripple py-8 rounded-2"
+              :disabled="true"
+              @click="richiediPrelievo"
+            >
+              <span class="svg-icon svg-icon-3x svg-icon-warning d-block my-2">
+                <inline-svg src="media/icons/duotune/ecommerce/ecm001.svg" />
+              </span>
+              Richiedi Prelievo
+            </button>
           </div>
-          <div class="col btn btn-light-primary px-3 py-8 rounded-2 mb-7">
-            <span class="svg-icon svg-icon-3x svg-icon-primary d-block my-2">
-              <inline-svg src="media/icons/duotune/arrows/arr075.svg" />
-            </span>
-
-            Inserisci Operatori
+          <div class="col d-grid mb-7 p-0">
+            <button
+              type="button"
+              class="btn btn-light-primary px-3 py-8 rounded-2"
+            >
+              <span class="svg-icon svg-icon-3x svg-icon-primary d-block my-2">
+                <inline-svg src="media/icons/duotune/arrows/arr075.svg" />
+              </span>
+              Inserisci Operatori
+            </button>
           </div>
-          <div class="col btn btn-light-info px-3 py-8 rounded-2 mb-7">
-            <span class="svg-icon svg-icon-3x svg-icon-primary d-block my-2">
-              <inline-svg src="media/icons/duotune/electronics/elc001.svg" />
-            </span>
-            Articoli
+          <div class="col d-grid mb-7 p-0">
+            <button
+              type="button"
+              class="btn btn-light-info px-3 py-8 rounded-2"
+            >
+              <span class="svg-icon svg-icon-3x svg-icon-primary d-block my-2">
+                <inline-svg src="media/icons/duotune/electronics/elc001.svg" />
+              </span>
+              Articoli
+            </button>
           </div>
         </div>
         <!--end::Row-->
         <!--begin::Row-->
-        <div class="row m-0">
-          <div
-            :class="
-              'col btn btn-light-success px-6 py-8 rounded-2 me-7 ' +
-              (active == 'success' ? 'success-btn' : '')
-            "
-            @click="active = 'success'"
-          >
-            <span class="svg-icon svg-icon-3x svg-icon-success d-block my-2">
-              <inline-svg src="media/icons/duotune/arrows/arr027.svg" />
-            </span>
-
-            Avvia Lavorazione
+        <div class="row m-0 gap-7">
+          <div class="col d-grid me-0 p-0">
+            <button
+              type="button "
+              :class="
+                'btn btn-light-success px-6 py-8 rounded-2 ' +
+                (active == 'success' ? 'success-btn' : '')
+              "
+              @click="active = 'success'"
+            >
+              <span class="svg-icon svg-icon-3x svg-icon-success d-block my-2">
+                <inline-svg src="media/icons/duotune/arrows/arr027.svg" />
+              </span>
+              Avvia
+            </button>
           </div>
-          <div
-            class="col btn btn-light-danger px-6 py-8 rounded-2"
-            @click="active = 'danger'"
-          >
-            <span class="svg-icon svg-icon-3x svg-icon-danger d-block my-2">
-              <inline-svg src="media/icons/duotune/abstract/abs006.svg" />
-            </span>
 
-            Fine Lavorazione
+          <div class="col d-grid p-0">
+            <button
+              type="button"
+              class="btn btn-light-danger px-6 py-8 rounded-2"
+              @click="active = 'danger'"
+            >
+              <span class="svg-icon svg-icon-3x svg-icon-danger d-block my-2">
+                <inline-svg src="media/icons/duotune/abstract/abs006.svg" />
+              </span>
+              Fine
+            </button>
           </div>
         </div>
         <!--end::Row-->
@@ -107,6 +125,9 @@
 
 <script lang="ts">
 import { defineComponent, ref, computed, watch, onBeforeMount } from "vue";
+import { rsaConsoleLog } from "@/core/helpers/utility";
+import { ILavorazione as LavorazioneDetails } from "@/core/data/lavorazioni";
+import ApiService from "@/core/services/ApiService";
 import { useStore } from "vuex";
 
 export default defineComponent({
@@ -131,8 +152,40 @@ export default defineComponent({
       return store.getters.getThemeMode;
     });
 
+    const lavorazioneDetails = ref<LavorazioneDetails>({
+      lav_codice: 0,
+      ana_desc1: "",
+      lav_anno: 0,
+      lav_rtf: "",
+      lav_ord_num: 0
+    });
+
+    const richiediPrelievo = () => {
+      const obj = {
+        RecordsTotal: 1,
+        Data: [lavorazioneDetails.value]
+      };
+      ApiService.setSendHeader();
+      ApiService.post("lavorazioni/prelievo/tipo/anno/codice", obj)
+        .then(({ data }) => {
+          rsaConsoleLog("***LavorazioniEdit Post Result -> ", data);
+          if (data.RecordsTotal > 0) {
+            lavorazioneDetails.value = {
+              lav_codice: 1,
+              ana_desc1: "",
+              lav_anno: 0,
+              lav_rtf: ""
+            };
+          }
+        })
+        .catch(({ response }) => {
+          rsaConsoleLog("Error--------------- ", response);
+        });
+    };
+
     return {
-      active
+      active,
+      richiediPrelievo
     };
   }
 });

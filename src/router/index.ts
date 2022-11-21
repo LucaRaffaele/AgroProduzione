@@ -72,7 +72,7 @@ const routes: Array<RouteRecordRaw> = [
               pageTitle: "Lavorazione",
               breadcrumbs: [
                 {
-                  label: "Lavorazione",
+                  label: "Lavorazioni",
                   link: "/lavorazioni/list"
                 }
               ]
@@ -88,7 +88,7 @@ const routes: Array<RouteRecordRaw> = [
               pageTitle: "Lavorazione Fine Processo",
               breadcrumbs: [
                 {
-                  label: "Lavorazione Stop",
+                  label: "Lavorazioni",
                   link: "/lavorazioni/list"
                 }
               ]
