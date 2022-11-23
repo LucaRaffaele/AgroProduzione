@@ -64,13 +64,15 @@
       <div class="card-p mt-n12 position-relative mx-n3">
         <!--begin::Row-->
         <div class="row m-0 gap-4">
-          <div class="col d-grid me-0 mb-7 p-0 rounded-2">
+          <div class="col d-grid me-0 mb-7 p-0 bg-light-warning rounded-2">
             <button
               type="button"
               class="btn btn-light-warning px-3 ripple py-8 rounded-2"
               :disabled="lavorazioneDetails.lav_ord_num != 0"
               :class="
-                lavorazioneDetails.lav_ord_num != 0 ? 'active' : 'btn-secondary'
+                lavorazioneDetails.lav_ord_num != 0
+                  ? 'active disabled-class'
+                  : 'btn-secondary'
               "
               @click="richiediPrelievo"
             >
@@ -83,7 +85,12 @@
           <div class="col d-grid mb-7 p-0 bg-light-primary rounded-2">
             <button
               type="button"
-              class="btn btn-light-primary px-3 py-8 rounded-2"
+              class="btn px-3 py-8 rounded-2"
+              :class="
+                !isStarted || isStopped
+                  ? 'btn-light-secondary'
+                  : 'btn-light-primary'
+              "
               :disabled="!isStarted || isStopped"
             >
               <span class="svg-icon svg-icon-3x svg-icon-primary d-block my-2">
@@ -286,8 +293,8 @@ export default defineComponent({
 });
 </script>
 <style>
-.success-btn {
-  opacity: 0.5;
+.disabled-class {
+  opacity: 0.4 !important;
   pointer-events: none;
 }
 </style>

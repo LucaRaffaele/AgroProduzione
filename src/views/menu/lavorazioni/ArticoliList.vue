@@ -8,410 +8,6 @@
       @submit="saveChanges()"
       :validation-schema="lavorazioneDetailsValidator"
     >
-      <!--begin::Card body-->
-      <div class="card-body border-top p-9">
-        <!--Full Name-->
-        <div class="row mb-6">
-          <!--begin::Label-->
-          <label
-            class="col-xl-2 col-lg-3 col-sm-4 col-8 col-form-label required fw-semobold fs-6"
-            >Articolo</label
-          >
-          <!--end::Label-->
-
-          <!--begin::Col-->
-
-          <div class="col-lg col-12 order-lg-1 order-2 fv-row">
-            <Field
-              type="text"
-              name="ana_desc"
-              :readonly="true"
-              class="form-control form-control-lg form-control-solid"
-              placeholder="Articolo"
-            />
-            <div class="fv-plugins-message-container">
-              <div class="fv-help-block">
-                <ErrorMessage name="ana_desc" />
-              </div>
-            </div>
-          </div>
-
-          <div class="col-auto order-lg-2 order-2 fv-row ms-auto">
-            <button
-              type="button"
-              class="btn btn-primary"
-              data-bs-toggle="modal"
-              :data-bs-target="`#${articoliSearchModalId}`"
-            >
-              <span class="svg-icon svg-icon-2">
-                <inline-svg src="media/icons/duotune/general/gen021.svg" />
-              </span>
-            </button>
-          </div>
-
-          <!--end::Col-->
-        </div>
-        <!--end::Input group-->
-
-        <!--begin::Input group-->
-        <div
-          class="row row-cols-lg-4 row-cols-sm-3 row-cols-2 mb-6 justify-content-start"
-        >
-          <div class="col">
-            <div class="row mb-6 justify-content-start">
-              <!--begin::Label-->
-              <label class="col-form-label fw-semobold fs-6"> Quantità </label>
-              <!--end::Label-->
-
-              <!--begin::Col-->
-              <div class="col fv-row">
-                <Field
-                  type="number"
-                  name="lav_art_qta"
-                  class="form-control form-control-lg form-control-solid"
-                  placeholder=""
-                />
-                <div class="fv-plugins-message-container">
-                  <div class="fv-help-block">
-                    <ErrorMessage name="lav_art_qta" />
-                  </div>
-                </div>
-              </div>
-
-              <!--end::Col-->
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="row mb-6 justify-content-start">
-              <!--begin::Label-->
-              <label class="col-form-label required fw-semobold fs-6">
-                Colli
-              </label>
-              <!--end::Label-->
-
-              <!--begin::Col-->
-              <div class="col fv-row">
-                <Field
-                  type="number"
-                  name="lav_art_colli"
-                  class="form-control form-control-lg form-control-solid"
-                  placeholder=""
-                />
-                <div class="fv-plugins-message-container">
-                  <div class="fv-help-block">
-                    <ErrorMessage name="lav_art_colli" />
-                  </div>
-                </div>
-              </div>
-
-              <!--end::Col-->
-            </div>
-          </div>
-        </div>
-        <!--end::Input group-->
-        <div class="row mb-6">
-          <!--begin::Label-->
-          <label
-            class="col-xl-2 col-lg-3 col-sm-4 col-8 col-form-label required fw-semobold fs-6"
-            >1° scelta</label
-          >
-          <!--end::Label-->
-
-          <!--begin::Col-->
-
-          <div class="col-lg col-12 order-lg-1 order-2 fv-row">
-            <Field
-              type="text"
-              name="ana_desc"
-              :readonly="true"
-              class="form-control form-control-lg form-control-solid"
-              placeholder="1° scelta"
-            />
-            <div class="fv-plugins-message-container">
-              <div class="fv-help-block">
-                <ErrorMessage name="ana_desc" />
-              </div>
-            </div>
-          </div>
-
-          <div class="col-auto order-lg-2 order-2 fv-row ms-auto">
-            <button
-              type="button"
-              class="btn btn-primary"
-              data-bs-toggle="modal"
-              :data-bs-target="`#${articoliSearchModalId}`"
-            >
-              <span class="svg-icon svg-icon-2">
-                <inline-svg src="media/icons/duotune/general/gen021.svg" />
-              </span>
-            </button>
-          </div>
-
-          <!--end::Col-->
-        </div>
-        <!--end::Input group-->
-
-        <!--begin::Input group-->
-        <div
-          class="row row-cols-lg-4 row-cols-sm-3 row-cols-2 mb-6 justify-content-start"
-        >
-          <div class="col">
-            <div class="row mb-6 justify-content-start">
-              <!--begin::Label-->
-              <label class="col-form-label fw-semobold fs-6"> Quantità </label>
-              <!--end::Label-->
-
-              <!--begin::Col-->
-              <div class="col fv-row">
-                <Field
-                  type="number"
-                  name="lav_art_qta"
-                  class="form-control form-control-lg form-control-solid"
-                  placeholder=""
-                />
-                <div class="fv-plugins-message-container">
-                  <div class="fv-help-block">
-                    <ErrorMessage name="lav_art_qta" />
-                  </div>
-                </div>
-              </div>
-
-              <!--end::Col-->
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="row mb-6 justify-content-start">
-              <!--begin::Label-->
-              <label class="col-form-label required fw-semobold fs-6">
-                Colli
-              </label>
-              <!--end::Label-->
-
-              <!--begin::Col-->
-              <div class="col fv-row">
-                <Field
-                  type="number"
-                  name="lav_art_colli"
-                  class="form-control form-control-lg form-control-solid"
-                  placeholder=""
-                />
-                <div class="fv-plugins-message-container">
-                  <div class="fv-help-block">
-                    <ErrorMessage name="lav_art_colli" />
-                  </div>
-                </div>
-              </div>
-
-              <!--end::Col-->
-            </div>
-          </div>
-        </div>
-        <!--end::Input group-->
-        <div class="row mb-6">
-          <!--begin::Label-->
-          <label
-            class="col-xl-2 col-lg-3 col-sm-4 col-8 col-form-label required fw-semobold fs-6"
-            >2° scelta</label
-          >
-          <!--end::Label-->
-
-          <!--begin::Col-->
-
-          <div class="col-lg col-12 order-lg-1 order-2 fv-row">
-            <Field
-              type="text"
-              name="ana_desc"
-              :readonly="true"
-              class="form-control form-control-lg form-control-solid"
-              placeholder="2° scelta"
-            />
-            <div class="fv-plugins-message-container">
-              <div class="fv-help-block">
-                <ErrorMessage name="ana_desc" />
-              </div>
-            </div>
-          </div>
-
-          <div class="col-auto order-lg-2 order-2 fv-row ms-auto">
-            <button
-              type="button"
-              class="btn btn-primary"
-              data-bs-toggle="modal"
-              :data-bs-target="`#${articoliSearchModalId}`"
-            >
-              <span class="svg-icon svg-icon-2">
-                <inline-svg src="media/icons/duotune/general/gen021.svg" />
-              </span>
-            </button>
-          </div>
-
-          <!--end::Col-->
-        </div>
-
-        <!--end::Input group-->
-
-        <!--begin::Input group-->
-        <div
-          class="row row-cols-lg-4 row-cols-sm-3 row-cols-2 mb-6 justify-content-start"
-        >
-          <div class="col">
-            <div class="row mb-6 justify-content-start">
-              <!--begin::Label-->
-              <label class="col-form-label fw-semobold fs-6"> Quantità </label>
-              <!--end::Label-->
-
-              <!--begin::Col-->
-              <div class="col fv-row">
-                <Field
-                  type="number"
-                  name="lav_art_qta"
-                  class="form-control form-control-lg form-control-solid"
-                  placeholder=""
-                />
-                <div class="fv-plugins-message-container">
-                  <div class="fv-help-block">
-                    <ErrorMessage name="lav_art_qta" />
-                  </div>
-                </div>
-              </div>
-
-              <!--end::Col-->
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="row mb-6 justify-content-start">
-              <!--begin::Label-->
-              <label class="col-form-label required fw-semobold fs-6">
-                Colli
-              </label>
-              <!--end::Label-->
-
-              <!--begin::Col-->
-              <div class="col fv-row">
-                <Field
-                  type="number"
-                  name="lav_art_colli"
-                  class="form-control form-control-lg form-control-solid"
-                  placeholder=""
-                />
-                <div class="fv-plugins-message-container">
-                  <div class="fv-help-block">
-                    <ErrorMessage name="lav_art_colli" />
-                  </div>
-                </div>
-              </div>
-
-              <!--end::Col-->
-            </div>
-          </div>
-        </div>
-
-        <div class="row mb-6">
-          <!--begin::Label-->
-          <label
-            class="col-xl-2 col-lg-3 col-sm-4 col-8 col-form-label required fw-semobold fs-6"
-            >3° scelta</label
-          >
-          <!--end::Label-->
-
-          <!--begin::Col-->
-
-          <div class="col-lg col-12 order-lg-1 order-2 fv-row">
-            <Field
-              type="text"
-              name="ana_desc"
-              :readonly="true"
-              class="form-control form-control-lg form-control-solid"
-              placeholder="3° scelta"
-            />
-            <div class="fv-plugins-message-container">
-              <div class="fv-help-block">
-                <ErrorMessage name="ana_desc" />
-              </div>
-            </div>
-          </div>
-
-          <div class="col-auto order-lg-2 order-2 fv-row ms-auto">
-            <button
-              type="button"
-              class="btn btn-primary"
-              data-bs-toggle="modal"
-              :data-bs-target="`#${articoliSearchModalId}`"
-            >
-              <span class="svg-icon svg-icon-2">
-                <inline-svg src="media/icons/duotune/general/gen021.svg" />
-              </span>
-            </button>
-          </div>
-
-          <!--end::Col-->
-        </div>
-
-        <!--end::Input group-->
-
-        <!--begin::Input group-->
-        <div
-          class="row row-cols-lg-4 row-cols-sm-3 row-cols-2 mb-6 justify-content-start"
-        >
-          <div class="col">
-            <div class="row mb-6 justify-content-start">
-              <!--begin::Label-->
-              <label class="col-form-label fw-semobold fs-6"> Quantità </label>
-              <!--end::Label-->
-
-              <!--begin::Col-->
-              <div class="col fv-row">
-                <Field
-                  type="number"
-                  name="lav_art_qta"
-                  class="form-control form-control-lg form-control-solid"
-                  placeholder=""
-                />
-                <div class="fv-plugins-message-container">
-                  <div class="fv-help-block">
-                    <ErrorMessage name="lav_art_qta" />
-                  </div>
-                </div>
-              </div>
-
-              <!--end::Col-->
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="row mb-6 justify-content-start">
-              <!--begin::Label-->
-              <label class="col-form-label required fw-semobold fs-6">
-                Colli
-              </label>
-              <!--end::Label-->
-
-              <!--begin::Col-->
-              <div class="col fv-row">
-                <Field
-                  type="number"
-                  name="lav_art_colli"
-                  class="form-control form-control-lg form-control-solid"
-                  placeholder=""
-                />
-                <div class="fv-plugins-message-container">
-                  <div class="fv-help-block">
-                    <ErrorMessage name="lav_art_colli" />
-                  </div>
-                </div>
-              </div>
-
-              <!--end::Col-->
-            </div>
-          </div>
-        </div>
-        <!--end::Input group-->
-      </div>
-
-      <!-- Discard and Save button -->
       <div class="card-footer d-flex justify-content-end py-6 px-9">
         <button
           type="submit"
@@ -429,6 +25,603 @@
             ></span>
           </span>
         </button>
+      </div>
+      <!--begin::Card body-->
+      <div class="card-body border-top p-9">
+        <div class="row mb-6">
+          <label
+            class="col-xl-2 col-lg-3 col-sm-4 col-8 col-form-label required fw-semobold fs-4"
+            >Prodotto finale</label
+          >
+        </div>
+        <!--Full Name-->
+        <div class="row mb-6">
+          <!--begin::Label-->
+
+          <!--end::Label-->
+
+          <!--begin::Col-->
+
+          <div class="col fv-row input-group">
+            <button
+              type="button"
+              class="btn btn-primary rounded"
+              data-bs-toggle="modal"
+              :data-bs-target="`#${articoliSearchModalId}`"
+            >
+              <span class="svg-icon svg-icon-2">
+                <inline-svg src="media/icons/duotune/general/gen021.svg" />
+              </span>
+            </button>
+            <Field
+              type="text"
+              name="ana_desc"
+              :readonly="true"
+              class="form-control form-control-lg form-control-solid"
+              placeholder=""
+            />
+            <div class="fv-plugins-message-container">
+              <div class="fv-help-block">
+                <ErrorMessage name="ana_desc" />
+              </div>
+            </div>
+          </div>
+
+          <!--end::Col-->
+        </div>
+        <!--end::Input group-->
+
+        <!--begin::Input group-->
+        <div
+          class="row row-cols-lg-4 row-cols-sm-3 row-cols-2 mb-6 justify-content-start"
+        >
+          <div class="col">
+            <div class="row mb-6 justify-content-start">
+              <!--begin::Label-->
+              <label class="col-form-label d-lg-block d-none fw-semobold fs-6">
+                Quantità
+              </label>
+              <!--end::Label-->
+
+              <!--begin::Col-->
+              <div class="col fv-row">
+                <Field
+                  type="number"
+                  name="lav_art_qta"
+                  class="form-control form-control-lg form-control-solid"
+                  placeholder="Quantità"
+                />
+                <div class="fv-plugins-message-container">
+                  <div class="fv-help-block">
+                    <ErrorMessage name="lav_art_qta" />
+                  </div>
+                </div>
+              </div>
+
+              <!--end::Col-->
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="row mb-6 justify-content-start">
+              <!--begin::Label-->
+              <label
+                class="col-form-label required d-lg-block d-none fw-semobold fs-6"
+              >
+                Colli
+              </label>
+              <!--end::Label-->
+
+              <!--begin::Col-->
+              <div class="col fv-row">
+                <Field
+                  type="number"
+                  name="lav_art_colli"
+                  class="form-control form-control-lg form-control-solid"
+                  placeholder="Colli"
+                />
+                <div class="fv-plugins-message-container">
+                  <div class="fv-help-block">
+                    <ErrorMessage name="lav_art_colli" />
+                  </div>
+                </div>
+              </div>
+
+              <!--end::Col-->
+            </div>
+          </div>
+        </div>
+        <div class="alert fw-bold fs-3 mt-15 alert-primary" role="alert">
+          Scarti
+        </div>
+
+        <!--end::Input group-->
+        <div class="row mt-15">
+          <!--begin::Label-->
+
+          <!--end::Label-->
+
+          <!--begin::Col-->
+
+          <div class="col fv-row input-group">
+            <button
+              type="button"
+              class="btn btn-primary rounded"
+              data-bs-toggle="modal"
+              :data-bs-target="`#${articoliSearchModalId}`"
+            >
+              <span class="svg-icon svg-icon-2">
+                <inline-svg src="media/icons/duotune/general/gen021.svg" />
+              </span>
+            </button>
+            <Field
+              type="text"
+              name="ana_desc"
+              :readonly="true"
+              class="form-control form-control-lg form-control-solid"
+              placeholder="Scarto I"
+            />
+            <div class="fv-plugins-message-container">
+              <div class="fv-help-block">
+                <ErrorMessage name="ana_desc" />
+              </div>
+            </div>
+          </div>
+
+          <!--end::Col-->
+        </div>
+        <!--end::Input group-->
+
+        <!--begin::Input group-->
+        <div
+          class="row row-cols-lg-4 row-cols-sm-3 row-cols-2 mt-6 justify-content-start"
+        >
+          <div class="col">
+            <div class="row mb-6 justify-content-start">
+              <!--begin::Label-->
+              <label class="col-form-label d-lg-block d-none fw-semobold fs-6">
+                Quantità
+              </label>
+              <!--end::Label-->
+
+              <!--begin::Col-->
+              <div class="col fv-row">
+                <Field
+                  type="number"
+                  name="lav_art_qta"
+                  class="form-control form-control-lg form-control-solid"
+                  placeholder="Quantità"
+                />
+                <div class="fv-plugins-message-container">
+                  <div class="fv-help-block">
+                    <ErrorMessage name="lav_art_qta" />
+                  </div>
+                </div>
+              </div>
+
+              <!--end::Col-->
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="row mb-6 justify-content-start">
+              <!--begin::Label-->
+              <label
+                class="col-form-label required d-lg-block d-none fw-semobold fs-6"
+              >
+                Colli
+              </label>
+              <!--end::Label-->
+
+              <!--begin::Col-->
+              <div class="col fv-row">
+                <Field
+                  type="number"
+                  name="lav_art_colli"
+                  class="form-control form-control-lg form-control-solid"
+                  placeholder="Colli"
+                />
+                <div class="fv-plugins-message-container">
+                  <div class="fv-help-block">
+                    <ErrorMessage name="lav_art_colli" />
+                  </div>
+                </div>
+              </div>
+
+              <!--end::Col-->
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-15">
+          <!--begin::Label-->
+
+          <!--end::Label-->
+
+          <!--begin::Col-->
+
+          <div class="col fv-row input-group">
+            <button
+              type="button"
+              class="btn btn-primary rounded"
+              data-bs-toggle="modal"
+              :data-bs-target="`#${articoliSearchModalId}`"
+            >
+              <span class="svg-icon svg-icon-2">
+                <inline-svg src="media/icons/duotune/general/gen021.svg" />
+              </span>
+            </button>
+            <Field
+              type="text"
+              name="ana_desc"
+              :readonly="true"
+              class="form-control form-control-lg form-control-solid"
+              placeholder="Scarto II"
+            />
+            <div class="fv-plugins-message-container">
+              <div class="fv-help-block">
+                <ErrorMessage name="ana_desc" />
+              </div>
+            </div>
+          </div>
+
+          <!--end::Col-->
+        </div>
+        <!--end::Input group-->
+
+        <!--begin::Input group-->
+        <div
+          class="row row-cols-lg-4 row-cols-sm-3 row-cols-2 mt-6 justify-content-start"
+        >
+          <div class="col">
+            <div class="row mb-6 justify-content-start">
+              <!--begin::Label-->
+              <label class="col-form-label d-lg-block d-none fw-semobold fs-6">
+                Quantità
+              </label>
+              <!--end::Label-->
+
+              <!--begin::Col-->
+              <div class="col fv-row">
+                <Field
+                  type="number"
+                  name="lav_art_qta"
+                  class="form-control form-control-lg form-control-solid"
+                  placeholder="Quantità"
+                />
+                <div class="fv-plugins-message-container">
+                  <div class="fv-help-block">
+                    <ErrorMessage name="lav_art_qta" />
+                  </div>
+                </div>
+              </div>
+
+              <!--end::Col-->
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="row mb-6 justify-content-start">
+              <!--begin::Label-->
+              <label
+                class="col-form-label required d-lg-block d-none fw-semobold fs-6"
+              >
+                Colli
+              </label>
+              <!--end::Label-->
+
+              <!--begin::Col-->
+              <div class="col fv-row">
+                <Field
+                  type="number"
+                  name="lav_art_colli"
+                  class="form-control form-control-lg form-control-solid"
+                  placeholder="Colli"
+                />
+                <div class="fv-plugins-message-container">
+                  <div class="fv-help-block">
+                    <ErrorMessage name="lav_art_colli" />
+                  </div>
+                </div>
+              </div>
+
+              <!--end::Col-->
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-15">
+          <!--begin::Label-->
+
+          <!--end::Label-->
+
+          <!--begin::Col-->
+
+          <div class="col fv-row input-group">
+            <button
+              type="button"
+              class="btn btn-primary rounded"
+              data-bs-toggle="modal"
+              :data-bs-target="`#${articoliSearchModalId}`"
+            >
+              <span class="svg-icon svg-icon-2">
+                <inline-svg src="media/icons/duotune/general/gen021.svg" />
+              </span>
+            </button>
+            <Field
+              type="text"
+              name="ana_desc"
+              :readonly="true"
+              class="form-control form-control-lg form-control-solid"
+              placeholder="Scarto Extra"
+            />
+            <div class="fv-plugins-message-container">
+              <div class="fv-help-block">
+                <ErrorMessage name="ana_desc" />
+              </div>
+            </div>
+          </div>
+
+          <!--end::Col-->
+        </div>
+        <!--end::Input group-->
+
+        <!--begin::Input group-->
+        <div
+          class="row row-cols-lg-4 row-cols-sm-3 row-cols-2 mt-6 justify-content-start"
+        >
+          <div class="col">
+            <div class="row mb-6 justify-content-start">
+              <!--begin::Label-->
+              <label class="col-form-label d-lg-block d-none fw-semobold fs-6">
+                Quantità
+              </label>
+              <!--end::Label-->
+
+              <!--begin::Col-->
+              <div class="col fv-row">
+                <Field
+                  type="number"
+                  name="lav_art_qta"
+                  class="form-control form-control-lg form-control-solid"
+                  placeholder="Quantità"
+                />
+                <div class="fv-plugins-message-container">
+                  <div class="fv-help-block">
+                    <ErrorMessage name="lav_art_qta" />
+                  </div>
+                </div>
+              </div>
+
+              <!--end::Col-->
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="row mb-6 justify-content-start">
+              <!--begin::Label-->
+              <label
+                class="col-form-label required d-lg-block d-none fw-semobold fs-6"
+              >
+                Colli
+              </label>
+              <!--end::Label-->
+
+              <!--begin::Col-->
+              <div class="col fv-row">
+                <Field
+                  type="number"
+                  name="lav_art_colli"
+                  class="form-control form-control-lg form-control-solid"
+                  placeholder="Colli"
+                />
+                <div class="fv-plugins-message-container">
+                  <div class="fv-help-block">
+                    <ErrorMessage name="lav_art_colli" />
+                  </div>
+                </div>
+              </div>
+
+              <!--end::Col-->
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-15">
+          <!--begin::Label-->
+
+          <!--end::Label-->
+
+          <!--begin::Col-->
+
+          <div class="col fv-row input-group">
+            <button
+              type="button"
+              class="btn btn-warning rounded"
+              data-bs-toggle="modal"
+              :disabled="true"
+              :data-bs-target="`#${articoliSearchModalId}`"
+            >
+              <span class="svg-icon svg-icon-2">
+                <i class="fa-solid fa-lock"></i>
+              </span>
+            </button>
+            <Field
+              type="text"
+              name="ana_desc"
+              :readonly="true"
+              class="form-control form-control-lg form-control-solid"
+              placeholder="Scarto NON UTILIZZABILE"
+            />
+            <div class="fv-plugins-message-container">
+              <div class="fv-help-block">
+                <ErrorMessage name="ana_desc" />
+              </div>
+            </div>
+          </div>
+
+          <!--end::Col-->
+        </div>
+        <!--end::Input group-->
+
+        <!--begin::Input group-->
+        <div
+          class="row row-cols-lg-4 row-cols-sm-3 row-cols-2 mt-6 justify-content-start"
+        >
+          <div class="col">
+            <div class="row mb-6 justify-content-start">
+              <!--begin::Label-->
+              <label class="col-form-label d-lg-block d-none fw-semobold fs-6">
+                Quantità
+              </label>
+              <!--end::Label-->
+
+              <!--begin::Col-->
+              <div class="col fv-row">
+                <Field
+                  type="number"
+                  name="lav_art_qta"
+                  class="form-control form-control-lg form-control-solid"
+                  placeholder="Quantità"
+                />
+                <div class="fv-plugins-message-container">
+                  <div class="fv-help-block">
+                    <ErrorMessage name="lav_art_qta" />
+                  </div>
+                </div>
+              </div>
+
+              <!--end::Col-->
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="row mb-6 justify-content-start">
+              <!--begin::Label-->
+              <label
+                class="col-form-label required d-lg-block d-none fw-semobold fs-6"
+              >
+                Colli
+              </label>
+              <!--end::Label-->
+
+              <!--begin::Col-->
+              <div class="col fv-row">
+                <Field
+                  type="number"
+                  name="lav_art_colli"
+                  class="form-control form-control-lg form-control-solid"
+                  placeholder="Colli"
+                />
+                <div class="fv-plugins-message-container">
+                  <div class="fv-help-block">
+                    <ErrorMessage name="lav_art_colli" />
+                  </div>
+                </div>
+              </div>
+
+              <!--end::Col-->
+            </div>
+          </div>
+        </div>
+        <div class="separator my-10"></div>
+        <div class="row mt-15">
+          <!--begin::Label-->
+
+          <!--end::Label-->
+
+          <!--begin::Col-->
+
+          <div class="col fv-row input-group">
+            <button
+              type="button"
+              class="btn btn-warning rounded"
+              data-bs-toggle="modal"
+              :disabled="true"
+              :data-bs-target="`#${articoliSearchModalId}`"
+            >
+              <span class="svg-icon svg-icon-2">
+                <i class="fa-solid fa-lock"></i>
+              </span>
+            </button>
+            <Field
+              type="text"
+              name="ana_desc"
+              :readonly="true"
+              class="form-control form-control-lg form-control-solid"
+              placeholder="RIMANENZA"
+            />
+            <div class="fv-plugins-message-container">
+              <div class="fv-help-block">
+                <ErrorMessage name="ana_desc" />
+              </div>
+            </div>
+          </div>
+
+          <!--end::Col-->
+        </div>
+        <!--end::Input group-->
+
+        <!--begin::Input group-->
+        <div
+          class="row row-cols-lg-4 row-cols-sm-3 row-cols-2 mt-6 justify-content-start"
+        >
+          <div class="col">
+            <div class="row mb-6 justify-content-start">
+              <!--begin::Label-->
+              <label class="col-form-label d-lg-block d-none fw-semobold fs-6">
+                Quantità
+              </label>
+              <!--end::Label-->
+
+              <!--begin::Col-->
+              <div class="col fv-row">
+                <Field
+                  type="number"
+                  name="lav_art_qta"
+                  class="form-control form-control-lg form-control-solid"
+                  placeholder="Quantità"
+                />
+                <div class="fv-plugins-message-container">
+                  <div class="fv-help-block">
+                    <ErrorMessage name="lav_art_qta" />
+                  </div>
+                </div>
+              </div>
+
+              <!--end::Col-->
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="row mb-6 justify-content-start">
+              <!--begin::Label-->
+              <label
+                class="col-form-label required d-lg-block d-none fw-semobold fs-6"
+              >
+                Colli
+              </label>
+              <!--end::Label-->
+
+              <!--begin::Col-->
+              <div class="col fv-row">
+                <Field
+                  type="number"
+                  name="lav_art_colli"
+                  class="form-control form-control-lg form-control-solid"
+                  placeholder="Colli"
+                />
+                <div class="fv-plugins-message-container">
+                  <div class="fv-help-block">
+                    <ErrorMessage name="lav_art_colli" />
+                  </div>
+                </div>
+              </div>
+
+              <!--end::Col-->
+            </div>
+          </div>
+        </div>
       </div>
     </Form>
   </div>
@@ -573,12 +766,3 @@ export default defineComponent({
   }
 });
 </script>
-
-<!-- <style>
-@media (max-width: 991.98px) {
-  .col-form-label {
-    display: none;
-  }
-}
-</style>
- -->

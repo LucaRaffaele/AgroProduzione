@@ -8,20 +8,38 @@
       @submit="saveChanges()"
       :validation-schema="lavorazioneDetailsValidator"
     >
+      <div class="card-footer d-flex justify-content-end py-6 px-9">
+        <button
+          type="submit"
+          id="lavorazioni_edit_submit"
+          ref="submitButton"
+          class="btn btn-primary ms"
+        >
+          <span class="indicator-label">
+            {{ isNewProcessing ? "Aggiungi operatore" : "Salva le modifiche" }}
+          </span>
+          <span class="indicator-progress">
+            Please wait...
+            <span
+              class="spinner-border spinner-border-sm align-middle ms-2"
+            ></span>
+          </span>
+        </button>
+      </div>
       <!--begin::Card body-->
       <div class="card-body border-top p-9">
         <!--Full Name-->
         <div class="row mb-6">
           <!--begin::Label-->
           <label
-            class="col-xl-2 col-lg-3 col-sm-4 col-8 col-form-label required fw-semobold fs-6"
+            class="col-xl-2 col-lg-3 col-sm-4 col-8 d-lg-block d-none col-form-label required fw-semobold fs-6"
             >Operatore</label
           >
           <!--end::Label-->
 
           <!--begin::Col-->
 
-          <div class="col-lg col-12 order-lg-1 order-2 fv-row">
+          <div class="col fv-row">
             <Field
               type="text"
               name="ana_desc"
@@ -36,7 +54,7 @@
             </div>
           </div>
 
-          <div class="col-auto order-lg-2 order-2 fv-row ms-auto">
+          <div class="col-auto fv-row ms-auto">
             <button
               type="button"
               class="btn btn-primary"
@@ -113,27 +131,65 @@
         </div>
         <!--end::Input group-->
       </div>
-      <div class="card-footer d-flex justify-content-end py-6 px-9">
-        <button
-          type="submit"
-          id="lavorazioni_edit_submit"
-          ref="submitButton"
-          class="btn btn-primary ms"
-        >
-          <span class="indicator-label">
-            {{ isNewProcessing ? "Aggiungi operatore" : "Salva le modifiche" }}
-          </span>
-          <span class="indicator-progress">
-            Please wait...
-            <span
-              class="spinner-border spinner-border-sm align-middle ms-2"
-            ></span>
-          </span>
-        </button>
-      </div>
     </Form>
   </div>
+
   <!--end::Input group-->
+
+  <div class="card-body py-3">
+    <!--begin::Table container-->
+    <div class="table-responsive">
+      <!--begin::Table-->
+      <table
+        class="table table-row-dashed table-row-gray-300 align-middle gs-0 gy-4"
+      >
+        <!--begin::Table head-->
+        <thead>
+          <tr class="fw-bold text-muted">
+            <th class="min-w-150px">Operatore</th>
+            <th class="min-w-140px">Orario Inizio</th>
+            <th class="min-w-120px">Orario Fine</th>
+          </tr>
+        </thead>
+        <!--end::Table head-->
+
+        <!--begin::Table body-->
+        <tbody>
+          <template v-for="(item, index) in list" :key="index">
+            <tr>
+              <td>
+                <h1 class="text-dark fw-bold text-hover-primary fs-6">
+                  {{ item.name }}
+                </h1>
+              </td>
+
+              <td>
+                <h1 class="text-gray-600 d-block fs-6">{{ item.start }}</h1>
+              </td>
+
+              <td>
+                <h1 class="text-gray-600 d-block fs-6">{{ item.end }}</h1>
+              </td>
+
+              <td class="text-end">
+                <a
+                  href="#"
+                  class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
+                >
+                  <span class="svg-icon svg-icon-3">
+                    <inline-svg src="media/icons/duotune/art/art005.svg" />
+                  </span>
+                </a>
+              </td>
+            </tr>
+          </template>
+        </tbody>
+        <!--end::Table body-->
+      </table>
+      <!--end::Table-->
+    </div>
+    <!--end::Table container-->
+  </div>
 
   <search-modal :idModal="articoliSearchModalId">
     <template v-slot:grid> <OperatoriGrid></OperatoriGrid></template>
@@ -171,6 +227,34 @@ export default defineComponent({
     const isNewProcessing = computed(() => {
       return props.id == "0";
     });
+
+    const list = [
+      {
+        name: "Franco",
+        start: "10:15",
+        end: "12:00"
+      },
+      {
+        name: "Marco",
+        start: "12:15",
+        end: "13:00"
+      },
+      {
+        name: "Luca",
+        start: "21:00",
+        end: "22:45"
+      },
+      {
+        name: "Andrea",
+        start: "9:00",
+        end: "19:30"
+      },
+      {
+        name: "Mattia",
+        start: "11:15",
+        end: "14:00"
+      }
+    ];
 
     const articoliSearchModalId = "articoli_search_modal";
 
@@ -269,7 +353,8 @@ export default defineComponent({
       saveChanges,
 
       isNewProcessing,
-      articoliSearchModalId
+      articoliSearchModalId,
+      list
     };
   }
 });
