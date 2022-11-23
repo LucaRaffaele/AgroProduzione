@@ -64,11 +64,14 @@
       <div class="card-p mt-n12 position-relative mx-n3">
         <!--begin::Row-->
         <div class="row m-0 gap-4">
-          <div class="col d-grid me-0 mb-7 p-0 bg-light-warning rounded-2">
+          <div class="col d-grid me-0 mb-7 p-0 rounded-2">
             <button
               type="button"
-              class="btn px-3 ripple py-8 rounded-2"
+              class="btn btn-light-warning px-3 ripple py-8 rounded-2"
               :disabled="lavorazioneDetails.lav_ord_num != 0"
+              :class="
+                lavorazioneDetails.lav_ord_num != 0 ? 'active' : 'btn-secondary'
+              "
               @click="richiediPrelievo"
             >
               <span class="svg-icon svg-icon-3x svg-icon-warning d-block my-2">
@@ -80,8 +83,8 @@
           <div class="col d-grid mb-7 p-0 bg-light-primary rounded-2">
             <button
               type="button"
-              class="btn px-3 py-8 rounded-2"
-              :disabled="true"
+              class="btn btn-light-primary px-3 py-8 rounded-2"
+              :disabled="!isStarted || isStopped"
             >
               <span class="svg-icon svg-icon-3x svg-icon-primary d-block my-2">
                 <inline-svg src="media/icons/duotune/arrows/arr075.svg" />
@@ -92,8 +95,8 @@
           <div class="col d-grid mb-7 p-0 bg-light-info rounded-2">
             <button
               type="button"
-              class="btn px-3 py-8 rounded-2"
-              :disabled="true"
+              class="btn btn-light-info px-3 py-8 rounded-2"
+              :disabled="!isStarted || isStopped"
             >
               <span class="svg-icon svg-icon-3x svg-icon-info d-block my-2">
                 <inline-svg src="media/icons/duotune/electronics/elc001.svg" />
@@ -109,7 +112,7 @@
             <button
               type="button"
               class="btn btn-light-success px-6 py-8 rounded-2"
-              :class="active == 'success' ? 'success-btn' : ''"
+              :class="lavorazioneDetails.lav_start != null ? 'active' : ''"
               :disabled="!isStartable"
               @click="startLavorazione"
             >
@@ -177,9 +180,9 @@ export default defineComponent({
     });
  */
     const widgetColor = computed(() => {
-      return isStartable.value
+      return lavorazioneDetails.value.lav_start != null
         ? "success"
-        : isStopped.value
+        : lavorazioneDetails.value.lav_stop != null
         ? "danger"
         : "primary";
     });
@@ -191,11 +194,19 @@ export default defineComponent({
       );
     });
 
-    const isStopped = computed(() => {
+    const isStarted = computed(() => {
+      return lavorazioneDetails.value.lav_start != null;
+    });
+
+    const isStoppable = computed(() => {
       return (
         lavorazioneDetails.value.lav_ord_num != 0 &&
         lavorazioneDetails.value.lav_start == null
       );
+    });
+
+    const isStopped = computed(() => {
+      return lavorazioneDetails.value.lav_stop != null;
     });
 
     const lavorazioneDetails = ref<LavorazioneDetails>({
@@ -264,6 +275,9 @@ export default defineComponent({
       richiediPrelievo,
       startLavorazione,
       isStartable,
+      isStarted,
+      isStoppable,
+      isStopped,
       dateFormatting,
       lavorazioneDetails,
       widgetColor
