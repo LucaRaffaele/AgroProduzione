@@ -10,4 +10,8 @@ const rsaConsoleLog = (
   if (process.env.NODE_ENV === "development") console.log(message, args);
 };
 
-export { zeroPad, rsaConsoleLog };
+const dateFormatting = (date: Date, language = "it-IT") => {
+  return new Date(date).toLocaleDateString(language);
+};
+
+export { zeroPad, rsaConsoleLog, dateFormatting };

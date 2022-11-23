@@ -9,7 +9,6 @@
     >
       <CardLavorazione
         widget-classes="card-xl-stretch mb-xl-8"
-        widget-color="primary"
         chart-height="200"
         stroke-color="#4e12c4"
         :lavorazione="lavorazione"
