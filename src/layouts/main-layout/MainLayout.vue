@@ -30,7 +30,6 @@
   <KTDrawers />
   <KTScrollTop />
   <KTModals />
-  <KTCustomize />
 </template>
 
 <script lang="ts">
@@ -49,7 +48,6 @@ import KTFooter from "@/layouts/main-layout/footer/Footer.vue";
 import KTDrawers from "@/layouts/main-layout/drawers/Drawers.vue";
 import KTModals from "@/layouts/main-layout/modals/Modals.vue";
 import KTScrollTop from "@/layouts/main-layout/extras/ScrollTop.vue";
-import KTCustomize from "@/layouts/main-layout/extras/Customize.vue";
 import { useRoute } from "vue-router";
 import { reinitializeComponents } from "@/core/plugins/keenthemes";
 import LayoutService from "@/core/services/LayoutService";
@@ -64,8 +62,7 @@ export default defineComponent({
     KTFooter,
     KTDrawers,
     KTScrollTop,
-    KTModals,
-    KTCustomize
+    KTModals
   },
   setup() {
     const route = useRoute();

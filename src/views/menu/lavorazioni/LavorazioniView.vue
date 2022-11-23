@@ -9,7 +9,19 @@
 
     <!--begin::Controls-->
     <template v-if="!onEdit">
-      <div class="d-flex align-items-center my-2">
+      <div class="d-flex align-items-center my-2 gap-3">
+        <router-link
+          :to="'/menu/lavorazioni/articoli/' + 0"
+          class="btn btn-primary align-self-center"
+          @click="onEdit = true"
+          >Aggiungi Articolo</router-link
+        >
+        <router-link
+          :to="'/menu/lavorazioni/operatori/' + 0"
+          class="btn btn-primary align-self-center"
+          @click="onEdit = true"
+          >Aggiungi Operatore</router-link
+        >
         <router-link
           :to="'/menu/lavorazioni/modifica/' + 0"
           class="btn btn-primary align-self-center"

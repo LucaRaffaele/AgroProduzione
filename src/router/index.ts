@@ -93,6 +93,38 @@ const routes: Array<RouteRecordRaw> = [
                 }
               ]
             }
+          },
+          {
+            path: "articoli/:id",
+            name: "articoli-list",
+            component: () =>
+              import("@/views/menu/lavorazioni/ArticoliList.vue"),
+            props: true,
+            meta: {
+              pageTitle: "Lavorazione",
+              breadcrumbs: [
+                {
+                  label: "Articoli",
+                  link: "/lavorazioni/list"
+                }
+              ]
+            }
+          },
+          {
+            path: "operatori/:id",
+            name: "operatori-list",
+            component: () =>
+              import("@/views/menu/lavorazioni/OperatoriList.vue"),
+            props: true,
+            meta: {
+              pageTitle: "Lavorazione",
+              breadcrumbs: [
+                {
+                  label: "Operatori",
+                  link: "/lavorazioni/list"
+                }
+              ]
+            }
           }
         ]
       },
