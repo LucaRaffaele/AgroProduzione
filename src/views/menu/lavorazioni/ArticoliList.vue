@@ -73,7 +73,7 @@
 
         <!--begin::Input group-->
         <div
-          class="row row-cols-lg-4 row-cols-sm-3 row-cols-2 mb-6 justify-content-start"
+          class="row row-cols-lg-4 row-cols-sm-3 row-cols-2 mt-6 justify-content-start"
         >
           <div class="col">
             <div class="row mb-6 justify-content-start">
@@ -87,7 +87,7 @@
               <div class="col fv-row">
                 <Field
                   type="number"
-                  name="lav_art_qta"
+                  name="art_qta"
                   class="form-control form-control-lg form-control-solid"
                   placeholder="Quantità"
                 />
@@ -116,7 +116,7 @@
               <div class="col fv-row">
                 <Field
                   type="number"
-                  name="lav_art_colli"
+                  name="art_colli"
                   class="form-control form-control-lg form-control-solid"
                   placeholder="Colli"
                 />
@@ -128,9 +128,23 @@
               </div>
 
               <!--end::Col-->
+
+              <div class="col-auto fv-row">
+                <button
+                  type="button"
+                  class="btn btn-primary rounded"
+                  data-bs-toggle="modal"
+                  :data-bs-target="`#${basketSearchModalId}`"
+                >
+                  <span class="svg-icon svg-icon-2">
+                    <i class="fas fa-shopping-basket"></i>
+                  </span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
+
         <div class="alert fw-bold fs-3 mt-15 alert-primary" role="alert">
           Scarti
         </div>
@@ -188,7 +202,7 @@
               <div class="col fv-row">
                 <Field
                   type="number"
-                  name="lav_art_qta"
+                  name="scarto_qta"
                   class="form-control form-control-lg form-control-solid"
                   placeholder="Quantità"
                 />
@@ -217,7 +231,7 @@
               <div class="col fv-row">
                 <Field
                   type="number"
-                  name="lav_art_colli"
+                  name="scarto_colli"
                   class="form-control form-control-lg form-control-solid"
                   placeholder="Colli"
                 />
@@ -229,6 +243,19 @@
               </div>
 
               <!--end::Col-->
+
+              <div class="col-auto fv-row">
+                <button
+                  type="button"
+                  class="btn btn-primary rounded"
+                  data-bs-toggle="modal"
+                  :data-bs-target="`#${basketSearchModalId}`"
+                >
+                  <span class="svg-icon svg-icon-2">
+                    <i class="fas fa-shopping-basket"></i>
+                  </span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -285,7 +312,7 @@
               <div class="col fv-row">
                 <Field
                   type="number"
-                  name="lav_art_qta"
+                  name="scarto2_qta"
                   class="form-control form-control-lg form-control-solid"
                   placeholder="Quantità"
                 />
@@ -314,7 +341,7 @@
               <div class="col fv-row">
                 <Field
                   type="number"
-                  name="lav_art_colli"
+                  name="scarto2_colli"
                   class="form-control form-control-lg form-control-solid"
                   placeholder="Colli"
                 />
@@ -326,6 +353,19 @@
               </div>
 
               <!--end::Col-->
+
+              <div class="col-auto fv-row">
+                <button
+                  type="button"
+                  class="btn btn-primary rounded"
+                  data-bs-toggle="modal"
+                  :data-bs-target="`#${basketSearchModalId}`"
+                >
+                  <span class="svg-icon svg-icon-2">
+                    <i class="fas fa-shopping-basket"></i>
+                  </span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -382,7 +422,7 @@
               <div class="col fv-row">
                 <Field
                   type="number"
-                  name="lav_art_qta"
+                  name="scarto3_qta"
                   class="form-control form-control-lg form-control-solid"
                   placeholder="Quantità"
                 />
@@ -411,7 +451,7 @@
               <div class="col fv-row">
                 <Field
                   type="number"
-                  name="lav_art_colli"
+                  name="scarto3_colli"
                   class="form-control form-control-lg form-control-solid"
                   placeholder="Colli"
                 />
@@ -423,6 +463,19 @@
               </div>
 
               <!--end::Col-->
+
+              <div class="col-auto fv-row">
+                <button
+                  type="button"
+                  class="btn btn-primary rounded"
+                  data-bs-toggle="modal"
+                  :data-bs-target="`#${basketSearchModalId}`"
+                >
+                  <span class="svg-icon svg-icon-2">
+                    <i class="fas fa-shopping-basket"></i>
+                  </span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -480,7 +533,7 @@
               <div class="col fv-row">
                 <Field
                   type="number"
-                  name="lav_art_qta"
+                  name="non_scarto_qta"
                   class="form-control form-control-lg form-control-solid"
                   placeholder="Quantità"
                 />
@@ -509,7 +562,7 @@
               <div class="col fv-row">
                 <Field
                   type="number"
-                  name="lav_art_colli"
+                  name="non_scarto_colli"
                   class="form-control form-control-lg form-control-solid"
                   placeholder="Colli"
                 />
@@ -521,9 +574,23 @@
               </div>
 
               <!--end::Col-->
+
+              <div class="col-auto fv-row">
+                <button
+                  type="button"
+                  class="btn btn-primary rounded"
+                  data-bs-toggle="modal"
+                  :data-bs-target="`#${basketSearchModalId}`"
+                >
+                  <span class="svg-icon svg-icon-2">
+                    <i class="fas fa-shopping-basket"></i>
+                  </span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
+
         <div class="separator my-10"></div>
         <div class="row mt-15">
           <!--begin::Label-->
@@ -578,7 +645,7 @@
               <div class="col fv-row">
                 <Field
                   type="number"
-                  name="lav_art_qta"
+                  name="rimanenza_qta"
                   class="form-control form-control-lg form-control-solid"
                   placeholder="Quantità"
                 />
@@ -607,7 +674,142 @@
               <div class="col fv-row">
                 <Field
                   type="number"
-                  name="lav_art_colli"
+                  name="rimanenza_colli"
+                  class="form-control form-control-lg form-control-solid"
+                  placeholder="Colli"
+                />
+                <div class="fv-plugins-message-container">
+                  <div class="fv-help-block">
+                    <ErrorMessage name="lav_art_colli" />
+                  </div>
+                </div>
+              </div>
+
+              <!--end::Col-->
+
+              <div class="col-auto fv-row">
+                <button
+                  type="button"
+                  class="btn btn-primary rounded"
+                  data-bs-toggle="modal"
+                  :data-bs-target="`#${basketSearchModalId}`"
+                >
+                  <span class="svg-icon svg-icon-2">
+                    <i class="fas fa-shopping-basket"></i>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Form>
+  </div>
+  <!--end::Input group-->
+
+  <search-modal :idModal="articoliSearchModalId">
+    <template v-slot:grid> <ArticoliGrid></ArticoliGrid></template>
+  </search-modal>
+  <search-modal :idModal="basketSearchModalId">
+    <template v-slot:grid>
+      <div class="w-85 mx-auto row">
+        <button
+          type="button"
+          class="btn w-50px ms-auto btn-primary rounded"
+          @click="add"
+        >
+          <span class="svg-icon mx-auto svg-icon-2">
+            <i class="fa-solid fa-plus"></i>
+          </span>
+        </button>
+      </div>
+      <div
+        class="w-100 mx-auto"
+        v-for="(element, index) in imballaggiCount"
+        :key="index"
+      >
+        <div class="row mx-auto mt-15 w-85">
+          <!--begin::Label-->
+
+          <!--end::Label-->
+
+          <!--begin::Col-->
+
+          <div class="col fv-row input-group">
+            <button
+              type="button"
+              class="btn btn-primary rounded"
+              data-bs-toggle="modal"
+              :data-bs-target="`#${articoliSearchModalId}`"
+            >
+              <span class="svg-icon svg-icon-2">
+                <inline-svg src="media/icons/duotune/general/gen021.svg" />
+              </span>
+            </button>
+            <Field
+              type="text"
+              name="ana_desc"
+              :readonly="true"
+              class="form-control form-control-lg form-control-solid"
+              placeholder="Imballaggio"
+            />
+            <div class="fv-plugins-message-container">
+              <div class="fv-help-block">
+                <ErrorMessage name="ana_desc" />
+              </div>
+            </div>
+          </div>
+
+          <!--end::Col-->
+        </div>
+        <!--end::Input group-->
+
+        <!--begin::Input group-->
+        <div
+          class="row row-cols-lg-4 mx-auto row-cols-sm-3 w-85 row-cols-2 mt-6 justify-content-start"
+        >
+          <div class="col">
+            <div class="row mb-6 justify-content-start">
+              <!--begin::Label-->
+              <label class="col-form-label d-lg-block d-none fw-semobold fs-6">
+                Quantità
+              </label>
+              <!--end::Label-->
+
+              <!--begin::Col-->
+              <div class="col fv-row">
+                <Field
+                  type="number"
+                  :name="index + '_qta'"
+                  class="form-control form-control-lg form-control-solid"
+                  placeholder="Quantità"
+                />
+                <div class="fv-plugins-message-container">
+                  <div class="fv-help-block">
+                    <ErrorMessage name="lav_art_qta" />
+                  </div>
+                </div>
+              </div>
+
+              <!--end::Col-->
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="row mb-6 justify-content-start">
+              <!--begin::Label-->
+              <label
+                class="col-form-label required d-lg-block d-none fw-semobold fs-6"
+              >
+                Colli
+              </label>
+              <!--end::Label-->
+
+              <!--begin::Col-->
+              <div class="col fv-row">
+                <Field
+                  type="number"
+                  :name="index + '_colli'"
                   class="form-control form-control-lg form-control-solid"
                   placeholder="Colli"
                 />
@@ -623,12 +825,7 @@
           </div>
         </div>
       </div>
-    </Form>
-  </div>
-  <!--end::Input group-->
-
-  <search-modal :idModal="articoliSearchModalId">
-    <template v-slot:grid> <ArticoliGrid></ArticoliGrid></template>
+    </template>
   </search-modal>
   <!--begin::Content-->
 </template>
@@ -664,7 +861,13 @@ export default defineComponent({
       return props.id == "0";
     });
 
+    const imballaggiCount = ref([1]);
+    const add = () => {
+      console.log("add");
+      imballaggiCount.value.push(0);
+    };
     const articoliSearchModalId = "articoli_search_modal";
+    const basketSearchModalId = "basket_search_modal";
 
     onMounted(() => {
       rsaConsoleLog("LavorazioniEdit Mounted with props id -> ", props.id);
@@ -759,9 +962,11 @@ export default defineComponent({
     return {
       submitButton,
       saveChanges,
-
+      basketSearchModalId,
       isNewProcessing,
-      articoliSearchModalId
+      articoliSearchModalId,
+      imballaggiCount,
+      add
     };
   }
 });
