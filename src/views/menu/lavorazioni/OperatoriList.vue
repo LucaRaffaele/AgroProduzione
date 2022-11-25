@@ -1,23 +1,33 @@
 <template>
-  <!--begin::Basic info-->
-  <div class="card mb-5 mb-xl-10">
-    <Form
-      id="lavorazioni_edit_form"
-      class="form"
-      novalidate="novalidate"
-      @submit="saveChanges()"
-      :validation-schema="lavorazioneDetailsValidator"
-    >
-      <div class="card-footer d-flex justify-content-end py-6 px-9">
+  <Form
+    id="lavorazioni_edit_form"
+    class="form"
+    novalidate="novalidate"
+    @submit="saveChanges()"
+    :validation-schema="lavorazioneDetailsValidator"
+  >
+    <!--begin::Campaigns toolbar-->
+    <div class="d-flex flex-wrap flex-stack my-5">
+      <!--begin::Title-->
+      <h2 class="fw-semibold my-2">
+        <span class="fs-4 text-gray-400 ms-1"></span>
+      </h2>
+      <!--end::Title-->
+
+      <!--begin::Controls-->
+      <div class="d-flex align-items-end my-2 gap-3">
+        <router-link
+          to="/menu/lavorazioni/list/"
+          class="btn btn-danger align-self-center"
+          >Indietro</router-link
+        >
         <button
           type="submit"
           id="lavorazioni_edit_submit"
           ref="submitButton"
           class="btn btn-primary ms"
         >
-          <span class="indicator-label">
-            {{ isNewProcessing ? "Aggiungi operatore" : "Salva le modifiche" }}
-          </span>
+          <span class="indicator-label"> Salva Operatori </span>
           <span class="indicator-progress">
             Please wait...
             <span
@@ -26,8 +36,14 @@
           </span>
         </button>
       </div>
+
+      <!--end::Controls-->
+    </div>
+    <!--end::Campaigns toolbar-->
+    <!--begin::Basic info-->
+    <div class="card mb-5 mb-xl-10">
       <!--begin::Card body-->
-      <div class="card-body border-top p-9">
+      <div class="card-body pt-lg-4 p-lg-7 p-2">
         <!--Full Name-->
         <div class="row mb-6">
           <!--begin::Label-->
@@ -131,8 +147,8 @@
         </div>
         <!--end::Input group-->
       </div>
-    </Form>
-  </div>
+    </div>
+  </Form>
 
   <!--end::Input group-->
 

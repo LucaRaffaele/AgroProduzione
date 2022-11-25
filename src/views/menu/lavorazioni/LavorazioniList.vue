@@ -1,9 +1,29 @@
 <template>
+  <!--begin::Campaigns toolbar-->
+  <div class="d-flex flex-wrap flex-stack my-5">
+    <!--begin::Title-->
+    <h2 class="fw-semobold my-2">
+      <span class="fs-4 text-gray-400 ms-1"></span>
+    </h2>
+    <!--end::Title-->
+
+    <!--begin::Controls-->
+    <div class="d-flex align-items-center my-2 gap-3">
+      <router-link
+        :to="'/menu/lavorazioni/modifica/' + 0"
+        class="btn btn-primary align-self-center"
+        @click="onEdit = true"
+        >Aggiungi Lavorazione</router-link
+      >
+    </div>
+    <!--end::Controls-->
+  </div>
+  <!--end::Campaigns toolbar-->
   <!--begin::Row-->
   <div class="row g-5 g-xl-8">
     <!--begin::Col-->
     <div
-      v-for="(lavorazione, index) of lavorazioniList"
+      v-for="(lavorazione, index) in lavorazioniList"
       :key="index"
       class="col-xl-4 col-md-6"
     >
@@ -20,9 +40,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, onMounted } from "vue";
+import { defineComponent, ref, computed, onMounted } from "vue";
 import ApiService from "@/core/services/ApiService";
 import { rsaConsoleLog } from "@/core/helpers/utility";
+import { useRouter, useRoute } from "vue-router";
 import CardLavorazione from "@/components/lavorazioni/CardLavorazione.vue";
 
 export default defineComponent({
@@ -30,6 +51,13 @@ export default defineComponent({
   emits: ["updateLavorazione"],
   components: { CardLavorazione },
   setup() {
+    const router = useRouter();
+    const route = useRoute();
+
+    const onEdit = computed(() => {
+      return route.path.indexOf("/list") == -1;
+    });
+
     const modalId = ref("modal_add_lavorazione");
     const lavorazioniFake = ref([
       {
@@ -70,7 +98,7 @@ export default defineComponent({
       }
       return null;
     };
-    return { modalId, lavorazioniList };
+    return { modalId, lavorazioniList, onEdit };
   }
 });
 </script>

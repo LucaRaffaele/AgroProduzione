@@ -26,7 +26,7 @@
   <div class="row g-5 g-xl-8">
     <!--begin::Col-->
     <div
-      v-for="(lavorazione, index) of lavorazioniList"
+      v-for="(lavorazione, index) in lavorazioniList"
       :key="index"
       class="col-xl-4"
     >

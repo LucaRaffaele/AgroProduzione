@@ -3,7 +3,7 @@
     <!--begin::Content container-->
     <div
       id="kt_app_content_container"
-      class="app-container"
+      class="app-container p-0"
       :class="{
         'container-fluid': contentWidthFluid,
         'container-xxl': !contentWidthFluid

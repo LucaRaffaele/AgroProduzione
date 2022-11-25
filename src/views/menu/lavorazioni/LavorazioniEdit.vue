@@ -1,4 +1,29 @@
 <template>
+  <!--begin::Campaigns toolbar-->
+  <div class="d-flex flex-wrap flex-stack my-5">
+    <!--begin::Title-->
+    <h2 class="fw-semibold my-2">
+      <span class="fs-4 text-gray-400 ms-1"></span>
+    </h2>
+    <!--end::Title-->
+
+    <!--begin::Controls-->
+    <div class="d-flex align-items-end my-2 gap-3">
+      <router-link
+        to="/menu/lavorazioni/list/"
+        class="btn btn-danger align-self-center"
+        >Indietro</router-link
+      >
+      <router-link
+        :to="'/menu/lavorazioni/list/' + 0"
+        class="btn btn-primary align-self-center"
+        >Salva Lavorazione</router-link
+      >
+    </div>
+
+    <!--end::Controls-->
+  </div>
+  <!--end::Campaigns toolbar-->
   <!--begin::Basic info-->
   <div class="card mb-5 mb-xl-10">
     <!--begin::Content-->

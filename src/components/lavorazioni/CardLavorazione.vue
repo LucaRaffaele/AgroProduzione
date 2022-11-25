@@ -60,7 +60,7 @@
     <!--end::Header-->
     <!--begin::Body-->
     <div class="card-body p-0">
-      <!--begin::Stats-->
+      <!--begin::Actions-->
       <div class="card-p mt-n12 position-relative mx-n3">
         <!--begin::Row-->
         <div class="row m-0 gap-4">
@@ -83,33 +83,41 @@
             </button>
           </div>
           <div class="col d-grid mb-7 p-0 bg-light-primary rounded-2">
-            <button
-              type="button"
+            <router-link
+              :to="'/menu/lavorazioni/operatori/' + 0"
               class="btn px-3 py-8 rounded-2"
               :class="
-                !isStarted || isStopped
-                  ? 'btn-light-secondary'
+                isStopped
+                  ? 'btn-light-primary active disabled-class'
+                  : !isStarted
+                  ? 'btn-light-secondary disabled-class'
                   : 'btn-light-primary'
               "
-              :disabled="!isStarted || isStopped"
             >
               <span class="svg-icon svg-icon-3x svg-icon-primary d-block my-2">
                 <inline-svg src="media/icons/duotune/arrows/arr075.svg" />
               </span>
               Inserisci Operatori
-            </button>
+            </router-link>
           </div>
           <div class="col d-grid mb-7 p-0 bg-light-info rounded-2">
-            <button
-              type="button"
-              class="btn btn-light-info px-3 py-8 rounded-2"
+            <router-link
+              :to="'/menu/lavorazioni/articoli/' + 0"
+              class="btn px-3 py-8 rounded-2"
+              :class="
+                isStopped
+                  ? 'btn-light-info active disabled-class'
+                  : !isStarted
+                  ? 'btn-light-secondary disabled-class'
+                  : 'btn-light-info'
+              "
               :disabled="!isStarted || isStopped"
             >
               <span class="svg-icon svg-icon-3x svg-icon-info d-block my-2">
                 <inline-svg src="media/icons/duotune/electronics/elc001.svg" />
               </span>
               Articoli
-            </button>
+            </router-link>
           </div>
         </div>
         <!--end::Row-->
@@ -118,9 +126,15 @@
           <div class="col d-grid me-0 p-0 bg-light-success rounded-2">
             <button
               type="button"
-              class="btn btn-light-success px-6 py-8 rounded-2"
-              :class="lavorazioneDetails.lav_start != null ? 'active' : ''"
-              :disabled="!isStartable"
+              class="btn px-6 py-8 rounded-2"
+              :class="
+                !isStartable
+                  ? 'btn-light-secondary disabled-class'
+                  : isStarted
+                  ? 'active btn-light-success disabled-class'
+                  : 'btn-light-success'
+              "
+              :disabled="!isStartable || isStarted"
               @click="startLavorazione"
             >
               <span class="svg-icon svg-icon-3x svg-icon-success d-block my-2">
@@ -146,7 +160,7 @@
         </div>
         <!--end::Row-->
       </div>
-      <!--end::Stats-->
+      <!--end::Actions-->
       <!--end::Body-->
     </div>
     <!--end::Mixed Widget 1-->
@@ -195,10 +209,7 @@ export default defineComponent({
     });
 
     const isStartable = computed(() => {
-      return (
-        lavorazioneDetails.value.lav_ord_num != 0 &&
-        lavorazioneDetails.value.lav_start == null
-      );
+      return lavorazioneDetails.value.lav_ord_num != 0;
     });
 
     const isStarted = computed(() => {
@@ -262,7 +273,7 @@ export default defineComponent({
         RecordsTotal: 1,
         Data: [lavorazioneDetails.value]
       };
-      const url = `lavorazioni/put/${lavorazioneDetails.value.lav_tipo}/${lavorazioneDetails.value.lav_anno}/${lavorazioneDetails.value.lav_codice}`;
+      const url = `lavorazioni/start/${lavorazioneDetails.value.lav_tipo}/${lavorazioneDetails.value.lav_anno}/${lavorazioneDetails.value.lav_codice}`;
 
       ApiService.setSendHeader();
       ApiService.put(url, obj)
@@ -274,6 +285,7 @@ export default defineComponent({
         })
         .catch(({ response }) => {
           rsaConsoleLog("Error--------------- ", response);
+          lavorazioneDetails.value.lav_start = null;
         });
     };
 

@@ -1,7 +1,6 @@
 <template>
-  <div class="card">
-    <div class="card-header border-0 pt-6"></div>
-    <div class="card-body pt-0">
+  <div class="card mt-lg-5 mt-2">
+    <div class="card-body p-0 m-0">
       <ArticoliGrid></ArticoliGrid>
     </div>
   </div>
