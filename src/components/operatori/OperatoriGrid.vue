@@ -28,7 +28,7 @@
           width="60"
         ></e-column>
         <e-column
-          field="ana_codice"
+          field="tab_codice"
           headerText="Codice"
           textAlign="Left"
           width="150"
@@ -37,7 +37,7 @@
         ></e-column>
 
         <e-column
-          field="ana_desc1"
+          field="tab_desc"
           headerText="Descrizione"
           textAlign="Left"
           :valueAccessor="descFormatter"
@@ -45,49 +45,10 @@
         ></e-column>
 
         <e-column
-          field="ana_cod_fornitore"
-          headerText="Cod. Art. Forn."
-          textAlign="Left"
-          hideAtMedia="(min-width: 1200px)"
-          width="120"
-        ></e-column>
-
-        <e-column
-          field="ana_gruppo"
-          headerText="Gruppo."
-          textAlign="Left"
-          hideAtMedia="(min-width: 800px)"
-          width="150"
-        ></e-column>
-
-        <e-column
-          field="for_desc"
-          headerText="Fornitore"
-          textAlign="Left"
-          hideAtMedia="(min-width: 800px)"
-          width="220"
-        ></e-column>
-
-        <e-column
-          field="mar_desc"
-          headerText="Marchio"
-          textAlign="Left"
-          hideAtMedia="(min-width: 800px)"
-          width="180"
-        ></e-column>
-
-        <e-column
-          field="mer_desc"
-          headerText="Cat. Merceologica"
-          textAlign="Left"
-          hideAtMedia="(min-width: 800px)"
-          width="180"
-        ></e-column>
-        <e-column
           headerText="Comandi"
-          hideAtMedia="(max-width: 800px)"
           textAlign="Left"
           width="80"
+          :commands="commands"
         ></e-column>
         <!-- template="selectButtonTemplate" -->
       </e-columns>
@@ -164,7 +125,7 @@ export default defineComponent({
         state.skip +
         "&inlinecount=true";
       ApiService.setHeader();
-      ApiService.get("articoli", slug)
+      ApiService.get("tabelle/gettype/21")
         .then(({ data }) => {
           rsaConsoleLog("*** Result -> ", data.RecordsTotal);
           if (data.RecordsTotal > 0) {
@@ -178,6 +139,17 @@ export default defineComponent({
           rsaConsoleLog("Error--------------- ", response);
         });
     };
+
+    const commands = ref([
+      {
+        id: "select-button",
+        title: "Seleziona l'articolo",
+        buttonOption: {
+          cssClass: "e-info",
+          iconCss: "fa-solid fa-arrow-right"
+        }
+      }
+    ]);
 
     const dataBound = () => {
       rsaConsoleLog(
@@ -230,7 +202,7 @@ export default defineComponent({
     };
 
     const descFormatter = (field, data) => {
-      return data[field] + " " + data.ana_desc2.trim();
+      return data[field] + " " + data.tab_desc.trim();
     };
 
     return {
@@ -244,7 +216,8 @@ export default defineComponent({
       wrapSettings,
       descFormatter,
       onDataStateChange,
-      toolbar
+      toolbar,
+      commands
     };
   }
 });
