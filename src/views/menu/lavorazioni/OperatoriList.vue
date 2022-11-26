@@ -4,7 +4,7 @@
     class="form"
     novalidate="novalidate"
     @submit="saveChanges()"
-    :validation-schema="lavorazioneDetailsValidator"
+    :validation-schema="operatoriLavorazioneValidator"
   >
     <!--begin::Campaigns toolbar-->
     <div class="d-flex flex-wrap flex-stack my-5">
@@ -151,7 +151,7 @@
   </Form>
 
   <!--end::Input group-->
-
+  <!--TODO: utilizzare la tabella metronic e mettere dentro una card -->
   <div class="card-body py-3">
     <!--begin::Table container-->
     <div class="table-responsive">
@@ -228,7 +228,9 @@ export default defineComponent({
   name: "articoli-list",
 
   props: {
-    id: { type: String, required: true }
+    tipo: { type: String, required: true },
+    anno: { type: String, required: true },
+    codice: { type: String, required: true }
   },
 
   components: {
@@ -241,8 +243,10 @@ export default defineComponent({
 
   setup(props) {
     const isNewProcessing = computed(() => {
-      return props.id == "0";
+      return props.codice == "0";
     });
+
+    const operatoriLavorazioneValidator = Yup.object().shape({});
 
     const list = [
       {
@@ -275,15 +279,15 @@ export default defineComponent({
     const articoliSearchModalId = "articoli_search_modal";
 
     onMounted(() => {
-      rsaConsoleLog("LavorazioniEdit Mounted with props id -> ", props.id);
-      /* if (props.id != 0)
+      rsaConsoleLog("LavorazioniEdit Mounted with props id -> ", props.codice);
+      /* if (props.codice != 0)
           lavorazioneDetails.value = ; */
     });
 
     watch(
-      () => props.id,
+      () => props.codice,
       (newValue) => {
-        rsaConsoleLog("UserSettings on WATCH props data -> ", props.id);
+        rsaConsoleLog("UserSettings on WATCH props data -> ", props.codice);
       }
     );
 
@@ -301,7 +305,7 @@ export default defineComponent({
           RecordsTotal: 1,
           Data: [lavorazioneDetails.value]
         };
-        if (props.id == "0") {
+        if (props.codice == "0") {
           ApiService.setSendHeader();
           ApiService.post("lavorazioni/post", obj)
             .then(({ data }) => {
@@ -367,7 +371,7 @@ export default defineComponent({
     return {
       submitButton,
       saveChanges,
-
+      operatoriLavorazioneValidator,
       isNewProcessing,
       articoliSearchModalId,
       list

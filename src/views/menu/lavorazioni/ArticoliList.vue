@@ -28,7 +28,7 @@
           class="btn btn-primary ms"
         >
           <span class="indicator-label">
-            {{ isNewProcessing ? "Salva Articoli" : "Salva le modifiche" }}
+            {{ isNewList ? "Salva Articoli" : "Salva le modifiche" }}
           </span>
           <span class="indicator-progress">
             Please wait...
@@ -178,7 +178,10 @@
             Scarti
           </div>
 
-          <template v-for="(articolo, index) in articoliList" :key="index">
+          <template
+            v-for="(articolo, index) in articoliDefaultList"
+            :key="index"
+          >
             <!--begin::Input group-->
             <div v-if="index != 0">
               <!--begin::Articolo-->
@@ -210,7 +213,7 @@
                     type="text"
                     name="ana_desc"
                     class="form-control form-control-lg form-control-solid"
-                    :placeholder="labelArticoli[articolo.tipo]"
+                    :placeholder="labelTipoArticoli[articolo.tipo]"
                     v-model="articolo.ana_desc1"
                   />
                   <div class="fv-plugins-message-container">
@@ -328,7 +331,10 @@
 
 <script lang="ts">
 import { defineComponent, onMounted, ref, watch, computed } from "vue";
-import { IArticoliLavorazione as ArticoliLavorazione } from "@/core/data/articoliLavorazioni";
+import {
+  IArticoliLavorazione as ArticoliLavorazione,
+  TipoArticoli
+} from "@/core/data/articoliLavorazioni";
 import ArticoliGrid from "@/components/articoli/ArticoliGrid.vue";
 import imballaggiModal from "@/components/imballaggiComp.vue";
 import { ErrorMessage, Field, Form } from "vee-validate";
@@ -342,7 +348,9 @@ export default defineComponent({
   name: "articoli-list",
 
   props: {
-    id: { type: String, required: true }
+    tipo: { type: String, required: true },
+    anno: { type: String, required: true },
+    codice: { type: String, required: true }
   },
 
   components: {
@@ -355,23 +363,61 @@ export default defineComponent({
   },
 
   setup(props) {
-    const isNewProcessing = computed(() => {
-      return props.id == "0";
+    const isNewList = computed(() => {
+      return props.codice == "0";
     });
 
     const articoliSearchModalId = "articoli_search_modal";
     const basketSearchModalId = "basket_search_modal";
 
-    const articoliList = ref<Array<ArticoliLavorazione>>([
-      { ana_codice: "", ana_desc1: "", tipo: 0, qta: 0, colli: 0 },
-      { ana_codice: "", ana_desc1: "", tipo: 1, qta: 0, colli: 0 },
-      { ana_codice: "", ana_desc1: "", tipo: 2, qta: 0, colli: 0 },
-      { ana_codice: "", ana_desc1: "", tipo: 3, qta: 0, colli: 0 },
-      { ana_codice: "", ana_desc1: "", tipo: 4, qta: 0, colli: 0 },
-      { ana_codice: "", ana_desc1: "", tipo: 5, qta: 0, colli: 0 }
+    const articoliDefaultList = ref<Array<ArticoliLavorazione>>([
+      {
+        lar_art: "",
+        ana_desc1: "",
+        lar_tipo_art: TipoArticoli.PRODOTTO_FINALE,
+        lar_qta: 0,
+        lar_colli: 0
+      },
+      {
+        lar_art: "",
+        ana_desc1: "",
+        lar_tipo_art: TipoArticoli.SCARTO_I,
+        lar_qta: 0,
+        lar_colli: 0
+      },
+      {
+        lar_art: "",
+        ana_desc1: "",
+        lar_tipo_art: TipoArticoli.SCARTO_II,
+        lar_qta: 0,
+        lar_colli: 0
+      },
+      {
+        lar_art: "",
+        ana_desc1: "",
+        lar_tipo_art: TipoArticoli.SCARTO_EXTRA,
+        lar_qta: 0,
+        lar_colli: 0
+      },
+      {
+        lar_art: "",
+        ana_desc1: "",
+        lar_tipo_art: TipoArticoli.SCARTO_NON_UTILIZZABILE,
+        lar_qta: 0,
+        lar_colli: 0
+      },
+      {
+        lar_art: "",
+        ana_desc1: "",
+        lar_tipo_art: TipoArticoli.RIMANENZA,
+        lar_qta: 0,
+        lar_colli: 0
+      }
     ]);
 
-    const labelArticoli = ref<Array<string>>([
+    const articoliLavorazioneList = ref<Array<ArticoliLavorazione>>([]);
+
+    const labelTipoArticoli = ref<Array<string>>([
       "Prodotto Finale",
       "Scarto I",
       "Scarto II",
@@ -381,11 +427,21 @@ export default defineComponent({
     ]);
 
     const articoloLavorazione = ref<ArticoliLavorazione>({
-      ana_codice: "",
-      ana_desc1: "",
-      tipo: 0,
-      qta: 0,
-      colli: 0
+      lar_codice: 1,
+      lar_tipo_lav: 0,
+      lar_anno_lav: 2022,
+      lar_codice_lav: 1,
+      lar_art: "",
+      lar_colli: 0,
+      lar_qta: 0,
+      lar_costo: 0,
+      lar_tipo_art: 0,
+      lar_partita: 0,
+      lar_imballo: false,
+      lar_user: "",
+      lar_created_at: null,
+      lar_last_update: null,
+      ana_desc1: ""
     });
 
     const articoliLavorazioneValidator = Yup.object().shape({
@@ -395,15 +451,19 @@ export default defineComponent({
     });
 
     onMounted(() => {
-      rsaConsoleLog("LavorazioniEdit Mounted with props id -> ", props.id);
+      rsaConsoleLog("LavorazioniEdit Mounted with props id -> ", props.codice);
+      rsaConsoleLog(
+        "LavorazioniEdit Mounted ENUM -> ",
+        TipoArticoli.PRODOTTO_FINALE
+      );
       /* if (props.id != 0)
           lavorazioneDetails.value = ; */
     });
 
     watch(
-      () => props.id,
+      () => props.codice,
       (newValue) => {
-        rsaConsoleLog("UserSettings on WATCH props data -> ", props.id);
+        rsaConsoleLog("UserSettings on WATCH props data -> ", props.codice);
       }
     );
 
@@ -484,12 +544,12 @@ export default defineComponent({
     }; */
 
     return {
-      articoliList,
-      labelArticoli,
+      articoliDefaultList,
+      labelTipoArticoli,
       submitButton,
       saveChanges,
       basketSearchModalId,
-      isNewProcessing,
+      isNewList,
       articoliSearchModalId,
       articoliLavorazioneValidator,
       onSelectArticolo

@@ -1,28 +1,27 @@
 interface IArticoliLavorazione {
+  lar_codice?: number;
+  lar_tipo_lav?: number;
+  lar_anno_lav?: number;
+  lar_codice_lav?: number;
+  lar_art: string;
+  lar_colli: number;
+  lar_qta: number;
+  lar_costo?: number;
+  lar_tipo_art: number;
+  lar_partita?: number;
+  lar_imballo?: boolean;
+  lar_user?: string;
+  lar_created_at?: Date | null;
+  lar_last_update?: Date | null;
   ana_desc1: string;
-  ana_codice: string;
-  tipo: number;
-  qta?: number;
-  colli?: number;
+}
+enum TipoArticoli {
+  PRODOTTO_FINALE,
+  SCARTO_I,
+  SCARTO_II,
+  SCARTO_EXTRA,
+  SCARTO_NON_UTILIZZABILE,
+  RIMANENZA
 }
 
-/* {
-  "lar_codice": 1,
-  "lar_tipo_lav": 0,
-  "lar_anno_lav": 2022,
-  "lar_codice_lav": 1,
-  "lar_art": "",
-  "lar_colli": 0,
-  "lar_qta": 0,
-  "lar_costo": 0,
-  "lar_tipo_art": 0,
-  "lar_partita": 0,
-  "lar_imballo": false,
-  "lar_user": "",
-  "lar_created_at": null,
-  "lar_last_update": null,
-  "ana_desc1": ""
-}
-] */
-
-export { IArticoliLavorazione };
+export { IArticoliLavorazione, TipoArticoli };

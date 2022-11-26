@@ -1,41 +1,56 @@
 <template>
-  <!--begin::Campaigns toolbar-->
-  <div class="d-flex flex-wrap flex-stack my-5">
-    <!--begin::Title-->
-    <h2 class="fw-semibold my-2">
-      <span class="fs-4 text-gray-400 ms-1"></span>
-    </h2>
-    <!--end::Title-->
+  <!--begin::Form-->
+  <Form
+    id="lavorazioni_edit_form"
+    class="form"
+    novalidate="novalidate"
+    @submit="saveChanges()"
+    :validation-schema="lavorazioneDetailsValidator"
+  >
+    <!--begin::Toolbar-->
+    <div class="d-flex flex-wrap flex-stack my-5">
+      <!--begin::Title-->
+      <h2 class="fw-semibold my-2">
+        <span class="fs-4 text-gray-400 ms-1"></span>
+      </h2>
+      <!--end::Title-->
+      <!-- Discard and Save button -->
+      <div class="card-footer d-flex justify-content-end py-6 px-9"></div>
 
-    <!--begin::Controls-->
-    <div class="d-flex align-items-end my-2 gap-3">
-      <router-link
-        to="/menu/lavorazioni/list/"
-        class="btn btn-danger align-self-center"
-        >Indietro</router-link
-      >
-      <router-link
-        :to="'/menu/lavorazioni/list/' + 0"
-        class="btn btn-primary align-self-center"
-        >Salva Lavorazione</router-link
-      >
+      <!--begin::Controls-->
+      <div class="d-flex align-items-end my-2 gap-3">
+        <router-link
+          to="/menu/lavorazioni/list/"
+          class="btn btn-danger align-self-center"
+          >Indietro</router-link
+        >
+        <button
+          type="submit"
+          id="lavorazioni_edit_submit"
+          ref="submitButton"
+          class="btn btn-primary ms"
+        >
+          <span class="indicator-label">
+            {{
+              isNewProcessing ? "Aggiungi la Lavorazione" : "Salva le modifiche"
+            }}
+          </span>
+          <span class="indicator-progress">
+            Please wait...
+            <span
+              class="spinner-border spinner-border-sm align-middle ms-2"
+            ></span>
+          </span>
+        </button>
+      </div>
+      <!--end::Controls-->
     </div>
+    <!--end::Toolbar-->
 
-    <!--end::Controls-->
-  </div>
-  <!--end::Campaigns toolbar-->
-  <!--begin::Basic info-->
-  <div class="card mb-5 mb-xl-10">
     <!--begin::Content-->
-    <div id="lavorazioni_edit" class="collapse show">
-      <!--begin::Form-->
-      <Form
-        id="lavorazioni_edit_form"
-        class="form"
-        novalidate="novalidate"
-        @submit="saveChanges()"
-        :validation-schema="lavorazioneDetailsValidator"
-      >
+    <div class="card mb-5 mb-xl-10">
+      <!--begin::Card Body-->
+      <div id="lavorazioni_edit" class="collapse show">
         <!--begin::Card body-->
         <div class="card-body border-top p-9">
           <!--Full Name-->
@@ -186,33 +201,12 @@
           </div>
           <!--end::Input group-->
         </div>
-
-        <!-- Discard and Save button -->
-        <div class="card-footer d-flex justify-content-end py-6 px-9">
-          <button
-            type="submit"
-            id="lavorazioni_edit_submit"
-            ref="submitButton"
-            class="btn btn-primary ms"
-          >
-            <span class="indicator-label">
-              {{
-                isNewProcessing
-                  ? "Aggiungi la Lavorazione"
-                  : "Salva le modifiche"
-              }}
-            </span>
-            <span class="indicator-progress">
-              Please wait...
-              <span
-                class="spinner-border spinner-border-sm align-middle ms-2"
-              ></span>
-            </span>
-          </button>
-        </div>
-      </Form>
+      </div>
+      <!--end::Card Body-->
     </div>
-  </div>
+    <!--end::Content-->
+  </Form>
+
   <search-modal :idModal="articoliSearchModalId">
     <template v-slot:grid>
       <ArticoliGrid @select-row="onSelectArticolo"></ArticoliGrid
@@ -235,7 +229,9 @@ export default defineComponent({
   name: "lavorazioni-edit",
 
   props: {
-    id: { type: String, required: true }
+    tipo: { type: String, required: true },
+    anno: { type: String, required: true },
+    codice: { type: String, required: true }
   },
 
   emits: ["updateLavorazione"],
@@ -250,28 +246,30 @@ export default defineComponent({
 
   setup(props, { emit }) {
     const lavorazioneDetails = ref<LavorazioneDetails>({
-      lav_codice: 1,
+      lav_tipo: Number(props.tipo),
+      lav_anno: Number(props.anno),
+      lav_rtf: "",
+      lav_art: "",
       ana_desc1: "",
-      lav_anno: 0,
-      lav_rtf: ""
+      img_data: null,
+      lav_art_colli: 0,
+      lav_art_qta: 0
     });
 
     const isNewProcessing = computed(() => {
-      return props.id == "0";
+      return props.codice == "0";
     });
 
     const articoliSearchModalId = "articoli_search_modal";
 
     onMounted(() => {
-      rsaConsoleLog("LavorazioniEdit Mounted with props id -> ", props.id);
-      /* if (props.id != 0)
-        lavorazioneDetails.value = ; */
+      rsaConsoleLog("LavorazioniEdit Mounted with props id -> ", props.codice);
     });
 
     watch(
-      () => props.id,
+      () => props.codice,
       (newValue) => {
-        rsaConsoleLog("UserSettings on WATCH props data -> ", props.id);
+        rsaConsoleLog("UserSettings on WATCH props data -> ", props.codice);
       }
     );
 
@@ -295,7 +293,7 @@ export default defineComponent({
           RecordsTotal: 1,
           Data: [lavorazioneDetails.value]
         };
-        if (props.id == "0") {
+        if (props.codice == "0") {
           ApiService.setSendHeader();
           ApiService.post("lavorazioni/post", obj)
             .then(({ data }) => {
@@ -304,10 +302,14 @@ export default defineComponent({
               if (data.RecordsTotal > 0) {
                 emit("updateLavorazione", data.Data[0]);
                 lavorazioneDetails.value = {
-                  lav_codice: 1,
+                  lav_tipo: Number(props.tipo),
+                  lav_anno: Number(props.anno),
+                  lav_rtf: "",
+                  lav_art: "",
                   ana_desc1: "",
-                  lav_anno: 0,
-                  lav_rtf: ""
+                  img_data: null,
+                  lav_art_colli: 0,
+                  lav_art_qta: 0
                 };
               }
             })
@@ -351,10 +353,14 @@ export default defineComponent({
     const onClickCancelButton = () => {
       emit("updateLavorazione", null);
       lavorazioneDetails.value = {
-        lav_codice: 1,
+        lav_tipo: Number(props.tipo),
+        lav_anno: Number(props.anno),
+        lav_rtf: "",
+        lav_art: "",
         ana_desc1: "",
-        lav_anno: 0,
-        lav_rtf: ""
+        img_data: null,
+        lav_art_colli: 0,
+        lav_art_qta: 0
       };
     };
 

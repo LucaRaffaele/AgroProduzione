@@ -63,7 +63,7 @@ const routes: Array<RouteRecordRaw> = [
             }
           },
           {
-            path: "modifica/:id",
+            path: "modifica/:tipo/:anno/:codice",
             name: "lavorazioni-edit",
             component: () =>
               import("@/views/menu/lavorazioni/LavorazioniEdit.vue"),
@@ -79,7 +79,7 @@ const routes: Array<RouteRecordRaw> = [
             }
           },
           {
-            path: "stop/:id",
+            path: "stop/:tipo/:anno/:codice",
             name: "lavorazioni-stop",
             component: () =>
               import("@/views/menu/lavorazioni/LavorazioniStopProcess.vue"),
@@ -95,7 +95,7 @@ const routes: Array<RouteRecordRaw> = [
             }
           },
           {
-            path: "articoli/:id",
+            path: "articoli/:tipo/:anno/:codice",
             name: "articoli-list",
             component: () =>
               import("@/views/menu/lavorazioni/ArticoliList.vue"),
@@ -111,7 +111,7 @@ const routes: Array<RouteRecordRaw> = [
             }
           },
           {
-            path: "operatori/:id",
+            path: "operatori/:tipo/:anno/:codice",
             name: "operatori-list",
             component: () =>
               import("@/views/menu/lavorazioni/OperatoriList.vue"),

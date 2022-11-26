@@ -10,7 +10,7 @@
     <!--begin::Controls-->
     <div class="d-flex align-items-center my-2 gap-3">
       <router-link
-        :to="'/menu/lavorazioni/modifica/' + 0"
+        :to="'/menu/lavorazioni/modifica/' + apiParams"
         class="btn btn-primary align-self-center"
         @click="onEdit = true"
         >Aggiungi Lavorazione</router-link
@@ -58,30 +58,18 @@ export default defineComponent({
       return route.path.indexOf("/list") == -1;
     });
 
-    const modalId = ref("modal_add_lavorazione");
-    const lavorazioniFake = ref([
-      {
-        lav_desc: "Pomodori",
-        lav_data: "12 Dicembre 2022",
-        img_data: null
-      },
-      {
-        lav_desc: "Arance",
-        lav_data: "13 Dicembre 2022",
-        img_data: null
-      },
-      {
-        lav_desc: "Limoni",
-        lav_data: "14 Dicembre 2022",
-        img_data: null
-      }
-    ]);
+    const lavTipoDefault = ref(0);
+    const lavAnnoDefault = ref(2022);
+    const lavCodiceDefault = ref(0); //nuova lavorazione
+
+    const apiParams = ref(
+      `${lavTipoDefault.value}/${lavAnnoDefault.value}/${lavCodiceDefault.value}`
+    );
 
     const lavorazioniList = ref<Array<any>>([]);
 
     onMounted(async () => {
       lavorazioniList.value = await getLavorazioni();
-      if (!lavorazioniList.value) lavorazioniList.value = lavorazioniFake.value;
     });
 
     const getLavorazioni = async () => {
@@ -98,7 +86,7 @@ export default defineComponent({
       }
       return null;
     };
-    return { modalId, lavorazioniList, onEdit };
+    return { lavorazioniList, onEdit, apiParams };
   }
 });
 </script>

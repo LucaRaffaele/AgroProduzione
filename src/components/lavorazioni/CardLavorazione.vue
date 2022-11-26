@@ -5,7 +5,6 @@
     <div :class="`bg-${widgetColor}`" class="card-header border-0 pt-5 pb-20">
       <!--begin::Heading-->
       <div class="d-flex flex-stack">
-        <!--begin:Info-->
         <div class="d-flex align-items-center">
           <!--begin:Image-->
           <div class="symbol symbol-60px me-5">
@@ -26,6 +25,7 @@
           </div>
           <!--end:Image-->
 
+          <!--begin:Info-->
           <div class="d-flex flex-column flex-grow-1 my-lg-0 my-2 pr-3">
             <!--begin:Title-->
             <a href="#" class="text-dark fw-bold text-hover-gray-300 fs-5">
@@ -49,13 +49,16 @@
             </span>
             <!--end:Date-->
           </div>
+          <!--end:Info-->
         </div>
-        <!--begin:Info-->
       </div>
+      <div class="d-flex">
+        <h4 class="fw-bold text-white">
+          {{ lavorazioneDetails.lav_rtf }}
+        </h4>
+      </div>
+      <!--TODO: Aggiungere Quantità, Colli e data Start qui-->
       <!--end::Heading-->
-      <h3 class="card-title fw-bold text-white">
-        {{ lavorazioneDetails.lav_desc }}
-      </h3>
     </div>
     <!--end::Header-->
     <!--begin::Body-->
@@ -84,7 +87,7 @@
           </div>
           <div class="col d-grid mb-7 p-0 bg-light-primary rounded-2">
             <router-link
-              :to="'/menu/lavorazioni/operatori/' + 0"
+              :to="'/menu/lavorazioni/operatori/' + apiParams"
               class="btn px-3 py-8 rounded-2"
               :class="
                 isStopped
@@ -102,7 +105,7 @@
           </div>
           <div class="col d-grid mb-7 p-0 bg-light-info rounded-2">
             <router-link
-              :to="'/menu/lavorazioni/articoli/' + 0"
+              :to="'/menu/lavorazioni/articoli/' + apiParams"
               class="btn px-3 py-8 rounded-2"
               :class="
                 isStopped
@@ -149,7 +152,6 @@
               type="button"
               class="btn px-6 py-8 btn-light-secondary rounded-2"
               :disabled="true"
-              @click="active = 'danger'"
             >
               <span class="svg-icon svg-icon-3x svg-icon-danger d-block my-2">
                 <inline-svg src="media/icons/duotune/abstract/abs006.svg" />
@@ -179,7 +181,6 @@ import {
 import { rsaConsoleLog, dateFormatting } from "@/core/helpers/utility";
 import { ILavorazione as LavorazioneDetails } from "@/core/data/lavorazioni";
 import ApiService from "@/core/services/ApiService";
-import { useStore } from "vuex";
 
 export default defineComponent({
   name: "card-lavorazione",
@@ -194,12 +195,27 @@ export default defineComponent({
   },
 
   setup(props) {
-    // const store = useStore();
-    const active = ref("primary");
+    const lavorazioneDetails = ref<LavorazioneDetails>({
+      lav_tipo: 0,
+      lav_anno: 0,
+      lav_rtf: "",
+      lav_art: "",
+      ana_desc1: "",
+      img_data: null,
+      lav_art_colli: 0,
+      lav_art_qta: 0,
+      lav_created_at: null,
+      lav_ord_num: 0
+    });
+
     /* const themeMode = computed(() => {
       return store.getters.getThemeMode;
     });
  */
+    const apiParams = ref(
+      `${lavorazioneDetails.value.lav_tipo}/${lavorazioneDetails.value.lav_anno}/${lavorazioneDetails.value.lav_codice}`
+    );
+
     const widgetColor = computed(() => {
       return lavorazioneDetails.value.lav_start != null
         ? "success"
@@ -227,14 +243,6 @@ export default defineComponent({
       return lavorazioneDetails.value.lav_stop != null;
     });
 
-    const lavorazioneDetails = ref<LavorazioneDetails>({
-      lav_codice: 0,
-      ana_desc1: "",
-      lav_anno: 0,
-      lav_rtf: "",
-      lav_ord_num: 0
-    });
-
     onMounted(() => {
       if (props.lavorazione.lav_codice != 0)
         lavorazioneDetails.value = props.lavorazione;
@@ -252,7 +260,7 @@ export default defineComponent({
         RecordsTotal: 1,
         Data: [lavorazioneDetails.value]
       };
-      const url = `lavorazioni/prelievo/${lavorazioneDetails.value.lav_tipo}/${lavorazioneDetails.value.lav_anno}/${lavorazioneDetails.value.lav_codice}`;
+      const url = `lavorazioni/prelievo/${apiParams.value}`;
 
       ApiService.setSendHeader();
       ApiService.put(url, obj)
@@ -273,7 +281,7 @@ export default defineComponent({
         RecordsTotal: 1,
         Data: [lavorazioneDetails.value]
       };
-      const url = `lavorazioni/start/${lavorazioneDetails.value.lav_tipo}/${lavorazioneDetails.value.lav_anno}/${lavorazioneDetails.value.lav_codice}`;
+      const url = `lavorazioni/start/${apiParams.value}`;
 
       ApiService.setSendHeader();
       ApiService.put(url, obj)
@@ -290,7 +298,6 @@ export default defineComponent({
     };
 
     return {
-      active,
       richiediPrelievo,
       startLavorazione,
       isStartable,
@@ -299,6 +306,7 @@ export default defineComponent({
       isStopped,
       dateFormatting,
       lavorazioneDetails,
+      apiParams,
       widgetColor
     };
   }
