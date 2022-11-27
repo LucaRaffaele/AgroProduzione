@@ -52,14 +52,31 @@
           <!--end:Info-->
         </div>
       </div>
-      <div class="d-flex">
-        <h4 class="fw-bold text-white">
+      <div class="d-flex mt-5 w-100">
+        <h4 class="fw-normal text-white">
           {{ lavorazioneDetails.lav_rtf }}
         </h4>
       </div>
-      <!--TODO: Aggiungere Quantità, Colli e data Start qui-->
+      <div class="row w-100 mt-5">
+        <div class="col-6">
+          <h1 class="text-white fs-6">
+            Quantità: {{ lavorazioneDetails.lav_art_qta }}
+          </h1>
+        </div>
+        <div class="col-6">
+          <h1 class="text-white fs-6 text-end">
+            Colli: {{ lavorazioneDetails.lav_art_colli }}
+          </h1>
+        </div>
+      </div>
+      <div class="d-flex w-100" v-if="lavorazioneDetails.lav_start">
+        <h4 class="fw-normal text-gray-800 fs-7">
+          Data di inizio: {{ lavorazioneDetails.lav_start }}
+        </h4>
+      </div>
       <!--end::Heading-->
     </div>
+
     <!--end::Header-->
     <!--begin::Body-->
     <div class="card-body p-0">

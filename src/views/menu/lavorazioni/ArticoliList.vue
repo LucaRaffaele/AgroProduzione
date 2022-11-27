@@ -215,6 +215,7 @@
                     class="form-control form-control-lg form-control-solid"
                     :placeholder="labelTipoArticoli[articolo.tipo]"
                     v-model="articolo.ana_desc1"
+                    :disabled="index > 3"
                   />
                   <div class="fv-plugins-message-container">
                     <div class="fv-help-block">
