@@ -71,7 +71,7 @@
       </div>
       <div class="d-flex w-100" v-if="lavorazioneDetails.lav_start">
         <h4 class="fw-normal text-gray-800 fs-7">
-          Data di inizio: {{ lavorazioneDetails.lav_start }}
+          Data di inizio: {{ dateFormatting(lavorazioneDetails.lav_start) }}
         </h4>
       </div>
       <!--end::Heading-->
@@ -225,13 +225,18 @@ export default defineComponent({
       lav_ord_num: 0
     });
 
-    /* const themeMode = computed(() => {
-      return store.getters.getThemeMode;
+    onMounted(() => {
+      if (props.lavorazione.lav_codice != 0)
+        lavorazioneDetails.value = props.lavorazione;
+      rsaConsoleLog(
+        "CardLavorazione onMouted codice ->",
+        lavorazioneDetails.value.lav_codice
+      );
     });
- */
-    const apiParams = ref(
-      `${lavorazioneDetails.value.lav_tipo}/${lavorazioneDetails.value.lav_anno}/${lavorazioneDetails.value.lav_codice}`
-    );
+
+    const apiParams = computed(() => {
+      return `${lavorazioneDetails.value.lav_tipo}/${lavorazioneDetails.value.lav_anno}/${lavorazioneDetails.value.lav_codice}`;
+    });
 
     const widgetColor = computed(() => {
       return lavorazioneDetails.value.lav_start != null
@@ -258,11 +263,6 @@ export default defineComponent({
 
     const isStopped = computed(() => {
       return lavorazioneDetails.value.lav_stop != null;
-    });
-
-    onMounted(() => {
-      if (props.lavorazione.lav_codice != 0)
-        lavorazioneDetails.value = props.lavorazione;
     });
 
     watch(

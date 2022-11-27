@@ -68,6 +68,7 @@
                   class="btn btn-primary rounded btn-sm p-4"
                   data-bs-toggle="modal"
                   :data-bs-target="`#${articoliSearchModalId}`"
+                  @click="articoliSearchModalId += 0"
                 >
                   <span class="mx-0 svg-icon svg-icon-2">
                     <inline-svg src="media/icons/duotune/general/gen021.svg" />
@@ -75,10 +76,10 @@
                 </button>
                 <Field
                   type="text"
-                  name="ana_desc"
+                  name="ana_desc1_0"
                   class="form-control form-control-lg form-control-solid"
                   placeholder="Articolo"
-                  v-model="prod_finale_desc"
+                  v-model="articoliDefaultList[0].ana_desc1"
                 />
                 <div class="fv-plugins-message-container">
                   <div class="fv-help-block">
@@ -109,10 +110,10 @@
                   <div class="col fv-row">
                     <Field
                       type="number"
-                      name="art_qta"
+                      name="lar_qta_0"
                       class="form-control form-control-lg form-control-solid"
                       placeholder="Quantità"
-                      v-model="prod_finale_qta"
+                      v-model="articoliDefaultList[0].lar_qta"
                     />
                     <div class="fv-plugins-message-container">
                       <div class="fv-help-block">
@@ -139,10 +140,10 @@
                   <div class="col fv-row">
                     <Field
                       type="number"
-                      name="art_colli"
+                      name="lar_colli_0"
                       class="form-control form-control-lg form-control-solid"
                       placeholder="Colli"
-                      v-model="prod_finale_colli"
+                      v-model="articoliDefaultList[0].lar_colli"
                     />
                     <div class="fv-plugins-message-container">
                       <div class="fv-help-block">
@@ -195,6 +196,7 @@
                     :disabled="index > 3"
                     data-bs-toggle="modal"
                     :data-bs-target="`#${articoliSearchModalId}`"
+                    @click="articoliSearchModalId += index"
                   >
                     <template v-if="index <= 3">
                       <span class="mx-0 svg-icon svg-icon-2">
@@ -211,15 +213,15 @@
                   </button>
                   <Field
                     type="text"
-                    name="ana_desc"
+                    :name="'ana_desc1_' + index"
                     class="form-control form-control-lg form-control-solid"
-                    :placeholder="labelTipoArticoli[articolo.tipo]"
+                    :placeholder="labelTipoArticoli[articolo.lar_tipo_art]"
                     v-model="articolo.ana_desc1"
                     :disabled="index > 3"
                   />
                   <div class="fv-plugins-message-container">
                     <div class="fv-help-block">
-                      <ErrorMessage name="ana_desc" />
+                      <ErrorMessage :name="'ana_desc1_' + index" />
                     </div>
                   </div>
                 </div>
@@ -246,14 +248,14 @@
                     <div class="col fv-row">
                       <Field
                         type="number"
-                        name="art_qta"
+                        :name="'lar_qta_' + index"
                         class="form-control form-control-lg form-control-solid"
                         placeholder="Quantità"
-                        v-model="articolo.qta"
+                        v-model="articolo.lar_qta"
                       />
                       <div class="fv-plugins-message-container">
                         <div class="fv-help-block">
-                          <ErrorMessage name="lav_art_qta" />
+                          <ErrorMessage :name="'lar_qta_' + index" />
                         </div>
                       </div>
                     </div>
@@ -276,14 +278,14 @@
                     <div class="col fv-row">
                       <Field
                         type="number"
-                        name="art_colli"
+                        :name="'lar_colli_' + index"
                         class="form-control form-control-lg form-control-solid"
                         placeholder="Colli"
-                        v-model="articolo.colli"
+                        v-model="articolo.lar_colli"
                       />
                       <div class="fv-plugins-message-container">
                         <div class="fv-help-block">
-                          <ErrorMessage name="lav_art_colli" />
+                          <ErrorMessage :name="'lar_colli_' + index" />
                         </div>
                       </div>
                     </div>
@@ -296,6 +298,7 @@
                         class="btn btn-primary rounded px-5"
                         data-bs-toggle="modal"
                         :data-bs-target="`#${basketSearchModalId}`"
+                        @click="basketSearchModalId += index"
                       >
                         <span class="mx-0 svg-icon svg-icon-1">
                           <i class="fas fa-shopping-basket px-0"></i>
@@ -368,8 +371,8 @@ export default defineComponent({
       return props.codice == "0";
     });
 
-    const articoliSearchModalId = "articoli_search_modal";
-    const basketSearchModalId = "basket_search_modal";
+    const articoliSearchModalId = ref("articoli_search_modal_");
+    const basketSearchModalId = ref("basket_search_modal_");
 
     const articoliDefaultList = ref<Array<ArticoliLavorazione>>([
       {
@@ -427,24 +430,6 @@ export default defineComponent({
       "Rimanenza"
     ]);
 
-    const articoloLavorazione = ref<ArticoliLavorazione>({
-      lar_codice: 1,
-      lar_tipo_lav: 0,
-      lar_anno_lav: 2022,
-      lar_codice_lav: 1,
-      lar_art: "",
-      lar_colli: 0,
-      lar_qta: 0,
-      lar_costo: 0,
-      lar_tipo_art: 0,
-      lar_partita: 0,
-      lar_imballo: false,
-      lar_user: "",
-      lar_created_at: null,
-      lar_last_update: null,
-      ana_desc1: ""
-    });
-
     const articoliLavorazioneValidator = Yup.object().shape({
       ana_desc1_tipo_0: Yup.string().required("Indicare il Prodotto finale"),
       qta_tipo_0: Yup.number().required("Indicare la Quantità"),
@@ -452,9 +437,9 @@ export default defineComponent({
     });
 
     onMounted(() => {
-      rsaConsoleLog("LavorazioniEdit Mounted with props id -> ", props.codice);
+      rsaConsoleLog("ArticoliList Mounted with props id -> ", props.codice);
       rsaConsoleLog(
-        "LavorazioniEdit Mounted ENUM -> ",
+        "ArticoliList Mounted ENUM -> ",
         TipoArticoli.PRODOTTO_FINALE
       );
       /* if (props.id != 0)
@@ -487,7 +472,7 @@ export default defineComponent({
           ApiService.post("lavorazioni/post", obj)
             .then(({ data }) => {
               submitButton.value?.removeAttribute("data-kt-indicator");
-              rsaConsoleLog("***LavorazioniEdit Post Result -> ", data);
+              rsaConsoleLog("***ArticoliList Post Result -> ", data);
               if (data.RecordsTotal > 0) {
                 emit("updateLavorazione", data.Data[0]);
                 lavorazioneDetails.value = {
@@ -512,7 +497,7 @@ export default defineComponent({
           )
             .then(({ data }) => {
               submitButton.value?.removeAttribute("data-kt-indicator");
-              rsaConsoleLog("***LavorazioniEdit Put Result -> ", data);
+              rsaConsoleLog("***ArticoliList Put Result -> ", data);
               if (data.RecordsTotal > 0) {
                 lavorazioneDetails.value = data.Data[0];
                 emit("updateLavorazione", data.Data[0]);
@@ -529,9 +514,18 @@ export default defineComponent({
     };
 
     const onSelectArticolo = (args) => {
-      rsaConsoleLog("LavorazioniEdit articolo Selected -> ", args);
-      hideModal(document.getElementById(articoliSearchModalId));
-      articoloLavorazione.value.ana_desc1 = args.ana_desc1;
+      rsaConsoleLog("ArticoliList articolo Selected -> ", args);
+
+      const id = Number(
+        articoliSearchModalId.value.substring(
+          articoliSearchModalId.value.length - 1
+        )
+      );
+      rsaConsoleLog("ArticoliList articoliSearchModalId -> ", id);
+      hideModal(document.getElementById(articoliSearchModalId.value));
+
+      articoliDefaultList.value[id].ana_desc1 = args.ana_desc1;
+      articoliSearchModalId.value = articoliSearchModalId.value.slice(0, -1);
     };
     /*
     const onClickCancelButton = () => {

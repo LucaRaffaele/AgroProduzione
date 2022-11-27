@@ -1,6 +1,6 @@
 <template>
   <!--begin::Modal - View Users-->
-  <div class="modal fade" :id="idModal" tabindex="-1" aria-hidden="true">
+  <div class="modal fade" :id="id" tabindex="-1" aria-hidden="true">
     <!--begin::Modal dialog-->
     <div class="modal-dialog mw-75">
       <!--begin::Modal content-->
@@ -34,7 +34,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { rsaConsoleLog } from "@/core/helpers/utility";
+import { defineComponent, ref, watch } from "vue";
 
 export default defineComponent({
   name: "search-modal",
@@ -43,8 +44,16 @@ export default defineComponent({
   },
 
   components: {},
-  setup() {
-    return {};
+  setup(props) {
+    const id = ref(props.idModal);
+    watch(
+      () => props.idModal,
+      (newValue) => {
+        rsaConsoleLog("SearchModal watch id ", newValue);
+        id.value = newValue;
+      }
+    );
+    return { id };
   }
 });
 </script>
