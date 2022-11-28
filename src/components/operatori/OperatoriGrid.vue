@@ -5,9 +5,6 @@
       :dataSource="dataTable"
       locale="it-IT"
       :allowSorting="true"
-      :dataBound="dataBound"
-      :allowResizing="true"
-      :resizeSettings="{ mode: 'Auto' }"
       :editSettings="editSettings"
       :toolbar="toolbar"
       :toolbarClick="onToolbarClicked"
@@ -20,6 +17,11 @@
       :dataStateChange="onDataStateChange"
       :height="500"
     >
+      <!--:dataBound="dataBound"
+          :allowResizing="true"
+          :resizeSettings="{ mode: 'Auto' }"
+
+       -->
       <e-columns>
         <e-column
           field=""
@@ -44,13 +46,15 @@
           width="180"
         ></e-column>
 
+        <!--TODO: Colonna Comandi 
+        --- Nella Grid View il tasto deve portare alla modifica (per ora disabilitata)
+        --- nella GRID Search il tasto invece serve per selezionare -->
         <e-column
           headerText="Comandi"
           textAlign="Left"
           width="80"
           :commands="commands"
         ></e-column>
-        <!-- template="selectButtonTemplate" -->
       </e-columns>
     </ejs-grid>
   </div>
@@ -60,7 +64,7 @@
 import { defineComponent, ref, onMounted } from "vue";
 import ApiService from "@/core/services/ApiService";
 import { rsaConsoleLog } from "@/core/helpers/utility";
-import { Page, Toolbar } from "@syncfusion/ej2-vue-grids";
+import { Page, Toolbar, CommandColumn } from "@syncfusion/ej2-vue-grids";
 
 /* const selectButtonTemplate = {
   template: `<a href="#" class="btn btn-icon btn-dark"
@@ -103,7 +107,7 @@ export default defineComponent({
   emit: ["edit-articolo"],
 
   provide: {
-    grid: [Page, Toolbar]
+    grid: [Page, Toolbar, CommandColumn]
   },
 
   setup(props, { emit }) {
@@ -112,22 +116,21 @@ export default defineComponent({
     const state = ref({ skip: 0, take: props.size, requiresCounts: true });
 
     onMounted(() => {
-      rsaConsoleLog("ArticoliGrid mounted");
+      rsaConsoleLog("OperatoriGrid mounted");
       onDataStateChange(state.value);
     });
 
     const onDataStateChange = (state) => {
-      rsaConsoleLog("*** Result -> ", state);
       const slug =
-        "getjoined?top=" +
+        "gettype/21?top=" +
         state.take +
         "&skip=" +
         state.skip +
         "&inlinecount=true";
       ApiService.setHeader();
-      ApiService.get("tabelle/gettype/21")
+      ApiService.get("tabelle", slug)
         .then(({ data }) => {
-          rsaConsoleLog("*** Result -> ", data.RecordsTotal);
+          rsaConsoleLog("***OperatoriGRID Result onDataStateChange -> ", data);
           if (data.RecordsTotal > 0) {
             dataTable.value = {
               result: data.Data,
@@ -143,7 +146,7 @@ export default defineComponent({
     const commands = ref([
       {
         id: "select-button",
-        title: "Seleziona l'articolo",
+        title: "Seleziona l'operatore",
         buttonOption: {
           cssClass: "e-info",
           iconCss: "fa-solid fa-arrow-right"
@@ -189,12 +192,12 @@ export default defineComponent({
     const onDoubleClick = (args) => {
       rsaConsoleLog("Double click", args);
       /* if (this.search) {
-        if (this.multiselection) this.selectArticolo([args.rowData]);
-        else this.selectArticolo(args.rowData);
+        if (this.multiselection) this.selectOperatore([args.rowData]);
+        else this.selectOperatore(args.rowData);
         this.$bvModal.hide("articoli-search");
       } else {
         rsaUtility.consoleLog(
-          "ArticoliGrid emit edit-articolo onDoubleClick",
+          "OperatoriGrid emit edit-articolo onDoubleClick",
           args.rowData
         );
         if (!this.toDeveloped) this.$emit("edit-articolo", true, args.rowData);
