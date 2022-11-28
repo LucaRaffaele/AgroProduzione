@@ -209,7 +209,7 @@
 
   <search-modal :idModal="articoliSearchModalId">
     <template v-slot:grid>
-      <ArticoliGrid @select-row="onSelectArticolo"></ArticoliGrid
+      <ArticoliGrid @select-row="onSelectArticolo" :search="true"></ArticoliGrid
     ></template>
   </search-modal>
 </template>

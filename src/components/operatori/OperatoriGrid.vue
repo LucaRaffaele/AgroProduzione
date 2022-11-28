@@ -14,6 +14,7 @@
       :recordDoubleClick="onDoubleClick"
       :allowTextWrap="true"
       :textWrapSettings="wrapSettings"
+      :command-click="commandClick"
       :dataStateChange="onDataStateChange"
       :height="500"
     >
@@ -209,7 +210,11 @@ export default defineComponent({
     const commandClick = (args) => {
       if (args.commandColumn.id == "select-button") {
         rsaConsoleLog("onClickSelectButton", args);
-        emit("select-row", args.rowData);
+        if (props.search) {
+          emit("select-row", args.rowData);
+          return;
+        }
+        rsaConsoleLog("Visualizzazione Griglia", args);
       }
     };
 

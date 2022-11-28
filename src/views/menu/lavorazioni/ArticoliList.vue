@@ -322,20 +322,13 @@
 
   <search-modal :idModal="articoliSearchModalId">
     <template v-slot:grid>
-      <ArticoliGrid @select-row="onSelectArticolo"></ArticoliGrid
+      <ArticoliGrid @select-row="onSelectArticolo" :search="true"></ArticoliGrid
     ></template>
   </search-modal>
-  <!--TODO: Sistemare Imballaggi Modal
-  --- la search modal deve essere inserita DENTRO la Modale Imballaggi 
-  --- infatti nel v-slot:grid ci va sempre una GRID e niente altro
-  --- Imballaggi Modal alla chiusura genera un evento 
-  --- che ritorna la lista con gli imballaggi -->
-  <search-modal :idModal="basketSearchModalId">
-    <template v-slot:grid>
-      <imballaggiModal></imballaggiModal>
-    </template>
-  </search-modal>
-  <!--begin::Content-->
+  <ImballaggiModal
+    :idModal="basketSearchModalId"
+    @imballaggi-save="onImballaggiSave"
+  ></ImballaggiModal>
 </template>
 
 <script lang="ts">
@@ -345,7 +338,7 @@ import {
   TipoArticoli
 } from "@/core/data/articoliLavorazioni";
 import ArticoliGrid from "@/components/articoli/ArticoliGrid.vue";
-import imballaggiModal from "@/components/imballaggiComp.vue";
+import ImballaggiModal from "@/components/imballaggi/ImballaggiModal.vue";
 import { ErrorMessage, Field, Form } from "vee-validate";
 import SearchModal from "@/components/modals/SearchModal.vue";
 import Swal from "sweetalert2/dist/sweetalert2.js";
@@ -369,7 +362,7 @@ export default defineComponent({
     Form,
     SearchModal,
     ArticoliGrid,
-    imballaggiModal
+    ImballaggiModal
   },
 
   setup(props) {
@@ -520,7 +513,9 @@ export default defineComponent({
           ana_desc1: lavorazione.ana_desc1
         };
     });
-
+    const onImballaggiSave = (args) => {
+      return args;
+    };
     watch(
       () => props.codice,
       (newValue) => {
@@ -626,7 +621,8 @@ export default defineComponent({
       isNewList,
       articoliSearchModalId,
       articoliLavorazioneValidator,
-      onSelectArticolo
+      onSelectArticolo,
+      onImballaggiSave
     };
   }
 });
