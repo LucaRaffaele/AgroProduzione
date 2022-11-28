@@ -97,6 +97,7 @@ import ApiService from "@/core/services/ApiService";
 import { rsaConsoleLog } from "@/core/helpers/utility";
 import { Page, Toolbar, CommandColumn } from "@syncfusion/ej2-vue-grids";
 import { createApp } from "vue";
+import { AxiosResponse } from "axios";
 const app = createApp({});
 
 /* <a href="#" class="btn btn-icon btn-dark"
@@ -235,9 +236,10 @@ export default defineComponent({
             };
           }
         })
-        .catch(({ response }) => {
-          rsaConsoleLog("Error--------------- ", response);
+        .catch((err) => {
+          rsaConsoleLog("Error--------------- ", err.toJSON());
         });
+      rsaConsoleLog("slug ->", slug);
     };
 
     const dataBound = () => {

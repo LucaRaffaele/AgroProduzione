@@ -325,6 +325,11 @@
       <ArticoliGrid @select-row="onSelectArticolo"></ArticoliGrid
     ></template>
   </search-modal>
+  <!--TODO: Sistemare Imballaggi Modal
+  --- la search modal deve essere inserita DENTRO la Modale Imballaggi 
+  --- infatti nel v-slot:grid ci va sempre una GRID e niente altro
+  --- Imballaggi Modal alla chiusura genera un evento 
+  --- che ritorna la lista con gli imballaggi -->
   <search-modal :idModal="basketSearchModalId">
     <template v-slot:grid>
       <imballaggiModal></imballaggiModal>
@@ -343,6 +348,7 @@ import ArticoliGrid from "@/components/articoli/ArticoliGrid.vue";
 import imballaggiModal from "@/components/imballaggiComp.vue";
 import { ErrorMessage, Field, Form } from "vee-validate";
 import SearchModal from "@/components/modals/SearchModal.vue";
+import Swal from "sweetalert2/dist/sweetalert2.js";
 import ApiService from "@/core/services/ApiService";
 import * as Yup from "yup";
 import { hideModal } from "@/core/helpers/dom";
@@ -374,10 +380,15 @@ export default defineComponent({
     const articoliSearchModalId = ref("articoli_search_modal_");
     const basketSearchModalId = ref("basket_search_modal_");
 
+    const articoloPrelevato = ref<any>({
+      lar_art: "",
+      ana_desc1: ""
+    });
+
     const articoliDefaultList = ref<Array<ArticoliLavorazione>>([
       {
-        lar_art: "",
-        ana_desc1: "",
+        lar_art: articoloPrelevato.value.lar_art,
+        ana_desc1: articoloPrelevato.value.ana_desc1,
         lar_tipo_art: TipoArticoli.PRODOTTO_FINALE,
         lar_qta: 0,
         lar_colli: 0
@@ -436,14 +447,78 @@ export default defineComponent({
       colli_tipo_0: Yup.number().required("Indicare i colli")
     });
 
-    onMounted(() => {
+    const apiParams = ref(`${props.tipo}/${props.anno}/${props.codice}`);
+    const getArticoli = async () => {
+      ApiService.setHeader();
+      try {
+        const result = await ApiService.get(
+          "lavorazioni/articoli/getjoined",
+          apiParams.value
+        );
+        rsaConsoleLog("***ArticoliList getArticoli Result -> ", result.data);
+        if (result.data.RecordsTotal > 0) {
+          return result.data.Data;
+        }
+      } catch (error) {
+        rsaConsoleLog("Error--------------- ", error);
+        Swal.fire({
+          text: error,
+          icon: "error",
+          buttonsStyling: false,
+          confirmButtonText: "Ok",
+          customClass: {
+            confirmButton: "btn btn-danger"
+          }
+        });
+        return null;
+      }
+      return null;
+    };
+
+    const getLavorazione = async () => {
+      ApiService.setHeader();
+      try {
+        const result = await ApiService.get(
+          "lavorazioni/getjoinedbyid",
+          apiParams.value
+        );
+        rsaConsoleLog(
+          "***ArticoliiList getLavorazione Result -> ",
+          result.data
+        );
+        if (result.data.RecordsTotal > 0) {
+          return result.data.Data;
+        }
+      } catch (error) {
+        rsaConsoleLog("Error--------------- ", error);
+        Swal.fire({
+          text: error,
+          icon: "error",
+          buttonsStyling: false,
+          confirmButtonText: "Ok",
+          customClass: {
+            confirmButton: "btn btn-danger"
+          }
+        });
+        return null;
+      }
+      return null;
+    };
+
+    onMounted(async () => {
       rsaConsoleLog("ArticoliList Mounted with props id -> ", props.codice);
       rsaConsoleLog(
         "ArticoliList Mounted ENUM -> ",
         TipoArticoli.PRODOTTO_FINALE
       );
-      /* if (props.id != 0)
-          lavorazioneDetails.value = ; */
+      const articoli = await getArticoli();
+      const lavorazione = await getLavorazione();
+      if (articoli) articoliLavorazioneList.value = articoli;
+      if (lavorazione)
+        articoloPrelevato.value = {
+          lar_art: lavorazione.lav_art,
+          ana_desc1: lavorazione.ana_desc1
+        };
     });
 
     watch(
@@ -452,6 +527,24 @@ export default defineComponent({
         rsaConsoleLog("UserSettings on WATCH props data -> ", props.codice);
       }
     );
+
+    const onSelectArticolo = (args) => {
+      rsaConsoleLog("ArticoliList articolo Selected -> ", args);
+
+      const id = Number(
+        articoliSearchModalId.value.substring(
+          articoliSearchModalId.value.length - 1
+        )
+      );
+
+      hideModal(document.getElementById(articoliSearchModalId.value));
+
+      articoliDefaultList.value[id].ana_desc1 = args.ana_desc1;
+      articoliDefaultList.value[id].lar_art = args.ana_codice;
+      articoliDefaultList.value[id].lar_costo = args.ana_ult_pr_acquisto;
+      articoliDefaultList.value[id].lar_imballo = false;
+      articoliSearchModalId.value = articoliSearchModalId.value.slice(0, -1);
+    };
 
     const submitButton = ref<HTMLElement | null>(null);
 
@@ -513,20 +606,6 @@ export default defineComponent({
       } */
     };
 
-    const onSelectArticolo = (args) => {
-      rsaConsoleLog("ArticoliList articolo Selected -> ", args);
-
-      const id = Number(
-        articoliSearchModalId.value.substring(
-          articoliSearchModalId.value.length - 1
-        )
-      );
-      rsaConsoleLog("ArticoliList articoliSearchModalId -> ", id);
-      hideModal(document.getElementById(articoliSearchModalId.value));
-
-      articoliDefaultList.value[id].ana_desc1 = args.ana_desc1;
-      articoliSearchModalId.value = articoliSearchModalId.value.slice(0, -1);
-    };
     /*
     const onClickCancelButton = () => {
       emit("updateLavorazione", null);

@@ -8,7 +8,8 @@ interface IArticoliLavorazione {
   lar_qta: number;
   lar_costo?: number;
   lar_tipo_art: number;
-  lar_partita?: number;
+  lar_tes_anno?: number;
+  lar_tes_num?: number;
   lar_imballo?: boolean;
   lar_user?: string;
   lar_created_at?: Date | null;
