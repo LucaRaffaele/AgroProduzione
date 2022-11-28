@@ -4,8 +4,8 @@ const zeroPad = (num: number, places: number | 1): string => {
 };
 
 const rsaConsoleLog = (
-  message: string | "RSA Console Log: ",
-  args?: any | ""
+  message = "RSA Console Log: " as string,
+  args = "" as string | any
 ): void => {
   if (process.env.NODE_ENV === "development") console.log(message, args);
 };

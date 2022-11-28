@@ -87,14 +87,14 @@ export default defineComponent({
 
     const getLavorazioni = async () => {
       ApiService.setHeader();
-      const result = await ApiService.get("lavorazioni/getjoined");
       try {
+        const result = await ApiService.get("lavorazioni/getjoined");
         rsaConsoleLog("***LavoraziniView Result -> ", result.data);
         if (result.data.RecordsTotal > 0) {
           return result.data.Data;
         }
-      } catch {
-        rsaConsoleLog("Error--------------- ", result);
+      } catch (error) {
+        rsaConsoleLog("Error--------------- ", error);
         return null;
       }
       return null;

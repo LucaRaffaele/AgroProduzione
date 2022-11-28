@@ -197,6 +197,7 @@ import {
 } from "vue";
 import { rsaConsoleLog, dateFormatting } from "@/core/helpers/utility";
 import { ILavorazione as LavorazioneDetails } from "@/core/data/lavorazioni";
+import Swal from "sweetalert2/dist/sweetalert2.js";
 import ApiService from "@/core/services/ApiService";
 
 export default defineComponent({
@@ -288,6 +289,7 @@ export default defineComponent({
           }
         })
         .catch(({ response }) => {
+          //TODO: Gestione Errori Swal -Andrea
           rsaConsoleLog("Error--------------- ", response);
         });
     };
