@@ -191,6 +191,8 @@ export default defineComponent({
 
     const onDoubleClick = (args) => {
       rsaConsoleLog("Double click", args);
+      emit("select-row", args.rowData);
+
       /* if (this.search) {
         if (this.multiselection) this.selectOperatore([args.rowData]);
         else this.selectOperatore(args.rowData);
@@ -202,6 +204,13 @@ export default defineComponent({
         );
         if (!this.toDeveloped) this.$emit("edit-articolo", true, args.rowData);
       } */
+    };
+
+    const commandClick = (args) => {
+      if (args.commandColumn.id == "select-button") {
+        rsaConsoleLog("onClickSelectButton", args);
+        emit("select-row", args.rowData);
+      }
     };
 
     const descFormatter = (field, data) => {
@@ -220,7 +229,8 @@ export default defineComponent({
       descFormatter,
       onDataStateChange,
       toolbar,
-      commands
+      commands,
+      commandClick
     };
   }
 });
