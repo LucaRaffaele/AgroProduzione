@@ -263,6 +263,7 @@ export default defineComponent({
     anno: { type: String, required: true },
     codice: { type: String, required: true }
   },
+  /*test*/
 
   components: {
     ErrorMessage,
