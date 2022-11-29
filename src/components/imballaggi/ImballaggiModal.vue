@@ -165,10 +165,6 @@
 </template>
 
 <script lang="ts">
-import {
-  IArticoliLavorazione as ArticoliLavorazione,
-  TipoArticoli
-} from "@/core/data/articoliLavorazioni";
 import { rsaConsoleLog } from "@/core/helpers/utility";
 import { defineComponent, ref, watch } from "vue";
 import { ErrorMessage, Field, Form } from "vee-validate";
@@ -190,7 +186,7 @@ export default defineComponent({
     const imballaggiCount = ref([1]);
     const articoliSearchModalId = ref("articoli_search_modal_");
     const id = ref(props.idModal);
-    const articoliDefaultList = ref<Array<ArticoliLavorazione>>([
+    const articoliDefaultList = ref([
       {
         lar_art: "",
         ana_desc1: "",
@@ -229,8 +225,8 @@ export default defineComponent({
 
       articoliDefaultList.value[id].ana_desc1 = args.ana_desc1;
       articoliDefaultList.value[id].lar_art = args.ana_codice;
-      articoliDefaultList.value[id].lar_costo = args.ana_ult_pr_acquisto;
-      articoliDefaultList.value[id].lar_imballo = false;
+      articoliDefaultList.value[id].lar_qta = args.lav_art_qta;
+      articoliDefaultList.value[id].lar_colli = args.lav_art_colli;
       articoliSearchModalId.value = articoliSearchModalId.value.slice(0, -1);
     };
 

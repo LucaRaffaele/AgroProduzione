@@ -171,7 +171,7 @@
 
         <!--begin::Table body-->
         <tbody>
-          <template v-for="(item, index) in list" :key="index">
+          <template v-for="(item, index) in listOperatori" :key="index">
             <tr>
               <td>
                 <h1 class="text-dark fw-bold text-hover-primary fs-6">
@@ -204,6 +204,35 @@
       </table>
       <!--end::Table-->
     </div>
+
+    <Datatable
+      :data="listOperatori"
+      :header="tableHeader"
+      :enable-items-per-page-dropdown="true"
+    >
+      <template v-slot:name="{ row: operatore }">
+        {{ operatore.tab_desc }}
+      </template>
+      <template v-slot:start="{ row: operatore }">
+        {{ operatore.lao_start }}
+      </template>
+      <template v-slot:end="{ row: operatore }">
+        {{ operatore.lao_stop }}
+      </template>
+      <template v-slot:actions>
+        <a
+          href="#"
+          class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
+        >
+          <span class="svg-icon svg-icon-3">
+            <inline-svg src="media/icons/duotune/art/art005.svg" />
+          </span>
+        </a>
+        <!--end::Menu item-->
+
+        <!--end::Menu-->
+      </template>
+    </Datatable>
     <!--end::Table container-->
   </div>
 
@@ -214,12 +243,14 @@
 </template>
 
 <script lang="ts">
+import Datatable from "@/components/kt-datatable/KTDataTable.vue";
 import { defineComponent, onMounted, ref, watch, computed } from "vue";
 import { ILavorazione as LavorazioneDetails } from "@/core/data/lavorazioni";
 import OperatoriGrid from "@/components/operatori/OperatoriGrid.vue";
 import { ErrorMessage, Field, Form } from "vee-validate";
 import SearchModal from "@/components/modals/SearchModal.vue";
 import ApiService from "@/core/services/ApiService";
+import Swal from "sweetalert2/dist/sweetalert2.js";
 import * as Yup from "yup";
 import { hideModal } from "@/core/helpers/dom";
 import { rsaConsoleLog } from "@/core/helpers/utility";
@@ -238,7 +269,8 @@ export default defineComponent({
     Field,
     Form,
     SearchModal,
-    OperatoriGrid
+    OperatoriGrid,
+    Datatable
   },
 
   setup(props) {
@@ -248,38 +280,70 @@ export default defineComponent({
 
     const operatoriLavorazioneValidator = Yup.object().shape({});
 
-    const list = [
+    const listOperatori = ref([]);
+
+    const tableHeader = ref([
       {
-        name: "Franco",
-        start: "10:15",
-        end: "12:00"
+        columnName: "Operatore",
+        columnLabel: "operatore",
+        columnWidth: 175
       },
       {
-        name: "Marco",
-        start: "12:15",
-        end: "13:00"
+        columnName: "Orario inizio",
+        columnLabel: "orario inizio",
+        sortEnabled: true,
+        columnWidth: 230
       },
       {
-        name: "Luca",
-        start: "21:00",
-        end: "22:45"
+        columnName: "Orario Fine",
+        columnLabel: "orario fine",
+        sortEnabled: true,
+        columnWidth: 175
       },
       {
-        name: "Andrea",
-        start: "9:00",
-        end: "19:30"
-      },
-      {
-        name: "Mattia",
-        start: "11:15",
-        end: "14:00"
+        columnName: "Modifica",
+        columnLabel: "modifica",
+        sortEnabled: true,
+        columnWidth: 175
       }
-    ];
+    ]);
+
+    const apiParams = ref(`${props.tipo}/${props.anno}/${props.codice}`);
+    const getOperatori = async () => {
+      ApiService.setHeader();
+      try {
+        const result = await ApiService.get(
+          "lavorazioni/operatori/getjoined",
+          apiParams.value
+        );
+        rsaConsoleLog("***OperatoriList getOperatori Result -> ", result.data);
+        if (result.data.RecordsTotal > 0) {
+          return result.data.Data;
+        }
+      } catch (error) {
+        rsaConsoleLog("Error--------------- ", error);
+        Swal.fire({
+          text: error,
+          icon: "error",
+          buttonsStyling: false,
+          confirmButtonText: "Ok",
+          customClass: {
+            confirmButton: "btn btn-danger"
+          }
+        });
+        return null;
+      }
+      return null;
+    };
 
     const articoliSearchModalId = "articoli_search_modal";
 
-    onMounted(() => {
+    onMounted(async () => {
       rsaConsoleLog("LavorazioniEdit Mounted with props id -> ", props.codice);
+      const operatori = await getOperatori();
+      listOperatori.value = operatori;
+      rsaConsoleLog("operatori -> ", listOperatori.value);
+
       /* if (props.codice != 0)
           lavorazioneDetails.value = ; */
     });
@@ -374,7 +438,8 @@ export default defineComponent({
       operatoriLavorazioneValidator,
       isNewProcessing,
       articoliSearchModalId,
-      list
+      listOperatori,
+      tableHeader
     };
   }
 });
